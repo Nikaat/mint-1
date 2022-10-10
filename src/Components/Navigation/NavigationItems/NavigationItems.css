@@ -1,0 +1,15 @@
+.Container {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 80px;
+    align-items: center;
+}
+
+.me {
+    background-color: #DF4142;
+    padding: 10px 7px 10px 7px;
+    color: white;
+    border-radius: 10px;
+    align-items: center;
+}
