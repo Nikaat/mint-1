@@ -7,7 +7,7 @@
 }
 
 .me {
-    background-color: #DF4142;
+    background-color: var(--light-red);
     padding: 10px 7px 10px 7px;
     color: white;
     border-radius: 10px;

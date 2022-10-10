@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #000;
+    background: black;
     border-radius: 27px;
     box-shadow: 0 6px 14px rgb(11 18 27 / 16%), 0 2px 8px rgb(14 18 22 / 12%);
     cursor: pointer;
@@ -22,12 +22,12 @@
 
 .ButtonIcon {
     width: 21.2px;
-    fill: #fff;
+    fill: white;
 }
 
 .ButtonText {
     display: block;
     margin-left: 5.5px;
-    color: #fff;
+    color: white;
     user-select: none;
 }

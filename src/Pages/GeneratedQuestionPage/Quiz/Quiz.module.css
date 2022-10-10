@@ -1,0 +1,10 @@
+.QuizContainer{
+    position: relative;
+    min-height: 100%;
+    background: var(--background1Color);
+}
+
+.Indicator {
+    margin-top: 0;
+    margin-bottom: 0;
+}

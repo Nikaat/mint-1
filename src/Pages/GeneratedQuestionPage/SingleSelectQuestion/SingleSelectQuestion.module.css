@@ -1,0 +1,15 @@
+.Header {
+    margin: 8px 10px 20px;
+}
+
+.HeaderTitle {
+    display: block;
+    padding: 0 10px;
+    z-index: 1;
+    margin-bottom: 16px;
+    color: var(--neutral900Color);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+}

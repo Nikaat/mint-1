@@ -1,0 +1,19 @@
+
+.copyright {
+    margin: 24px auto;
+    color: var(--light-gray);
+    font-size: 10px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.copyrightRow {
+    display: block;
+}
+
+.copyrightRow a {
+    color: var(--light-gray);
+    cursor: pointer;
+    text-decoration: underline;
+    white-space: nowrap;
+}

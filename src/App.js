@@ -1,9 +1,19 @@
+import React from "react";
+import { Routes, Route } from "react-router";
+
 import Layout from "./hoc/Layout/Layout";
+import GenderSelection from "./Pages/GenderSelectionPage/GenderSelection";
+import GQuestion from "./Pages/GeneratedQuestionPage/GQuestion";
 
 function App() {
   return (
     <div className="App">
       <Layout />
+      <Routes>
+        <Route path="/generated-questionary" element={<GQuestion />} />
+        <Route path="/" element={<GenderSelection />} />
+        <Route path="*" element={<GenderSelection />} />
+      </Routes>
     </div>
   );
 }

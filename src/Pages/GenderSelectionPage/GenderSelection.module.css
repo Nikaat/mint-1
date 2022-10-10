@@ -1,0 +1,60 @@
+.GenderSelection {
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    color: #fff;
+}
+
+.Main {
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.quizLabel {
+    color: #090a0a;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 2.14;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+
+.title {
+    margin-top: 0;
+    margin-bottom: 32px;
+    color: #090a0a;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 125%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.title small {
+    color: #6c727a;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 125%;
+    text-transform: none;
+}
+
+.caption {
+    display: inline-block;
+    margin-bottom: 56px;
+    color: var(--light-black);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.87;
+    text-align: center;
+}
+
+.buttonSection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}

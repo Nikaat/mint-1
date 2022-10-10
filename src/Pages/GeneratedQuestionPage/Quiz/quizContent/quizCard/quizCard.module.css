@@ -1,0 +1,44 @@
+.QuizCardContainer {
+    position: relative;
+    display: flex;
+    border: 1px solid var(--neutral200Color);
+    border-radius: 13px;
+    color: var(--neutral900Color);
+    cursor: pointer;
+    margin: 16px 0;
+}
+
+.QuizCard {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.QuizCardContent {
+    flex-grow: 1;
+    padding: 28px 0 28px 32px;
+}
+
+.QuizCardHeader {
+    color: var(--neutral900Color);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.QuizCardDescription {
+    color: var(--neutral600Color);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.IsTransparent {
+    opacity: 0;
+}
+
+.Checkbox {
+    position: absolute;
+    opacity: 0;
+}
