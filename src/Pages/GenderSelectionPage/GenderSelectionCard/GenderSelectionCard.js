@@ -3,7 +3,7 @@ import React from "react";
 import classes from "./GenderSelectionCard.module.css";
 
 const genderSelectioncard = (props) => (
-  <button className={classes.Button}>
+  <button className={classes.Button} onClick={() => props.onAnswer()}>
     <span className={classes.ButtonInner}>
       <img
         src={props.src}
@@ -27,7 +27,7 @@ const genderSelectioncard = (props) => (
               ></path>
             </svg>
           </span>
-          Male
+          {props.gender}
         </div>
       </span>
     </span>

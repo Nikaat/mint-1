@@ -8,7 +8,11 @@ const QuizContent = (props) => {
   switch (props.questionType) {
     case "SingleSelectQuestion":
       QuestionType = (
-        <SingleSelectQuestion dataCard={props.dataCard} header={props.header} />
+        <SingleSelectQuestion
+          onAnswer={props.onAnswer}
+          dataCard={props.dataCard}
+          header={props.header}
+        />
       );
       break;
     default:

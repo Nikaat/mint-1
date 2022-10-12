@@ -9,7 +9,7 @@ const quizCard = (props) => {
       data-card-idx="0"
       className={classes.QuizCardContainer}
     >
-      <article className={classes.QuizCard}>
+      <article className={classes.QuizCard} onClick={() => props.onAnswer()}>
         <div className={classes.QuizCardContent}>
           <div className={classes.QuizCardHeader}>{props.cardHeader}</div>
           <div className={classes.QuizCardDescription}>{props.description}</div>

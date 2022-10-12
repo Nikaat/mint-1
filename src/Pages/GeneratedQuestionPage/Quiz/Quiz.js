@@ -18,6 +18,7 @@ const quiz = (props) => {
         currentProgress={Questions[questionNum].currentProgress}
       />
       <QuizContent
+        onAnswer={props.onAnswer}
         questionType={Questions[questionNum].questionType}
         header={Questions[questionNum].header}
         dataCard={Questions[questionNum].dataCard}

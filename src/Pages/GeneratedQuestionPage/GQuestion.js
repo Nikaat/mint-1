@@ -7,7 +7,18 @@ import Quiz from "./Quiz/Quiz";
 
 class GQuestion extends Component {
   state = {
-    questionNum: 16,
+    questionNum: 0,
+  };
+
+  answerHandler = () => {
+    setTimeout(
+      () =>
+        this.setState((prevState) => ({
+          ...prevState,
+          questionNum: prevState.questionNum + 1,
+        })),
+      1000
+    );
   };
 
   render() {
@@ -28,7 +39,10 @@ class GQuestion extends Component {
             />
           </div>
           <div className={classes.ContentContainer}>
-            <Quiz questionNum={this.state.questionNum} />
+            <Quiz
+              questionNum={this.state.questionNum}
+              onAnswer={this.answerHandler}
+            />
           </div>
         </div>
       </Auxiliary>
