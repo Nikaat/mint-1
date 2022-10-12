@@ -63,12 +63,11 @@
 
 .CheckmarkIcon {
     color: var(--light-red);
-    display: none;
+    /* display: none; */
     font-size: 20px;
     left: calc(50% - 10px);
     position: absolute;
     top: calc(50% - 9px);
-
     stroke-width: 0;
     fill: currentColor;
     stroke: currentColor;
