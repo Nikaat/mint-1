@@ -1,3 +1,16 @@
+.QuizContent {
+    max-width: 500px;
+    height: 100%;
+    padding: 10px 16px;
+    margin: 0 auto;
+    color: var(--neutral900Color);
+}
+
+.QuestionsSection {
+    display: block;
+    padding: 0 10px;
+}
+
 .Header {
     margin: 8px 10px 20px;
 }
@@ -6,7 +19,7 @@
     display: block;
     padding: 0 10px;
     z-index: 1;
-    margin-bottom: 16px;
+    margin: 0 0 16px 0;
     color: var(--neutral900Color);
     font-size: 32px;
     font-weight: 700;

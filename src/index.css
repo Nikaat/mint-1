@@ -3,6 +3,7 @@
 :root {
   --light-red: #df4142;
   --background-color: #F7F8F9;
+  --background1Color: #FFFFFF;
   --light-black: #090a0a;
   --light-gray: #abb3c0;
   --neutral200Color: #eaeef2;
@@ -16,8 +17,6 @@ body {
   background-color: var(--background-color);
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 code {

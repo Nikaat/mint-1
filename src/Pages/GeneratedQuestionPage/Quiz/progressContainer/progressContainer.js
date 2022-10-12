@@ -18,7 +18,7 @@ const progressContainer = (props) => {
         ></path>
       </svg>
       <span className={classes.Progress}>
-        <span className={classes.CurrentProgress}>1</span>
+        <span className={classes.CurrentProgress}>{props.currentProgress}</span>
         <span>/</span>17
       </span>
     </div>
