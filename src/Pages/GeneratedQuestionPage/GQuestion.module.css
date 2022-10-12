@@ -1,4 +1,5 @@
 .Container {
+    height: 100%;
     display: flex;
     padding-top: 48px;
     background-color: var(--background1Color);
@@ -25,6 +26,7 @@
 }
 
 .ContentContainer {
+    background-color: var(--background1Color);
     padding-top: 32px;
     width: 43%;
     margin-left: auto;

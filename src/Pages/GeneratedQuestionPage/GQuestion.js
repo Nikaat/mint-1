@@ -4,21 +4,46 @@ import { Questions } from "./Questions";
 import classes from "./GQuestion.module.css";
 import Auxiliary from "../../hoc/Auxiliary/Auxiliary";
 import Quiz from "./Quiz/Quiz";
+import { Navigate } from "react-router";
 
 class GQuestion extends Component {
   state = {
     questionNum: 0,
+    changePage: null,
   };
 
   answerHandler = () => {
-    setTimeout(
-      () =>
-        this.setState((prevState) => ({
-          ...prevState,
-          questionNum: prevState.questionNum + 1,
-        })),
-      1000
-    );
+    if (this.state.questionNum !== 16) {
+      setTimeout(
+        () =>
+          this.setState((prevState) => ({
+            ...prevState,
+            questionNum: prevState.questionNum + 1,
+          })),
+        1000
+      );
+    }
+  };
+
+  onArrowHandler = () => {
+    if (this.state.questionNum === 0) {
+      setTimeout(
+        () =>
+          this.setState({
+            changePage: <Navigate to="/" />,
+          }),
+        1000
+      );
+    } else {
+      setTimeout(
+        () =>
+          this.setState((prevState) => ({
+            ...prevState,
+            questionNum: prevState.questionNum - 1,
+          })),
+        1000
+      );
+    }
   };
 
   render() {
@@ -40,11 +65,13 @@ class GQuestion extends Component {
           </div>
           <div className={classes.ContentContainer}>
             <Quiz
+              onArrow={this.onArrowHandler}
               questionNum={this.state.questionNum}
               onAnswer={this.answerHandler}
             />
           </div>
         </div>
+        {this.state.changePage}
       </Auxiliary>
     );
   }

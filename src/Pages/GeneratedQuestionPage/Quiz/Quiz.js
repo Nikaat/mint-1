@@ -15,6 +15,7 @@ const quiz = (props) => {
         <QuizIndicator barFilled={Questions[questionNum].barFilled} />
       </div>
       <ProgressContainer
+        onArrow={props.onArrow}
         currentProgress={Questions[questionNum].currentProgress}
       />
       <QuizContent

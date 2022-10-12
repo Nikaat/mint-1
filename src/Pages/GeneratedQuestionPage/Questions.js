@@ -32,9 +32,9 @@ export const Questions = [
   },
   {
     image: {
-      src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_1000/boajzhbqn9wn9sdfe3ir",
+      src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_1000/yn2cqqbppz5u5y5sotya",
       srcSet:
-        "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_1000/boajzhbqn9wn9sdfe3ir 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_1000/boajzhbqn9wn9sdfe3ir 2x",
+        "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_1000/yn2cqqbppz5u5y5sotya 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_1000/yn2cqqbppz5u5y5sotya 2x",
     },
     barFilled: "11.7647%",
     currentProgress: 2,

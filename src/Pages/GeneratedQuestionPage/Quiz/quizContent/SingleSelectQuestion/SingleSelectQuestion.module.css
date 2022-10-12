@@ -19,7 +19,7 @@
     display: block;
     padding: 0 10px;
     z-index: 1;
-    margin: 0 0 16px 0;
+    margin: 16px 0;
     color: var(--neutral900Color);
     font-size: 32px;
     font-weight: 700;

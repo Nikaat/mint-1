@@ -2,19 +2,63 @@
 
 :root {
   --light-red: #df4142;
-  --background-color: #F7F8F9;
-  --background1Color: #FFFFFF;
   --light-black: #090a0a;
   --light-gray: #abb3c0;
-  --neutral200Color: #eaeef2;
-  --neutral600Color: #8490a1;
-  --neutral900Color: #090a0a;
-  --primary400Color: #df4142;
+  --answerOptionColor: #FFFFFF;
+    --answerOptionActiveColor: #FFFFFF;
+    --answerOptionBorderColor: #DFE3EB;
+    --selectableCardActiveColor: transparent;
+    --answerOptionRadius: 12px;
+    --questionBackgroundColor: #FFFFFF;
+    --buttonRadius: 32px;
+    --buttonPadding: 15px;
+    --font: Montserrat;
+    --neutral900Color: #090A0A;
+    --neutral800Color: #525764;
+    --neutral700Color: #6C727A;
+    --neutral600Color: #8490A1;
+    --neutral500Color: #ABB3C0;
+    --neutral400Color: #D1D5DB;
+    --neutral300Color: #DFE3EB;
+    --neutral200Color: #EAEEF2;
+    --neutral100Color: #F7F7F8;
+    --blackColor: #000000;
+    --whiteColor: #fFFFFF;
+    --background1Color: #FFFFFF;
+    --background2Color: #F7F8F9;
+    --background3Color: #FFFFFF;
+    --primary500Color: #DF4142;
+    --primary400Color: #DF4142;
+    --primary300Color: #DF4142;
+    --primary200Color: #FCDCE0;
+    --primary100Color: #FFEEEE;
+    --secondary1Color: #4ED09A;
+    --secondary2Color: #FCBA2F;
+    --accentRedColor: #FF8845;
+    --accentGreenColor: #34C759;
+    --accentYellowColor: #F7C557;
+    --accentBlueColor: #68DFFA;
+    --primaryButtonShadowColor: rgba(223, 65, 66, 0.31);
+    --secondaryButtonShadowColor: rgba(78, 208, 154, 0.31);
+    --shadowCardDefault: 0px 12px 24px rgba(108, 114, 122, 0.1), 0px 2px 6px rgba(108, 114, 122, 0.06);
+    --countdownTimeBlock: rgba(78, 208, 154, 0.4);
+    --additionalDiscountHeaderColor: rgba(223, 65, 66, 0.1);
+    --exclusiveOfferLogoBackgroundColor: rgba(223, 65, 66, 0.2);
+    --checkoutPriceBannerShadowColor: rgba(223, 65, 66, 0.4);
+    --countdownShadowColor: rgba(223, 65, 66, 0.15);
+    --choosePlanNotificationBackgroundColor: rgba(223, 65, 66, 0.2);
+    --howItWorksActivePointShadowColor: rgba(223, 65, 66, 0.32);
+    --priceSectionShadowColor: rgba(223, 65, 66, 0.4);
+    --priceSectionShadowSecondaryColor: rgba(223, 227, 235, 0.4);
+    --errorInputBackgroundColor: rgba(247, 197, 87, 0.3);
+    --checkboxBorderColor: var(--neutral300Color);
+    --buttonTextShadowColor: rgba(66, 33, 108, 0.12);
+    --pulseButtonShadowColor: rgba(223, 65, 66, 0.4);
 }
 
 body {
+  height: 100%;
   font-size: 14px;
-  background-color: var(--background-color);
   margin: 0;
   font-family: 'Montserrat', sans-serif;
 }

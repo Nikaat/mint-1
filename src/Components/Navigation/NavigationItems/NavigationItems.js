@@ -1,15 +1,21 @@
 import React from "react";
 
 import DrawerToggle from "../DrawerToggle/DrawerToggle";
-import "./NavigationItems.css";
+import classes from "./NavigationItems.module.css";
 
-const navigationItems = (props) => {
+const navigationItems = () => {
   return (
-    <nav className="Container">
-      <h1>
-        <span>Better</span>
-        <span className="me">Me.</span>
-      </h1>
+    <nav className={classes.Container}>
+      <span>
+        <a href="/">
+          <img
+            className={classes.Logo}
+            src="https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_1.0,q_auto:eco/ks5dfptxqjo4x8iguaba"
+            srcSet="https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_1.0,q_auto:eco/ks5dfptxqjo4x8iguaba 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_2.0,q_auto:eco/ks5dfptxqjo4x8iguaba 2x, https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_3.0,q_auto:eco/ks5dfptxqjo4x8iguaba 3x, https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_4.0,q_auto:eco/ks5dfptxqjo4x8iguaba 4x"
+            alt=""
+          />
+        </a>
+      </span>
       <DrawerToggle />
     </nav>
   );

@@ -11,10 +11,6 @@
     background-color: transparent;
 }
 
-.me {
-    background-color: var(--light-red);
-    padding: 10px 7px 10px 7px;
-    color: white;
-    border-radius: 10px;
-    align-items: center;
+.Logo {
+    height: 48px;
 }
