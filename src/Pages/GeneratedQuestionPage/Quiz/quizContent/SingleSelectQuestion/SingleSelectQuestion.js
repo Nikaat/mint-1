@@ -13,7 +13,12 @@ const SingleSelectQuestion = (props) => {
       </div>
       <section className={classes.QuestionsSection}>
         {dataCard.map((opt) => (
-          <QuizCard {...opt} key={opt.dataCardId} onAnswer={props.onAnswer} />
+          <QuizCard
+            {...opt}
+            key={opt.dataCardId}
+            onAnswer={props.onAnswer}
+            isAnswered={props.isAnswered}
+          />
         ))}
       </section>
     </div>

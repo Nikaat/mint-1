@@ -8,17 +8,31 @@ import { Navigate } from "react-router";
 
 class GQuestion extends Component {
   state = {
+    isAnswered: [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+    ],
     questionNum: 0,
     changePage: null,
   };
 
   answerHandler = () => {
+    this.setState({ isAnswered: true });
     if (this.state.questionNum !== 16) {
       setTimeout(
         () =>
           this.setState((prevState) => ({
             ...prevState,
             questionNum: prevState.questionNum + 1,
+            isAnswered: false,
           })),
         1000
       );
@@ -65,6 +79,7 @@ class GQuestion extends Component {
           </div>
           <div className={classes.ContentContainer}>
             <Quiz
+              isAnswered={this.state.isAnswered}
               onArrow={this.onArrowHandler}
               questionNum={this.state.questionNum}
               onAnswer={this.answerHandler}

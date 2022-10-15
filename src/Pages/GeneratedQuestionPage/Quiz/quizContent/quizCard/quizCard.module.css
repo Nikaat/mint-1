@@ -2,10 +2,12 @@
     position: relative;
     display: flex;
     border: 1px solid var(--neutral200Color);
-    border-radius: 13px;
     color: var(--neutral900Color);
     cursor: pointer;
     margin: 16px 0;
+    padding: 0 16px 0 0;
+    background: var(--answerOptionColor);
+    border-radius: var(--answerOptionRadius);
 }
 
 .QuizCard {
@@ -34,11 +36,6 @@
     line-height: 20px;
 }
 
-.IsTransparent {
-    opacity: 0;
-}
-
-.Checkbox {
-    position: absolute;
-    opacity: 0;
+.RedCheckmark {
+    width: 20px;
 }

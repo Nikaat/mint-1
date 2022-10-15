@@ -19,6 +19,7 @@ const quiz = (props) => {
         currentProgress={Questions[questionNum].currentProgress}
       />
       <QuizContent
+        isAnswered={props.isAnswered}
         onAnswer={props.onAnswer}
         questionType={Questions[questionNum].questionType}
         header={Questions[questionNum].header}

@@ -1,6 +1,7 @@
 import React from "react";
 
 import classes from "./quizCard.module.css";
+import redCheckmark from "../../../../../assets/images/Red-checkmark.PNG";
 
 const quizCard = (props) => {
   return (
@@ -14,14 +15,9 @@ const quizCard = (props) => {
           <div className={classes.QuizCardHeader}>{props.cardHeader}</div>
           <div className={classes.QuizCardDescription}>{props.description}</div>
         </div>
-        <span className={classes.IsTransparent}>
-          <input
-            className={classes.Checkbox}
-            readOnly=""
-            type="checkbox"
-            data-checkbox="generated-single-select-question"
-          />
-        </span>
+        {props.isAnswered ? (
+          <img src={redCheckmark} alt="" className={classes.RedCheckmark} />
+        ) : null}
       </article>
     </div>
   );

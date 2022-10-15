@@ -9,6 +9,7 @@ const QuizContent = (props) => {
     case "SingleSelectQuestion":
       QuestionType = (
         <SingleSelectQuestion
+          isAnswered={props.isAnswered}
           onAnswer={props.onAnswer}
           dataCard={props.dataCard}
           header={props.header}
