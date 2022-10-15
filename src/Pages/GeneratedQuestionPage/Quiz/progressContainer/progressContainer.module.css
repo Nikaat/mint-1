@@ -16,3 +16,21 @@
 .CurrentProgress {
     color: var(--primary400Color);
 }
+
+@media (max-width: 500px) {
+    .ProgressContainer {
+        position: fixed;
+        z-index: 210;
+        top: 0;
+        display: flex;
+        width: 90%;
+        height: 48px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 15px ;
+    }
+    .Progress {
+        padding-left: 40px;
+        background-color: white;
+    }
+}

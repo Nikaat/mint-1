@@ -71,3 +71,16 @@
     fill: currentColor;
     stroke: currentColor;
 }
+
+@media (max-width: 500px) {
+    .Button {
+        margin: 0 12px;
+        min-width: 20px;
+    }
+    .ButtonTextContainer {
+        text-align: center;
+    }
+    .ButtonText {
+        padding-left: 0;
+    }
+}

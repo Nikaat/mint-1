@@ -14,3 +14,19 @@
 .Logo {
     height: 48px;
 }
+
+@media (max-width: 500px) {
+    .Container {
+        justify-content: flex-end;
+        height: 48px;
+    }
+    .Logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 28px;
+        cursor: pointer;
+        transform: translate(-50%,-50%);
+        transform-origin: center top;
+    }
+}

@@ -15,7 +15,7 @@ const quizCard = (props) => {
           <div className={classes.QuizCardHeader}>{props.cardHeader}</div>
           <div className={classes.QuizCardDescription}>{props.description}</div>
         </div>
-        {props.isAnswered ? (
+        {props.isAnswered === true ? (
           <img src={redCheckmark} alt="" className={classes.RedCheckmark} />
         ) : null}
       </article>

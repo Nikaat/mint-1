@@ -72,8 +72,8 @@ class GQuestion extends Component {
             }}
           >
             <img
-              className={classes.Image}
-              {...Questions[this.state.questionNum].image}
+              className={classes.LeftImage}
+              {...Questions[this.state.questionNum].leftImage}
               alt=""
             />
           </div>
@@ -83,6 +83,11 @@ class GQuestion extends Component {
               onArrow={this.onArrowHandler}
               questionNum={this.state.questionNum}
               onAnswer={this.answerHandler}
+            />
+            <img
+              className={classes.RightImage}
+              {...Questions[this.state.questionNum].rightImage}
+              alt=""
             />
           </div>
         </div>

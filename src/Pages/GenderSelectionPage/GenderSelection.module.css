@@ -58,3 +58,23 @@
     width: 100%;
     justify-content: center;
 }
+
+
+@media (max-width: 500px) {
+    .GenderSelection {
+        justify-content: flex-start;
+        padding: 48px 0 0 0;
+    }
+    .Main {
+        padding-top: 24px;
+    }
+    .quizLabel {
+        margin-bottom: 26px;
+    }
+    .caption {
+        margin-bottom: 24px;
+    }
+    .buttonSection {
+        justify-content: initial;
+    }
+}

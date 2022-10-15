@@ -6,7 +6,7 @@ import classes from "./NavigationItems.module.css";
 const navigationItems = () => {
   return (
     <nav className={classes.Container}>
-      <span>
+      <span className={classes.Logo}>
         <a href="/">
           <img
             className={classes.Logo}
