@@ -8,3 +8,10 @@
     margin-top: 0;
     margin-bottom: 0;
 }
+
+@media (max-width: 500px) {
+    .QuizContainer {
+        z-index: 1;
+        background-color: transparent;
+    }
+}
