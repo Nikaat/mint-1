@@ -19,6 +19,7 @@
     .Container {
         justify-content: flex-end;
         height: 48px;
+        background-color: white;
     }
     .Logo {
         position: absolute;

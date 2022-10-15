@@ -3,6 +3,8 @@
 Just some parts of the female section
 
 must be done:
+-responsive images - done
+-responsive navigation logo - done
 -image options
 -height and weight components
 -ft and cm components

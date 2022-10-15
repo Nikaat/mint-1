@@ -17,6 +17,10 @@
     color: var(--primary400Color);
 }
 
+.Logo {
+    display: none;
+}
+
 @media (max-width: 500px) {
     .ProgressContainer {
         position: fixed;
@@ -28,9 +32,20 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 15px ;
+        background-color: white;
     }
     .Progress {
         padding-left: 40px;
         background-color: white;
+    }
+    .Logo {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 28px;
+        cursor: pointer;
+        transform: translate(-50%,-50%);
+        transform-origin: center top;
     }
 }
