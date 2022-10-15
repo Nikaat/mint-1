@@ -1,3 +1,3 @@
 # Mint Project
 
-Just some parts of the female section till now
+Just some parts of the female section
