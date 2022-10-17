@@ -26,3 +26,16 @@
     line-height: 1.25;
     text-align: center;
 }
+
+@media (max-width: 500px) {
+    .HeaderTitle {
+        font-size: 24px;
+        margin-top: 0;
+    }
+    .Header {
+        margin-top: 0;
+    }
+    .QuestionsSection {
+        margin-top: 38px;
+    }
+}

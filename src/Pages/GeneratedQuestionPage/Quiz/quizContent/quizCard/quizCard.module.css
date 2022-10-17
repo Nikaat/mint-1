@@ -43,3 +43,13 @@
 .Answer {
     border: 1px solid var(--primary400Color);
 }
+
+@media (max-width: 500px) {
+    .QuizCardContainer {
+        width: 60%;
+        min-height: 72px;
+    }
+    .QuizCardContent {
+        padding: 16px 0 16px 16px;
+    }
+}
