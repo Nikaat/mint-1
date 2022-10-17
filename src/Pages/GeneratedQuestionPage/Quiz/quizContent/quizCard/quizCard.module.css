@@ -39,3 +39,7 @@
 .RedCheckmark {
     width: 20px;
 }
+
+.Answer {
+    border: 1px solid var(--primary400Color);
+}

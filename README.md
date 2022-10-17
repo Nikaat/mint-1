@@ -13,7 +13,7 @@ Just some parts of the female section
 - next button
 - responsive help button
 - [active question checkmark] - done
-- active question border
+- [active question border] - done
 - side drawer
 - loading component
 - progress bar

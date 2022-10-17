@@ -4,8 +4,14 @@ import classes from "./quizCard.module.css";
 import redCheckmark from "../../../../../assets/images/Red-checkmark.PNG";
 
 const quizCard = (props) => {
+  let cardStyle;
+  cardStyle =
+    props.isAnswered === props.idx
+      ? [classes.QuizCardContainer, classes.Answer].join(" ")
+      : [classes.QuizCardContainer];
+
   return (
-    <div className={classes.QuizCardContainer}>
+    <div className={cardStyle}>
       <article
         className={classes.QuizCard}
         onClick={() => props.onAnswer(props.idx)}
