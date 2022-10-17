@@ -8,24 +8,15 @@ import { Navigate } from "react-router";
 
 class GQuestion extends Component {
   state = {
-    isAnswered: [
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-    ],
+    isAnswered: null,
     questionNum: 0,
     changePage: null,
   };
 
-  answerHandler = () => {
-    this.setState({ isAnswered: true });
+  answerHandler = (idx) => {
+    this.setState({
+      isAnswered: idx,
+    });
     if (this.state.questionNum !== 16) {
       setTimeout(
         () =>

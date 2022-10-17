@@ -16,6 +16,7 @@ const SingleSelectQuestion = (props) => {
           <QuizCard
             {...opt}
             key={opt.dataCardId}
+            idx={opt.dataCardIdx}
             onAnswer={props.onAnswer}
             isAnswered={props.isAnswered}
           />

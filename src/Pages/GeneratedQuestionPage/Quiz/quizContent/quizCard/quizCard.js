@@ -5,17 +5,16 @@ import redCheckmark from "../../../../../assets/images/Red-checkmark.PNG";
 
 const quizCard = (props) => {
   return (
-    <div
-      data-card-id="1802"
-      data-card-idx="0"
-      className={classes.QuizCardContainer}
-    >
-      <article className={classes.QuizCard} onClick={() => props.onAnswer()}>
+    <div className={classes.QuizCardContainer}>
+      <article
+        className={classes.QuizCard}
+        onClick={() => props.onAnswer(props.idx)}
+      >
         <div className={classes.QuizCardContent}>
           <div className={classes.QuizCardHeader}>{props.cardHeader}</div>
           <div className={classes.QuizCardDescription}>{props.description}</div>
         </div>
-        {props.isAnswered === true ? (
+        {props.isAnswered === props.idx ? (
           <img src={redCheckmark} alt="" className={classes.RedCheckmark} />
         ) : null}
       </article>

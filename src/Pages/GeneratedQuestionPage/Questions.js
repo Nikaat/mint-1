@@ -39,9 +39,7 @@ export const Questions = [
       srcSet:
         "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_1000/yn2cqqbppz5u5y5sotya 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_1000/yn2cqqbppz5u5y5sotya 2x",
     },
-    rightImage: {
-      src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_750/d5h9oydmzg4ekjbqkzft",
-    },
+    rightImage: {},
     barFilled: "11.7647%",
     currentProgress: 2,
     questionType: "SingleSelectQuestion",
@@ -75,7 +73,6 @@ export const Questions = [
       srcSet:
         "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_1000/qcyo3d7okqhwj4nlcoji 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_1000/qcyo3d7okqhwj4nlcoji 2x",
     },
-    rightImage: {},
     barFilled: "17.6471%",
     currentProgress: 3,
     questionType: "SingleSelectQuestion",

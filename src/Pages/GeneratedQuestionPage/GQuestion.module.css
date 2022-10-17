@@ -42,9 +42,9 @@
     }
     .ContentContainer {
         padding: 0;
-        width: auto;
+        width: 100%;
     }
-    .RightImage {
+    .RightImage { 
         display:inline;
         position: fixed;
         z-index: 0;
