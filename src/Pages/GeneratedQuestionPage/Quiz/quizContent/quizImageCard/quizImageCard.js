@@ -4,8 +4,7 @@ import classes from "./quizImageCard.module.css";
 import redCheckmark from "../../../../../assets/images/Red-checkmark.PNG";
 
 const quizImageCard = (props) => {
-  let cardStyle;
-  cardStyle =
+  let cardStyle =
     props.isAnswered === props.idx
       ? [classes.QuizCardContainer, classes.Answer].join(" ")
       : [classes.QuizCardContainer];
@@ -19,8 +18,10 @@ const quizImageCard = (props) => {
           srcSet={props.optionImage.srcSet}
           alt=""
         />
-        <div className={classes.QuizCardHeader}>{props.cardHeader}</div>
-        <div className={classes.QuizCardDescription}>{props.description}</div>
+        <div className={classes.TextContainer}>
+          <div className={classes.QuizCardHeader}>{props.cardHeader}</div>
+          <div className={classes.QuizCardDescription}>{props.description}</div>
+        </div>
       </div>
       {props.isAnswered === props.idx ? (
         <img src={redCheckmark} alt="" className={classes.RedCheckmark} />

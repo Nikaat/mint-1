@@ -45,27 +45,47 @@ export const Questions = [
     currentProgress: 2,
     questionType: "SingleSelectQuestion",
     header: "What is your age?",
-    optionwithImage: false,
+    optionwithImage: true,
     dataCard: [
       {
         cardHeader: "20s",
         dataCardId: "1805",
         dataCardIdx: "0",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/zoj7ng4g4n0ruoz85bgk",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/zoj7ng4g4n0ruoz85bgk 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/zoj7ng4g4n0ruoz85bgk 2x",
+        },
       },
       {
         cardHeader: "30s",
         dataCardId: "1806",
         dataCardIdx: "1",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/f2d89523zcicrsqhhsk0",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/f2d89523zcicrsqhhsk0 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/f2d89523zcicrsqhhsk0 2x",
+        },
       },
       {
         cardHeader: "40s",
         dataCardId: "1807",
         dataCardIdx: "2",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/xehbpikq4c9ietwgcdah",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/xehbpikq4c9ietwgcdah 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/xehbpikq4c9ietwgcdah 2x",
+        },
       },
       {
         cardHeader: "50+",
         dataCardId: "1808",
         dataCardIdx: "3",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/iojovsk9kdg7q3sa7q88",
+          srtSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/iojovsk9kdg7q3sa7q88 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/iojovsk9kdg7q3sa7q88 2x",
+        },
       },
     ],
   },
@@ -420,27 +440,47 @@ export const Questions = [
     currentProgress: 11,
     questionType: "SingleSelectQuestion",
     header: "How much time do you want to work out?",
-    optionwithImage: false,
+    optionwithImage: true,
     dataCard: [
       {
         cardHeader: "10-15 min",
         dataCardId: "1805",
         dataCardIdx: "0",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/ls0fxbnjzb6hkfh9dtho",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/ls0fxbnjzb6hkfh9dtho 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/ls0fxbnjzb6hkfh9dtho 2x",
+        },
       },
       {
         cardHeader: "15-25 min",
         dataCardId: "1806",
         dataCardIdx: "1",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/c07tga8upog0vyzo9ott",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/c07tga8upog0vyzo9ott 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/c07tga8upog0vyzo9ott 2x",
+        },
       },
       {
         cardHeader: "25+ min",
         dataCardId: "1807",
         dataCardIdx: "2",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/sckefvofcpnxrnmjlx8v",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/sckefvofcpnxrnmjlx8v 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/sckefvofcpnxrnmjlx8v 2x",
+        },
       },
       {
         cardHeader: "I don't know",
         dataCardId: "1808",
         dataCardIdx: "3",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/qvrrofmcky7bcofuo6hy",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/qvrrofmcky7bcofuo6hy 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/qvrrofmcky7bcofuo6hy 2x",
+        },
       },
     ],
   },
@@ -583,27 +623,47 @@ export const Questions = [
     currentProgress: 16,
     questionType: "SingleSelectQuestion",
     header: "How much water do you drink daily?",
-    optionwithImage: false,
+    optionwithImage: true,
     dataCard: [
       {
         cardHeader: "Only coffee or tea",
         dataCardId: "1805",
         dataCardIdx: "0",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/zsc1elbbhv3khubnggig",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/zsc1elbbhv3khubnggig 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/zsc1elbbhv3khubnggig 2x",
+        },
       },
       {
         cardHeader: "Less than 2 glasses (16 oz)",
         dataCardId: "1806",
         dataCardIdx: "1",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/d3gian3tp9p5y2nzi9po",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/d3gian3tp9p5y2nzi9po 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/d3gian3tp9p5y2nzi9po 2x",
+        },
       },
       {
         cardHeader: "2-6 glasses  (16-48 oz)",
         dataCardId: "1807",
         dataCardIdx: "2",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/ih6r9nncuzw5tgcje0oy",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/ih6r9nncuzw5tgcje0oy 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/ih6r9nncuzw5tgcje0oy 2x",
+        },
       },
       {
         cardHeader: "More than 6 glasses",
         dataCardId: "1808",
         dataCardIdx: "3",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/avpmb0yeg6dq5odcdar5",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/avpmb0yeg6dq5odcdar5 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/avpmb0yeg6dq5odcdar5 2x",
+        },
       },
     ],
   },
@@ -618,67 +678,117 @@ export const Questions = [
     currentProgress: 17,
     questionType: "SingleSelectQuestion",
     header: "Choose your diet type",
-    optionwithImage: false,
+    optionwithImage: true,
     dataCard: [
       {
         cardHeader: "Traditional",
         description: "I enjoy everything",
         dataCardId: "1805",
         dataCardIdx: "0",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/jhdg6bwibee2pxicoebg",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/jhdg6bwibee2pxicoebg 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/jhdg6bwibee2pxicoebg 2x",
+        },
       },
       {
         cardHeader: "Vegetarian",
         description: "I avoid meat and fish",
         dataCardId: "1806",
         dataCardIdx: "1",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/bpwyxlo64mgbhgclrzl8",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/bpwyxlo64mgbhgclrzl8 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/bpwyxlo64mgbhgclrzl8 2x",
+        },
       },
       {
         cardHeader: "Vegetarian (Plant Diet)",
         description: "I do not eat animal products",
         dataCardId: "1807",
         dataCardIdx: "2",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/skk8uzmptweqakgmzz1d",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/skk8uzmptweqakgmzz1d 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/skk8uzmptweqakgmzz1d 2x",
+        },
       },
       {
         cardHeader: "Keto Vegan",
         description: "I like low-carb meals and avoid animal products",
         dataCardId: "1808",
         dataCardIdx: "3",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/lbeoyxoxrisexmjqwu2g",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/lbeoyxoxrisexmjqwu2g 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/lbeoyxoxrisexmjqwu2g 2x",
+        },
       },
       {
         cardHeader: "Keto",
         description: "I like low-carb meals for fast metabolism",
         dataCardId: "1809",
         dataCardIdx: "4",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/wsraqabl0seu3ohroefb",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/wsraqabl0seu3ohroefb 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/wsraqabl0seu3ohroefb 2x",
+        },
       },
       {
         cardHeader: "Pescatarian",
         description: "I avoid meat but enjoy fish",
         dataCardId: "1810",
         dataCardIdx: "5",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/wiihiisoihteq3ejl0sp",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/wiihiisoihteq3ejl0sp 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/wiihiisoihteq3ejl0sp 2x",
+        },
       },
       {
         cardHeader: "Lactose Free",
         description: "I do not take milk products",
         dataCardId: "1811",
         dataCardIdx: "6",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/rgkqa3xsrwvqvyhladcc",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/rgkqa3xsrwvqvyhladcc 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/rgkqa3xsrwvqvyhladcc 2x",
+        },
       },
       {
         cardHeader: "Gluten Free",
         description: "No wheat for me, please!",
         dataCardId: "1812",
         dataCardIdx: "7",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/yk96p69fxyzjrwztfrrh",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/yk96p69fxyzjrwztfrrh 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/yk96p69fxyzjrwztfrrh 2x",
+        },
       },
       {
         cardHeader: "Paleo",
         description: "Little processed foods, extra veggies and fruit",
         dataCardId: "1813",
         dataCardIdx: "8",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/llgl5htfp5oraymqjlvy",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/llgl5htfp5oraymqjlvy 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/llgl5htfp5oraymqjlvy 2x",
+        },
       },
       {
         cardHeader: "Mediterranean diet",
         description: "High on veggies, nuts, low on meat",
         dataCardId: "1814",
         dataCardIdx: "9",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/ujvstd0zpk7u10rnpodz",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/ujvstd0zpk7u10rnpodz 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/ujvstd0zpk7u10rnpodz 2x",
+        },
       },
     ],
   },

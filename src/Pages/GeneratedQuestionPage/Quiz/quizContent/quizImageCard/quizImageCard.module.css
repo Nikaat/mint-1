@@ -5,7 +5,7 @@
     color: var(--neutral900Color);
     background: var(--answerOptionColor);
     border-radius: var(--answerOptionRadius);
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     cursor: pointer;
     z-index: 1;
     align-items: center;
@@ -23,8 +23,6 @@
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
-    padding: 16px 0;
-    margin: auto 0;
 }
 
 .QuizCardDescription {
@@ -45,12 +43,18 @@
     margin-right: 12px;
 }
 
+.TextContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+    margin: auto 0;
+}
+
 @media (max-width: 500px) {
     .QuizCardContainer {
-        width: 60%;
         min-height: 72px;
     }
     .QuizCardContent {
-        padding: 16px 0 16px 16px;
+        padding: 0;
     }
 }
