@@ -2,7 +2,7 @@
 
 Just some parts of the female section
 
-## must be done:
+## done:
 
 - [responsive images] - done
 - [responsive navigation logo] - done
