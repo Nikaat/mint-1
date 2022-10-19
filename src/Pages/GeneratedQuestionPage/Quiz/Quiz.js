@@ -30,6 +30,7 @@ const quiz = (props) => {
         onScaleChange={props.onScaleChange}
         onInputChange={props.onInputChange}
         inputValue={props.inputValue}
+        optionwithimage={Questions[questionNum].optionwithImage}
       />
     </div>
   );

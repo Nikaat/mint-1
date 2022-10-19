@@ -12,6 +12,7 @@ export const Questions = [
     currentProgress: 1,
     questionType: "SingleSelectQuestion",
     header: "What is your primary goal?",
+    optionwithImage: false,
     dataCard: [
       {
         cardHeader: "Lose weight",
@@ -44,6 +45,7 @@ export const Questions = [
     currentProgress: 2,
     questionType: "SingleSelectQuestion",
     header: "What is your age?",
+    optionwithImage: false,
     dataCard: [
       {
         cardHeader: "20s",
@@ -78,7 +80,7 @@ export const Questions = [
     questionType: "InputQuestion",
     header: "How tall are you?",
     param: "height",
-    scale: "FT",
+    optionwithImage: false,
     dataCard: [
       {
         cardHeader: "20s",
@@ -114,6 +116,7 @@ export const Questions = [
     questionType: "InputQuestion",
     header: "What’s your current weight?",
     param: "weight",
+    optionwithImage: false,
     dataCard: [
       {
         cardHeader: "20s",
@@ -149,6 +152,7 @@ export const Questions = [
     questionType: "InputQuestion",
     header: "Got it! And what's your goal weight?",
     param: "goalweight",
+    optionwithImage: false,
     dataCard: [
       {
         cardHeader: "20s",
@@ -185,6 +189,7 @@ export const Questions = [
     currentProgress: 6,
     questionType: "SingleSelectQuestion",
     header: "Please, describe your typical day",
+    optionwithImage: false,
     dataCard: [
       {
         cardHeader: "At the office",
@@ -219,41 +224,77 @@ export const Questions = [
     currentProgress: 7,
     questionType: "SingleSelectQuestion",
     header: "Select habits that are true for you",
+    optionwithImage: true,
     dataCard: [
       {
         cardHeader: "Alcohol",
         dataCardId: "1805",
         dataCardIdx: "0",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/rch8hhqrf0fllqtehbvx",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/rch8hhqrf0fllqtehbvx 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/rch8hhqrf0fllqtehbvx 2x",
+        },
       },
       {
         cardHeader: "Smoking",
         dataCardId: "1806",
         dataCardIdx: "1",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/fryxjszbkx87guyjvynp",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/fryxjszbkx87guyjvynp 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/fryxjszbkx87guyjvynp 2x",
+        },
       },
       {
         cardHeader: "Sweet treats",
         dataCardId: "1807",
         dataCardIdx: "2",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/v8910qeielxabdzou8ma",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/v8910qeielxabdzou8ma 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/v8910qeielxabdzou8ma 2x",
+        },
       },
       {
         cardHeader: "Carbonated beverages",
         dataCardId: "1808",
         dataCardIdx: "3",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/rdei0pdtqfnbxjulbj5o",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/rdei0pdtqfnbxjulbj5o 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/rdei0pdtqfnbxjulbj5o 2x",
+        },
       },
       {
         cardHeader: "Salty foods",
         dataCardId: "1809",
         dataCardIdx: "4",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/o5sidn4nw8fluxydqjcd",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/o5sidn4nw8fluxydqjcd 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/o5sidn4nw8fluxydqjcd 2x",
+        },
       },
       {
         cardHeader: "Eating in front of the TV",
         dataCardId: "1810",
         dataCardIdx: "5",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/ict9t09ojap3ufwu0wjp",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/ict9t09ojap3ufwu0wjp 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/ict9t09ojap3ufwu0wjp 2x",
+        },
       },
       {
         cardHeader: "None of the above",
         dataCardId: "1811",
         dataCardIdx: "6",
+        optionImage: {
+          src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/icdepki8b5uy2hj3tas1",
+          srcSet:
+            "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_104/icdepki8b5uy2hj3tas1 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_104/icdepki8b5uy2hj3tas1 2x",
+        },
       },
     ],
   },
@@ -270,6 +311,7 @@ export const Questions = [
     currentProgress: 8,
     questionType: "SingleSelectQuestion",
     header: "Your physical activity",
+    optionwithImage: false,
     dataCard: [
       {
         cardHeader: "Almost none",
@@ -311,6 +353,7 @@ export const Questions = [
     currentProgress: 9,
     questionType: "SingleSelectQuestion",
     header: "How many lunges could you do?",
+    optionwithImage: false,
     dataCard: [
       {
         cardHeader: "1-10",
@@ -347,6 +390,7 @@ export const Questions = [
     currentProgress: 10,
     questionType: "SingleSelectQuestion",
     header: "Which exercise is your least favorite?",
+    optionwithImage: false,
     dataCard: [
       {
         cardHeader: "Dumbbell exercises",
@@ -376,6 +420,7 @@ export const Questions = [
     currentProgress: 11,
     questionType: "SingleSelectQuestion",
     header: "How much time do you want to work out?",
+    optionwithImage: false,
     dataCard: [
       {
         cardHeader: "10-15 min",
@@ -412,6 +457,7 @@ export const Questions = [
     currentProgress: 12,
     questionType: "SingleSelectQuestion",
     header: "How many times per week would you like to train?",
+    optionwithImage: false,
     dataCard: [
       {
         cardHeader: "1-2 times",
@@ -443,6 +489,7 @@ export const Questions = [
     currentProgress: 13,
     questionType: "SingleSelectQuestion",
     header: "How is your energy during the day?",
+    optionwithImage: false,
     dataCard: [
       {
         cardHeader: "I can maintain a good level all day long",
@@ -474,6 +521,7 @@ export const Questions = [
     currentProgress: 14,
     questionType: "SingleSelectQuestion",
     header: "Select preferred place to work out",
+    optionwithImage: false,
     dataCard: [
       {
         cardHeader: "Gym",
@@ -500,6 +548,7 @@ export const Questions = [
     currentProgress: 15,
     questionType: "SingleSelectQuestion",
     header: "How much do you normally sleep?",
+    optionwithImage: false,
     dataCard: [
       {
         cardHeader: "Less than 5 hours",
@@ -534,6 +583,7 @@ export const Questions = [
     currentProgress: 16,
     questionType: "SingleSelectQuestion",
     header: "How much water do you drink daily?",
+    optionwithImage: false,
     dataCard: [
       {
         cardHeader: "Only coffee or tea",
@@ -568,6 +618,7 @@ export const Questions = [
     currentProgress: 17,
     questionType: "SingleSelectQuestion",
     header: "Choose your diet type",
+    optionwithImage: false,
     dataCard: [
       {
         cardHeader: "Traditional",

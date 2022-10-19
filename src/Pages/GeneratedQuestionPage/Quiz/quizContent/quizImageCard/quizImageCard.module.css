@@ -1,0 +1,56 @@
+.QuizCardContainer {
+    position: relative;
+    display: flex;
+    border: 1px solid var(--neutral200Color);
+    color: var(--neutral900Color);
+    background: var(--answerOptionColor);
+    border-radius: var(--answerOptionRadius);
+    margin-bottom: 24px;
+    cursor: pointer;
+    z-index: 1;
+    align-items: center;
+    outline: none;
+    width: 100%;
+}
+
+.QuizCardContent {
+    display: flex;
+    width: 91%;
+}
+
+.QuizCardHeader {
+    color: var(--neutral900Color);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 16px 0;
+    margin: auto 0;
+}
+
+.QuizCardDescription {
+    color: var(--neutral600Color);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.RedCheckmark {
+    width: 20px;
+}
+
+.Answer {
+    border: 1px solid var(--primary400Color);
+}
+
+.Image {
+    margin-right: 12px;
+}
+
+@media (max-width: 500px) {
+    .QuizCardContainer {
+        width: 60%;
+        min-height: 72px;
+    }
+    .QuizCardContent {
+        padding: 16px 0 16px 16px;
+    }
+}

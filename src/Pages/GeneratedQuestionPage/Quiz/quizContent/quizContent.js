@@ -14,6 +14,8 @@ const QuizContent = (props) => {
           onAnswer={props.onAnswer}
           dataCard={props.dataCard}
           header={props.header}
+          optionImages={props.optionImages}
+          optionwithimage={props.optionwithimage}
         />
       );
       break;
