@@ -78,6 +78,7 @@ export const Questions = [
     questionType: "InputQuestion",
     header: "How tall are you?",
     param: "height",
+    scale: "FT",
     dataCard: [
       {
         cardHeader: "20s",

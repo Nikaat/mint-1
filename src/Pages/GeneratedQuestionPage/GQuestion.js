@@ -11,8 +11,15 @@ class GQuestion extends Component {
     isAnswered: null,
     questionNum: 0,
     changePage: null,
-    scale: "FT",
-    inputValue: {},
+    heightscale: "FT",
+    weightscale: "LBS",
+    inputValue: {
+      ftvalue: "",
+      invalue: "",
+      cmvalue: "",
+      lbsvalue: "",
+      kgvalue: "",
+    },
   };
 
   answerHandler = (idx) => {
@@ -54,35 +61,59 @@ class GQuestion extends Component {
   };
 
   scaleHandler = () => {
-    if (this.state.scale === "FT") {
-      this.setState({ scale: "CM" });
+    if (this.state.heightscale === "FT") {
+      this.setState({ heightscale: "CM" });
     } else {
-      this.setState({ scale: "FT" });
+      this.setState({ heightscale: "FT" });
+    }
+    if (this.state.weightscale === "LBS") {
+      this.setState({ weightscale: "KG" });
+    } else {
+      this.setState({ weightscale: "LBS" });
     }
   };
 
   inputChangeHandler = (value, scale) => {
     switch (scale) {
       case "ft":
-        this.setState((prevState) => {
-          let inpvalue = Object.assign({}, prevState.inputValue);
-          inpvalue.ftvalue = value;
-          return { inpvalue };
-        });
+        this.setState((prevState) => ({
+          inputValue: {
+            ...prevState.inputValue,
+            ftvalue: value,
+          },
+        }));
         break;
       case "in":
-        this.setState((prevState) => {
-          let inpvalue = Object.assign({}, prevState.inputValue);
-          inpvalue.invalue = value;
-          return { inpvalue };
-        });
+        this.setState((prevState) => ({
+          inputValue: {
+            ...prevState.inputValue,
+            invalue: value,
+          },
+        }));
         break;
       case "cm":
-        this.setState((prevState) => {
-          let inpvalue = Object.assign({}, prevState.inputValue);
-          inpvalue.cmvalue = value;
-          return { inpvalue };
-        });
+        this.setState((prevState) => ({
+          inputValue: {
+            ...prevState.inputValue,
+            cmvalue: value,
+          },
+        }));
+        break;
+      case "lbs":
+        this.setState((prevState) => ({
+          inputValue: {
+            ...prevState.inputValue,
+            lbsvalue: value,
+          },
+        }));
+        break;
+      case "kg":
+        this.setState((prevState) => ({
+          inputValue: {
+            ...prevState.inputValue,
+            kgvalue: value,
+          },
+        }));
         break;
       default:
         break;
@@ -124,7 +155,7 @@ class GQuestion extends Component {
               questionNum={this.state.questionNum}
               onAnswer={this.answerHandler}
               onInputAnswer={this.inputAnswerHandler}
-              scale={this.state.scale}
+              scale={[this.state.heightscale, this.state.weightscale]}
               onScaleChange={this.scaleHandler}
               inputValue={this.state.inputValue}
               onInputChange={this.inputChangeHandler}

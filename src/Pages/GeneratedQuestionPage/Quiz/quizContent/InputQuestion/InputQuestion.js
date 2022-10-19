@@ -6,6 +6,58 @@ import Toggle from "./toggle/toggle";
 import Input from "./Input/Input";
 
 const InputQuestion = (props) => {
+  let inputs;
+  if (props.param === "height") {
+    inputs =
+      props.scale[0] === "CM" ? (
+        <Input
+          value={props.inputValue.cmvalue}
+          param={props.param}
+          scale="cm"
+          inputValue={props.inputValue}
+          onInputChange={props.onInputChange}
+        />
+      ) : (
+        <div className={classes.InputRow}>
+          <Input
+            value={props.inputValue.ftvalue}
+            param={props.param}
+            scale="ft"
+            inputValue={props.inputValue}
+            onInputChange={props.onInputChange}
+          />
+          <Input
+            value={props.inputValue.invalue}
+            param={props.param}
+            scale="in"
+            inputValue={props.inputValue}
+            onInputChange={props.onInputChange}
+          />
+        </div>
+      );
+  } else {
+    inputs =
+      props.scale[1] === "KG" ? (
+        <Input
+          value={props.inputValue.kgvalue}
+          param={props.param}
+          scale="kg"
+          inputValue={props.inputValue}
+          onInputChange={props.onInputChange}
+        />
+      ) : (
+        <div className={classes.InputRow}>
+          <Input
+            value={props.inputValue.lbsvalue}
+            param={props.param}
+            scale="lbs"
+            inputValue={props.inputValue}
+            onInputChange={props.onInputChange}
+          />
+        </div>
+      );
+  }
+
   return (
     <div className={classes.QuizContent}>
       <div className={classes.Header}>
@@ -15,31 +67,10 @@ const InputQuestion = (props) => {
         <Toggle
           className={classes.Toggle}
           scale={props.scale}
+          param={props.param}
           onScaleChange={props.onScaleChange}
         />
-        {props.scale === "CM" ? (
-          <Input
-            param={props.param}
-            scale="cm"
-            inputValue={props.inputValue}
-            onInputChange={props.onInputChange}
-          />
-        ) : (
-          <div className={classes.InputRow}>
-            <Input
-              param={props.param}
-              scale="ft"
-              inputValue={props.inputValue}
-              onInputChange={props.onInputChange}
-            />
-            <Input
-              param={props.param}
-              scale="in"
-              inputValue={props.inputValue}
-              onInputChange={props.onInputChange}
-            />
-          </div>
-        )}
+        {inputs}
 
         <div className={classes.FormBtnContainer}>
           <Button text="NEXT STEP" onAnswer={props.onInputAnswer} />
