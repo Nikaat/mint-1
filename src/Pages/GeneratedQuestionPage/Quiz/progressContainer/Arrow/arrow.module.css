@@ -4,3 +4,7 @@
     height: 24;
     box-sizing: border-box;
 }
+
+html[dir="rtl"] .ArrowBack {
+    rotate:calc(180deg)
+}

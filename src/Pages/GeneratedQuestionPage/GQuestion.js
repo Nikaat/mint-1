@@ -11,6 +11,8 @@ class GQuestion extends Component {
     isAnswered: null,
     questionNum: 0,
     changePage: null,
+    scale: "FT",
+    inputValue: {},
   };
 
   answerHandler = (idx) => {
@@ -23,7 +25,7 @@ class GQuestion extends Component {
           this.setState((prevState) => ({
             ...prevState,
             questionNum: prevState.questionNum + 1,
-            isAnswered: false,
+            isAnswered: null,
           })),
         1000
       );
@@ -51,6 +53,53 @@ class GQuestion extends Component {
     }
   };
 
+  scaleHandler = () => {
+    if (this.state.scale === "FT") {
+      this.setState({ scale: "CM" });
+    } else {
+      this.setState({ scale: "FT" });
+    }
+  };
+
+  inputChangeHandler = (value, scale) => {
+    switch (scale) {
+      case "ft":
+        this.setState((prevState) => {
+          let inpvalue = Object.assign({}, prevState.inputValue);
+          inpvalue.ftvalue = value;
+          return { inpvalue };
+        });
+        break;
+      case "in":
+        this.setState((prevState) => {
+          let inpvalue = Object.assign({}, prevState.inputValue);
+          inpvalue.invalue = value;
+          return { inpvalue };
+        });
+        break;
+      case "cm":
+        this.setState((prevState) => {
+          let inpvalue = Object.assign({}, prevState.inputValue);
+          inpvalue.cmvalue = value;
+          return { inpvalue };
+        });
+        break;
+      default:
+        break;
+    }
+  };
+
+  inputAnswerHandler = () => {
+    setTimeout(
+      () =>
+        this.setState((prevState) => ({
+          ...prevState,
+          questionNum: prevState.questionNum + 1,
+        })),
+      1000
+    );
+  };
+
   render() {
     return (
       <Auxiliary>
@@ -74,6 +123,11 @@ class GQuestion extends Component {
               onArrow={this.onArrowHandler}
               questionNum={this.state.questionNum}
               onAnswer={this.answerHandler}
+              onInputAnswer={this.inputAnswerHandler}
+              scale={this.state.scale}
+              onScaleChange={this.scaleHandler}
+              inputValue={this.state.inputValue}
+              onInputChange={this.inputChangeHandler}
             />
             <img
               className={classes.RightImage}

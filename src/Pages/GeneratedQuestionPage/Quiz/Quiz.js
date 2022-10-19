@@ -21,9 +21,15 @@ const quiz = (props) => {
       <QuizContent
         isAnswered={props.isAnswered}
         onAnswer={props.onAnswer}
+        onInputAnswer={props.onInputAnswer}
         questionType={Questions[questionNum].questionType}
         header={Questions[questionNum].header}
         dataCard={Questions[questionNum].dataCard}
+        param={Questions[questionNum].param}
+        scale={props.scale}
+        onScaleChange={props.onScaleChange}
+        onInputChange={props.onInputChange}
+        inputValue={props.inputValue}
       />
     </div>
   );

@@ -75,8 +75,9 @@ export const Questions = [
     },
     barFilled: "17.6471%",
     currentProgress: 3,
-    questionType: "SingleSelectQuestion",
+    questionType: "InputQuestion",
     header: "How tall are you?",
+    param: "height",
     dataCard: [
       {
         cardHeader: "20s",
@@ -109,8 +110,9 @@ export const Questions = [
     rightImage: {},
     barFilled: "23.5294%",
     currentProgress: 4,
-    questionType: "SingleSelectQuestion",
+    questionType: "InputQuestion",
     header: "What’s your current weight?",
+    param: "weight",
     dataCard: [
       {
         cardHeader: "20s",
@@ -143,8 +145,9 @@ export const Questions = [
     rightImage: {},
     barFilled: "29.4118%",
     currentProgress: 5,
-    questionType: "SingleSelectQuestion",
+    questionType: "InputQuestion",
     header: "Got it! And what's your goal weight?",
+    param: "goalweight",
     dataCard: [
       {
         cardHeader: "20s",

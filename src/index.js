@@ -5,6 +5,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
+let lang = "en";
+
+if (lang === "fa") {
+  document.dir = "rtl";
+} else {
+  document.dir = "ltr";
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
