@@ -4,13 +4,11 @@ import { Questions } from "./Questions";
 import classes from "./GQuestion.module.css";
 import Auxiliary from "../../hoc/Auxiliary/Auxiliary";
 import Quiz from "./Quiz/Quiz";
-import { Navigate } from "react-router";
+// import { Navigate } from "react-router";
+import { connect } from "react-redux";
 
 class GQuestion extends Component {
   state = {
-    isAnswered: null,
-    questionNum: 0,
-    changePage: null,
     heightscale: "FT",
     weightscale: "LBS",
     inputValue: {
@@ -20,44 +18,6 @@ class GQuestion extends Component {
       lbsvalue: "",
       kgvalue: "",
     },
-  };
-
-  answerHandler = (idx) => {
-    this.setState({
-      isAnswered: idx,
-    });
-    if (this.state.questionNum !== 16) {
-      setTimeout(
-        () =>
-          this.setState((prevState) => ({
-            ...prevState,
-            questionNum: prevState.questionNum + 1,
-            isAnswered: null,
-          })),
-        1000
-      );
-    }
-  };
-
-  onArrowHandler = () => {
-    if (this.state.questionNum === 0) {
-      setTimeout(
-        () =>
-          this.setState({
-            changePage: <Navigate to="/" />,
-          }),
-        1000
-      );
-    } else {
-      setTimeout(
-        () =>
-          this.setState((prevState) => ({
-            ...prevState,
-            questionNum: prevState.questionNum - 1,
-          })),
-        1000
-      );
-    }
   };
 
   scaleHandler = () => {
@@ -144,16 +104,13 @@ class GQuestion extends Component {
           >
             <img
               className={classes.LeftImage}
-              {...Questions[this.state.questionNum].leftImage}
+              {...Questions[this.props.qNum].leftImage}
               alt=""
             />
           </div>
           <div className={classes.ContentContainer}>
             <Quiz
-              isAnswered={this.state.isAnswered}
-              onArrow={this.onArrowHandler}
-              questionNum={this.state.questionNum}
-              onAnswer={this.answerHandler}
+              questionNum={this.props.qNum}
               onInputAnswer={this.inputAnswerHandler}
               scale={[this.state.heightscale, this.state.weightscale]}
               onScaleChange={this.scaleHandler}
@@ -162,15 +119,22 @@ class GQuestion extends Component {
             />
             <img
               className={classes.RightImage}
-              {...Questions[this.state.questionNum].rightImage}
+              {...Questions[this.props.qNum].rightImage}
               alt=""
             />
           </div>
         </div>
-        {this.state.changePage}
+        {/* {this.props.arrowRedirectPath !== null ? (
+          <Navigate to={this.props.arrowRedirectPath} />
+        ) : null} */}
       </Auxiliary>
     );
   }
 }
 
-export default GQuestion;
+const mapStateToProps = (state) => ({
+  qNum: state.quiz.questionNum,
+  arrowRedirectPath: state.quiz.arrowRedirectPath,
+});
+
+export default connect(mapStateToProps)(GQuestion);

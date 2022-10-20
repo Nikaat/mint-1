@@ -15,21 +15,13 @@ const SingleSelectQuestion = (props) => {
       <section className={classes.QuestionsSection}>
         {!props.optionwithimage
           ? dataCard.map((opt) => (
-              <QuizCard
-                {...opt}
-                key={opt.dataCardId}
-                idx={opt.dataCardIdx}
-                onAnswer={props.onAnswer}
-                isAnswered={props.isAnswered}
-              />
+              <QuizCard {...opt} key={opt.dataCardId} idx={opt.dataCardIdx} />
             ))
           : dataCard.map((opt) => (
               <QuizImageCard
                 {...opt}
                 key={opt.dataCardId}
                 idx={opt.dataCardIdx}
-                onAnswer={props.onAnswer}
-                isAnswered={props.isAnswered}
               />
             ))}
       </section>

@@ -4,10 +4,7 @@ import classes from "./GenderSelectionCard.module.css";
 
 const genderSelectioncard = (props) => {
   return (
-    <button
-      className={classes.Button}
-      onClick={() => props.onAnswer(props.gender)}
-    >
+    <button className={classes.Button} onClick={() => props.onAnswer()}>
       <span className={classes.ButtonInner}>
         <img
           src={props.src}
@@ -20,9 +17,7 @@ const genderSelectioncard = (props) => {
             <span
               className={classes.Checkmark}
               style={{
-                backgroundColor: props.isAnswered
-                  ? "white"
-                  : "var(--light-red)",
+                backgroundColor: props.selected ? "white" : "var(--light-red)",
               }}
             >
               <svg

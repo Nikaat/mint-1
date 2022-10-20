@@ -7,30 +7,25 @@ import QuizContent from "./quizContent/quizContent";
 import { Questions } from "../Questions";
 
 const quiz = (props) => {
-  let questionNum = props.questionNum;
+  let qNum = props.questionNum;
 
   return (
     <div className={classes.QuizContainer}>
       <div className={classes.Indicator}>
-        <QuizIndicator barFilled={Questions[questionNum].barFilled} />
+        <QuizIndicator barFilled={Questions[qNum].barFilled} />
       </div>
-      <ProgressContainer
-        onArrow={props.onArrow}
-        currentProgress={Questions[questionNum].currentProgress}
-      />
+      <ProgressContainer currentProgress={Questions[qNum].currentProgress} />
       <QuizContent
-        isAnswered={props.isAnswered}
-        onAnswer={props.onAnswer}
         onInputAnswer={props.onInputAnswer}
-        questionType={Questions[questionNum].questionType}
-        header={Questions[questionNum].header}
-        dataCard={Questions[questionNum].dataCard}
-        param={Questions[questionNum].param}
+        questionType={Questions[qNum].questionType}
+        header={Questions[qNum].header}
+        dataCard={Questions[qNum].dataCard}
+        param={Questions[qNum].param}
         scale={props.scale}
         onScaleChange={props.onScaleChange}
         onInputChange={props.onInputChange}
         inputValue={props.inputValue}
-        optionwithimage={Questions[questionNum].optionwithImage}
+        optionwithimage={Questions[qNum].optionwithImage}
       />
     </div>
   );

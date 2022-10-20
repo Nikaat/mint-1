@@ -10,8 +10,6 @@ const QuizContent = (props) => {
     case "SingleSelectQuestion":
       QuestionType = (
         <SingleSelectQuestion
-          isAnswered={props.isAnswered}
-          onAnswer={props.onAnswer}
           dataCard={props.dataCard}
           header={props.header}
           optionImages={props.optionImages}
@@ -23,7 +21,6 @@ const QuizContent = (props) => {
       QuestionType = (
         <InputQuestion
           header={props.header}
-          onAnswer={props.onAnswer}
           onInputAnswer={props.onInputAnswer}
           param={props.param}
           scale={props.scale}

@@ -1,10 +1,12 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import classes from "./arrow.module.css";
+import { onArrow } from "../../../../../redux/actions/actions";
 
 const arrow = (props) => (
   <svg
-    onClick={() => props.onArrow()}
+    onClick={() => props.onClickArrow(props.qNum)}
     width="24"
     height="24"
     viewBox="0 0 24 24"
@@ -18,4 +20,13 @@ const arrow = (props) => (
   </svg>
 );
 
-export default arrow;
+const mapStateToProps = (state) => ({
+  qNum: state.quiz.questionNum,
+  redirectToFirstPage: state.quiz.redirectToFirstPage,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  onClickArrow: (qNum) => dispatch(onArrow(qNum)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(arrow);
