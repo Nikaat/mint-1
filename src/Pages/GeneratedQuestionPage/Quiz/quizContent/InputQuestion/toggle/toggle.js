@@ -1,14 +1,16 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import classes from "./toggle.module.css";
+import * as actionTypes from "../../../../../../redux/actions/actionTypes";
 
 const toggle = (props) => {
   let option;
-  props.scale[0] === "FT"
+  props.heightScale === "FT"
     ? (option = [classes.Active, classes.Disable])
     : (option = [classes.Disable, classes.Active]);
 
-  props.scale[1] === "LBS"
+  props.weightScale === "LBS"
     ? (option = [classes.Active, classes.Disable])
     : (option = [classes.Disable, classes.Active]);
 
@@ -19,17 +21,31 @@ const toggle = (props) => {
         type="button"
         onClick={() => props.onScaleChange()}
       >
-        {props.param === "height" ? "FT" : "LBS"}
+        {props.qNum === 2 ? "FT" : "LBS"}
       </button>
       <button
         className={option[1]}
         type="button"
         onClick={() => props.onScaleChange()}
       >
-        {props.param === "height" ? "CM" : "KG"}
+        {props.qNum === 2 ? "CM" : "KG"}
       </button>
     </div>
   );
 };
 
-export default toggle;
+const mapStateToProps = (state) => {
+  return {
+    qNum: state.quiz.questionNum,
+    heightScale: state.quiz.heightScale,
+    weightScale: state.quiz.weightScale,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onScaleChange: () => dispatch({ type: actionTypes.ON_SCALE_CHANGE }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(toggle);

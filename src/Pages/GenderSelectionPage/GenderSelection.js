@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Navigate } from "react-router-dom";
 import { connect } from "react-redux";
-import { clickedonGenderCard } from "../../redux/actions/actions";
+import { clickedonGenderCard } from "../../redux/actions";
 
 import classes from "./GenderSelection.module.css";
-import HelpButton from "../../Components/UI/HelpButton/HelpButton";
+// import HelpButton from "../../Components/UI/HelpButton/HelpButton";
 import GenderSelectioncard from "../../Pages/GenderSelectionPage/GenderSelectionCard/GenderSelectionCard";
 import Copyright from "../../Components/Copyright/Copyright";
 
@@ -36,7 +36,7 @@ class GenderSelection extends Component {
           </section>
         </div>
         <Copyright />
-        <HelpButton />
+        {/* <HelpButton /> */}
         {this.props.isAnswered === true ? (
           <Navigate to="/generated-questionary" />
         ) : null}

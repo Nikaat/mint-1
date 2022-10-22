@@ -4,59 +4,45 @@ import classes from "./InputQuestion.module.css";
 import Button from "../../../../../Components/UI/Button/button";
 import Toggle from "./toggle/toggle";
 import Input from "./Input/Input";
+import { clickedonNextButton } from "../../../../../redux/actions";
+import { connect } from "react-redux";
 
 const InputQuestion = (props) => {
   let inputs;
-  if (props.param === "height") {
-    inputs =
-      props.scale[0] === "CM" ? (
-        <Input
-          value={props.inputValue.cmvalue}
-          param={props.param}
-          scale="cm"
-          inputValue={props.inputValue}
-          onInputChange={props.onInputChange}
-        />
+
+  inputs =
+    props.qNum === 2 ? (
+      props.heightScale === "CM" ? (
+        <Input value={props.inputValue.height_cm} scale="cm" />
       ) : (
         <div className={classes.InputRow}>
-          <Input
-            value={props.inputValue.ftvalue}
-            param={props.param}
-            scale="ft"
-            inputValue={props.inputValue}
-            onInputChange={props.onInputChange}
-          />
-          <Input
-            value={props.inputValue.invalue}
-            param={props.param}
-            scale="in"
-            inputValue={props.inputValue}
-            onInputChange={props.onInputChange}
-          />
+          <Input value={props.inputValue.height_ft} scale="ft" />
+          <Input value={props.inputValue.height_in} scale="in" />
         </div>
-      );
-  } else {
-    inputs =
-      props.scale[1] === "KG" ? (
+      )
+    ) : props.qNum === 3 || 4 ? (
+      props.weightScale === "KG" ? (
         <Input
-          value={props.inputValue.kgvalue}
-          param={props.param}
+          value={
+            props.qNum === 3
+              ? props.inputValue.weight_current_kg
+              : props.inputValue.weight_goal_kg
+          }
           scale="kg"
-          inputValue={props.inputValue}
-          onInputChange={props.onInputChange}
         />
       ) : (
         <div className={classes.InputRow}>
           <Input
-            value={props.inputValue.lbsvalue}
-            param={props.param}
+            value={
+              props.qNum === 3
+                ? props.inputValue.weight_current_lbs
+                : props.inputValue.weight_goal_lbs
+            }
             scale="lbs"
-            inputValue={props.inputValue}
-            onInputChange={props.onInputChange}
           />
         </div>
-      );
-  }
+      )
+    ) : null;
 
   return (
     <div className={classes.QuizContent}>
@@ -64,20 +50,33 @@ const InputQuestion = (props) => {
         <h1 className={classes.HeaderTitle}>{props.header}</h1>
       </div>
       <form className={classes.Form}>
-        <Toggle
-          className={classes.Toggle}
-          scale={props.scale}
-          param={props.param}
-          onScaleChange={props.onScaleChange}
-        />
+        <Toggle className={classes.Toggle} />
         {inputs}
 
         <div className={classes.FormBtnContainer}>
-          <Button text="NEXT STEP" onAnswer={props.onInputAnswer} />
+          <Button
+            text="NEXT STEP"
+            onAnswer={() => props.clickedonButton(props.qNum)}
+          />
         </div>
       </form>
     </div>
   );
 };
 
-export default InputQuestion;
+const mapStateToProps = (state) => {
+  return {
+    qNum: state.quiz.questionNum,
+    heightScale: state.quiz.heightScale,
+    weightScale: state.quiz.weightScale,
+    inputValue: state.quiz.inputValue,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    clickedonButton: (qNum) => dispatch(clickedonNextButton(qNum)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(InputQuestion);

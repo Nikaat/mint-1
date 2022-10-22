@@ -99,7 +99,6 @@ export const Questions = [
     currentProgress: 3,
     questionType: "InputQuestion",
     header: "How tall are you?",
-    param: "height",
     optionwithImage: false,
     dataCard: [
       {
@@ -135,7 +134,6 @@ export const Questions = [
     currentProgress: 4,
     questionType: "InputQuestion",
     header: "What’s your current weight?",
-    param: "weight",
     optionwithImage: false,
     dataCard: [
       {
@@ -171,7 +169,6 @@ export const Questions = [
     currentProgress: 5,
     questionType: "InputQuestion",
     header: "Got it! And what's your goal weight?",
-    param: "goalweight",
     optionwithImage: false,
     dataCard: [
       {
@@ -242,8 +239,9 @@ export const Questions = [
     rightImage: {},
     barFilled: "41.1765%",
     currentProgress: 7,
-    questionType: "SingleSelectQuestion",
+    questionType: "MultiSelectQuestion",
     header: "Select habits that are true for you",
+    optionNum: 7,
     optionwithImage: true,
     dataCard: [
       {

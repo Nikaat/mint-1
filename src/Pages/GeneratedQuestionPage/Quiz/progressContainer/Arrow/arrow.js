@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import classes from "./arrow.module.css";
-import { onArrow } from "../../../../../redux/actions/actions";
+import { onArrow } from "../../../../../redux/actions";
 
 const arrow = (props) => (
   <svg

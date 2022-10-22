@@ -2,6 +2,7 @@ import React from "react";
 
 import SingleSelectQuestion from "./SingleSelectQuestion/SingleSelectQuestion";
 import InputQuestion from "./InputQuestion/InputQuestion";
+import MultiSelectQuestion from "./MultiSelectQuestion/MultiSelectQuestion";
 
 const QuizContent = (props) => {
   let QuestionType;
@@ -18,15 +19,15 @@ const QuizContent = (props) => {
       );
       break;
     case "InputQuestion":
+      QuestionType = <InputQuestion header={props.header} />;
+      break;
+    case "MultiSelectQuestion":
       QuestionType = (
-        <InputQuestion
+        <MultiSelectQuestion
+          dataCard={props.dataCard}
           header={props.header}
-          onInputAnswer={props.onInputAnswer}
-          param={props.param}
-          scale={props.scale}
-          onScaleChange={props.onScaleChange}
-          inputValue={props.inputValue}
-          onInputChange={props.onInputChange}
+          optionImages={props.optionImages}
+          optionwithimage={props.optionwithimage}
         />
       );
       break;

@@ -3,13 +3,21 @@ import { connect } from "react-redux";
 
 import classes from "./quizImageCard.module.css";
 import redCheckmark from "../../../../../assets/images/Red-checkmark.PNG";
-import { clickedonQuizCard } from "../../../../../redux/actions/actions";
 
 const quizImageCard = (props) => {
   let cardStyle =
     props.answerIndex === props.idx
       ? [classes.QuizCardContainer, classes.Answer].join(" ")
       : [classes.QuizCardContainer];
+
+  if (props.multiSelect === "true") {
+    for (let i = 0; i < 7; i++) {
+      cardStyle =
+        props.answerIndexes[i] === true
+          ? [classes.QuizCardContainer, classes.Answer].join(" ")
+          : [classes.QuizCardContainer];
+    }
+  }
 
   return (
     <article
@@ -38,10 +46,7 @@ const quizImageCard = (props) => {
 const mapStateToProps = (state) => ({
   qNum: state.quiz.questionNum,
   answerIndex: state.quiz.answerIndex,
+  answerIndexes: state.quiz.answerIndexes,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  onAnswer: (index, qNum) => dispatch(clickedonQuizCard(index, qNum)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(quizImageCard);
+export default connect(mapStateToProps)(quizImageCard);

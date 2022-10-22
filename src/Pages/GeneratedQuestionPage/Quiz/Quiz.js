@@ -16,15 +16,9 @@ const quiz = (props) => {
       </div>
       <ProgressContainer currentProgress={Questions[qNum].currentProgress} />
       <QuizContent
-        onInputAnswer={props.onInputAnswer}
         questionType={Questions[qNum].questionType}
         header={Questions[qNum].header}
         dataCard={Questions[qNum].dataCard}
-        param={Questions[qNum].param}
-        scale={props.scale}
-        onScaleChange={props.onScaleChange}
-        onInputChange={props.onInputChange}
-        inputValue={props.inputValue}
         optionwithimage={Questions[qNum].optionwithImage}
       />
     </div>
