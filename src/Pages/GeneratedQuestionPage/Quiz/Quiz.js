@@ -21,6 +21,7 @@ const quiz = (props) => {
         dataCard={Questions[qNum].dataCard}
         optionwithimage={Questions[qNum].optionwithImage}
         hint={Questions[qNum].hint}
+        video={Questions[qNum].video}
       />
     </div>
   );

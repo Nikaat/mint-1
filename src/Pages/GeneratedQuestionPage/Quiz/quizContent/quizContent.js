@@ -16,6 +16,7 @@ const QuizContent = (props) => {
           optionImages={props.optionImages}
           optionwithimage={props.optionwithimage}
           hint={props.hint}
+          video={props.video}
         />
       );
       break;

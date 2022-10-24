@@ -93,6 +93,9 @@ export const Questions = [
         },
       },
     ],
+    video: {
+      src: "https://samplelib.com/lib/preview/mp4/sample-5s.mp4",
+    },
   },
   {
     leftImage: {
