@@ -42,6 +42,15 @@
 }
 
 .Answer {
+    position: relative;
+    display: flex;
+    border: 1px solid var(--neutral200Color);
+    color: var(--neutral900Color);
+    cursor: pointer;
+    margin: 16px 0;
+    padding: 0 16px 0 0 ;
+    background: var(--answerOptionColor);
+    border-radius: var(--answerOptionRadius);
     border: 1px solid var(--primary400Color);
 }
 

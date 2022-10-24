@@ -24,10 +24,12 @@ const quizReducer = (state = initialState, action) => {
       return updateObject(state, {
         answerIndex: action.index,
         answerIndexes: state.answerIndexes.map((item, index) => {
-          if (index !== action.index) {
+          // eslint-disable-next-line
+          if (index == action.index) {
+            return item === null ? action.index : null;
+          } else {
             return item;
           }
-          return true;
         }),
       });
     case actionTypes.CHANGE_QUESTION_PAGE:
