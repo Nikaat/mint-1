@@ -3,7 +3,10 @@ import React from "react";
 import SingleSelectQuestion from "./SingleSelectQuestion/SingleSelectQuestion";
 import InputQuestion from "./InputQuestion/InputQuestion";
 import MultiSelectQuestion from "./MultiSelectQuestion/MultiSelectQuestion";
-import Calendar from "./Calendar/Calendar";
+// eslint-disable-next-line
+import EnCalendar from "./Calendar/EnCalendar";
+// eslint-disable-next-line
+import FaCalendar from "./Calendar/FaCalendar";
 
 const QuizContent = (props) => {
   let QuestionType;
@@ -35,7 +38,7 @@ const QuizContent = (props) => {
       );
       break;
     case "Calendar":
-      QuestionType = <Calendar header={props.header} />;
+      QuestionType = <EnCalendar header={props.header} />;
       break;
     default:
       break;

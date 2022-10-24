@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import Calendar from "react-calendar";
-import "./Calendar.css";
+import "./EnCalendar.css";
 
-function CalendarComp(props) {
+function Calendar_En(props) {
   const [date, setDate] = useState(new Date());
 
   return (
@@ -23,4 +23,4 @@ function CalendarComp(props) {
   );
 }
 
-export default CalendarComp;
+export default Calendar_En;
