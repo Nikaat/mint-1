@@ -5,6 +5,7 @@ import QuizCard from "../quizCard/quizCard";
 import QuizImageCard from "../quizImageCard/quizImageCard";
 import { connect } from "react-redux";
 import { clickedonQuizCard } from "../../../../../redux/actions";
+import Hint from "../hint/hint";
 
 const SingleSelectQuestion = (props) => {
   let dataCard = props.dataCard;
@@ -32,6 +33,9 @@ const SingleSelectQuestion = (props) => {
                 onAnswer={props.onSingleAnswer}
               />
             ))}
+        {props.hint ? (
+          <Hint title={props.hint.title} caption={props.hint.caption} />
+        ) : null}
       </section>
     </div>
   );

@@ -2,6 +2,7 @@ import React from "react";
 
 import classes from "./InputQuestion.module.css";
 import Button from "../../../../../Components/UI/Button/button";
+import Hint from "../hint/hint";
 import Toggle from "./toggle/toggle";
 import Input from "./Input/Input";
 import { clickedonNextButton } from "../../../../../redux/actions";
@@ -59,6 +60,10 @@ const InputQuestion = (props) => {
             onAnswer={() => props.clickedonButton(props.qNum)}
           />
         </div>
+
+        {props.hint ? (
+          <Hint title={props.hint.title} caption={props.hint.caption} />
+        ) : null}
       </form>
     </div>
   );

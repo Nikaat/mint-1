@@ -15,11 +15,12 @@ const QuizContent = (props) => {
           header={props.header}
           optionImages={props.optionImages}
           optionwithimage={props.optionwithimage}
+          hint={props.hint}
         />
       );
       break;
     case "InputQuestion":
-      QuestionType = <InputQuestion header={props.header} />;
+      QuestionType = <InputQuestion header={props.header} hint={props.hint} />;
       break;
     case "MultiSelectQuestion":
       QuestionType = (

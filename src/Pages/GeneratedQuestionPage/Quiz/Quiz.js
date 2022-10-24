@@ -20,6 +20,7 @@ const quiz = (props) => {
         header={Questions[qNum].header}
         dataCard={Questions[qNum].dataCard}
         optionwithimage={Questions[qNum].optionwithImage}
+        hint={Questions[qNum].hint}
       />
     </div>
   );
