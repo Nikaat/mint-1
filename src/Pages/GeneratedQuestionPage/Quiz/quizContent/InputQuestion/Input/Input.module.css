@@ -1,11 +1,11 @@
 
-.HeightInputs {
+.Inputs {
     margin: 0 auto;
     position: relative;
     display: inline-block;
 }
 
-.HeightMetricalInput{
+.MetricalInput{
     width: 180px;
 }
 
@@ -54,7 +54,7 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 500px) {
     .Root {
-        width: 110px;
+        width: 130px;
         margin: auto;
     }
 }

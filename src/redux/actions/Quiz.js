@@ -31,6 +31,10 @@ export const clickedonQuizCard = (index, qNum) => {
       setTimeout(() => {
         dispatch(changequestionPage());
       }, 1000);
+    } else if (qNum === 16) {
+      setTimeout(() => {
+        dispatch(goToCalendar());
+      });
     }
   };
 };
@@ -68,5 +72,11 @@ export const onInputChange = (value, scale, qNum) => {
     value: value,
     scale: scale,
     qNum: qNum,
+  };
+};
+
+export const goToCalendar = () => {
+  return {
+    type: actionTypes.GO_TO_CALENDAR,
   };
 };

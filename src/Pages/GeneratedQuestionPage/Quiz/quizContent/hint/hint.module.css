@@ -1,13 +1,13 @@
 .HintContainer {
     position: relative;
-    border: 1px solid var(--neutral900Color);
+    border: 1px solid var(--neutral200Color);
     color: var(--neutral900Color);
     cursor: default;
     margin: 16px 0;
     padding: 0 16px 0 0 ;
     background: var(--answerOptionColor);
     border-radius: 3px;
-}
+} 
 
 .HintTitle {
     padding: 0 20px;

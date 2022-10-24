@@ -4,7 +4,7 @@ import { updateObject } from "../utility";
 const initialState = {
   answerIndex: null,
   answerIndexes: [null, null, null, null, null, null, null],
-  questionNum: 0,
+  questionNum: 17,
   heightScale: "FT",
   weightScale: "LBS",
   inputValue: {

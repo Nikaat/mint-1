@@ -16,6 +16,7 @@ const SingleSelectQuestion = (props) => {
       <div className={classes.Header}>
         <h1 className={classes.HeaderTitle}>{props.header}</h1>
       </div>
+      {props.video ? <Video src={props.video.src} /> : null}
       <section className={classes.QuestionsSection}>
         {!props.optionwithimage
           ? dataCard.map((opt) => (
@@ -37,7 +38,6 @@ const SingleSelectQuestion = (props) => {
         {props.hint ? (
           <Hint title={props.hint.title} caption={props.hint.caption} />
         ) : null}
-        {props.video ? <Video src={props.video.src} /> : null}
       </section>
     </div>
   );

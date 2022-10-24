@@ -6,8 +6,8 @@ import * as actionTypes from "../../../../../../redux/actions/actionTypes";
 
 const input = (props) => {
   return (
-    <div className={classes.HeightInputs}>
-      <div className={classes.HeightMetricalInput}>
+    <div className={classes.Inputs}>
+      <div className={classes.MetricalInput}>
         <div className={classes.Root}>
           <input
             className={classes.Input}

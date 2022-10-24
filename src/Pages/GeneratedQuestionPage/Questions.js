@@ -36,7 +36,7 @@ export const Questions = [
     hint: {
       title: "Lorem Ipsum",
       caption:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
   },
   {
@@ -807,5 +807,17 @@ export const Questions = [
         },
       },
     ],
+  },
+  {
+    leftImage: {
+      src: "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_1000/hjbqpbpdacn4ewayww8g",
+      srcSet:
+        "https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_1000/hjbqpbpdacn4ewayww8g 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_1000/hjbqpbpdacn4ewayww8g 2x",
+    },
+    barFilled: "100%",
+    currentProgress: 18,
+    questionType: "Calendar",
+    header: "How much do you normally sleep?",
+    optionwithImage: false,
   },
 ];
