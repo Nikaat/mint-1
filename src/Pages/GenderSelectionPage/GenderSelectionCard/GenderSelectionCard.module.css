@@ -50,6 +50,17 @@
     padding-left: 45px;
 }
 
+html[dir="rtl"] .ButtonText {
+    padding-left: 0;
+    padding-right: 45px;
+}
+
+html[dir="rtl"] .ButtonText {
+    text-align: right;
+    display: block;
+    width: -webkit-fill-available;
+}
+
 .Checkmark {
     border: 1px solid white;
     border-radius: 50%;
@@ -58,6 +69,17 @@
     height: 20px;
     position: relative;
     right: 14px;
+    width: 20px;
+}
+
+html[dir="rtl"] .Checkmark {
+    border: 1px solid white;
+    border-radius: 50%;
+    bottom: -4px;
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    right: 130px;
     width: 20px;
 }
 

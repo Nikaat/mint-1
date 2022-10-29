@@ -20,11 +20,10 @@ const SingleSelectQuestion = (props) => {
       <section className={classes.QuestionsSection}>
         {/* {!props.optionwithimage */}
         {props.dataCard
-          ? dataCard.map((opt) => (
+          ? dataCard.map((opt, index) => (
               <QuizCard
-                // {...opt}
-                // key={opt.dataCardId}
-                // idx={opt.dataCardIdx}
+                {...opt}
+                idx={index}
                 key={opt.aid}
                 onAnswer={props.onSingleAnswer}
               />
@@ -50,7 +49,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onSingleAnswer: (index, qNum) => dispatch(clickedonQuizCard(index, qNum)),
+  onSingleAnswer: (code, aid, index) =>
+    dispatch(clickedonQuizCard(code, aid, index)),
 });
 
 export default connect(

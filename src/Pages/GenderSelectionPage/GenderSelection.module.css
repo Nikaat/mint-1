@@ -59,7 +59,6 @@
     justify-content: center;
 }
 
-
 @media (max-width: 500px) {
     .GenderSelection {
         justify-content: flex-start;

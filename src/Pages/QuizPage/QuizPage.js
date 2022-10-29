@@ -10,7 +10,7 @@ import { fetchData } from "../../redux/actions";
 
 class QuizPage extends Component {
   componentDidMount = () => {
-    this.props.fetchData(this.props.code, this.props.aid, this.props.result);
+    this.props.fetchData();
   };
 
   render() {
@@ -54,7 +54,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchData: (code, aid, result) => dispatch(fetchData(code, aid, result)),
+  fetchData: () => dispatch(fetchData()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuizPage);

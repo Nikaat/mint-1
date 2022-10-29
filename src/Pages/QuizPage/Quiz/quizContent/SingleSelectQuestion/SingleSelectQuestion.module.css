@@ -27,6 +27,11 @@
     text-align: center;
 }
 
+html[dir= 'rtl'] .HeaderTitle {
+    font-weight: 100;
+    text-align: justify;
+}
+
 @media (max-width: 500px) {
     .HeaderTitle {
         font-size: 24px;

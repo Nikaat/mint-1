@@ -15,10 +15,10 @@ const quizCard = (props) => {
     <div className={cardStyle}>
       <article
         className={classes.QuizCard}
-        onClick={() => props.onAnswer(props.idx, props.qNum)}
+        onClick={() => props.onAnswer(props.code, props.aid, props.idx)}
       >
         <div className={classes.QuizCardContent}>
-          <div className={classes.QuizCardHeader}>{props.cardHeader}</div>
+          <div className={classes.QuizCardHeader}>{props.text}</div>
           <div className={classes.QuizCardDescription}>{props.description}</div>
         </div>
         {props.answerIndex === props.idx ? (
@@ -32,6 +32,8 @@ const quizCard = (props) => {
 const mapStateToProps = (state) => ({
   qNum: state.quiz.questionNum,
   answerIndex: state.quiz.answerIndex,
+  code: state.quiz.code,
+  aid: state.quiz.aid,
 });
 
 export default connect(mapStateToProps)(quizCard);

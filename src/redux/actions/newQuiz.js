@@ -26,18 +26,32 @@ export const clickedonNextButton = (qNum) => {
   };
 };
 
-export const clickedonQuizCard = (index, qNum) => {
+export const nullAnswerIndex = () => {
+  return {
+    type: actionTypes.NULL_ANSWER_INDEX,
+  };
+};
+
+export const clickedonQuizCard = (prevCode, prevAid, index) => {
   return (dispatch) => {
     dispatch(answerQuestion(index));
-    if (qNum <= 16) {
-      setTimeout(() => {
-        dispatch(changequestionPage());
-      }, 1000);
-    } else if (qNum === 16) {
-      setTimeout(() => {
-        dispatch(goToCalendar());
-      });
-    }
+    setTimeout(() => {
+      axios
+        .get(
+          "https://mintdoctor.app/process/main/question.php?type=eghdam&code=" +
+            prevCode +
+            "&aid=" +
+            prevAid
+        )
+        .then((res) => {
+          console.log(res);
+          const code = res.data.result.code;
+          const aid = res.data.result.answers[0].aid;
+          const result = res.data.result;
+          dispatch(saveFetchedData(code, aid, result));
+          dispatch(nullAnswerIndex());
+        });
+    }, 1000);
   };
 };
 
@@ -92,40 +106,23 @@ export const saveFetchedData = (code, aid, result) => {
   };
 };
 
-export const fetchData = (prevCode, prevAid) => {
+export const fetchData = () => {
   return (dispatch) => {
     // const headers = {
     //   "Content-Type": "application/json",
     //   Authorization: "",
     //   token: "",
     // };
-    if (prevCode === "") {
-      axios
-        .get(
-          "https://mintdoctor.app/process/main/question.php?type=eghdam&aid=start"
-        )
-        .then((res) => {
-          console.log(res);
-          const code = res.data.result.code;
-          const aid = res.data.result.answers[0].aid;
-          const result = res.data.result;
-          dispatch(saveFetchedData(code, aid, result));
-        });
-    } else {
-      axios
-        .get(
-          "https://mintdoctor.app/process/main/question.php?type=eghdam&code=" +
-            prevCode +
-            "&aid=" +
-            prevAid
-        )
-        .then((res) => {
-          console.log(res);
-          const code = res.data.result.code;
-          const aid = res.data.result.answers[0].aid;
-          const result = res.data.result;
-          dispatch(saveFetchedData(code, aid, result));
-        });
-    }
+    axios
+      .get(
+        "https://mintdoctor.app/process/main/question.php?type=eghdam&aid=start"
+      )
+      .then((res) => {
+        console.log(res);
+        const code = res.data.result.code;
+        const aid = res.data.result.answers[0].aid;
+        const result = res.data.result;
+        dispatch(saveFetchedData(code, aid, result));
+      });
   };
 };

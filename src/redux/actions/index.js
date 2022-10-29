@@ -5,6 +5,16 @@ export {
   returnToFirstPage,
 } from "./GenderSel";
 
+// export {
+//   answerQuestion,
+//   changequestionPage,
+//   clickedonQuizCard,
+//   returnToPreviusQuestion,
+//   onArrow,
+//   clickedonNextButton,
+//   fetchData,
+// } from "./Quiz";
+
 export {
   answerQuestion,
   changequestionPage,
@@ -13,4 +23,4 @@ export {
   onArrow,
   clickedonNextButton,
   fetchData,
-} from "./Quiz";
+} from "./newQuiz";
