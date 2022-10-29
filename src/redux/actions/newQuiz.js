@@ -120,9 +120,8 @@ export const fetchData = () => {
       .then((res) => {
         console.log(res);
         const code = res.data.result.code;
-        const aid = res.data.result.answers[0].aid;
         const result = res.data.result;
-        dispatch(saveFetchedData(code, aid, result));
+        dispatch(saveFetchedData(code, null, result));
       });
   };
 };

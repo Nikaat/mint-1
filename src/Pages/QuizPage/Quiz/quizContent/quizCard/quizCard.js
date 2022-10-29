@@ -33,7 +33,6 @@ const mapStateToProps = (state) => ({
   qNum: state.quiz.questionNum,
   answerIndex: state.quiz.answerIndex,
   code: state.quiz.code,
-  aid: state.quiz.aid,
 });
 
 export default connect(mapStateToProps)(quizCard);
