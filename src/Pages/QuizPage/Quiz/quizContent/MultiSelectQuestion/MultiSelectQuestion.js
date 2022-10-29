@@ -20,11 +20,11 @@ const MultiSelectQuestion = (props) => {
         </div>
         <section className={classes.QuestionsSection}>
           {!props.optionwithimage
-            ? dataCard.map((opt) => (
+            ? dataCard.map((opt, index) => (
                 <QuizCard
                   {...opt}
-                  key={opt.dataCardId}
-                  idx={opt.dataCardIdx}
+                  key={opt.aid}
+                  idx={index}
                   onAnswer={props.clickedonMultiSelectCard}
                   multiSelect="true"
                 />

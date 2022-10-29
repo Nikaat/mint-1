@@ -10,6 +10,10 @@
     border-radius: var(--answerOptionRadius);
 }
 
+html[dir="rtl"] .QuizCardContainer {
+    padding: 0 0 0 16px;
+}
+
 .QuizCard {
     display: flex;
     width: 100%;
@@ -21,6 +25,11 @@
 .QuizCardContent {
     flex-grow: 1;
     padding: 28px 0 28px 32px;
+}
+
+html[dir="rtl"] .QuizCardContent {
+    flex-grow: 1;
+    padding: 28px 32px 28px 0;
 }
 
 .QuizCardHeader {
@@ -38,7 +47,6 @@
 
 .RedCheckmark {
     width: 20px;
-    margin: auto;
 }
 
 .Answer {

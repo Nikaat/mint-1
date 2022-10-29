@@ -6,22 +6,41 @@ import redCheckmark from "../../../../../assets/images/Red-checkmark.PNG";
 
 const quizCard = (props) => {
   let cardStyle;
-  cardStyle =
-    props.answerIndex === props.idx
-      ? [classes.QuizCardContainer, classes.Answer].join(" ")
-      : [classes.QuizCardContainer];
+  let cardStyles = [null, null, null, null, null, null, null];
+
+  if (props.multiSelect === "true") {
+    for (let i = 0; i < 7; i++) {
+      cardStyles[i] =
+        props.answerIndexes[i] !== null
+          ? [classes.Answer]
+          : [classes.QuizCardContainer];
+    }
+  } else if (props.multiSelect !== "true") {
+    cardStyle =
+      props.answerIndex === props.idx
+        ? [classes.QuizCardContainer, classes.Answer].join(" ")
+        : [classes.QuizCardContainer];
+  }
 
   return (
-    <div className={cardStyle}>
+    <div
+      className={
+        props.multiSelect === "true" ? cardStyles[props.idx] : cardStyle
+      }
+    >
       <article
         className={classes.QuizCard}
-        onClick={() => props.onAnswer(props.code, props.aid, props.idx)}
+        onClick={() => props.onAnswer(props.idx, props.code, props.aid)}
       >
         <div className={classes.QuizCardContent}>
           <div className={classes.QuizCardHeader}>{props.text}</div>
           <div className={classes.QuizCardDescription}>{props.description}</div>
         </div>
-        {props.answerIndex === props.idx ? (
+        {props.multiSelect ? (
+          props.answerIndexes[props.idx] !== null ? (
+            <img src={redCheckmark} alt="" className={classes.RedCheckmark} />
+          ) : null
+        ) : props.answerIndex === props.idx ? (
           <img src={redCheckmark} alt="" className={classes.RedCheckmark} />
         ) : null}
       </article>
@@ -33,6 +52,7 @@ const mapStateToProps = (state) => ({
   qNum: state.quiz.questionNum,
   answerIndex: state.quiz.answerIndex,
   code: state.quiz.code,
+  answerIndexes: state.quiz.answerIndexes,
 });
 
 export default connect(mapStateToProps)(quizCard);

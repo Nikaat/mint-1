@@ -49,8 +49,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onSingleAnswer: (code, aid, index) =>
-    dispatch(clickedonQuizCard(code, aid, index)),
+  onSingleAnswer: (aid, index, code) =>
+    dispatch(clickedonQuizCard(aid, index, code)),
 });
 
 export default connect(

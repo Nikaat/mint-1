@@ -24,13 +24,13 @@ const QuizContent = (props) => {
     case "InputQuestion":
       QuestionType = <InputQuestion header={props.header} hint={props.hint} />;
       break;
-    case "MultiSelectQuestion":
+    case "multiSelect":
       QuestionType = (
         <MultiSelectQuestion
-          dataCard={props.dataCard}
-          header={props.header}
-          optionImages={props.optionImages}
-          optionwithimage={props.optionwithimage}
+          dataCard={props.result.answers}
+          header={props.result.text}
+          // optionImages={props.optionImages}
+          // optionwithimage={props.optionwithimage}
         />
       );
       break;

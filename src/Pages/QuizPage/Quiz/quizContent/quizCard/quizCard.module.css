@@ -50,15 +50,41 @@ html[dir="rtl"] .QuizCardContent {
 }
 
 .Answer {
+    position: relative;
+    display: flex;
+    border: 1px solid var(--neutral200Color);
+    color: var(--neutral900Color);
+    cursor: pointer;
+    margin: 16px 0;
+    padding: 0 16px 0 0 ;
+    background: var(--answerOptionColor);
+    border-radius: var(--answerOptionRadius);
     border: 1px solid var(--primary400Color);
+}
+
+html[dir='rtl'] .Answer {
+    padding: 0 0 0 16px ;
 }
 
 @media (max-width: 500px) {
     .QuizCardContainer {
-        width: 60%;
         min-height: 72px;
+        margin-bottom: 16px;
+        z-index: 1;
+        align-items: center;
+        outline: none;
     }
+    
     .QuizCardContent {
-        padding: 16px 16px 16px 24px;
+        display: flex;
+        width: 91%;
+        padding: 0;
+    }
+    
+    .TextContainer{
+        display: flex;
+        flex-direction: column;
+        padding: 16px 0;
+        margin: auto 0;
     }
 }

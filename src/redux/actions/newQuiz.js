@@ -32,7 +32,7 @@ export const nullAnswerIndex = () => {
   };
 };
 
-export const clickedonQuizCard = (prevCode, prevAid, index) => {
+export const clickedonQuizCard = (index, prevCode, prevAid) => {
   return (dispatch) => {
     dispatch(answerQuestion(index));
     setTimeout(() => {
