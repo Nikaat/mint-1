@@ -7,16 +7,20 @@ import DatePicker from "./Calendar/datePicker";
 
 const QuizContent = (props) => {
   let QuestionType;
-  switch (props.questionType) {
-    case "SingleSelectQuestion":
+  // switch (props.questionType) {
+  switch (props.result.questionType) {
+    // case "SingleSelectQuestion" :
+    case "singleSelect":
       QuestionType = (
         <SingleSelectQuestion
-          dataCard={props.dataCard}
-          header={props.header}
-          optionImages={props.optionImages}
-          optionwithimage={props.optionwithimage}
-          hint={props.hint}
-          video={props.video}
+          // dataCard={props.dataCard}
+          // header={props.header}
+          header={props.result.text}
+          dataCard={props.result.answers}
+          // optionImages={props.optionImages}
+          // optionwithimage={props.optionwithimage}
+          // hint={props.hint}
+          // video={props.video}
         />
       );
       break;

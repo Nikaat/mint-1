@@ -1,0 +1,89 @@
+.QuizCardContainer {
+    position: relative;
+    display: flex;
+    border: 1px solid var(--neutral200Color);
+    color: var(--neutral900Color);
+    cursor: pointer;
+    margin: 16px 0;
+    padding: 0 16px 0 0 ;
+    background: var(--answerOptionColor);
+    border-radius: var(--answerOptionRadius);
+}
+
+.QuizCard {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.QuizCardContent {
+    flex-grow: 1;
+    padding: 28px 0 28px 32px;
+}
+
+.QuizCardHeader {
+    color: var(--neutral900Color);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.QuizCardDescription {
+    color: var(--neutral600Color);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.RedCheckmark {
+    width: 20px;
+    margin: auto;
+}
+
+.Answer {
+    position: relative;
+    display: flex;
+    border: 1px solid var(--neutral200Color);
+    color: var(--neutral900Color);
+    cursor: pointer;
+    margin: 16px 0;
+    padding: 0 16px 0 0 ;
+    background: var(--answerOptionColor);
+    border-radius: var(--answerOptionRadius);
+    border: 1px solid var(--primary400Color);
+}
+
+.Image {
+    display: none;
+}
+
+
+@media (max-width: 500px) {
+    .QuizCardContainer {
+        min-height: 72px;
+        margin-bottom: 16px;
+        z-index: 1;
+        align-items: center;
+        outline: none;
+    }
+    
+    .QuizCardContent {
+        display: flex;
+        width: 91%;
+        padding: 0;
+    }
+    
+    .TextContainer{
+        display: flex;
+        flex-direction: column;
+        padding: 16px 0;
+        margin: auto 0;
+    }
+    
+    .Image {
+        display: inline;
+        margin-right: 12px;
+    }
+    
+}

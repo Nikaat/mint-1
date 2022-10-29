@@ -1,0 +1,51 @@
+.ProgressContainer{
+    display: flex;
+    max-width: 500px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.Progress {
+    color: var(--neutral900Color);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.CurrentProgress {
+    color: var(--primary400Color);
+}
+
+.Logo {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .ProgressContainer {
+        position: fixed;
+        z-index: 210;
+        top: 0;
+        display: flex;
+        width: 90%;
+        height: 48px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 15px ;
+        background-color: white;
+    }
+    .Progress {
+        padding-left: 40px;
+        background-color: white;
+    }
+    .Logo {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 28px;
+        cursor: pointer;
+        transform: translate(-50%,-50%);
+        transform-origin: center top;
+    }
+}

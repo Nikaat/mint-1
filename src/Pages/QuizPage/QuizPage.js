@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 
 import { Questions } from "./Questions";
-import classes from "./GQuestion.module.css";
+import classes from "./QuizPage.module.css";
 import Auxiliary from "../../hoc/Auxiliary/Auxiliary";
 import Quiz from "./Quiz/Quiz";
 import { Navigate } from "react-router";
 import { connect } from "react-redux";
 import { fetchData } from "../../redux/actions";
 
-class GQuestion extends Component {
+class QuizPage extends Component {
   componentDidMount = () => {
-    this.props.fetchData(this.props.code, this.props.aid);
+    this.props.fetchData(this.props.code, this.props.aid, this.props.result);
   };
 
   render() {
@@ -31,7 +31,7 @@ class GQuestion extends Component {
             />
           </div>
           <div className={classes.ContentContainer}>
-            <Quiz questionNum={this.props.qNum} />
+            <Quiz result={this.props.result} />
             <img
               className={classes.RightImage}
               {...Questions[this.props.qNum].rightImage}
@@ -50,10 +50,11 @@ const mapStateToProps = (state) => ({
   isGenderSelected: state.genderSel.isAnswered,
   code: state.quiz.code,
   aid: state.quiz.aid,
+  result: state.quiz.result,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchData: (code, aid) => dispatch(fetchData(code, aid)),
+  fetchData: (code, aid, result) => dispatch(fetchData(code, aid, result)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(GQuestion);
+export default connect(mapStateToProps, mapDispatchToProps)(QuizPage);

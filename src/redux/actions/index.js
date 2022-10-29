@@ -12,4 +12,5 @@ export {
   returnToPreviusQuestion,
   onArrow,
   clickedonNextButton,
+  fetchData,
 } from "./Quiz";

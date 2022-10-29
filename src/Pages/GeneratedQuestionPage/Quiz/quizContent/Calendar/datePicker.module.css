@@ -22,11 +22,25 @@
     text-align: center;
 }
 
-.calendar-caption {
-    margin-top: 20px;
-    text-align: center;
+.calendarContainer {
+    display: flex;
 }
 
+.customInput {
+    border-radius: 8px;
+    border: 1px var(--neutral400Color) solid;
+    padding: 4px 12px;
+    background-color: white;
+    height: 22px;
+    font-size: "14px";
+    padding: "3px 10px";
+}
+
+.customInput:focus {
+    outline: none;
+    border: 1px solid var(--neutral400Color);
+    box-shadow: 0 0 5px 1px var(--neutral400Color);
+}
 
 @media (max-width: 500px) {
     .headerTitle {

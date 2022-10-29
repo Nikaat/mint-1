@@ -16,6 +16,7 @@ const quiz = (props) => {
       </div>
       <ProgressContainer currentProgress={Questions[qNum].currentProgress} />
       <QuizContent
+        result={props.result}
         questionType={Questions[qNum].questionType}
         header={Questions[qNum].header}
         dataCard={Questions[qNum].dataCard}

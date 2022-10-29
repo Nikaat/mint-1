@@ -1,0 +1,60 @@
+
+.Inputs {
+    margin: 0 auto;
+    position: relative;
+    display: inline-block;
+}
+
+.MetricalInput{
+    width: 180px;
+}
+
+.Root {
+    align-items: center;
+    border-bottom: 1px solid var(--neutral400Color);
+    color: var(--neutral900Color);
+    display: flex;
+    font-size: 48px;
+    padding: 0 10px;
+    position: relative;
+    width: 150px;
+}
+
+.Input {
+    background: none;
+    border: none;
+    color: inherit;
+    flex: 1 1;
+    font-size: inherit;
+    font-weight: 700;
+    line-height: 1;
+    outline: none;
+    overflow: auto;
+    padding: 8px 0;
+    text-align: center;
+}
+
+.Postfix {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.33;
+    margin-left: 10px;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+    appearance: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+@media (max-width: 500px) {
+    .Root {
+        width: 130px;
+        margin: auto;
+    }
+}

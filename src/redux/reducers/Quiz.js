@@ -16,6 +16,32 @@ const initialState = {
     weight_goal_lbs: "",
     weight_goal_kg: "",
   },
+  code: "",
+  aid: "",
+  result: {
+    token:
+      "4978d1a83e27e5b4b39f7828c6f7cda8200b6fd917dd36c5cb0d3c15942090f7f93670042b7e72f56f0fe887c2ca33ec",
+    code: "8e4f0dcae2162d33",
+    title: "",
+    dialogTitle: "",
+    dialogDescription: "",
+    forceDialog: "false",
+    qid: "eghdamA1",
+    type: "eghdam",
+    questionType: "singleSelect",
+    video: "",
+    image: "",
+    diagram: "",
+    text: "برای اینکه در کوتاه ترین زمان ممکن باردار بشی و جنسیت فرزندت، همون چیزی که میخوای بشه، باید ریز به ریز شرایط خودت و همسرت رو بدونیم.\r\n\r\nهر چقدر با دقت بیشتری به سوالات پاسخ بدی، سریع تر باردار میشی و احتمال جنسیت مد نظرت بالاتر میره. پس با تمام دقتت به سوالات پاسخ بده.",
+    hint: "",
+    isResult: "false",
+    answers: [
+      {
+        aid: "eA1",
+        text: "ادامه",
+      },
+    ],
+  },
 };
 
 const quizReducer = (state = initialState, action) => {
@@ -93,6 +119,12 @@ const quizReducer = (state = initialState, action) => {
             },
           })
         : state;
+    case actionTypes.SAVE_FETCHED_DATA:
+      return updateObject(state, {
+        code: action.code,
+        aid: action.aid,
+        result: action.result,
+      });
     default:
       return state;
   }

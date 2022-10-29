@@ -1,0 +1,54 @@
+.quizContent {
+    max-width: 500px;
+    height: 100%;
+    padding: 10px 16px;
+    margin: 0 auto;
+    color: var(--neutral900Color);
+}
+
+.header {
+    margin: 8px 10px 20px;
+}
+
+.headerTitle {
+    display: block;
+    padding: 0 10px;
+    z-index: 1;
+    margin: 16px 0;
+    color: var(--neutral900Color);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.calendarContainer {
+    display: flex;
+}
+
+.customInput {
+    border-radius: 8px;
+    border: 1px var(--neutral400Color) solid;
+    padding: 4px 12px;
+    background-color: white;
+    height: 22px;
+    font-size: "14px";
+    padding: "3px 10px";
+}
+
+.customInput:focus {
+    outline: none;
+    border: 1px solid var(--neutral400Color);
+    box-shadow: 0 0 5px 1px var(--neutral400Color);
+}
+
+@media (max-width: 500px) {
+    .headerTitle {
+        font-size: 24px;
+        margin-top: 0;
+        padding: 0;
+    }
+    .header {
+        margin-top: 0;
+    }
+}
