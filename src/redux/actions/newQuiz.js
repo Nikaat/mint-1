@@ -3,10 +3,11 @@ import axios from "axios";
 import * as actionTypes from "./actionTypes";
 import * as actionCreators from "./index";
 
-export const answerQuestion = (index) => {
+export const answerQuestion = (index, aid) => {
   return {
     type: actionTypes.ANSWER_QUESTION,
     index: index,
+    aid: aid,
   };
 };
 
@@ -16,13 +17,33 @@ export const changequestionPage = () => {
   };
 };
 
-export const clickedonNextButton = (qNum) => {
-  return (dispatch) => {
-    if (qNum <= 16) {
-      setTimeout(() => {
-        dispatch(changequestionPage());
-      }, 1000);
+export const clickedonNextButton = (prevCode, answerIndexes) => {
+  let aids = "";
+  answerIndexes.map((item) => {
+    if (item != null) {
+      aids = aids + item + ",";
     }
+    return aids;
+  });
+
+  return (dispatch) => {
+    console.log(aids);
+    setTimeout(() => {
+      axios
+        .get(
+          "https://mintdoctor.app/process/main/question.php?type=eghdam&code=" +
+            prevCode +
+            "&aid=" +
+            aids
+        )
+        .then((res) => {
+          console.log(res);
+          const code = res.data.result.code;
+          const result = res.data.result;
+          dispatch(saveFetchedData(code, result));
+          dispatch(nullAnswerIndex());
+        });
+    }, 1000);
   };
 };
 
@@ -32,7 +53,7 @@ export const nullAnswerIndex = () => {
   };
 };
 
-export const clickedonQuizCard = (index, prevCode, prevAid) => {
+export const clickedonQuizCard = (index, prevAid, prevCode) => {
   return (dispatch) => {
     dispatch(answerQuestion(index));
     setTimeout(() => {
@@ -46,9 +67,8 @@ export const clickedonQuizCard = (index, prevCode, prevAid) => {
         .then((res) => {
           console.log(res);
           const code = res.data.result.code;
-          const aid = res.data.result.answers[0].aid;
           const result = res.data.result;
-          dispatch(saveFetchedData(code, aid, result));
+          dispatch(saveFetchedData(code, result));
           dispatch(nullAnswerIndex());
         });
     }, 1000);
@@ -97,11 +117,10 @@ export const goToCalendar = () => {
   };
 };
 
-export const saveFetchedData = (code, aid, result) => {
+export const saveFetchedData = (code, result) => {
   return {
     type: actionTypes.SAVE_FETCHED_DATA,
     code: code,
-    aid: aid,
     result: result,
   };
 };
@@ -121,7 +140,7 @@ export const fetchData = () => {
         console.log(res);
         const code = res.data.result.code;
         const result = res.data.result;
-        dispatch(saveFetchedData(code, null, result));
+        dispatch(saveFetchedData(code, result));
       });
   };
 };

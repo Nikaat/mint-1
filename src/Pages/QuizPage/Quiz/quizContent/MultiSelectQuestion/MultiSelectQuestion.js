@@ -44,7 +44,9 @@ const MultiSelectQuestion = (props) => {
         <div className={classes.ButtonContainer}>
           <Button
             text="NEXT"
-            onAnswer={() => props.clickedonButton(props.qNum)}
+            onAnswer={() =>
+              props.clickedonButton(props.code, props.answerIndexes)
+            }
           />
         </div>
       </div>
@@ -55,14 +57,17 @@ const MultiSelectQuestion = (props) => {
 const mapStateToProps = (state) => {
   return {
     qNum: state.quiz.questionNum,
+    code: state.quiz.code,
+    answerIndexes: state.quiz.answerIndexes,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    clickedonButton: (qNum) => dispatch(clickedonNextButton(qNum)),
-    clickedonMultiSelectCard: (index) =>
-      dispatch({ type: actionTypes.ANSWER_QUESTION, index: index }),
+    clickedonButton: (code, answerIndexes) =>
+      dispatch(clickedonNextButton(code, answerIndexes)),
+    clickedonMultiSelectCard: (index, aid) =>
+      dispatch({ type: actionTypes.ANSWER_QUESTION, index: index, aid: aid }),
   };
 };
 

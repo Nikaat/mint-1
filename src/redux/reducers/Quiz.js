@@ -29,7 +29,7 @@ const quizReducer = (state = initialState, action) => {
         answerIndexes: state.answerIndexes.map((item, index) => {
           // eslint-disable-next-line
           if (index == action.index) {
-            return item === null ? action.index : null;
+            return item === null ? action.aid : null;
           } else {
             return item;
           }
@@ -99,12 +99,23 @@ const quizReducer = (state = initialState, action) => {
     case actionTypes.SAVE_FETCHED_DATA:
       return updateObject(state, {
         code: action.code,
-        aid: action.aid,
         result: action.result,
       });
     case actionTypes.NULL_ANSWER_INDEX:
       return updateObject(state, {
         answerIndex: null,
+        answerIndexes: [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+        ],
       });
     default:
       return state;

@@ -6,10 +6,10 @@ import redCheckmark from "../../../../../assets/images/Red-checkmark.PNG";
 
 const quizCard = (props) => {
   let cardStyle;
-  let cardStyles = [null, null, null, null, null, null, null];
+  let cardStyles = [null, null, null, null, null, null, null, null, null];
 
   if (props.multiSelect === "true") {
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 10; i++) {
       cardStyles[i] =
         props.answerIndexes[i] !== null
           ? [classes.Answer]
@@ -30,7 +30,7 @@ const quizCard = (props) => {
     >
       <article
         className={classes.QuizCard}
-        onClick={() => props.onAnswer(props.idx, props.code, props.aid)}
+        onClick={() => props.onAnswer(props.idx, props.aid, props.code)}
       >
         <div className={classes.QuizCardContent}>
           <div className={classes.QuizCardHeader}>{props.text}</div>
