@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&display=swap');
 
+@font-face {
+  font-family: "Dana";  
+  src: local("dana_fa"),
+    url("./assets/fonts/dana_fa.ttf") format("truetype");
+}
+
 :root {
-  --light-red: #df4142;
+  --light-red: #A43751;
   --light-black: #090a0a;
   --light-gray: #abb3c0;
   --answerOptionColor: #FFFFFF;
@@ -28,9 +34,9 @@
     --background1Color: #FFFFFF;
     --background2Color: #F7F8F9;
     --background3Color: #FFFFFF;
-    --primary500Color: #DF4142;
-    --primary400Color: #DF4142;
-    --primary300Color: #DF4142;
+    --primary500Color: #A43751;
+    --primary400Color: #A43751;
+    --primary300Color: #A43751;
     --primary200Color: #FCDCE0;
     --primary100Color: #FFEEEE;
     --secondary1Color: #4ED09A;
@@ -62,7 +68,7 @@ body {
   font-size: 14px;
   margin: 0;
   padding: 0;
-  font-family: 'Baloo Bhaijaan 2', cursive, 'Montserrat', sans-serif;
+  font-family: 'Dana';
 }
 
 code {

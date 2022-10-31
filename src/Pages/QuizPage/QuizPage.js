@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { Navigate } from "react-router";
 import { connect } from "react-redux";
 import { fetchData } from "../../redux/actions";
-import { Questions } from "./Questions";
 import classes from "./QuizPage.module.css";
 import Auxiliary from "../../hoc/Auxiliary/Auxiliary";
 import Quiz from "./Quiz/Quiz";
@@ -31,7 +30,7 @@ class QuizPage extends Component {
           >
             <img
               className={classes.LeftImage}
-              {...Questions[this.props.qNum].leftImage}
+              src={this.props.result.borderImage}
               alt=""
             />
           </div>
@@ -41,7 +40,7 @@ class QuizPage extends Component {
             <Quiz result={this.props.result} />
             <img
               className={classes.RightImage}
-              {...Questions[this.props.qNum].rightImage}
+              src={this.props.result.borderImage}
               alt=""
             />
           </div>

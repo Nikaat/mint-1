@@ -21,7 +21,7 @@
     z-index: 1;
     margin: 16px 0;
     color: var(--neutral900Color);
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 1.25;
     text-align: center;
@@ -30,6 +30,12 @@
 html[dir= 'rtl'] .HeaderTitle {
     font-weight: 100;
     text-align: justify;
+}
+
+.Image {
+    margin: 8px 10px 20px;
+    width: 100%;
+    border-radius: 7px;
 }
 
 @media (max-width: 500px) {

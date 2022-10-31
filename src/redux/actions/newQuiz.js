@@ -31,7 +31,7 @@ export const clickedonNextButton = (prevCode, answerIndexes) => {
     setTimeout(() => {
       axios
         .get(
-          "https://mintdoctor.app/process/main/question.php?type=eghdam&code=" +
+          "https://mintdoctor.ir/process/v2/main/question.php?type=eghdam&code=" +
             prevCode +
             "&aid=" +
             aids
@@ -59,7 +59,7 @@ export const clickedonQuizCard = (index, prevAid, prevCode) => {
     setTimeout(() => {
       axios
         .get(
-          "https://mintdoctor.app/process/main/question.php?type=eghdam&code=" +
+          "https://mintdoctor.ir/process/v2/main/question.php?type=eghdam&code=" +
             prevCode +
             "&aid=" +
             prevAid
@@ -134,7 +134,7 @@ export const fetchData = () => {
     // };
     axios
       .get(
-        "https://mintdoctor.app/process/main/question.php?type=eghdam&aid=start"
+        "https://mintdoctor.ir/process/v2/main/question.php?type=eghdam&aid=start"
       )
       .then((res) => {
         console.log(res);

@@ -102,7 +102,7 @@ export const fetchData = (prevCode, prevAid) => {
     if (prevCode === "") {
       axios
         .get(
-          "https://mintdoctor.app/process/main/question.php?type=eghdam&aid=start"
+          "https://mintdoctor.ir/process/v2/main/question.php?type=eghdam&aid=start"
         )
         .then((res) => {
           console.log(res);
@@ -114,7 +114,7 @@ export const fetchData = (prevCode, prevAid) => {
     } else {
       axios
         .get(
-          "https://mintdoctor.app/process/main/question.php?type=eghdam&code=" +
+          "https://mintdoctor.ir/process/v2/main/question.php?type=eghdam&code=" +
             prevCode +
             "&aid=" +
             prevAid

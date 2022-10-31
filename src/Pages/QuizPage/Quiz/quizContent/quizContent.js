@@ -14,6 +14,7 @@ const QuizContent = (props) => {
         <SingleSelectQuestion
           header={props.result.text}
           dataCard={props.result.answers}
+          image={props.result.image}
           // optionImages={props.optionImages}
           // optionwithimage={props.optionwithimage}
           // hint={props.hint}
@@ -21,7 +22,7 @@ const QuizContent = (props) => {
         />
       );
       break;
-    case "InputQuestion":
+    case "inputQuestion":
       QuestionType = <InputQuestion header={props.header} hint={props.hint} />;
       break;
     case "multiSelect":

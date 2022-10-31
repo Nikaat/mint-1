@@ -9,12 +9,7 @@ const navigationItems = () => {
     <nav className={classes.Container}>
       <span className={classes.Logo}>
         <a href="/">
-          <img
-            className={classes.Logo}
-            src={Logoimg}
-            srcSet="https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_1.0,q_auto:eco/ks5dfptxqjo4x8iguaba 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_2.0,q_auto:eco/ks5dfptxqjo4x8iguaba 2x, https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_3.0,q_auto:eco/ks5dfptxqjo4x8iguaba 3x, https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_4.0,q_auto:eco/ks5dfptxqjo4x8iguaba 4x"
-            alt=""
-          />
+          <img className={classes.Logo} src={Logoimg} alt="" />
         </a>
       </span>
       <DrawerToggle />

@@ -13,10 +13,13 @@ const SingleSelectQuestion = (props) => {
 
   return (
     <div className={classes.QuizContent}>
+      {props.image !== "" ? (
+        <img className={classes.Image} src={props.image} alt=" " />
+      ) : null}
+      {props.video ? <Video src={props.video.src} /> : null}
       <div className={classes.Header}>
         <h1 className={classes.HeaderTitle}>{props.header}</h1>
       </div>
-      {props.video ? <Video src={props.video.src} /> : null}
       <section className={classes.QuestionsSection}>
         {/* {!props.optionwithimage */}
         {props.dataCard
