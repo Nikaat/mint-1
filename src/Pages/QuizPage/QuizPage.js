@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 
+import { Navigate } from "react-router";
+import { connect } from "react-redux";
+import { fetchData } from "../../redux/actions";
 import { Questions } from "./Questions";
 import classes from "./QuizPage.module.css";
 import Auxiliary from "../../hoc/Auxiliary/Auxiliary";
 import Quiz from "./Quiz/Quiz";
-import { Navigate } from "react-router";
-import { connect } from "react-redux";
-import { fetchData } from "../../redux/actions";
+// import Parasite from "./Quiz/Parasite/Parasite";
+// import LineChart from "../../Components/Chart/lineChart";
 
 class QuizPage extends Component {
   componentDidMount = () => {
@@ -16,7 +18,10 @@ class QuizPage extends Component {
   render() {
     return (
       <Auxiliary>
-        <div className={classes.Container}>
+        <div
+          className={classes.Container}
+          // style={{ backgroundColor: "blue" }}
+        >
           <div
             className={classes.ImageContainer}
             style={{
@@ -31,6 +36,8 @@ class QuizPage extends Component {
             />
           </div>
           <div className={classes.ContentContainer}>
+            {/* <Parasite /> */}
+            {/* <LineChart /> */}
             <Quiz result={this.props.result} />
             <img
               className={classes.RightImage}
@@ -58,3 +65,21 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuizPage);
+
+<svg
+  class="loader-module_coloredCircle__R3CaB loader-module_circle__YREhS loader-module_shadow__l6IA7"
+  viewBox="0 0 225 225"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle
+    stroke-linecap="round"
+    stroke="var(--neutral100Color)"
+    stroke-width="17"
+    stroke-dashoffset="226.50883032382407"
+    fill="transparent"
+    r="103"
+    cx="112"
+    cy="112"
+  ></circle>
+</svg>;
