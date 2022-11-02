@@ -18,9 +18,6 @@ const quiz = (props) => {
       /> */}
       <QuizContent
         result={props.result}
-        // questionType={Questions[qNum].questionType}
-        // header={Questions[qNum].header}
-        // dataCard={Questions[qNum].dataCard}
         // optionwithimage={Questions[qNum].optionwithImage}
         // hint={Questions[qNum].hint}
         // video={Questions[qNum].video}
