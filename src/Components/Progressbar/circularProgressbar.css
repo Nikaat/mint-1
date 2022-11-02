@@ -6,6 +6,7 @@
 .TextList {
     list-style: none;
     padding: 0;
+    padding-top: 30px;
 }
 
 .i1, .i2, .i3, .i4, .i5, .i6 {
