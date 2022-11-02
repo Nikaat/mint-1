@@ -1,2 +1,43 @@
-.ParasiteContainer {
+.TitleFadeList {
+    list-style: none;
+}
+
+.Li1 ,.Li2 ,.Li3 ,.Li4 ,.Li5 {
+    opacity: 0;
+    position: absolute;
+}
+
+.Li1 {
+    animation: fade-in-out 5s ease-in forwards;
+    animation-iteration-count: 1;
+}
+
+.Li2 {
+    animation: fade-in-out 5s ease-in forwards;
+    animation-iteration-count: 1;
+    animation-delay: 5s;
+}
+
+.Li3 {
+    animation: fade-in-out 5s ease-in forwards;
+    animation-iteration-count: 1;
+    animation-delay: 10s;
+}
+
+.Li4 {
+    animation: fade-in-out 5s ease-in forwards;
+    animation-iteration-count: 1;
+    animation-delay: 15s;
+}
+
+.Li5 {
+    animation: fade-in-out 5s ease-in forwards;
+    animation-iteration-count: 1;
+    animation-delay: 20s;
+}
+
+@keyframes fade-in-out {
+    0% {  opacity: 0; } 
+    50% {  opacity: 1; } 
+    100% {  opacity: 0; } 
 }

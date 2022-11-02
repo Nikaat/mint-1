@@ -5,6 +5,14 @@
     background-color: var(--background1Color);
 }
 
+.ParContainer {
+    min-height: calc(100vh - 48px);
+    display: flex;
+    padding-top: 48px;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .ImageContainer {
     position: fixed;
     top: 0;

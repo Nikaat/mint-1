@@ -6,8 +6,7 @@ import { fetchData } from "../../redux/actions";
 import classes from "./QuizPage.module.css";
 import Auxiliary from "../../hoc/Auxiliary/Auxiliary";
 import Quiz from "./Quiz/Quiz";
-// import Parasite from "./Quiz/Parasite/Parasite";
-// import LineChart from "../../Components/Chart/lineChart";
+import Parasite from "./Quiz/Parasite/Parasite";
 
 class QuizPage extends Component {
   componentDidMount = () => {
@@ -17,34 +16,41 @@ class QuizPage extends Component {
   render() {
     return (
       <Auxiliary>
-        <div
-          className={classes.Container}
-          // style={{ backgroundColor: "blue" }}
-        >
+        {this.props.questionType === "parasite" ? (
           <div
-            className={classes.ImageContainer}
+            className={classes.ParContainer}
             style={{
-              background:
-                "linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.25))",
+              backgroundColor: this.props.parasite.bgColor,
+              color: this.props.parasite.textColor,
             }}
           >
-            <img
-              className={classes.LeftImage}
-              src={this.props.result.borderImage}
-              alt=""
-            />
+            <Parasite result={this.props.result} />
           </div>
-          <div className={classes.ContentContainer}>
-            {/* <Parasite /> */}
-            {/* <LineChart /> */}
-            <Quiz result={this.props.result} />
-            <img
-              className={classes.RightImage}
-              src={this.props.result.borderImage}
-              alt=""
-            />
+        ) : (
+          <div className={classes.Container}>
+            <div
+              className={classes.ImageContainer}
+              style={{
+                background:
+                  "linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.25))",
+              }}
+            >
+              <img
+                className={classes.LeftImage}
+                src={this.props.result.borderImage}
+                alt=""
+              />
+            </div>
+            <div className={classes.ContentContainer}>
+              <Quiz result={this.props.result} />
+              <img
+                className={classes.RightImage}
+                src={this.props.result.borderImage}
+                alt=""
+              />
+            </div>
           </div>
-        </div>
+        )}
         {this.props.isGenderSelected === false ? <Navigate to="/" /> : null}
       </Auxiliary>
     );
@@ -57,6 +63,8 @@ const mapStateToProps = (state) => ({
   code: state.quiz.code,
   aid: state.quiz.aid,
   result: state.quiz.result,
+  questionType: state.quiz.result.questionType,
+  parasite: state.quiz.result.parasite,
 });
 
 const mapDispatchToProps = (dispatch) => ({
