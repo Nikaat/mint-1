@@ -36,6 +36,14 @@
     animation-delay: 20s;
 }
 
+.ParasiteButton {
+    width: 100%;
+    border: 1px solid var(--primary400color);
+    border-radius: 5px;
+    font-family: inherit;
+    padding: 10px;
+}
+
 @keyframes fade-in-out {
     0% {  opacity: 0; } 
     50% {  opacity: 1; } 
