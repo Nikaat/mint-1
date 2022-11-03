@@ -9,8 +9,9 @@
     min-height: calc(100vh - 48px);
     display: flex;
     padding-top: 48px;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    text-align: center;
 }
 
 .ImageContainer {

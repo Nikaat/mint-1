@@ -44,7 +44,6 @@ export default function CircularStatic() {
 
   React.useEffect(() => {
     const time = 100 + Math.random() * 30;
-    console.log(time);
     const timer = setInterval(() => {
       setProgress((prevProgress) =>
         prevProgress >= 100 ? 0 : prevProgress + 1

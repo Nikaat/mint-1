@@ -51,6 +51,7 @@ html[dir="rtl"] .QuizCardContent {
 
 .Answer {
     border: 1px solid var(--primary400Color);
+    box-shadow: 0 12px 24px rgb(43 49 57 / 8%), 0 4px 8px rgb(43 55 70 / 6%);
 }
 
 @media (max-width: 500px) {

@@ -8,6 +8,8 @@ import Auxiliary from "../../hoc/Auxiliary/Auxiliary";
 import Quiz from "./Quiz/Quiz";
 import Parasite from "./Quiz/Parasite/Parasite";
 
+import LinearProgressbar from "../../Components/Progressbar/linear/linearProgressbar";
+
 class QuizPage extends Component {
   componentDidMount = () => {
     this.props.fetchData();
@@ -25,6 +27,7 @@ class QuizPage extends Component {
             }}
           >
             <Parasite result={this.props.result} />
+            <LinearProgressbar />
           </div>
         ) : (
           <div className={classes.Container}>

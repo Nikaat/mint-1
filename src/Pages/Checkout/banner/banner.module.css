@@ -1,0 +1,148 @@
+.Container {
+    width: 100%;
+    padding: 18px 0 64px;
+    margin: auto;
+    background-color: var(--neutral100Color);
+}
+
+.TopBanner {
+    display: flex;
+    max-width: 1142px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.TopBannerColLeft {
+    max-width: 46%;
+    flex: 1 1 46%;
+    padding: 62px 0 24px;
+    margin: 0 13px;
+}
+
+.TopBannerText {
+    width: 100%;
+    max-width: 502px;
+}
+
+.TopBannerTitle {
+    margin: 0 0 40px;
+    color: var(--neutral900Color);
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    line-height: 1.14;
+}
+
+.HighlightedTitle {
+    color: var(--primary400Color);
+    font-weight: 700;
+}
+
+.TopBannerButton {
+    max-width: 328px;
+    margin: 0 0 109px;
+}
+
+.Button {
+    border: none;
+    border-radius: var(--buttonRadius);
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .7px;
+    line-height: 1.25;
+    padding: var(--buttonPadding);
+    text-shadow: 0 1px 2px var(--buttonTextShadowColor);
+    width: 100%;
+    background: var(--secondary1Color);
+    animation: button-module_pulse__icT-A 1.25s cubic-bezier(.66,0,0,1) infinite;
+    box-shadow: 0 0 0 0 var(--secondaryButtonShadowColor);
+}
+
+.FeaturedInHorizontalModuleContainer {
+    --featuredInLogoLighterFill: var(--neutral500Color);
+    --featuredInLogoBgFill: var(--whiteColor);
+    color: var(--neutral700Color);
+    width: 100%;
+}
+
+.FeaturedInHorizontalModuleTitle {
+    color: var(--neutral500Color);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.FeaturedInHorizontalModuleRow {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.FeaturedInHorizontalModuleLogo {
+    fill: currentColor;
+    height: auto;
+    margin: 0 min(2.5%,12px);
+    margin-left: 0;
+}
+
+.FeaturedInHorizontalModuleLighterLogo {
+    margin-right: 0;
+    color: var(--neutral500Color);
+    fill: currentColor;
+    height: auto;
+    margin: 0 min(2.5%,12px);
+}
+
+.TopBannerColRight {
+    position: relative;
+    flex: 1 1 54%;
+    margin: 0 13px;
+}
+
+.TopBannerImg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.CheckoutRatingBox {
+    position: absolute;
+    bottom: 25%;
+    right: -30%;
+    width: 100%;
+    max-width: 276px;
+}
+
+.RatingBox {
+    padding: 20px 35px 16px;
+    background: var(--background3Color);
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgb(36 36 36 / 6%), 0 12px 24px rgb(36 36 36 / 8%);
+    text-align: center;
+}
+
+.StarsRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -4px 8px;
+}
+
+.Star {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0 4px;
+    background-image: url(https://res.cloudinary.com/drhg6wpcy/image/upload/q_auto:eco/public/images/star.svg);
+    background-repeat: no-repeat;
+}
+
+.RatingText {
+    color: var(--neutral700Color);
+    font-size: 14px;
+    letter-spacing: .5px;
+    line-height: 1.428;
+}
