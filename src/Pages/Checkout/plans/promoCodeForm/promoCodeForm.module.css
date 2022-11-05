@@ -1,0 +1,60 @@
+.Container {
+    padding-top: 12px;
+    margin-bottom: 32px;
+}
+
+.PromoHeading {
+    margin-bottom: 16px;
+    color: var(--neutral900Color);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.Content {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    margin: 0 -3px;
+}
+
+.InputContainer {
+    position: relative;
+    width: 100%;
+    padding: 0 3px;
+}
+
+.Input {
+    width: 100%;
+    padding: 12px 48px 12px 16px;
+    border: 1px solid var(--neutral300Color);
+    background: var(--background3Color);
+    background-position: 0 0;
+    border-radius: 8px;
+    color: var(--neutral900Color);
+    outline: none;
+    font-family: inherit;
+}
+
+.ButtonContainer {
+    padding: 0 3px;
+}
+
+.ButtonWithBorderRadius {
+    min-width: 112px;
+    height: 100%;
+    padding: 6px;
+    border: 2px solid var(--secondary1Color);
+    border-radius: 32px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    line-height: 1.71;
+    outline: none;
+    text-transform: uppercase;
+    max-width: 306px;
+    border-color: var(--neutral300Color);
+    background: var(--whiteColor);
+    color: var(--neutral300Color);
+    user-select: none;
+}

@@ -1,0 +1,72 @@
+.AppStoreReview {
+    padding: 20px;
+    background: var(--background3Color);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgb(22 42 65 / 4%), 0 14px 26px rgb(7 21 37 / 10%);
+    color: var(--neutral900Color);
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(33% - 16px);
+    margin-bottom: 0;
+}
+
+.Title {
+    padding-bottom: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.TitleGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.TitleGroup:first-child {
+    padding-bottom: 6px;
+}
+
+.TitleText {
+    margin-right: 10px;
+    color: var(--neutral900Color);
+}
+
+.DateNameText {
+    color: var(--neutral600Color);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.23;
+    white-space: nowrap;
+}
+
+.ReviewExpandable {
+    color: var(--neutral700Color);
+    font-size: 14px;
+    letter-spacing: -.001em;
+    line-height: 1.43;
+    position: relative;
+    overflow: hidden;
+    max-height: 80.08px;
+}
+
+.ExpandButton {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-left: 22px;
+    background: linear-gradient(270deg, #FFFFFF 63.54%, rgba(255, 255, 255, 0) 91.43%);;
+    color: #2c70c3;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -.001em;
+    line-height: 20.02px;
+    outline: none;
+    text-decoration: none;
+}

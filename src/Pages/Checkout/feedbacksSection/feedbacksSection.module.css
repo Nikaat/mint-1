@@ -1,0 +1,34 @@
+.Container {
+    position: relative;
+    width: 100%;
+    max-width: 1112px;
+    margin: auto;
+    padding: 0 40px;
+}
+
+.AppStoreReviews {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.AppStoreReviewsTitle {
+    margin-bottom: 24px;
+    color: var(--neutral900Color);
+    font-weight: 700;
+    line-height: 1.33;
+    text-align: center;
+    display: block;
+    font-size: 32px;
+    flex: 0 0 100%;
+}
+
+.AppStoreReviewsSubtitle {
+    flex: 0 0 100%;
+    margin-bottom: 40px;
+    color: var(--neutral700Color);
+    text-align: center;
+    display: block;
+}

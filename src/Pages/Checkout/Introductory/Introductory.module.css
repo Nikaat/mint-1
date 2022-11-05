@@ -1,0 +1,79 @@
+.ContentContainer {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1112px;
+    padding: 0 40px;
+}
+
+.CheckoutPlanBenefits {
+    margin-bottom: 64px;
+}
+
+.PicsListWithImageContainer {
+    display: grid;
+    align-items: center;
+    grid-column-gap: 24px;
+    grid-template-columns: auto 592px;
+}
+
+.PicsListWithImageTitle {
+    margin-bottom: 24px
+}
+
+.Title {
+    margin: auto;
+    color: var(--neutral900Color);
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.25;
+    text-align: left;
+}
+
+.PicsListItem {
+    display: flex;
+    margin-bottom: 24px;
+    --subTitleColor: var(--neutral700Color);
+}
+
+.PicsListItemImage {
+    display: block;
+    height: 56px;
+    flex: 0 0 56px;
+    margin: 0 16px 0 0;
+}
+
+.PicsListItemTitle {
+    margin-bottom: 2px;
+    color: var(--neutral900Color);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.PicsListItemSubtitle {
+    color: var(--subTitleColor);
+    font-size: 14px;
+    line-height: 1.43;
+}
+
+.PicsListWithImageNote {
+    display: block;
+    margin-top: 24px;
+}
+
+.Footnote {
+    color: var(--neutral600Color);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.ColImg {
+    display: block;
+}
+
+.Image {
+    display: block;
+    height: auto;
+    width: 100%;
+}

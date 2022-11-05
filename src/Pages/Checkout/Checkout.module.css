@@ -24,7 +24,7 @@
     height: 80px;
     align-items: center;
     backdrop-filter: blur(30px);
-    background: var(--blurredHeaderBackgroundColor);
+    background: white;
     transition: box-shadow .35s;
 }
 
@@ -69,4 +69,16 @@
 
 .Banner {
     margin-bottom: 64px;
+}
+
+.IntroductoryMainSection {
+    overflow: auto;
+    background: var(--background1Color);
+    display: block;
+}
+
+.FeedbacksSection {
+    overflow: auto;
+    background: var(--neutral100Color);
+    padding: 64px 0 32px;
 }

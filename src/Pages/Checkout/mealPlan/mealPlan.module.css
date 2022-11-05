@@ -1,0 +1,46 @@
+.MealPlan {
+    margin-bottom: 64px;
+}
+
+.Container {
+    position: relative;
+    width: 100%;
+    max-width: 1112px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+.InsightsContainer {
+    border-radius: 12px;
+    padding: 0;
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+
+.Header {
+    display: block;
+    color: var(--neutral900Color);
+    font-weight: 700;
+    letter-spacing: -.01em;
+    text-align: center;
+    margin: 0 auto 8px;
+    max-width: 520px;
+    font-size: 32px;
+    line-height: 1.25;
+}
+
+.Subtitle {
+    display: block;
+    color: var(--neutral700Color);
+    line-height: 1.5;
+    text-align: center;
+    margin: 0 auto 22px;
+    font-size: 14px;
+    margin-bottom: 45px;
+}
+
+.CardsContainer {
+    display: flex;
+    flex-direction: row;
+}

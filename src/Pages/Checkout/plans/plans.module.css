@@ -1,0 +1,90 @@
+.Plans {
+    border: 1px solid var(--neutral300Color);
+    border-radius: 24px;
+    max-width: 680px;
+    margin: 0 auto 64px;
+}
+
+.Container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1112px;
+    padding: 0 40px;
+}
+
+.ChoosePlanGenericContainer {
+    padding: 0 88px;
+    margin-top: 48px;
+}
+
+.ChoosePlanHeader {
+    color: var(--neutral900Color);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 32px;
+    line-height: 1.25;
+}
+
+.PlanListContainer {
+    margin-bottom: 24px;
+}
+
+.ButtonContainer {
+    max-width: 306px;
+    margin: 0 auto 24px;
+    text-align: center;
+    --buttonRadius: 32px;
+}
+
+.Button {
+    border: none;
+    border-radius: var(--buttonRadius);
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .7px;
+    line-height: 1.25;
+    padding: var(--buttonPadding);
+    text-shadow: 0 1px 2px var(--buttonTextShadowColor);
+    width: 100%;
+    background: var(--secondary1Color);
+    animation: button-module_pulse__icT-A 1.25s cubic-bezier(.66,0,0,1) infinite;
+    box-shadow: 0 0 0 0 var(--secondaryButtonShadowColor);
+}
+
+.LegalContainer {
+    max-width: 328px;
+    margin: 0 auto 32px;
+}
+
+.SafeCheckout {
+    margin-bottom: 48px;
+}
+
+.ChoosePlanSafeCheckout {
+    position: relative;
+    max-width: 360px;
+    padding: 17px 12px 12px;
+    border: 1px solid var(--neutral300Color);
+    margin: 25px auto 0;
+    border-radius: 8px;
+}
+
+.SafeCheckoutText {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    padding: 0 8px;
+    background-color: var(--background1Color);
+    color: var(--neutral900Color);
+    font-size: 18px;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.ChoosePlanSafeCheckoutCards {
+    width: 100%;
+}

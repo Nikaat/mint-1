@@ -1,0 +1,64 @@
+.ContentRow {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 190px;
+    height: auto;
+    flex-direction: column;
+    margin-right: 21px;
+    margin-bottom: 24px;
+}
+
+.ContentImage {
+    display: block;
+    width: 100%;
+    max-width: 56px;
+    height: auto;
+    border: 2px solid var(--whiteColor);
+    margin: 0 0 16px;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px rgb(22 42 65 / 6%), 0 12px 24px rgb(7 21 37 / 8%);
+}
+
+.ContentHeadline {
+    color: var(--neutral700Color);
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.6;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.ContentTitle {
+    color: var(--blackColor);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.TimeAndCaloriesInfo {
+    text-align: center;
+}
+
+.Time {
+    display: inline-flex;
+    align-items: center;
+    color: var(--neutral500Color);
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.Icon {
+    height: 12px;
+    margin-right: 3px;
+}
+
+.AdditionalInfo {
+    display: inline-flex;
+    align-items: center;
+    color: var(--neutral500Color);
+    font-size: 12px;
+}
