@@ -8,7 +8,8 @@
 }
 
 :root {
-  --light-red: #A43751;
+  /* --light-red: #A43751; */
+  --light-red: #f87691;
   --light-black: #090a0a;
   --light-gray: #abb3c0;
   --answerOptionColor: #FFFFFF;
@@ -34,9 +35,12 @@
     --background1Color: #FFFFFF;
     --background2Color: #F7F8F9;
     --background3Color: #FFFFFF;
-    --primary500Color: #A43751;
+    --primary500Color: #f87691;
+    --primary400Color: #f87691;
+    --primary300Color: #f87691;
+    /* --primary500Color: #A43751;
     --primary400Color: #A43751;
-    --primary300Color: #A43751;
+    --primary300Color: #A43751; */
     --primary200Color: #FCDCE0;
     --primary100Color: #FFEEEE;
     --secondary1Color: #4ED09A;
@@ -68,7 +72,7 @@ body {
   font-size: 14px;
   margin: 0;
   padding: 0;
-  font-family: 'Dana';
+  font-family: 'Dana', 'Montserrat';
 }
 
 code {

@@ -4,7 +4,10 @@ import classes from "./faqItem.module.css";
 
 const faqItem = (props) => (
   <div className={classes.FaqItem}>
-    <div className={classes.FaqQuestion}>
+    <div
+      className={classes.FaqQuestion}
+      onClick={() => props.clicked(props.id)}
+    >
       {props.question}
       <div className={classes.FaqItemBtn}>
         <svg
@@ -14,6 +17,7 @@ const faqItem = (props) => (
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className={classes.FaqItemBtnIcon}
+          style={{ transform: props.faq === true ? "rotate(180deg)" : null }}
         >
           <path
             fillRule="evenodd"
@@ -23,7 +27,11 @@ const faqItem = (props) => (
         </svg>
       </div>
     </div>
-    <div className={classes.FaqAnswer}>
+    <div
+      className={
+        props.faq === false ? classes.FaqAnswerClose : classes.FaqAnswerOpen
+      }
+    >
       <div className={classes.FaqAnswerText}>{props.answer}</div>
     </div>
   </div>

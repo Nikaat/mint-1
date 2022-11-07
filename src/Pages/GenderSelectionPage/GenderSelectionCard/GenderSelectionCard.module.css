@@ -38,11 +38,11 @@
     color: white;
     font-size: 20px;
     font-weight: 700;
-    left: 0;
+    left: -1px;
     line-height: 47px;
     position: absolute;
     text-align: left;
-    width: 100%;
+    width: 101%;
     z-index: 2;
 }
 

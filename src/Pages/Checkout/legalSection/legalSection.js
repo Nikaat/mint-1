@@ -21,7 +21,7 @@ const legalSection = (props) => {
           alt="Avocado"
         />
         <div className={classes.Faq}>
-          <Faq />
+          <Faq faq={props.faq} clicked={props.faqClicked} />
         </div>
       </div>
       <div className={classes.MoneyBackGuarantee}>

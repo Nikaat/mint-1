@@ -11,44 +11,41 @@
     cursor: pointer;
 }
 
+.PlanCardActive {
+    background-color: var(--whiteColor);
+    box-shadow: 0 2px 6px rgb(22 42 65 / 10%), 0 12px 24px rgb(103 125 150 / 10%);
+}
+
 .MainContentItemContainer {
     position: relative;
     display: flex;
     padding: 16px 7.5px 16px 50px;
     border: 1px solid var(--neutral300Color);
-    border-radius: 8px;
+    border-radius: var(--MainContentItemContainer-border-radius);
 }
 
-.MainContentItemContainerMP {
-    position: relative;
-    display: flex;
-    padding: 16px 7.5px 16px 50px;
-    border: 1px solid var(--neutral300Color);
-    border-radius: 0 0 8px 8px;
-}
-
-.MainContentItemContainer::before {
+.MainContentItemContainer::before{
     top: calc(50% - 28px/2);
     left: 12px;
     width: 24px;
     height: 24px;
-    border: 2px solid var(--neutral400Color);
+    border: 2px solid var(--before-border-color);
     position: absolute;
     z-index: 1;
     border-radius: 50%;
     content: "";
 }
 
-.MainContentItemContainerMP::before {
-    top: calc(50% - 28px/2);
-    left: 12px;
-    width: 24px;
-    height: 24px;
-    border: 2px solid var(--neutral400Color);
+.MainContentItemContainer::after{
     position: absolute;
     z-index: 1;
     border-radius: 50%;
     content: "";
+    top: var(--after-top);
+    left: var(--after-left);
+    width: var(--after-width);
+    height: var(--after-height);
+    background: var(--after-background);
 }
 
 .PlanMainInfo {
@@ -57,7 +54,7 @@
 
 .PlanName {
     margin-bottom: 4px;
-    color: var(--neutral600Color);
+    color: var(--plan-name-color);
     font-size: 16px;
     font-weight: 800;
     letter-spacing: .5px;
@@ -111,7 +108,7 @@
     top: 50%;
     left: 0;
     height: 100%;
-    color: var(--neutral200Color);
+    color: var(--label-color);
     fill: currentColor;
     transform: translateY(-50%);
 }

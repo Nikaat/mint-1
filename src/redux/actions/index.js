@@ -24,3 +24,5 @@ export {
   clickedonNextButton,
   fetchData,
 } from "./newQuiz";
+
+export { choosePlan } from "./Checkout";

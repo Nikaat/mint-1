@@ -21,6 +21,7 @@ const feedbacksSection = (props) => {
             learned though.....even though I might feel that I “don’t eat a lot”
             counting those calories will reveal your TRUTH. What you eat is a
             fraction of the battle....count those calories and WIN the battle."
+            openModal={props.openModal}
           />
           <AppStoreReview
             titleText="Thank You!"
@@ -34,6 +35,7 @@ const feedbacksSection = (props) => {
             it will tire you and you will be tired afterwards. But I get
             support from my mom because we do it together so it is fun/funny
             for us. Thank you and to you reading this have a great day. "
+            openModal={props.openModal}
           />
           <AppStoreReview
             titleText="Convenient for moms"
@@ -51,6 +53,7 @@ const feedbacksSection = (props) => {
             something better without paying. Obviously, I was wrong and did
             no exercise after deleting the app. So I’m installing it again
             and look forward to working out!"
+            openModal={props.openModal}
           />
         </div>
       </div>

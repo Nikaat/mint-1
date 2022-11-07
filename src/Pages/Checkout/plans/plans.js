@@ -5,7 +5,10 @@ import Breakdown from "./breakdown/breakdown";
 import PromoCodeForm from "./promoCodeForm/promoCodeForm";
 import Legal from "./legal/legal";
 
-const plans = (peops) => {
+const plans = (props) => {
+  let weekAcive = props.planSelected === "week" ? "true" : "false";
+  let monthAcive = props.planSelected === "month" ? "true" : "false";
+  let month3Acive = props.planSelected === "month3" ? "true" : "false";
   return (
     <div className={classes.Plans}>
       <div className={classes.Container}>
@@ -13,28 +16,37 @@ const plans = (peops) => {
           <h3 className={classes.ChoosePlanHeader}>Choose Your Plan</h3>
           <div className={classes.PlanListContainer}>
             <Breakdown
-              palnName="7-DAY PLAN"
+              planName="7-DAY PLAN"
               price="9.99"
               singleLine="7 days"
               dollors="1"
               cents="43"
               data="affiliates-introductory-3-subs-1-week"
+              active={weekAcive}
+              id="week"
+              clicked={props.clicked}
             />
             <Breakdown
-              palnName="1-MONTH PLAN"
+              planName="1-MONTH PLAN"
               price="28.56"
               singleLine="1 month"
               dollors="1"
               cents="02"
               data="affiliates-introductory-3-subs-1-month"
+              active={monthAcive}
+              id="month"
+              clicked={props.clicked}
             />
             <Breakdown
-              palnName="3-MONTH PLAN"
+              planName="3-MONTH PLAN"
               price="42.84"
               singleLine="3 months"
               dollors="0"
               cents="36"
               data="affiliates-introductory-3-subs-3-month"
+              active={month3Acive}
+              id="month3"
+              clicked={props.clicked}
             />
           </div>
           <PromoCodeForm />

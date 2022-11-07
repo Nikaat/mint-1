@@ -13,12 +13,18 @@ const faq = (props) => (
         as similar to the regular menu as possible. We believe that even those
         who live off fast food will be satisfied with both the meals and the
         results, and never feel hungry."
+        faq={props.faq.Q1}
+        id="Q1"
+        clicked={props.clicked}
       />
       <FaqItem
         question="I don’t want to give up my sweets!"
         answer="And you don't have to. We know that it’s hard to get rid of the
         sweet tooth, and included sweet dishes into the meal plan. We’ve
         picked balanced sweets."
+        faq={props.faq.Q2}
+        id="Q2"
+        clicked={props.clicked}
       />
       <FaqItem
         question="Can I lose weight without working out?"
@@ -27,6 +33,9 @@ const faq = (props) => (
         and defined. We know it’s a lot to take on, and the workouts are
         extremely easy, suitable for first-timers, and will take up barely
         any time."
+        faq={props.faq.Q3}
+        id="Q3"
+        clicked={props.clicked}
       />
     </ul>
   </div>

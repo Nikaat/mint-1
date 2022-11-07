@@ -12,3 +12,5 @@ export const GO_TO_CALENDAR = "GO_TO_CALENDAR";
 export const SAVE_FETCHED_DATA = "SAVE_FETCHED_DATA";
 
 export const NULL_ANSWER_INDEX = "NULL_ANSWER_INDEX";
+
+export const CHOOSE_PLAN = "CHOOSE_PLAN";

@@ -1,0 +1,106 @@
+.Container {
+    background: #162a4199;
+    bottom: 0;
+    display: flex;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 777;
+    padding: 76px 20px;
+}
+
+.Content {
+    -webkit-animation: modal-module_modalOpacity__vNfyA .5s;
+    animation: modal-module_modalOpacity__vNfyA .5s;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-height: 100%;
+    max-width: 504px;
+    min-height: 96px;
+    position: relative;
+    width: 100%;
+}
+
+.ScrollableContent {
+    background: var(--background3Color);
+    border-radius: 8px;
+    box-shadow: 0 8px 16px #44474826;
+    height: 100%;
+    overflow-y: auto;
+    padding: 24px;
+    width: 100%;
+    padding: 56px 40px 40px;
+}
+
+.Title {
+    padding-bottom: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.TitleGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 6px;
+}
+
+.TitleText {
+    margin-right: 10px;
+    color: var(--neutral900Color);
+}
+
+.DateNameText {
+    color: var(--neutral600Color);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.23;
+    white-space: nowrap;
+}
+
+.TitleGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Review {
+    color: var(--neutral700Color);
+    font-size: 14px;
+    letter-spacing: -.001em;
+    line-height: 1.43;
+    text-align: justify;
+}
+
+.CloseButton {
+    align-items: center;
+    background: #0000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    position: absolute;
+    bottom: auto;
+    left: 0;
+    padding: 5px;
+    top: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.CloseIcon {
+    display: inline-block;
+    flex-shrink: 0;
+    height: 1em;
+    overflow: hidden;
+    user-select: none;
+    width: 1em;
+    stroke-width: 0;
+    fill: currentColor;
+    stroke: currentColor;
+    font-size: 30px;
+    transition: fill .25s;
+    color: var(--neutral700Color);
+}
