@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/mint/static/css/main.ea7358dc.css",
-    "main.js": "/mint/static/js/main.12748a1a.js",
+    "main.css": "/mint/static/css/main.f928a5ef.css",
+    "main.js": "/mint/static/js/main.70eb1467.js",
     "static/js/787.64ae0bc3.chunk.js": "/mint/static/js/787.64ae0bc3.chunk.js",
+    "static/media/dana_fa.ttf": "/mint/static/media/dana_fa.bb0bc3506258a94831c5.ttf",
     "index.html": "/mint/index.html",
-    "static/media/Red-checkmark.PNG": "/mint/static/media/Red-checkmark.249fa94fcc341538e729.PNG",
-    "main.ea7358dc.css.map": "/mint/static/css/main.ea7358dc.css.map",
-    "main.12748a1a.js.map": "/mint/static/js/main.12748a1a.js.map",
+    "main.f928a5ef.css.map": "/mint/static/css/main.f928a5ef.css.map",
+    "main.70eb1467.js.map": "/mint/static/js/main.70eb1467.js.map",
     "787.64ae0bc3.chunk.js.map": "/mint/static/js/787.64ae0bc3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea7358dc.css",
-    "static/js/main.12748a1a.js"
+    "static/css/main.f928a5ef.css",
+    "static/js/main.70eb1467.js"
   ]
 }
