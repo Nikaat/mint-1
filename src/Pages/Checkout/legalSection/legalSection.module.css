@@ -1,0 +1,95 @@
+.Container {
+    position: relative;
+    width: 100%;
+    max-width: 1112px;
+    margin: auto;
+    padding: 0 40px;
+}
+
+.DesktopOnly {
+    display: block;
+}
+
+.LegalSectionBgLeft {
+    position: absolute;
+    top: 84px;
+    left: 40px;
+    width: 279px;
+    height: auto;
+}
+
+.LegalSectionBgRight {
+    position: absolute;
+    top: 0;
+    right: 60px;
+    width: 247px;
+    height: auto;
+}
+
+.Faq {
+    position: relative;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto 64px;
+}
+
+.MoneyBackGuarantee {
+    width: 100%;
+    max-width: 680px;
+    margin: auto;
+}
+
+.AboveButtonElement {
+    width: 100%;
+    max-width: 680px;
+    margin: auto;
+}
+
+.UnderButtonLegalText {
+    width: 100%;
+    margin: 27px auto 0;
+    color: var(--neutral600Color);
+    font-size: 11px;
+    line-height: 1.45;
+    text-align: center;
+}
+
+.UnderButtonLegalText a {
+    color: var(--neutral600Color);
+}
+
+.PaymentButton {
+    text-align: center;
+    max-width: 328px;
+    margin: 24px auto 0;
+}
+
+.Button {
+    border: none;
+    border-radius: var(--buttonRadius);
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .7px;
+    line-height: 1.25;
+    padding: var(--buttonPadding);
+    text-shadow: 0 1px 2px var(--buttonTextShadowColor);
+    width: 100%;
+    background: var(--secondary1Color);
+    box-shadow: 0 12px 23px var(--secondaryButtonShadowColor);
+}
+
+.Legal {
+    max-width: 680px;
+    margin: 24px auto 0;
+    color: var(--neutral700Color);
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 1.45;
+    text-align: center;
+}
+
+.LegalAddress {
+    margin-top: 24px;
+}

@@ -82,3 +82,9 @@
     background: var(--neutral100Color);
     padding: 64px 0 32px;
 }
+
+.LegalSection {
+    overflow: auto;
+    background: var(--neutral100Color);
+    padding: 32px 0 64px;
+}

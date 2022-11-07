@@ -1,0 +1,67 @@
+.Container {
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+.Content {
+    position: relative;
+    padding: 12px;
+    margin: 0 auto;
+    background: var(--background3Color);
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgb(22 42 65 / 6%), 0 12px 24px rgb(7 21 37 / 8%);
+}
+
+.ContentInner {
+    position: relative;
+    padding: 24px 16px 32px;
+    border: 2px solid var(--primary400Color);
+    border-radius: 12px;
+}
+
+.ContentInner::after {
+    position: absolute;
+    right: 18px;
+    bottom: -4px;
+    width: 68px;
+    height: 6px;
+    background: var(--background3Color);
+    content: "";
+}
+
+.Title {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--neutral900Color);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    line-height: 32px;
+    text-align: center;
+}
+
+.Text {
+    display: block;
+    color: var(--neutral700Color);
+    font-size: 14px;
+    letter-spacing: -.01em;
+    line-height: 22px;
+}
+
+.Stamp {
+    overflow: hidden;
+    width: 64;
+    height: 89;
+    fill: none;
+    position: absolute;
+    right: 34px;
+    bottom: -40px;
+}
+
+.StampPath {
+    fill: var(--primary400Color);
+}
+
+.Text a {
+    color: var(--primary400Color);
+}
