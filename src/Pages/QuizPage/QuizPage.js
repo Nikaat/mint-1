@@ -6,9 +6,7 @@ import { fetchData } from "../../redux/actions";
 import classes from "./QuizPage.module.css";
 import Auxiliary from "../../hoc/Auxiliary/Auxiliary";
 import Quiz from "./Quiz/Quiz";
-import Parasite from "./Quiz/Parasite/Parasite";
-
-import LinearProgressbar from "../../Components/Progressbar/linear/linearProgressbar";
+import Parasite from "./Parasite/Parasite";
 
 class QuizPage extends Component {
   componentDidMount = () => {
@@ -27,7 +25,6 @@ class QuizPage extends Component {
             }}
           >
             <Parasite result={this.props.result} />
-            <LinearProgressbar />
           </div>
         ) : (
           <div className={classes.Container}>

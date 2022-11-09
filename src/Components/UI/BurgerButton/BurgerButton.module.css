@@ -1,0 +1,17 @@
+
+.BurgerbuttonContainer {
+    position: relative;
+    padding: 6px 2px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.BurgerbuttonDash {
+    display: block;
+    width: 18px;
+    height: 2px;
+    margin-bottom: 4px;
+    background-color: var(--neutral900Color);
+    border-radius: 2px;
+}

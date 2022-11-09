@@ -10,7 +10,7 @@
     position: relative;
 }
 
-.HeaderWithCountdown {
+.HeaderWithCountdownDesktop {
     padding-top: 80px;
 }
 
@@ -33,7 +33,6 @@
     top: 50%;
     left: 40px;
     width: 135px;
-    height: auto;
     transform: translateY(-50%);
 }
 
@@ -48,23 +47,6 @@
     top: 50%;
     right: 56px;
     transform: translateY(-50%);
-}
-
-.BurgerbuttonContainer {
-    position: relative;
-    padding: 6px 2px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-}
-
-.BurgerbuttonDash {
-    display: block;
-    width: 18px;
-    height: 2px;
-    margin-bottom: 4px;
-    background-color: var(--neutral900Color);
-    border-radius: 2px;
 }
 
 .Banner {
@@ -87,4 +69,101 @@
     overflow: auto;
     background: var(--neutral100Color);
     padding: 32px 0 64px;
+}
+
+.HeaderWithCountdownMobile {
+    padding-top: 48px;
+    display: none;
+}
+
+.Header {
+    position: fixed;
+    z-index: 210;
+    top: 0;
+    display: flex;
+    width: 100%;
+    height: 48px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 15px;
+    background-color: var(--background1Color);
+}
+
+.TitleSection {
+    padding: 16px 0 24px;
+    background-color: var(--background1Color);
+    text-align: center;
+}
+
+.Container {
+    position: relative;
+    width: 100%;
+    max-width: 1112px;
+    padding: 0 20px;
+    margin: auto;
+}
+
+.Title {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--neutral900Color);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.33;
+}
+
+.HighlightedTitle {
+    color: var(--primary400Color);
+    font-weight: 700;
+}
+
+.SubTitle {
+    color: var(--neutral900Color);
+    font-size: 16px;
+    line-height: 1.375;
+}
+
+.SubTitle span {
+    color: var(--primary400Color);
+    font-weight: 700;
+}
+
+.StickyCountdown {
+    background: var(--primary500Color);
+}
+
+.CountdownText {
+    padding: 18px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.CountdownTimeUnit {
+    display: inline-block;
+    width: 55px;
+    color: var(--secondary2Color);
+    text-align: left;
+}
+
+@media (max-width: 500px) {
+    .HeaderWithCountdownDesktop {
+        display: none;
+    }
+
+    .HeaderWithCountdownMobile {
+        display: block;
+    }
+
+    .Logo {
+        left: 50%;
+        height: 28px;
+        width: auto;
+        cursor: pointer;
+        transform: translate(-50%,-50%);
+        transform-origin: center top;
+    }
 }

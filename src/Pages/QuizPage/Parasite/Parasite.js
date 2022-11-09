@@ -6,11 +6,21 @@ const parasite = (props) => {
   let elements = props.result.parasite.elements;
 
   let el = [null, null, null, null, null];
-  for (var i = 0; i <= Object.keys(props.result.parasite).length; i++) {
+  let elementsLength = Object.keys(elements).length;
+
+  for (var i = 0; i < elementsLength; i++) {
     if (elements[i].id === "title") {
       el[i] = (
-        <div key="title">
+        <div key="title" className={classes.Element}>
           <h3>{elements[i].inputs.text}</h3>
+        </div>
+      );
+    }
+
+    if (elements[i].id === "description") {
+      el[i] = (
+        <div key="description" className={classes.Element}>
+          <p className={classes.Description}>{elements[i].inputs.text}</p>
         </div>
       );
     }
@@ -31,18 +41,25 @@ const parasite = (props) => {
 
     if (elements[i].id === "button") {
       el[i] = (
-        <button
-          key="button"
-          className={classes.ParasiteButton}
-          style={{
-            backgroundColor: elements[i].inputs.bgColor,
-            color: elements[i].inputs.textColor,
-          }}
-        >
-          {elements[i].inputs.text}
-        </button>
+        <div key="button" className={classes.Element}>
+          <button
+            className={classes.ParasiteButton}
+            style={{
+              backgroundColor: elements[i].inputs.bgColor,
+              color: elements[i].inputs.textColor,
+            }}
+          >
+            {elements[i].inputs.text}
+          </button>
+        </div>
       );
     }
+
+    // if (elements[i].id === "diagram") {
+    //   el[i] = (
+
+    //   );
+    // }
   }
 
   return <div className={classes.ParasiteContainer}>{el}</div>;

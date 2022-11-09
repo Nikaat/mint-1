@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import classes from "./Checkout.module.css";
 import Logo from "../../assets/images/logo.png";
+import BurgerButton from "../../Components/UI/BurgerButton/BurgerButton";
 import Countdown from "./countdown/countdown";
 import Banner from "./banner/banner";
 import Introductory from "./Introductory/Introductory";
@@ -17,7 +18,7 @@ import * as actionTypes from "../../redux/actions/actionTypes";
 class Checkout extends Component {
   state = {
     faq: { Q1: false, Q2: false, Q3: false },
-    modal: true,
+    modal: false,
   };
 
   onfaqQuestion = (q) => {
@@ -48,7 +49,7 @@ class Checkout extends Component {
         id="page"
       >
         <main className={classes.Main}>
-          <div className={classes.HeaderWithCountdown}>
+          <div className={classes.HeaderWithCountdownDesktop}>
             <header className={classes.headerwithcountdown}>
               <div className={classes.Logo}>
                 <span>
@@ -59,18 +60,44 @@ class Checkout extends Component {
               </div>
               <Countdown />
               <div className={classes.BurgerButton}>
-                <button
-                  className={classes.BurgerbuttonContainer}
-                  data-button="burger-menu"
-                >
-                  <span className={classes.BurgerbuttonDash}></span>
-                  <span className={classes.BurgerbuttonDash}></span>
-                  <span className={classes.BurgerbuttonDash}></span>
-                </button>
+                <BurgerButton />
               </div>
             </header>
           </div>
-          {/* mobile only ? */}
+          <div className={classes.HeaderWithCountdownMobile}>
+            <header className={classes.Header}>
+              <span>
+                <a href="/">
+                  <img className={classes.Logo} src={Logo} alt="Home" />
+                </a>
+              </span>
+              <BurgerButton />
+            </header>
+            <section className={classes.TitleSection}>
+              <div className={classes.Container}>
+                <span className={classes.Title}>
+                  Start{" "}
+                  <b className={classes.HighlightedTitle}>losing weight</b>{" "}
+                  right now
+                </span>
+                <span className={classes.SubTitle}>
+                  Join over <span>10,000,000</span> members of BetterMe family
+                </span>
+              </div>
+            </section>
+            <div className={classes.StickyCountdown}>
+              <div>
+                <div className={classes.CountdownText}>
+                  Reserved price for:{" "}
+                  <span className={classes.CountdownTimeUnit}>
+                    <span>00</span>
+                    <span>:</span>
+                    <span>00</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className={classes.Banner}>
             <Banner />
           </div>
