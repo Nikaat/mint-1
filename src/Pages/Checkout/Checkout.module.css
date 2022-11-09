@@ -166,4 +166,12 @@
         transform: translate(-50%,-50%);
         transform-origin: center top;
     }
+
+    .Banner {
+        margin-bottom: 32px;
+    }
+
+    .FeedbacksSection {
+        padding: 32px 0;
+    }
 }

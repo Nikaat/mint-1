@@ -77,9 +77,7 @@ function LineChart() {
             },
           },
         }}
-      >
-        Hello
-      </Line>
+      ></Line>
     </div>
   );
 }

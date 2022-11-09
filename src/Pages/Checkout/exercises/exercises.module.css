@@ -44,3 +44,35 @@
     display: flex;
     flex-direction: row;
 }
+
+@media (max-width: 500px) {
+    .Exercises {
+        margin-bottom: 30px;
+    }
+
+    .Container {
+        max-width: 672px;
+        padding: 0 20px;
+    }
+
+    .PlanContainer {
+        padding: 24px 16px;
+        background: var(--background1Color);
+        box-shadow: 0 2px 6px rgb(22 42 65 / 6%), 0 12px 24px rgb(7 21 37 / 8%);
+    }
+
+    .Header {
+        line-height: 1.4;
+        font-size: 24px;
+        max-width: none;
+    }
+
+    .Subtitle {
+        font-size: 16px;
+        margin: 0 auto 22px;
+    }
+
+    .CardsContainer {
+        display: block;
+    }
+}

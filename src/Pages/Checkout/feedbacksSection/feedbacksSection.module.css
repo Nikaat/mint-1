@@ -6,7 +6,7 @@
     padding: 0 40px;
 }
 
-.AppStoreReviews {
+.AppStoreReviewsDesktop {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -31,4 +31,22 @@
     color: var(--neutral700Color);
     text-align: center;
     display: block;
+}
+
+.AppStoreReviewsMobile {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .Container {
+        padding: 0 20px;
+    }
+
+    .AppStoreReviewsDesktop {
+        display: none;
+    }
+
+    .AppStoreReviewsMobile {
+        display: block;
+    }
 }

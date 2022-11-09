@@ -77,3 +77,40 @@
     height: auto;
     width: 100%;
 }
+
+@media (max-width: 500px) {
+    .ContentContainer {
+        max-width: 672px;
+        padding: 0 20px;
+    }
+
+    .CheckoutPlanBenefits {
+        margin-bottom: 35px;
+    }
+
+    .PicsListWithImageContainer {
+        grid-template-columns: 1fr 0;
+    }
+
+    .PicsListWithImageTitle {
+        margin-bottom: 16px;
+    }
+
+    .Title {
+        font-size: 24px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .PicsListItem {
+        margin-bottom: 16px;
+    }
+
+    .PicsListWithImageNote {
+        display: none;
+    }
+
+    .ColImg {
+        display: none;
+    }
+}

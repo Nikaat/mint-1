@@ -62,3 +62,33 @@
     color: var(--neutral500Color);
     font-size: 12px;
 }
+
+@media (max-width: 500px) {
+    .ContentRow {
+        font-size: 100%;
+        width: auto;
+        max-width: none;
+        height: auto;
+        flex-direction: row;
+        margin: 0;
+    }
+
+    .ContentImage {
+        margin-right: 16px;
+    }
+
+    .ContentHeadline {
+        margin-bottom: 0;
+        text-align: start;
+    }
+
+    .ContentTitle {
+        margin-bottom: 6px;
+        text-align: start;
+        word-wrap: break-word;
+    }
+
+    .TimeAndCaloriesInfo {
+        text-align: start;
+    }
+}

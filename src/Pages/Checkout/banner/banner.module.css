@@ -1,4 +1,4 @@
-.Container {
+.ContainerDesktop {
     width: 100%;
     padding: 18px 0 64px;
     margin: auto;
@@ -145,4 +145,51 @@
     font-size: 14px;
     letter-spacing: .5px;
     line-height: 1.428;
+}
+
+.ContainerMobile {
+    display: none;
+}
+
+.Comparison {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 415px;
+    height: 448px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.ComparisonImageLeft {
+    left: 0;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    width: auto;
+    height: 100%;
+    transition: all 1s ease;
+}
+
+.ComparisonImageRight {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    width: auto;
+    height: 100%;
+    transition: all 1s ease;
+    right: 0;
+}
+
+@media (max-width: 500px) {
+    .ContainerDesktop {
+        display: none;
+    }
+
+    .ContainerMobile {
+        width: 100%;
+        background-color: var(--neutral100Color);
+        display: block;
+    }
 }
