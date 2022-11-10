@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { Navigate } from "react-router";
 import { connect } from "react-redux";
-import { fetchData } from "../../redux/actions";
+import { fetchData, goNext } from "../../redux/actions";
 import classes from "./QuizPage.module.css";
 import Auxiliary from "../../hoc/Auxiliary/Auxiliary";
 import Quiz from "./Quiz/Quiz";
@@ -11,6 +11,14 @@ import Parasite from "./Parasite/Parasite";
 class QuizPage extends Component {
   componentDidMount = () => {
     this.props.fetchData();
+  };
+
+  state = {
+    checkout: false,
+  };
+
+  onCheckout = () => {
+    this.setState({ checkout: true });
   };
 
   render() {
@@ -24,7 +32,11 @@ class QuizPage extends Component {
               color: this.props.parasite.textColor,
             }}
           >
-            <Parasite result={this.props.result} />
+            <Parasite
+              result={this.props.result}
+              goNext={this.props.goNext}
+              goToCheckout={this.onCheckout}
+            />
           </div>
         ) : (
           <div className={classes.Container}>
@@ -52,6 +64,7 @@ class QuizPage extends Component {
           </div>
         )}
         {this.props.isGenderSelected === false ? <Navigate to="/" /> : null}
+        {this.state.checkout === true ? <Navigate to="/checkout" /> : null}
       </Auxiliary>
     );
   }
@@ -69,6 +82,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchData: () => dispatch(fetchData()),
+  goNext: (aid) => dispatch(goNext(aid)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuizPage);

@@ -6,7 +6,7 @@
     padding: 0 40px;
 }
 
-.AppStoreReviewsDesktop {
+.AppStoreReviews {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -33,20 +33,21 @@
     display: block;
 }
 
-.AppStoreReviewsMobile {
-    display: none;
-}
 
 @media (max-width: 500px) {
     .Container {
         padding: 0 20px;
     }
 
-    .AppStoreReviewsDesktop {
-        display: none;
+    .AppStoreReviews {
+        display: block;
     }
 
-    .AppStoreReviewsMobile {
-        display: block;
+    .AppStoreReviewsTitle {
+        font-size: 24px;
+    }
+
+    .AppStoreReviewsSubtitle {
+        display: none;
     }
 }

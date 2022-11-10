@@ -117,6 +117,11 @@ const quizReducer = (state = initialState, action) => {
           null,
         ],
       });
+    case actionTypes.GO_NEXT:
+      return updateObject(state, {
+        code: action.code,
+        result: action.result,
+      });
     default:
       return state;
   }

@@ -93,3 +93,22 @@
 .LegalAddress {
     margin-top: 24px;
 }
+ 
+@media (max-width: 500px) {
+    .MoneyBackGuarantee {
+        max-width: none;
+        width: auto;
+        margin: 0;
+    }
+
+    .AboveButtonElement {
+        margin: 0;
+        max-width: none;
+    }
+
+    .PaymentButton {
+        max-width: none;
+        margin: 0;
+        margin-top: 24px;
+    }
+}

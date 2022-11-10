@@ -1,8 +1,10 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import classes from "./Parasite.module.css";
 
 const parasite = (props) => {
+  // let parasite = props.result.parasite;
   let elements = props.result.parasite.elements;
 
   let el = [null, null, null, null, null];
@@ -48,6 +50,8 @@ const parasite = (props) => {
               backgroundColor: elements[i].inputs.bgColor,
               color: elements[i].inputs.textColor,
             }}
+            // onClick={() => props.goNext(parasite.aid, props.code)}
+            onClick={() => props.goToCheckout()}
           >
             {elements[i].inputs.text}
           </button>
@@ -65,4 +69,6 @@ const parasite = (props) => {
   return <div className={classes.ParasiteContainer}>{el}</div>;
 };
 
-export default parasite;
+const mapStateToProps = (state) => ({ code: state.quiz.code });
+
+export default connect(mapStateToProps)(parasite);

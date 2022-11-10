@@ -28,7 +28,7 @@ const banner = (peops) => {
                 <div className={classes.FeaturedInHorizontalModuleRow}>
                   <svg
                     width="54"
-                    height=""
+                    height="100%"
                     viewBox="0 0 70 36"
                     xmlns="http://www.w3.org/2000/svg"
                     className={classes.FeaturedInHorizontalModuleLogo}
@@ -75,7 +75,7 @@ const banner = (peops) => {
                   </svg>
                   <svg
                     width="42"
-                    height=""
+                    height="100%"
                     viewBox="0 0 69 36"
                     xmlns="http://www.w3.org/2000/svg"
                     className={classes.FeaturedInHorizontalModuleLogo}
@@ -84,7 +84,7 @@ const banner = (peops) => {
                   </svg>
                   <svg
                     width="120"
-                    height=""
+                    height="100%"
                     viewBox="0 0 142 22"
                     xmlns="http://www.w3.org/2000/svg"
                     className={classes.FeaturedInHorizontalModuleLogo}
@@ -105,7 +105,7 @@ const banner = (peops) => {
                   </svg>
                   <svg
                     width="135"
-                    height=""
+                    height="100%"
                     viewBox="0 0 131 18"
                     xmlns="http://www.w3.org/2000/svg"
                     className={classes.FeaturedInHorizontalModuleLighterLogo}
@@ -184,13 +184,13 @@ const banner = (peops) => {
           <img
             className={classes.ComparisonImageLeft}
             src="https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_535/v1/weightloss/checkout/affiliates/var1_z8ezaz.png"
-            srcset="https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_535/v1/weightloss/checkout/affiliates/var1_z8ezaz.png 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_535/v1/weightloss/checkout/affiliates/var1_z8ezaz.png 2x"
+            srcSet="https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_535/v1/weightloss/checkout/affiliates/var1_z8ezaz.png 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_535/v1/weightloss/checkout/affiliates/var1_z8ezaz.png 2x"
             alt=""
           />
           <img
             className={classes.ComparisonImageRight}
             src="https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_535/v1/weightloss/checkout/affiliates/var1_fqsswb.png"
-            srcset="https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_535/v1/weightloss/checkout/affiliates/var1_fqsswb.png 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_535/v1/weightloss/checkout/affiliates/var1_fqsswb.png 2x"
+            srcSet="https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_535/v1/weightloss/checkout/affiliates/var1_fqsswb.png 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_535/v1/weightloss/checkout/affiliates/var1_fqsswb.png 2x"
             alt=""
           />
         </div>

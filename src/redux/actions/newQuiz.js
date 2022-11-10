@@ -144,3 +144,23 @@ export const fetchData = () => {
       });
   };
 };
+
+export const goNext = (prevAid, prevCode) => {
+  return (dispatch) => {
+    setTimeout(() => {
+      axios
+        .get(
+          "https://mintdoctor.ir/process/v2/main/question.php?type=eghdam&code=" +
+            prevCode +
+            "&aid=" +
+            prevAid
+        )
+        .then((res) => {
+          console.log(res);
+          const code = res.data.result.code;
+          const result = res.data.result;
+          dispatch(saveFetchedData(code, result));
+        });
+    }, 1000);
+  };
+};

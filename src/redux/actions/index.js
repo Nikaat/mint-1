@@ -23,6 +23,7 @@ export {
   onArrow,
   clickedonNextButton,
   fetchData,
+  goNext,
 } from "./newQuiz";
 
 export { choosePlan } from "./Checkout";
