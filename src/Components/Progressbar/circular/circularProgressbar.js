@@ -47,20 +47,22 @@ function CircularProgressWithLabel(
 }
 
 function CircularStatic(props) {
-  const [progress, setProgress] = React.useState(10);
+  const [progress, setProgress] = React.useState(0);
 
   React.useEffect(() => {
-    const time = props.timeSec * 10;
+    const time = 100 * Math.random() + 30;
+
+    // const time = props.time * 10;
+    const maxValue = parseInt(props.maxValue, 10);
+
     const timer = setInterval(() => {
       setProgress((prevProgress) =>
-        prevProgress >= props.maxValue ? props.maxValue : prevProgress + 1
+        prevProgress >= maxValue ? maxValue : prevProgress + 1
       );
     }, time);
     return () => {
       clearInterval(timer);
     };
-
-    // eslint-disable-next-line
   }, []);
 
   let redirect;

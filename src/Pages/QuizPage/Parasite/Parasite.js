@@ -50,24 +50,6 @@ const parasite = (props) => {
       );
     }
 
-    if (elements[i].id === "button") {
-      el[i] = (
-        <div key="button" className={classes.Element}>
-          <button
-            className={classes.ParasiteButton}
-            style={{
-              backgroundColor: elements[i].inputs.bgColor,
-              color: elements[i].inputs.textColor,
-            }}
-            onClick={() => props.goNext(parasite.aid, props.code)}
-            // onClick={() => props.goToCheckout()}
-          >
-            {elements[i].inputs.text}
-          </button>
-        </div>
-      );
-    }
-
     if (elements[i].id === "loading") {
       let inputs = elements[i].inputs;
       if (inputs.type === "circleFade") {
@@ -79,6 +61,7 @@ const parasite = (props) => {
               texts={inputs.texts}
               timeSec={inputs.time}
               aid={parasite.aid}
+              onShowButton={props.onShowButton}
             />
           </div>
         );
@@ -89,17 +72,22 @@ const parasite = (props) => {
             <CircularStatic
               color={inputs.color}
               maxValue={inputs.maxValue}
-              timeSec={inputs.time}
+              time={inputs.time}
               aid={parasite.aid}
               nextByButton="true"
+              onShowButton={props.onShowButton}
             />
           </div>
         );
       }
       if (inputs.type === "linear") {
         el[i] = (
-          <div key="linearloading" className={classes.Element}>
-            <LinearProgressbar />
+          <div key="linearloading" className={classes.LineLoading}>
+            <LinearProgressbar
+              time={inputs.time}
+              color={inputs.color}
+              onShowButton={props.onShowButton}
+            />
           </div>
         );
       }
@@ -147,22 +135,29 @@ const parasite = (props) => {
     if (elements[i].id === "titleFade") {
       let texts = elements[i].inputs.texts;
       let delayTime = -5;
-      const TitleFadeList = [];
-      for (var j = 0; j < texts.length; j++) {
-        delayTime = delayTime + 5;
-        // console.log(delayTime);
-        // console.log(elements[i].inputs.texts[j]);
-        TitleFadeList.push(
-          <li
-            className={classes.Li}
-            key={elements[i].inputs.texts[j]}
-            style={{ "--delay-time": delayTime }}
-          >
-            {/* {elements[i].inputs.texts[j]} */}
-            لطفا صبر کنید...
-          </li>
-        );
-      }
+      const TitleFadeList = (
+        <li
+          className={classes.Li}
+          key={texts[4]}
+          style={{ "--delay-time": delayTime }}
+        >
+          لطفا صبر کنید...
+        </li>
+      );
+      // for (var j = 0; j < texts.length; j++) {
+      //   delayTime = delayTime + 5;
+      //   // console.log(delayTime);
+      //   // console.log(elements[i].inputs.texts[j]);
+      //   TitleFadeList.push(
+      //     <li
+      //       className={classes.Li}
+      //       key={elements[i].inputs.texts[j]}
+      //       style={{ "--delay-time": delayTime }}
+      //     >
+      //       {elements[i].inputs.texts[j]}
+      //     </li>
+      //   );
+      // }
 
       el[i] = (
         <div key="titleFade" className={classes.TitleFadeContainer}>
@@ -171,6 +166,21 @@ const parasite = (props) => {
       );
 
       setTimeout(() => props.goNext(parasite.aid, props.code), 5000);
+    }
+
+    if (elements[i].id === "video") {
+      const inputs = elements[i].inputs;
+      el[i] = (
+        <div key="video" className={classes.Element}>
+          <video
+            src={inputs.link}
+            controls
+            autoPlay
+            className={classes.Video}
+            controlsList="nodownload"
+          />
+        </div>
+      );
     }
   }
 
