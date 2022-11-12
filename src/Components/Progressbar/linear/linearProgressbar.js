@@ -29,7 +29,7 @@ export default function LinearProgressbar() {
     const time = 100 + Math.random() * 30;
     const timer = setInterval(() => {
       setProgress((prevProgress) =>
-        prevProgress >= 100 ? 0 : prevProgress + 1
+        prevProgress >= 100 ? 100 : prevProgress + 1
       );
     }, time);
     return () => {

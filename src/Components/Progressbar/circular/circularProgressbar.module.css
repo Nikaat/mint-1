@@ -16,21 +16,21 @@
 }
     
 .i1 {
-    color: black;
+    color: rgba(0, 0, 0, 1);
     animation: fade-in-item 1s 1.5s ease-out forwards,
         move-top1 1s 1.5s ease-out forwards;
 
 }
 
 .i2 {
-    color: var(--neutral900Color);
+    color: rgba(20, 20, 20, .9);
     animation: fade-in-item 1s 3s ease-out forwards, 
         move-top1 1s 1.5s ease-out forwards,
         move-top2 1s 3s ease-out forwards;
 }
 
 .i3 {
-    color: var(--neutral800Color);
+    color: rgba(40, 40, 40, .8);
     animation: fade-in-item 1s 4.5s ease-out forwards, 
         move-top1 1s 1.5s ease-out forwards, 
         move-top2 1s 3s ease-out forwards,
@@ -38,7 +38,7 @@
 }
 
 .i4 {
-    color: var(--neutral700Color);
+    color: rgba(60, 60, 60, .7);
     animation: fade-in-item 1s 6s ease-out forwards, 
         move-top1 1s 1.5s ease-out forwards, 
         move-top2 1s 3s ease-out forwards, 
@@ -47,7 +47,7 @@
 }
 
 .i5 {
-    color: var(--neutral600Color);
+    color: rgba(80, 80, 80, .6);
     animation: fade-in-item 1s 7.5s ease-out forwards, 
         move-top1 1s 1.5s ease-out forwards, 
         move-top2 1s 3s ease-out forwards, 
@@ -57,7 +57,7 @@
 }
 
 .i6 {
-    color: var(--neutral500Color);
+    color: rgba(100, 100, 100, .5);
     animation: fade-in-item 1s 9s ease-out forwards, 
         move-top1 1s 1.5s ease-out forwards, 
         move-top2 1s 3s ease-out forwards, 
@@ -98,14 +98,4 @@
     60% {  opacity: .4; } 
     80% {  opacity: .2; } 
     100% {  opacity: 0; display: none;} 
-}
-
-.MuiCircularProgress-circle{
-    color: var(--primary500Color);
-    font-size: 20px;
-}
-
-.MuiCircularProgress-circle div {
-    font-size: 40px !important ;
-    color: black !important ;
 }

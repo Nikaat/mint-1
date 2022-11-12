@@ -156,6 +156,12 @@ export const goNext = (prevAid, prevCode) => {
             prevAid
         )
         .then((res) => {
+          // console.log(
+          //   "https://mintdoctor.ir/process/v2/main/question.php?type=eghdam&code=" +
+          //     prevCode +
+          //     "&aid=" +
+          //     prevAid
+          // );
           console.log(res);
           const code = res.data.result.code;
           const result = res.data.result;

@@ -7,6 +7,8 @@ import classes from "./QuizPage.module.css";
 import Auxiliary from "../../hoc/Auxiliary/Auxiliary";
 import Quiz from "./Quiz/Quiz";
 import Parasite from "./Parasite/Parasite";
+// import LinearProgressbar from "../../Components/Progressbar/linear/linearProgressbar";
+// import CircularStatic from "../../Components/Progressbar/circular/circularProgressbar";
 
 class QuizPage extends Component {
   componentDidMount = () => {
@@ -35,8 +37,11 @@ class QuizPage extends Component {
             <Parasite
               result={this.props.result}
               goNext={this.props.goNext}
-              goToCheckout={this.onCheckout}
+              // goToCheckout={this.onCheckout}
             />
+
+            {/* <LinearProgressbar /> */}
+            {/* <CircularStatic /> */}
           </div>
         ) : (
           <div className={classes.Container}>
@@ -82,7 +87,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchData: () => dispatch(fetchData()),
-  goNext: (aid) => dispatch(goNext(aid)),
+  goNext: (aid, code) => dispatch(goNext(aid, code)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuizPage);

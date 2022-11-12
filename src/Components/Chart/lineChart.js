@@ -22,41 +22,16 @@ ChartJS.register(
   PointElement
 );
 
-function LineChart() {
+function LineChart(props) {
   // eslint-disable-next-line
   const [data, setData] = useState({
-    labels: [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ],
+    labels: props.labels,
     datasets: [
       {
-        label: "First Dataset",
-        data: [0, 20, 30, 42, 51, 82, 45, 59, 57, 73, 91, 68],
+        label: "Line",
+        data: props.datasets,
         backgroundColor: "#FFAFCC",
         borderColor: "#FFAFCC",
-      },
-      {
-        label: "Secound Dataset",
-        data: [25, 33, 19, 38, 32, 55, 68, 62, 73, 59, 51, 45],
-        backgroundColor: "#CDB4DB",
-        borderColor: "#CDB4DB",
-      },
-      {
-        label: "Third Dataset",
-        data: [15, 40, 30, 22, 40, 36, 66, 51, 87, 65, 58, 73],
-        backgroundColor: "#A2D2FF",
-        borderColor: "#A2D2FF",
       },
     ],
   });
@@ -70,10 +45,27 @@ function LineChart() {
           maintainAspectRatio: "true",
           scales: {
             y: {
-              ticks: { color: "black" },
+              ticks: {
+                color: "black",
+                font: {
+                  size: "14px",
+                  family: "Dana",
+                },
+              },
             },
             x: {
-              ticks: { color: "black" },
+              ticks: {
+                color: "black",
+                font: {
+                  size: "14px",
+                  family: "Dana",
+                },
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              display: false,
             },
           },
         }}

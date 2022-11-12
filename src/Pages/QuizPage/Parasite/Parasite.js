@@ -2,15 +2,37 @@ import React from "react";
 import { connect } from "react-redux";
 
 import classes from "./Parasite.module.css";
+import LineChart from "../../../Components/Chart/lineChart";
+import PieChart from "../../../Components/Chart/pieChart";
+import BarChart from "../../../Components/Chart/barChart";
+import CircularStatic from "../../../Components/Progressbar/circular/circularProgressbar";
 
 const parasite = (props) => {
-  // let parasite = props.result.parasite;
+  let parasite = props.result.parasite;
   let elements = props.result.parasite.elements;
 
-  let el = [null, null, null, null, null];
+  let el = [];
   let elementsLength = Object.keys(elements).length;
 
   for (var i = 0; i < elementsLength; i++) {
+    if (elements[i].id === "button") {
+      el[i] = (
+        <div key="button" className={classes.Element}>
+          <button
+            className={classes.ParasiteButton}
+            style={{
+              backgroundColor: elements[i].inputs.bgColor,
+              color: elements[i].inputs.textColor,
+            }}
+            onClick={() => props.goNext(parasite.aid, props.code)}
+            // onClick={() => props.goToCheckout()}
+          >
+            {elements[i].inputs.text}
+          </button>
+        </div>
+      );
+    }
+
     if (elements[i].id === "title") {
       el[i] = (
         <div key="title" className={classes.Element}>
@@ -27,20 +49,6 @@ const parasite = (props) => {
       );
     }
 
-    // if (elements[i].id === "titleFade") {
-    //   el[i] = (
-    //     <div key="titleFade">
-    //       <ul className={classes.TitleFadeList}>
-    //         <li className={classes.Li1}>{elements[i].inputs.texts[0]}</li>
-    //         <li className={classes.Li2}>{elements[i].inputs.texts[1]}</li>
-    //         <li className={classes.Li3}>{elements[i].inputs.texts[2]}</li>
-    //         <li className={classes.Li4}>{elements[i].inputs.texts[3]}</li>
-    //         <li className={classes.Li5}>{elements[i].inputs.texts[4]}</li>
-    //       </ul>
-    //     </div>
-    //   );
-    // }
-
     if (elements[i].id === "button") {
       el[i] = (
         <div key="button" className={classes.Element}>
@@ -50,8 +58,8 @@ const parasite = (props) => {
               backgroundColor: elements[i].inputs.bgColor,
               color: elements[i].inputs.textColor,
             }}
-            // onClick={() => props.goNext(parasite.aid, props.code)}
-            onClick={() => props.goToCheckout()}
+            onClick={() => props.goNext(parasite.aid, props.code)}
+            // onClick={() => props.goToCheckout()}
           >
             {elements[i].inputs.text}
           </button>
@@ -59,11 +67,102 @@ const parasite = (props) => {
       );
     }
 
-    // if (elements[i].id === "diagram") {
-    //   el[i] = (
+    if (elements[i].id === "loading") {
+      let inputs = elements[i].inputs;
+      if (inputs.type === "circleFade") {
+        el[i] = (
+          <div key="circleFade" className={classes.Element}>
+            <CircularStatic
+              color={inputs.color}
+              texts={inputs.texts}
+              timeSec={inputs.time}
+              aid={parasite.aid}
+            />
+          </div>
+        );
+      }
+      if (inputs.type === "circle") {
+        el[i] = (
+          <div key="circleloading" className={classes.Element}>
+            <CircularStatic
+              color={inputs.color}
+              maxValue={inputs.maxValue}
+              timeSec={inputs.time}
+              aid={parasite.aid}
+              nextByButton="true"
+            />
+          </div>
+        );
+      }
+    }
 
-    //   );
-    // }
+    if (elements[i].id === "diagram") {
+      if (elements[i].type === "line") {
+        let inputs = elements[i].inputs;
+        el[i] = (
+          <div key="line" className={classes.ChartContainer}>
+            <LineChart
+              color={inputs.color}
+              labels={inputs.labels}
+              datasets={inputs.datasets}
+            />
+          </div>
+        );
+      }
+      if (elements[i].type === "pie") {
+        let inputs = elements[i].inputs;
+        el[i] = (
+          <div key="pie" className={classes.ChartContainer}>
+            <PieChart
+              color={inputs.color}
+              labels={inputs.labels}
+              datasets={inputs.datasets}
+            />
+          </div>
+        );
+      }
+      if (elements[i].type === "bar") {
+        let inputs = elements[i].inputs;
+        el[i] = (
+          <div key="bar" className={classes.ChartContainer}>
+            <BarChart
+              color={inputs.color}
+              labels={inputs.labels}
+              datasets={inputs.datasets}
+            />
+          </div>
+        );
+      }
+    }
+
+    if (elements[i].id === "titleFade") {
+      let texts = elements[i].inputs.texts;
+      let delayTime = -5;
+      const TitleFadeList = [];
+      for (var j = 0; j < texts.length; j++) {
+        delayTime = delayTime + 5;
+        // console.log(delayTime);
+        // console.log(elements[i].inputs.texts[j]);
+        TitleFadeList.push(
+          <li
+            className={classes.Li}
+            key={elements[i].inputs.texts[j]}
+            style={{ "--delay-time": delayTime }}
+          >
+            {/* {elements[i].inputs.texts[j]} */}
+            لطفا صبر کنید...
+          </li>
+        );
+      }
+
+      el[i] = (
+        <div key="titleFade" className={classes.TitleFadeContainer}>
+          <ul className={classes.TitleFadeList}>{TitleFadeList}</ul>
+        </div>
+      );
+
+      setTimeout(() => props.goNext(parasite.aid, props.code), 5000);
+    }
   }
 
   return <div className={classes.ParasiteContainer}>{el}</div>;

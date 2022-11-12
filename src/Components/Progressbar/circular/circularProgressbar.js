@@ -1,12 +1,14 @@
 import * as React from "react";
-import { Navigate } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
 import CircularProgress, {
   CircularProgressProps,
 } from "@mui/material/CircularProgress";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
-import "./circularProgressbar.css";
+import classes from "./circularProgressbar.module.css";
+import { connect } from "react-redux";
+import { goNext } from "../../../redux/actions";
 
 function CircularProgressWithLabel(
   props: CircularProgressProps & { value: number }
@@ -16,8 +18,8 @@ function CircularProgressWithLabel(
       <CircularProgress
         variant="determinate"
         {...props}
-        color={"error"}
-        size="10rem"
+        size="12rem"
+        sx={{ color: "var(--primary500Color)" }}
       />
       <Box
         sx={{
@@ -31,7 +33,12 @@ function CircularProgressWithLabel(
           justifyContent: "center",
         }}
       >
-        <Typography variant="caption" component="div" color="text.secondary">
+        <Typography
+          sx={{ fontSize: "34px", fontWeight: "900" }}
+          variant="caption"
+          component="div"
+          color="text.secondary"
+        >
           {`${Math.round(props.value)}%`}
         </Typography>
       </Box>
@@ -39,38 +46,55 @@ function CircularProgressWithLabel(
   );
 }
 
-export default function CircularStatic() {
+function CircularStatic(props) {
   const [progress, setProgress] = React.useState(10);
 
   React.useEffect(() => {
-    const time = 100 + Math.random() * 30;
+    const time = props.timeSec * 10;
     const timer = setInterval(() => {
       setProgress((prevProgress) =>
-        prevProgress >= 100 ? 0 : prevProgress + 1
+        prevProgress >= 100 ? 100 : prevProgress + 1
       );
     }, time);
     return () => {
       clearInterval(timer);
     };
+
+    // eslint-disable-next-line
   }, []);
 
   let redirect;
   if (progress === 100) {
-    redirect = <Navigate to="/" />;
+    if (props.nextByButton !== "true") {
+      props.goNext(props.aid, props.code);
+    }
   }
 
+  let texts = props.texts;
   return (
-    <div className="Container">
-      <CircularProgressWithLabel value={progress} className="main" />
-      <ul className="TextList">
-        <li className="i1">Caption 1</li>
-        <li className="i2">Caption 2</li>
-        <li className="i3">Caption 3</li>
-        <li className="i4">Caption 4</li>
-        <li className="i5">Caption 5</li>
-        <li className="i6">Caption 6</li>
-      </ul>
+    <div className={classes.Container}>
+      <CircularProgressWithLabel value={progress} className={classes.main} />
+      {props.texts ? (
+        <ul className={classes.TextList}>
+          <li className={classes.i1}>{texts[0]}</li>
+          <li className={classes.i2}>{texts[1]}</li>
+          <li className={classes.i3}>{texts[2]}</li>
+          <li className={classes.i4}>{texts[3]}</li>
+          <li className={classes.i5}>{texts[4]}</li>
+          <li className={classes.i6}>{texts[5]}</li>
+        </ul>
+      ) : null}
       {redirect}
     </div>
   );
 }
+
+const mapStateToprops = (state) => ({
+  code: state.quiz.code,
+});
+
+const mapDispatchToprops = (dispatch) => ({
+  goNext: (aid, code) => dispatch(goNext(aid, code)),
+});
+
+export default connect(mapStateToprops, mapDispatchToprops)(CircularStatic);
