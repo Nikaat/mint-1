@@ -74,6 +74,7 @@ const parasite = (props) => {
           <div key="circleFade" className={classes.Element}>
             <CircularStatic
               color={inputs.color}
+              maxValue={inputs.maxValue}
               texts={inputs.texts}
               timeSec={inputs.time}
               aid={parasite.aid}

@@ -53,7 +53,7 @@ function CircularStatic(props) {
     const time = props.timeSec * 10;
     const timer = setInterval(() => {
       setProgress((prevProgress) =>
-        prevProgress >= 100 ? 100 : prevProgress + 1
+        prevProgress >= props.maxValue ? props.maxValue : prevProgress + 1
       );
     }, time);
     return () => {

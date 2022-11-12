@@ -32,7 +32,24 @@ export function PieChart(props) {
     ],
   };
 
-  return <Pie data={data} />;
+  return (
+    <Pie
+      data={data}
+      options={{
+        responsive: "true",
+        maintainAspectRatio: "true",
+        plugins: {
+          legend: {
+            labels: {
+              font: {
+                family: "Dana",
+              },
+            },
+          },
+        },
+      }}
+    />
+  );
 }
 
 export default PieChart;
