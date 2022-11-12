@@ -75,6 +75,10 @@ body {
   font-family: 'Dana', 'Montserrat';
 }
 
+p {
+  font-size: 22px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

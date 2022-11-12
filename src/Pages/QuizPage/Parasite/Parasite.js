@@ -6,6 +6,7 @@ import LineChart from "../../../Components/Chart/lineChart";
 import PieChart from "../../../Components/Chart/pieChart";
 import BarChart from "../../../Components/Chart/barChart";
 import CircularStatic from "../../../Components/Progressbar/circular/circularProgressbar";
+import LinearProgressbar from "../../../Components/Progressbar/linear/linearProgressbar";
 
 const parasite = (props) => {
   let parasite = props.result.parasite;
@@ -92,6 +93,13 @@ const parasite = (props) => {
               aid={parasite.aid}
               nextByButton="true"
             />
+          </div>
+        );
+      }
+      if (inputs.type === "linear") {
+        el[i] = (
+          <div key="linearloading" className={classes.Element}>
+            <LinearProgressbar />
           </div>
         );
       }
