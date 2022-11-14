@@ -12,6 +12,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    height: calc(100vh-80px);
 }
 
 .ImageContainer {
