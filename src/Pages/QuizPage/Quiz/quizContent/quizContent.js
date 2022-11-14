@@ -15,7 +15,7 @@ const QuizContent = (props) => {
           header={props.result.text}
           dataCard={props.result.answers}
           image={props.result.image}
-          // hint={props.hint}
+          hint={props.result.hint}
           // video={props.video}
         />
       );
