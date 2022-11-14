@@ -28,7 +28,6 @@
 }
 
 html[dir= 'rtl'] .HeaderTitle {
-    font-weight: 100;
     text-align: justify;
 }
 
