@@ -65,6 +65,7 @@
 
 .Image {
     border-radius: 10px;
+    margin: 25px;
 }
 
 @keyframes fade-in-out {

@@ -161,8 +161,12 @@ const parasite = (props) => {
     if (elements[i].id === "image") {
       const inputs = elements[i].inputs;
       el[i] = (
-        <div key="image" className={classes.Element}>
-          <img src={inputs.link} className={classes.Image} alt="" />
+        <div
+          key="image"
+          className={classes.Image}
+          style={{ textAlign: inputs.textAlign }}
+        >
+          <img src={inputs.link} alt="" />
         </div>
       );
     }
