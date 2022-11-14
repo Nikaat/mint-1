@@ -35,7 +35,7 @@
 
 .ParasiteButton {
     max-width: 365px;
-    width: 70%;
+    width: 100%;
     border: 1px solid var(--primary400color);
     border-radius: 10px;
     font-family: inherit;

@@ -1,16 +1,20 @@
 import React from "react";
 
 import classes from "./TitleFade.module.css";
-import Title from "./title/title";
+import Fader from "./Fader/fader";
 
 const titleFade = (props) => {
   const texts = props.texts;
-  console.log(texts.length);
+
+  // useEffect(() => {
+  //   }, 4000);
+  //   return () => clearInterval(timeout);
+  // }, []);
 
   return (
     <ul className={classes.TitleFadeList}>
       {texts.map((text, index) => (
-        <Title key={text} text={text} delayTime={index * 5} />
+        <Fader key={text} text={text} time={index} />
       ))}
     </ul>
   );

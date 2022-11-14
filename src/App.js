@@ -30,8 +30,8 @@ function App() {
                 "لطفا صبور باشید...",
               ]}
             />
-          } */}
-        />
+          }
+        /> */}
         <Route path="*" element={<GenderSelection />} />
       </Routes>
     </div>
