@@ -44,9 +44,15 @@ const parasite = (props) => {
     }
 
     if (elements[i].id === "description") {
+      const text = elements[i].inputs.text;
+      const fixed = text.replace(/<br\s*\\?>/g, "\r\n");
       el[i] = (
         <div key="description" className={classes.Element}>
-          <p className={classes.Description}>{elements[i].inputs.text}</p>
+          <div className={classes.Description}>
+            {fixed.split(/[\r\n]+/).map((line) => (
+              <div key={line}>{line}</div>
+            ))}
+          </div>
         </div>
       );
     }
@@ -62,7 +68,6 @@ const parasite = (props) => {
               texts={inputs.texts}
               loadingtime={inputs.time}
               aid={parasite.aid}
-              onShowButton={props.onShowButton}
             />
           </div>
         );
@@ -76,7 +81,6 @@ const parasite = (props) => {
               loadingtime={inputs.time}
               aid={parasite.aid}
               nextByButton="true"
-              onShowButton={props.onShowButton}
             />
           </div>
         );
@@ -84,11 +88,7 @@ const parasite = (props) => {
       if (inputs.type === "linear") {
         el[i] = (
           <div key="linearloading" className={classes.LineLoading}>
-            <LinearProgressbar
-              loadingtime={inputs.time}
-              color={inputs.color}
-              onShowButton={props.onShowButton}
-            />
+            <LinearProgressbar loadingtime={inputs.time} color={inputs.color} />
           </div>
         );
       }
