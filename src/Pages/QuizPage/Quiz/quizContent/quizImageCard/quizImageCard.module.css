@@ -47,6 +47,8 @@ html[dir="rtl"] .QuizCardContent {
 
 .RedCheckmark {
     width: 20px;
+    height: 20px;
+    margin: auto;
 }
 
 .Answer {
