@@ -7,6 +7,7 @@ import PieChart from "../../../Components/Chart/pieChart";
 import BarChart from "../../../Components/Chart/barChart";
 import CircularStatic from "../../../Components/Progressbar/circular/circularProgressbar";
 import LinearProgressbar from "../../../Components/Progressbar/linear/linearProgressbar";
+import TitleFade from "../../../Components/TitleFade/TitleFade";
 
 const parasite = (props) => {
   let parasite = props.result.parasite;
@@ -133,35 +134,9 @@ const parasite = (props) => {
     }
 
     if (elements[i].id === "titleFade") {
-      let texts = elements[i].inputs.texts;
-      let delayTime = -5;
-      const TitleFadeList = (
-        <li
-          className={classes.Li}
-          key={texts[4]}
-          style={{ "--delay-time": delayTime }}
-        >
-          لطفا صبر کنید...
-        </li>
-      );
-      // for (var j = 0; j < texts.length; j++) {
-      //   delayTime = delayTime + 5;
-      //   // console.log(delayTime);
-      //   // console.log(elements[i].inputs.texts[j]);
-      //   TitleFadeList.push(
-      //     <li
-      //       className={classes.Li}
-      //       key={elements[i].inputs.texts[j]}
-      //       style={{ "--delay-time": delayTime }}
-      //     >
-      //       {elements[i].inputs.texts[j]}
-      //     </li>
-      //   );
-      // }
-
       el[i] = (
         <div key="titleFade" className={classes.TitleFadeContainer}>
-          <ul className={classes.TitleFadeList}>{TitleFadeList}</ul>
+          <TitleFade texts={elements[i].inputs.text} />
         </div>
       );
 
