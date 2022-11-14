@@ -27,9 +27,9 @@
     text-align: center;
 }
 
-html[dir= 'rtl'] .HeaderTitle {
+/* html[dir= 'rtl'] .HeaderTitle {
     text-align: justify;
-}
+} */
 
 .Image {
     margin: 8px 10px 20px;
