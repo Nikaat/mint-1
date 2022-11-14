@@ -4,17 +4,17 @@
     color: var(--neutral900Color);
     cursor: default;
     margin: 16px 0;
-    padding: 0 16px 0 0 ;
-    background: var(--answerOptionColor);
-    border-radius: 3px;
+    background: var(--neutral100Color);
+    border-radius: 10px;
+    font-size: 14px;
 } 
 
 .HintTitle {
-    padding: 0 20px;
+    padding: 20px;
 }
 
 .HintCaption{
-    padding: 0 15px;
+    padding: 10px 15px;
     text-align: justify;
 }
 

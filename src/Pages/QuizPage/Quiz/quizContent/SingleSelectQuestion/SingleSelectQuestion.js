@@ -39,7 +39,7 @@ const SingleSelectQuestion = (props) => {
             />
           )
         )}
-        {props.hint ? <Hint title="عنوان" caption={props.hint} /> : null}
+        {props.hint ? <Hint caption={props.hint} /> : null}
       </section>
     </div>
   );

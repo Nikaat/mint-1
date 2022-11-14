@@ -5,10 +5,12 @@ import classes from "./hint.module.css";
 const hint = (props) => {
   return (
     <div className={classes.HintContainer}>
-      <div className={classes.HintTitle}>
-        <h1>{props.title}</h1>
-      </div>
-      <hr className={classes.HR} />
+      {props.title ? (
+        <div className={classes.HintTitle}>
+          <h1>{props.title}</h1>
+          <hr className={classes.HR} />
+        </div>
+      ) : null}
       <div className={classes.HintCaption}>
         <p>{props.caption}</p>
       </div>
