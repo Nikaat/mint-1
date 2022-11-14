@@ -37,7 +37,7 @@ const parasite = (props) => {
     if (elements[i].id === "title") {
       el[i] = (
         <div key="title" className={classes.Element}>
-          <h3>{elements[i].inputs.text}</h3>
+          <h3 className={classes.Title}>{elements[i].inputs.text}</h3>
         </div>
       );
     }

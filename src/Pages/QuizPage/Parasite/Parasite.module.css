@@ -1,3 +1,7 @@
+.ParasiteContainer {
+    margin: 0px 300px;
+}
+
 .TitleFadeContainer {
     text-align: center;
 }
@@ -8,6 +12,11 @@
 
 .Element {
     margin: 25px;
+}
+
+.Title {
+    text-align: right;
+    font-size: 28px;
 }
 
 .Li {
@@ -35,7 +44,6 @@
 }
 
 .Description {
-    margin: 25px 250px;
     text-align: justify;
 }
 
@@ -64,8 +72,8 @@
 }
 
 @media (max-width: 500px) {
-    .Description {
-        margin: 25px;
+    .ParasiteContainer {
+        margin: 0 auto;
     }
 
     .ChartContainer {
