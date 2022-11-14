@@ -41,8 +41,8 @@ export default function LinearProgressbar(props) {
   const [progress, setProgress] = React.useState(10);
 
   React.useEffect(() => {
-    const time = 100 * Math.random() + 30;
-    // const time = props.time * 10;
+    const time = parseInt(props.loadingtime, 10) * 10;
+
     const timer = setInterval(() => {
       setProgress((prevProgress) =>
         prevProgress >= 100 ? 100 : prevProgress + 1

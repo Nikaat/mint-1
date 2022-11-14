@@ -59,7 +59,7 @@ const parasite = (props) => {
               color={inputs.color}
               maxValue={inputs.maxValue}
               texts={inputs.texts}
-              timeSec={inputs.time}
+              loadingtime={inputs.time}
               aid={parasite.aid}
               onShowButton={props.onShowButton}
             />
@@ -72,7 +72,7 @@ const parasite = (props) => {
             <CircularStatic
               color={inputs.color}
               maxValue={inputs.maxValue}
-              time={inputs.time}
+              loadingtime={inputs.time}
               aid={parasite.aid}
               nextByButton="true"
               onShowButton={props.onShowButton}
@@ -84,7 +84,7 @@ const parasite = (props) => {
         el[i] = (
           <div key="linearloading" className={classes.LineLoading}>
             <LinearProgressbar
-              time={inputs.time}
+              loadingtime={inputs.time}
               color={inputs.color}
               onShowButton={props.onShowButton}
             />
@@ -179,6 +179,15 @@ const parasite = (props) => {
             className={classes.Video}
             controlsList="nodownload"
           />
+        </div>
+      );
+    }
+
+    if (elements[i].id === "image") {
+      const inputs = elements[i].inputs;
+      el[i] = (
+        <div key="image" className={classes.Element}>
+          <img src={inputs.link} className={classes.Image} alt="" />
         </div>
       );
     }

@@ -42,7 +42,7 @@
 .ChartContainer {
     width: 50%;
     margin: 25px auto;
-}
+} 
 
 .LineLoading {
     margin: 25px auto;
@@ -50,6 +50,10 @@
 }
 
 .Video {
+    border-radius: 10px;
+}
+
+.Image {
     border-radius: 10px;
 }
 

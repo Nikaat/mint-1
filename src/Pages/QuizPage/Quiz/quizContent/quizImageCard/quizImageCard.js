@@ -6,10 +6,10 @@ import redCheckmark from "../../../../../assets/images/Red-checkmark.PNG";
 
 const quizImageCard = (props) => {
   let cardStyle;
-  let cardStyles = [null, null, null, null, null, null, null];
+  let cardStyles = [null, null, null, null, null, null, null, null, null];
 
   if (props.multiSelect === "true") {
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 10; i++) {
       cardStyles[i] =
         props.answerIndexes[i] !== null
           ? [classes.Answer]
@@ -23,24 +23,21 @@ const quizImageCard = (props) => {
   }
 
   return (
-    <article
+    <div
       className={
         props.multiSelect === "true" ? cardStyles[props.idx] : cardStyle
       }
-      onClick={() => props.onAnswer(props.idx, props.qNum)}
     >
-      <div className={classes.QuizCardContent}>
-        <img
-          className={classes.Image}
-          src={props.optionImage.src}
-          srcSet={props.optionImage.srcSet}
-          alt=""
-        />
+      <article
+        className={classes.QuizCardContent}
+        onClick={() => props.onAnswer(props.idx, props.aid, props.code)}
+      >
+        <img className={classes.Image} src={props.image} alt="" />
         <div className={classes.TextContainer}>
-          <div className={classes.QuizCardHeader}>{props.cardHeader}</div>
+          <div className={classes.QuizCardHeader}>{props.text}</div>
           <div className={classes.QuizCardDescription}>{props.description}</div>
         </div>
-      </div>
+      </article>
       {props.multiSelect ? (
         props.answerIndexes[props.idx] !== null ? (
           <img src={redCheckmark} alt="" className={classes.RedCheckmark} />
@@ -48,13 +45,14 @@ const quizImageCard = (props) => {
       ) : props.answerIndex === props.idx ? (
         <img src={redCheckmark} alt="" className={classes.RedCheckmark} />
       ) : null}
-    </article>
+    </div>
   );
 };
 
 const mapStateToProps = (state) => ({
   qNum: state.quiz.questionNum,
   answerIndex: state.quiz.answerIndex,
+  code: state.quiz.code,
   answerIndexes: state.quiz.answerIndexes,
 });
 

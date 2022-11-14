@@ -18,7 +18,6 @@ const quiz = (props) => {
       /> */}
       <QuizContent
         result={props.result}
-        // optionwithimage={Questions[qNum].optionwithImage}
         // hint={Questions[qNum].hint}
         // video={Questions[qNum].video}
       />

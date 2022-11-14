@@ -67,6 +67,11 @@ html[dir="rtl"] .QuizCardContent {
     display: none;
 }
 
+html[dir='rtl'] .Image {
+    margin: 0;
+    margin-left: 12px;
+}
+
 
 @media (max-width: 500px) {
     .QuizCardContainer {
@@ -83,6 +88,10 @@ html[dir="rtl"] .QuizCardContent {
         padding: 0;
     }
     
+    html[dir='rtl'] .QuizCardContent {
+        padding: 0;
+    }
+
     .TextContainer{
         display: flex;
         flex-direction: column;
@@ -94,5 +103,6 @@ html[dir="rtl"] .QuizCardContent {
         display: inline;
         margin-right: 12px;
     }
+
     
 }

@@ -21,24 +21,24 @@ const SingleSelectQuestion = (props) => {
         <h1 className={classes.HeaderTitle}>{props.header}</h1>
       </div>
       <section className={classes.QuestionsSection}>
-        {/* {!props.optionwithimage */}
-        {props.dataCard
-          ? dataCard.map((opt, index) => (
-              <QuizCard
-                {...opt}
-                idx={index}
-                key={opt.aid}
-                onAnswer={props.onSingleAnswer}
-              />
-            ))
-          : dataCard.map((opt) => (
-              <QuizImageCard
-                {...opt}
-                key={opt.dataCardId}
-                idx={opt.dataCardIdx}
-                onAnswer={props.onSingleAnswer}
-              />
-            ))}
+        {dataCard.map((opt, index) =>
+          opt.image !== "" ? (
+            <QuizImageCard
+              {...opt}
+              idx={index}
+              key={opt.aid}
+              image={opt.image}
+              onAnswer={props.onSingleAnswer}
+            />
+          ) : (
+            <QuizCard
+              {...opt}
+              idx={index}
+              key={opt.aid}
+              onAnswer={props.onSingleAnswer}
+            />
+          )
+        )}
         {props.hint ? (
           <Hint title={props.hint.title} caption={props.hint.caption} />
         ) : null}

@@ -50,9 +50,7 @@ function CircularStatic(props) {
   const [progress, setProgress] = React.useState(0);
 
   React.useEffect(() => {
-    const time = 100 * Math.random() + 30;
-
-    // const time = props.time * 10;
+    const time = parseInt(props.loadingtime, 10) * 10;
     const maxValue = parseInt(props.maxValue, 10);
 
     const timer = setInterval(() => {
@@ -63,6 +61,7 @@ function CircularStatic(props) {
     return () => {
       clearInterval(timer);
     };
+    // eslint-disable-next-line
   }, []);
 
   let redirect;
