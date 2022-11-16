@@ -24,3 +24,9 @@
     background-color: var(--primary400Color);
     height: 1px;
 }
+
+@media (max-width: 500px) {
+    .HintContainer {
+        width: 60%;
+    }
+}
