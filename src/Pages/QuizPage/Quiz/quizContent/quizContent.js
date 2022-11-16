@@ -27,6 +27,7 @@ const QuizContent = (props) => {
     case "multiSelect":
       QuestionType = (
         <MultiSelectQuestion
+          borderImage={props.result.borderImage}
           dataCard={props.result.answers}
           header={props.result.text}
           // optionImages={props.optionImages}

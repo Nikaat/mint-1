@@ -36,22 +36,29 @@ const parasite = (props) => {
     }
 
     if (elements[i].id === "title") {
+      const inputs = elements[i].inputs;
       el[i] = (
         <div
           key={"title" + i}
           className={classes.Element}
-          style={{ textAlign: elements[i].inputs.textAlign }}
+          style={{ textAlign: inputs.textAlign }}
         >
-          <h3 className={classes.Title}>{elements[i].inputs.text}</h3>
+          <h3 className={classes.Title} style={{ float: inputs.textAlign }}>
+            {inputs.text}
+          </h3>
         </div>
       );
     }
 
     if (elements[i].id === "description") {
-      const text = elements[i].inputs.text;
+      const inputs = elements[i].inputs;
+      const text = inputs.text;
       el[i] = (
         <div key={"description" + i} className={classes.Element}>
-          <div className={classes.Description}>
+          <div
+            className={classes.Description}
+            style={{ float: inputs.textAlign }}
+          >
             <div dangerouslySetInnerHTML={{ __html: text }} />
           </div>
         </div>

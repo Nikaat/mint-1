@@ -25,6 +25,7 @@ const MultiSelectQuestion = (props) => {
                   {...opt}
                   key={opt.aid}
                   idx={index}
+                  backgroundImg={props.borderImage}
                   onAnswer={props.clickedonMultiSelectCard}
                   multiSelect="true"
                 />
