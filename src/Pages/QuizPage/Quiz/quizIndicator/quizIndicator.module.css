@@ -3,6 +3,7 @@
     padding: 20px 20px 16px;
     margin: 0 auto;
     padding-top: 0;
+    direction: ltr;
 }
 
 .Bar {
@@ -19,5 +20,5 @@
     position: absolute;
     background: var(--primary400Color);
     transition: width .1s ease-in;
-    width: 5.88235%;
+    width: var(--bar-width);
 }
