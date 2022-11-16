@@ -35,7 +35,7 @@ class QuizPage extends Component {
               color: this.props.parasite.textColor,
             }}
           >
-            <ProgressContainer currentProgress />
+            <ProgressContainer result={this.props.result} currentProgress />
             <Parasite
               result={this.props.result}
               goNext={this.props.goNext}

@@ -13,7 +13,7 @@ const quiz = (props) => {
         barFilled={Questions[qNum].barFilled}
         />
       </div> */}
-      <ProgressContainer currentProgress />
+      <ProgressContainer result={props.result} currentProgress />
       <QuizContent result={props.result} />
     </div>
   );

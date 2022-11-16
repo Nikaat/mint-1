@@ -7,7 +7,7 @@ import Logoimg from "../../../../assets/images/logo.png";
 const progressContainer = (props) => {
   return (
     <div className={classes.ProgressContainer}>
-      <Arrow />
+      <Arrow preAid={props.result.preAid} />
       <img className={classes.Logo} src={Logoimg} alt="" />
       {/* <span className={classes.Progress}>
         <span className={classes.CurrentProgress}>{props.currentProgress}</span>
