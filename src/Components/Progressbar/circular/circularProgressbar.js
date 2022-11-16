@@ -72,19 +72,23 @@ function CircularStatic(props) {
   }
 
   let texts = props.texts;
+  // console.log(props.texts);
   return (
     <div className={classes.Container}>
       <CircularProgressWithLabel value={progress} className={classes.main} />
-      {props.texts ? (
-        <ul className={classes.TextList}>
-          <li className={classes.i1}>{texts[0]}</li>
-          <li className={classes.i2}>{texts[1]}</li>
-          <li className={classes.i3}>{texts[2]}</li>
-          <li className={classes.i4}>{texts[3]}</li>
-          <li className={classes.i5}>{texts[4]}</li>
-          <li className={classes.i6}>{texts[5]}</li>
-        </ul>
-      ) : null}
+
+      <ul
+        className={classes.TextList}
+        style={{ display: props.texts === [] ? "none" : "block" }}
+      >
+        <li className={classes.i1}>{texts[0]}</li>
+        <li className={classes.i2}>{texts[1]}</li>
+        <li className={classes.i3}>{texts[2]}</li>
+        <li className={classes.i4}>{texts[3]}</li>
+        <li className={classes.i5}>{texts[4]}</li>
+        <li className={classes.i6}>{texts[5]}</li>
+      </ul>
+
       {redirect}
     </div>
   );

@@ -26,8 +26,13 @@ export const clickedonNextButton = (prevCode, answerIndexes) => {
     return aids;
   });
 
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    if (aids === "") {
+      aids = getState().quiz.result.answers[0].aid;
+    }
     console.log(aids);
+
+    console.log(getState());
     setTimeout(() => {
       axios
         .get(
@@ -147,7 +152,8 @@ export const fetchData = () => {
 
 export const goNext = (prevAid, prevCode) => {
   return (dispatch) => {
-    prevAid === ""
+    console.log(prevAid);
+    prevAid === "main"
       ? setTimeout(() => dispatch(actionCreators.returnToFirstPage()), 1000)
       : setTimeout(() => {
           axios

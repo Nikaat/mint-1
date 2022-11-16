@@ -76,7 +76,18 @@ const parasite = (props) => {
               texts={inputs.texts}
               loadingtime={inputs.time}
               aid={parasite.aid}
+              // nextByButton="true"
             />
+            {inputs.text !== "" ? (
+              <div key={"description" + i} className={classes.Element}>
+                <div
+                  className={classes.Description}
+                  style={{ float: inputs.textAlign }}
+                >
+                  {inputs.text}
+                </div>
+              </div>
+            ) : null}
           </div>
         );
       }
@@ -144,7 +155,7 @@ const parasite = (props) => {
     if (elements[i].id === "titleFade") {
       el[i] = (
         <div key="titleFade" className={classes.TitleFadeContainer}>
-          <TitleFade texts={elements[i].inputs.text} />
+          <TitleFade texts={elements[i].inputs.texts} />
         </div>
       );
 
