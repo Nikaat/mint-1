@@ -23,15 +23,13 @@ class GenderSelection extends Component {
               selected={this.props.isMale}
               onAnswer={() => this.props.onGenderSelection("Male")}
               gender="Male"
-              src="https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_230/v1/affiliates/Image_male_cqrt5z"
-              srcSet="https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_230/v1/affiliates/Image_male_cqrt5z 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_230/v1/affiliates/Image_male_cqrt5z 2x"
+              src="https://mintdoctor.app/wp-content/uploads/2022/11/boy.png"
             />
             <GenderSelectioncard
               selected={this.props.isFemale}
               onAnswer={() => this.props.onGenderSelection("Female")}
               gender="Female"
-              src="https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_230/v1/affiliates/Image_female_sxkuf7"
-              srcSet="https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_230/v1/affiliates/Image_female_sxkuf7 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_230/v1/affiliates/Image_female_sxkuf7 2x"
+              src="https://mintdoctor.app/wp-content/uploads/2022/11/girl.png"
             />
           </section>
         </div>
