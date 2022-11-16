@@ -98,6 +98,7 @@ const quizReducer = (state = initialState, action) => {
         : state;
     case actionTypes.SAVE_FETCHED_DATA:
       return updateObject(state, {
+        questionNum: state.questionNum + 1,
         code: action.code,
         result: action.result,
       });

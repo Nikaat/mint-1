@@ -64,8 +64,9 @@
 }
 
 .Image {
+    width: 100%;
     border-radius: 10px;
-    margin: 25px;
+    margin-bottom: 25px;
 }
 
 @keyframes fade-in-out {

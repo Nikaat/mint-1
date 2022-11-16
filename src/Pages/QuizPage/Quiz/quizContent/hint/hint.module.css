@@ -4,8 +4,8 @@
     color: var(--neutral900Color);
     cursor: default;
     margin: 16px 0;
-    /* background: var(--neutral100Color); */
-    background: transparent;
+    background: rgba(247, 247, 248, .5);
+    /* background: transparent; */
     border-radius: 10px;
     font-size: 14px;
 } 

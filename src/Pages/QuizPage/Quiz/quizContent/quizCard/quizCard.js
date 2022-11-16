@@ -27,6 +27,7 @@ const quizCard = (props) => {
       className={
         props.multiSelect === "true" ? cardStyles[props.idx] : cardStyle
       }
+      style={{ "--card-width": props.backgroundImg === "" ? "100%" : "60%" }}
     >
       <article
         className={classes.QuizCard}

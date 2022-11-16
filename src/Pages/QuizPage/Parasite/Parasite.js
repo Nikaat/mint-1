@@ -37,7 +37,11 @@ const parasite = (props) => {
 
     if (elements[i].id === "title") {
       el[i] = (
-        <div key="title" className={classes.Element}>
+        <div
+          key={"title" + i}
+          className={classes.Element}
+          style={{ textAlign: elements[i].inputs.textAlign }}
+        >
           <h3 className={classes.Title}>{elements[i].inputs.text}</h3>
         </div>
       );
@@ -158,12 +162,13 @@ const parasite = (props) => {
     if (elements[i].id === "image") {
       const inputs = elements[i].inputs;
       el[i] = (
-        <div
-          key="image"
-          className={classes.Image}
-          style={{ textAlign: inputs.textAlign }}
-        >
-          <img src={inputs.link} alt="" />
+        <div key="image" className={classes.Element}>
+          <img
+            src={inputs.link}
+            className={classes.Image}
+            style={{ float: inputs.textAlign }}
+            alt=""
+          />
         </div>
       );
     }

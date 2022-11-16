@@ -50,7 +50,7 @@ html[dir="rtl"] .QuizCardContent {
 } 
 
 .Answer {
-    width: 60%;
+    width: var(--card-width);
     position: relative;
     display: flex;
     border: 1px solid var(--neutral200Color);
@@ -75,7 +75,7 @@ html[dir='rtl'] .Answer {
         z-index: 1;
         align-items: center;
         outline: none;
-        width: 60%;
+        width: var(--card-width);
     }
     
     .QuizCardContent {

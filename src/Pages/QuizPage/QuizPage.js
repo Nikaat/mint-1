@@ -9,6 +9,7 @@ import Quiz from "./Quiz/Quiz";
 import Parasite from "./Parasite/Parasite";
 // import LinearProgressbar from "../../Components/Progressbar/linear/linearProgressbar";
 // import CircularStatic from "../../Components/Progressbar/circular/circularProgressbar";
+import ProgressContainer from "./Quiz/progressContainer/progressContainer";
 
 class QuizPage extends Component {
   componentDidMount = () => {
@@ -34,6 +35,7 @@ class QuizPage extends Component {
               color: this.props.parasite.textColor,
             }}
           >
+            <ProgressContainer currentProgress />
             <Parasite
               result={this.props.result}
               goNext={this.props.goNext}

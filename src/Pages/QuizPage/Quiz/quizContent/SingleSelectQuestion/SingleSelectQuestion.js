@@ -36,6 +36,7 @@ const SingleSelectQuestion = (props) => {
               {...opt}
               idx={index}
               key={opt.aid}
+              backgroundImg={props.borderImage}
               onAnswer={props.onSingleAnswer}
             />
           )
