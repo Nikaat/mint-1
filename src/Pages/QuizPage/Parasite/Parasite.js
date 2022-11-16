@@ -45,13 +45,10 @@ const parasite = (props) => {
 
     if (elements[i].id === "description") {
       const text = elements[i].inputs.text;
-      const fixed = text.replace(/<br\s*\\?>/g, "\r\n");
       el[i] = (
         <div key={"description" + i} className={classes.Element}>
           <div className={classes.Description}>
-            {fixed.split(/[\r\n]+/).map((line) => (
-              <div key={line}>{line}</div>
-            ))}
+            <div dangerouslySetInnerHTML={{ __html: text }} />
           </div>
         </div>
       );
@@ -80,7 +77,7 @@ const parasite = (props) => {
               maxValue={inputs.maxValue}
               loadingtime={inputs.time}
               aid={parasite.aid}
-              nextByButton="true"
+              // nextByButton="true"
             />
           </div>
         );
