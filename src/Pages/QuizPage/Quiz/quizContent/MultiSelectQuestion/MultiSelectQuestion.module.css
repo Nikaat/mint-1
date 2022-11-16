@@ -32,12 +32,10 @@
     width: 100%;
     position: fixed;
     right: 0;
-    padding: 32px 0 0;
+    padding: 20px 0 0;
     z-index: 11;
     bottom: 0;
     padding-bottom: 32px;
-    background: var(--background1Color);
-    box-shadow: 0 0 10px rgb(32 40 50 / 10%);
     max-width: 43%;
 }
 
