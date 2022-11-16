@@ -39,9 +39,6 @@ class QuizPage extends Component {
               goNext={this.props.goNext}
               // goToCheckout={this.onCheckout}
             />
-
-            {/* <LinearProgressbar /> */}
-            {/* <CircularStatic /> */}
           </div>
         ) : (
           <div className={classes.Container}>

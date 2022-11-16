@@ -1,8 +1,10 @@
 import React from "react";
+import { useState } from "react";
 
 import classes from "./promoCodeForm.module.css";
 
-const promoCodeForm = (props) => {
+const PromoCodeForm = (props) => {
+  const [inputValue, setInputValue] = useState("");
   return (
     <form className={classes.Container}>
       <h4 className={classes.PromoHeading}>Apply promo code</h4>
@@ -13,7 +15,8 @@ const promoCodeForm = (props) => {
             className={classes.Input}
             type="text"
             name="promo"
-            value=""
+            value={inputValue}
+            onChange={(event) => setInputValue(event.target.value)}
           />
         </div>
         <div className={classes.ButtonContainer}>
@@ -26,4 +29,4 @@ const promoCodeForm = (props) => {
   );
 };
 
-export default promoCodeForm;
+export default PromoCodeForm;

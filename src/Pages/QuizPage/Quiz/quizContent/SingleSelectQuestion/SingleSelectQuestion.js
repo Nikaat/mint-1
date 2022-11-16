@@ -6,7 +6,6 @@ import QuizImageCard from "../quizImageCard/quizImageCard";
 import { connect } from "react-redux";
 import { clickedonQuizCard } from "../../../../../redux/actions";
 import Hint from "../hint/hint";
-import Video from "../videoComp/video";
 
 const SingleSelectQuestion = (props) => {
   let dataCard = props.dataCard;
@@ -16,7 +15,9 @@ const SingleSelectQuestion = (props) => {
       {props.image !== "" ? (
         <img className={classes.Image} src={props.image} alt=" " />
       ) : null}
-      {props.video ? <Video src={props.video.src} /> : null}
+      {props.video ? (
+        <video src={props.video} className={classes.Video} controls autoPlay />
+      ) : null}
       <div className={classes.Header}>
         <h1 className={classes.HeaderTitle}>{props.header}</h1>
       </div>

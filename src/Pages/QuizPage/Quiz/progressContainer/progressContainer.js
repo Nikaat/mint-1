@@ -9,10 +9,10 @@ const progressContainer = (props) => {
     <div className={classes.ProgressContainer}>
       <Arrow />
       <img className={classes.Logo} src={Logoimg} alt="" />
-      <span className={classes.Progress}>
+      {/* <span className={classes.Progress}>
         <span className={classes.CurrentProgress}>{props.currentProgress}</span>
         <span>/</span>17
-      </span>
+      </span> */}
     </div>
   );
 };

@@ -37,6 +37,11 @@
     border-radius: 7px;
 }
 
+.Video {
+    width: 100%;
+    border-radius: 7px;
+}
+
 @media (max-width: 500px) {
     .HeaderTitle {
         font-size: 24px;
@@ -47,6 +52,6 @@
         margin-top: 0;
     }
     .QuestionsSection {
-        margin-top: 38px;
+        margin-top: 20px;
     }
 }

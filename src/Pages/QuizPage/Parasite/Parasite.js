@@ -47,7 +47,7 @@ const parasite = (props) => {
       const text = elements[i].inputs.text;
       const fixed = text.replace(/<br\s*\\?>/g, "\r\n");
       el[i] = (
-        <div key="description" className={classes.Element}>
+        <div key={"description" + i} className={classes.Element}>
           <div className={classes.Description}>
             {fixed.split(/[\r\n]+/).map((line) => (
               <div key={line}>{line}</div>

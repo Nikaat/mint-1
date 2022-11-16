@@ -13,8 +13,8 @@ function App() {
     <div className="App">
       <Layout />
       <Routes>
-        <Route path="/generated-questionary" element={<QuizPage />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/mint/generated-questionary" element={<QuizPage />} />
+        <Route path="/mint/checkout" element={<Checkout />} />
         <Route path="/" element={<GenderSelection />} />
         <Route path="*" element={<GenderSelection />} />
       </Routes>

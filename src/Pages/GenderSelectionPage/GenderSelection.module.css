@@ -5,7 +5,7 @@
     justify-content: space-between;
     padding: 80px 16px 0 16px;
     color: #fff;
-    background-color: var(--background2Color);
+    /* background-color: var(--background2Color); */
 }
 
 .Main {

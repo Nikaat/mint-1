@@ -38,7 +38,7 @@ class GenderSelection extends Component {
         <Copyright />
         {/* <HelpButton /> */}
         {this.props.isAnswered === true ? (
-          <Navigate to="/generated-questionary" />
+          <Navigate to={this.props.nextPage} />
         ) : null}
       </main>
     );
@@ -50,6 +50,7 @@ const mapStateToProps = (state) => {
     isMale: state.genderSel.isMale,
     isFemale: state.genderSel.isFemale,
     isAnswered: state.genderSel.isAnswered,
+    nextPage: state.genderSel.nextPage,
   };
 };
 

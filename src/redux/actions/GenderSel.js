@@ -7,7 +7,7 @@ export const genderSelection = (genderType) => {
   };
 };
 
-export const changePage = () => {
+export const changePage = (genderType) => {
   return {
     type: actionTypes.CHANGE_PAGE,
   };

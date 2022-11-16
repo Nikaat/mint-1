@@ -2,7 +2,7 @@ import React from "react";
 
 import classes from "./Quiz.module.css";
 // import QuizIndicator from "./quizIndicator/quizIndicator";
-// import ProgressContainer from "./progressContainer/progressContainer";
+import ProgressContainer from "./progressContainer/progressContainer";
 import QuizContent from "./quizContent/quizContent";
 
 const quiz = (props) => {
@@ -13,14 +13,8 @@ const quiz = (props) => {
         barFilled={Questions[qNum].barFilled}
         />
       </div> */}
-      {/* <ProgressContainer
-      currentProgress={Questions[qNum].currentProgress}
-      /> */}
-      <QuizContent
-        result={props.result}
-        // hint={Questions[qNum].hint}
-        // video={Questions[qNum].video}
-      />
+      <ProgressContainer currentProgress />
+      <QuizContent result={props.result} />
     </div>
   );
 };

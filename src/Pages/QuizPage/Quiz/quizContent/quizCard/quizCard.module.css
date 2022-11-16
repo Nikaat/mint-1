@@ -74,6 +74,7 @@ html[dir='rtl'] .Answer {
         z-index: 1;
         align-items: center;
         outline: none;
+        width: 60%;
     }
     
     .QuizCardContent {
