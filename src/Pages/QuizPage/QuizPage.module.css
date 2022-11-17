@@ -12,7 +12,8 @@
     flex-direction: column;
     /* justify-content: center; */
     text-align: center;
-    height: calc(100vh);
+    min-height: 100vh;
+    height: 100%;
 }
 
 .ImageContainer {
