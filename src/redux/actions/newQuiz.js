@@ -36,12 +36,22 @@ export const clickedonNextButton = (prevCode, answerIndexes) => {
     setTimeout(() => {
       axios
         .get(
-          "https://mintdoctor.ir/process/v2/main/question.php?type=eghdam&code=" +
+          "https://mintdoctor.ir/process/v2/main/question.php?type=" +
+            getState().genderSel.type +
+            "&code=" +
             prevCode +
             "&aid=" +
             aids
         )
         .then((res) => {
+          console.log(
+            "https://mintdoctor.ir/process/v2/main/question.php?type=" +
+              getState().genderSel.type +
+              "&code=" +
+              prevCode +
+              "&aid=" +
+              aids
+          );
           console.log(res);
           const code = res.data.result.code;
           const result = res.data.result;
@@ -59,12 +69,14 @@ export const nullAnswerIndex = () => {
 };
 
 export const clickedonQuizCard = (index, prevAid, prevCode) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
     dispatch(answerQuestion(index));
     setTimeout(() => {
       axios
         .get(
-          "https://mintdoctor.ir/process/v2/main/question.php?type=eghdam&code=" +
+          "https://mintdoctor.ir/process/v2/main/question.php?type=" +
+            getState().genderSel.type +
+            "&code=" +
             prevCode +
             "&aid=" +
             prevAid
