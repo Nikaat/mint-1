@@ -199,13 +199,12 @@ const parasite = (props) => {
     if (elements[i].id === "icon") {
       const inputs = elements[i].inputs;
       el[i] = (
-        <div key="image" className={classes.Element}>
-          <img
-            src={inputs.link}
-            className={classes.Icon}
-            style={{ float: inputs.textAlign }}
-            alt=""
-          />
+        <div
+          key="image"
+          className={classes.Element}
+          style={{ justifyContent: inputs.textAlign }}
+        >
+          <img src={inputs.link} className={classes.Icon} alt="" />
         </div>
       );
     }

@@ -12,6 +12,7 @@
 
 .Element {
     margin: 25px;
+    display: flex;
 }
 
 .Title {
@@ -83,7 +84,7 @@
 }
 
 .Icon {
-    width: 60%;
+    width: 50%;
     margin-bottom: 25px;
 }
 
