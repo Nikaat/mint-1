@@ -61,7 +61,7 @@ const MultiSelectQuestion = (props) => {
       <div className={classes.FixedButtonContainer}>
         <div className={classes.ButtonContainer}>
           <Button
-            text="NEXT"
+            text="ادامه"
             onAnswer={() =>
               props.clickedonButton(props.code, props.answerIndexes)
             }

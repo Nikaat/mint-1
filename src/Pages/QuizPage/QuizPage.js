@@ -2,7 +2,8 @@ import React, { Component } from "react";
 
 import { Navigate } from "react-router";
 import { connect } from "react-redux";
-import { fetchData, goNext } from "../../redux/actions";
+import * as actionCreators from "../../redux/actions";
+
 import classes from "./QuizPage.module.css";
 import Auxiliary from "../../hoc/Auxiliary/Auxiliary";
 import Quiz from "./Quiz/Quiz";
@@ -14,6 +15,10 @@ import ProgressContainer from "./Quiz/progressContainer/progressContainer";
 class QuizPage extends Component {
   componentDidMount = () => {
     this.props.fetchData();
+    const params = new URLSearchParams(window.location.search); // id=123
+    let type = params.get("type");
+
+    this.props.onSaveType(type);
   };
 
   state = {
@@ -85,8 +90,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchData: () => dispatch(fetchData()),
-  goNext: (aid, code) => dispatch(goNext(aid, code)),
+  fetchData: () => dispatch(actionCreators.fetchData()),
+  onSaveType: (linkType) => dispatch(actionCreators.saveType(linkType)),
+  goNext: (aid, code) => dispatch(actionCreators.goNext(aid, code)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuizPage);
