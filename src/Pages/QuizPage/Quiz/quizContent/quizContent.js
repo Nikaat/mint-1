@@ -12,12 +12,12 @@ const QuizContent = (props) => {
     case "singleSelect":
       QuestionType = (
         <SingleSelectQuestion
-          header={props.result.text}
+          borderImage={props.result.borderImage}
           dataCard={props.result.answers}
+          header={props.result.text}
           image={props.result.image}
           hint={props.result.hint}
           video={props.result.video}
-          borderImage={props.result.borderImage}
           description={props.result.description}
         />
       );
@@ -31,8 +31,10 @@ const QuizContent = (props) => {
           borderImage={props.result.borderImage}
           dataCard={props.result.answers}
           header={props.result.text}
-          // optionImages={props.optionImages}
-          // optionwithimage={props.optionwithimage}
+          image={props.result.image}
+          hint={props.result.hint}
+          video={props.result.video}
+          description={props.result.description}
         />
       );
       break;

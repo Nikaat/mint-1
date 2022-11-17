@@ -45,6 +45,17 @@
     margin: 0 auto;
 }
 
+.Image {
+    margin: 8px 10px 20px;
+    width: 100%;
+    border-radius: 7px;
+}
+
+.Video {
+    width: 100%;
+    border-radius: 7px;
+}
+
 @media (max-width: 500px) {
     .HeaderTitle {
         font-size: 24px;

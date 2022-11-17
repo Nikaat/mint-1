@@ -20,6 +20,9 @@ const SingleSelectQuestion = (props) => {
       ) : null}
       <div className={classes.Header}>
         <h1 className={classes.HeaderTitle}>{props.header}</h1>
+        {props.description !== "" ? (
+          <h3 className={classes.HeaderDescription}>{props.description}</h3>
+        ) : null}
       </div>
       <section className={classes.QuestionsSection}>
         {dataCard.map((opt, index) =>

@@ -7,6 +7,7 @@ import Button from "../../../../../Components/UI/Button/button";
 import { connect } from "react-redux";
 import { clickedonNextButton } from "../../../../../redux/actions";
 import Auxiliary from "../../../../../hoc/Auxiliary/Auxiliary";
+import Hint from "../hint/hint";
 import * as actionTypes from "../../../../../redux/actions/actionTypes";
 
 const MultiSelectQuestion = (props) => {
@@ -15,27 +16,43 @@ const MultiSelectQuestion = (props) => {
   return (
     <Auxiliary>
       <div className={classes.QuizContent}>
+        {props.image !== "" ? (
+          <img className={classes.Image} src={props.image} alt=" " />
+        ) : null}
+        {props.video ? (
+          <video
+            src={props.video}
+            className={classes.Video}
+            controls
+            autoPlay
+          />
+        ) : null}
         <div className={classes.Header}>
           <h1 className={classes.HeaderTitle}>{props.header}</h1>
+          {props.description !== "" ? (
+            <h3 className={classes.HeaderDescription}>{props.description}</h3>
+          ) : null}
         </div>
         <section className={classes.QuestionsSection}>
           {!props.optionwithimage
             ? dataCard.map((opt, index) => (
                 <QuizCard
                   {...opt}
-                  key={opt.aid}
                   idx={index}
+                  key={opt.aid}
+                  image={opt.image}
+                  onAnswer={props.onSingleAnswer}
                   backgroundImg={props.borderImage}
-                  onAnswer={props.clickedonMultiSelectCard}
                   multiSelect="true"
                 />
               ))
-            : dataCard.map((opt) => (
+            : dataCard.map((opt, index) => (
                 <QuizImageCard
                   {...opt}
-                  key={opt.dataCardId}
-                  idx={opt.dataCardIdx}
-                  onAnswer={props.clickedonMultiSelectCard}
+                  idx={index}
+                  key={opt.aid}
+                  backgroundImg={props.borderImage}
+                  onAnswer={props.onSingleAnswer}
                   multiSelect="true"
                 />
               ))}
@@ -51,6 +68,9 @@ const MultiSelectQuestion = (props) => {
           />
         </div>
       </div>
+      {props.hint.caption !== "" ? (
+        <Hint title={props.hint.title} caption={props.hint.caption} />
+      ) : null}
     </Auxiliary>
   );
 };
