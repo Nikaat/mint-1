@@ -41,7 +41,7 @@ const MultiSelectQuestion = (props) => {
                   idx={index}
                   key={opt.aid}
                   image={opt.image}
-                  onAnswer={props.onSingleAnswer}
+                  onAnswer={props.clickedonMultiSelectCard}
                   backgroundImg={props.borderImage}
                   multiSelect="true"
                 />
@@ -52,7 +52,7 @@ const MultiSelectQuestion = (props) => {
                   idx={index}
                   key={opt.aid}
                   backgroundImg={props.borderImage}
-                  onAnswer={props.onSingleAnswer}
+                  onAnswer={props.clickedonMultiSelectCard}
                   multiSelect="true"
                 />
               ))}
