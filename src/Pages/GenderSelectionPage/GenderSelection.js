@@ -7,8 +7,17 @@ import classes from "./GenderSelection.module.css";
 // import HelpButton from "../../Components/UI/HelpButton/HelpButton";
 import GenderSelectioncard from "../../Pages/GenderSelectionPage/GenderSelectionCard/GenderSelectionCard";
 import Copyright from "../../Components/Copyright/Copyright";
+import * as actionCreators from "../../redux/actions";
 
 class GenderSelection extends Component {
+  componentDidMount = () => {
+    const params = new URLSearchParams(window.location.search); // id=123
+    let type = params.get("type");
+
+    this.props.onSaveType(type);
+    console.log(type);
+  };
+
   render() {
     return (
       <main className={classes.GenderSelection}>
@@ -56,6 +65,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onGenderSelection: (gendertype) =>
       dispatch(clickedonGenderCard(gendertype)),
+    onSaveType: (linkType) => dispatch(actionCreators.saveType(linkType)),
   };
 };
 

@@ -3,6 +3,7 @@ export {
   changePage,
   clickedonGenderCard,
   returnToFirstPage,
+  saveType,
 } from "./GenderSel";
 
 // export {

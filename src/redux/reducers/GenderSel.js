@@ -6,6 +6,7 @@ const initialState = {
   isFemale: false,
   isAnswered: false,
   nextPage: "",
+  type: "",
 };
 
 const genderReducer = (state = initialState, action) => {
@@ -26,6 +27,8 @@ const genderReducer = (state = initialState, action) => {
       return updateObject(state, { isAnswered: true });
     case actionTypes.RETURN_TO_FIRST_PAGE:
       return updateObject(state, { isAnswered: false });
+    case actionTypes.SAVE_TYPE:
+      return updateObject(state, { type: action.linkType });
     default:
       return state;
   }

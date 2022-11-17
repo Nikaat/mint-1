@@ -131,7 +131,7 @@ export const saveFetchedData = (code, result) => {
 };
 
 export const fetchData = () => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
     // const headers = {
     //   "Content-Type": "application/json",
     //   Authorization: "",
@@ -139,7 +139,9 @@ export const fetchData = () => {
     // };
     axios
       .get(
-        "https://mintdoctor.ir/process/v2/main/question.php?type=eghdam&aid=start"
+        "https://mintdoctor.ir/process/v2/main/question.php?type=" +
+          getState().genderSel.type +
+          "&aid=start"
       )
       .then((res) => {
         console.log(res);
@@ -151,14 +153,16 @@ export const fetchData = () => {
 };
 
 export const goNext = (prevAid, prevCode) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
     console.log(prevAid);
     prevAid === "main"
       ? setTimeout(() => dispatch(actionCreators.returnToFirstPage()), 1000)
       : setTimeout(() => {
           axios
             .get(
-              "https://mintdoctor.ir/process/v2/main/question.php?type=eghdam&code=" +
+              "https://mintdoctor.ir/process/v2/main/question.php?type=" +
+                getState().genderSel.type +
+                "&code=" +
                 prevCode +
                 "&aid=" +
                 prevAid
