@@ -13,6 +13,7 @@
 .Element {
     margin: 25px;
     display: flex;
+    flex-direction: column;
 }
 
 .Title {
@@ -67,10 +68,6 @@
     margin: 25px auto;
 } 
 
-.LineLoading {
-    margin: 25px auto;
-    width: 50%;
-}
 
 .Video {
     width: 100%;
@@ -102,10 +99,6 @@
     .ChartContainer {
         width: auto;
         margin: 25px;
-    }
-
-    .LineLoading {
-        width: 75%;
     }
 
 }

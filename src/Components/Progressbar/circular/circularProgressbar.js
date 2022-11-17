@@ -48,11 +48,10 @@ function CircularProgressWithLabel(
 
 function CircularStatic(props) {
   const [progress, setProgress] = React.useState(0);
+  const time = parseInt(props.loadingtime, 10) * 10;
+  const maxValue = parseInt(props.maxValue, 10);
 
   React.useEffect(() => {
-    const time = parseInt(props.loadingtime, 10) * 10;
-    const maxValue = parseInt(props.maxValue, 10);
-
     const timer = setInterval(() => {
       setProgress((prevProgress) =>
         prevProgress >= maxValue ? maxValue : prevProgress + 1
@@ -65,7 +64,7 @@ function CircularStatic(props) {
   }, []);
 
   let redirect;
-  if (progress === 100) {
+  if (progress === maxValue) {
     if (props.nextByButton !== "true") {
       props.goNext(props.aid, props.code);
     }

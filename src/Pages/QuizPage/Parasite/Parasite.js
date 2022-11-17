@@ -106,13 +106,40 @@ const parasite = (props) => {
               aid={parasite.aid}
               // nextByButton="true"
             />
+            {inputs.text !== "" ? (
+              <div key={"description" + i} className={classes.Element}>
+                <div
+                  className={classes.Description}
+                  style={{ float: inputs.textAlign }}
+                >
+                  {inputs.text}
+                </div>
+              </div>
+            ) : null}
           </div>
         );
       }
       if (inputs.type === "linear") {
         el[i] = (
-          <div key="linearloading" className={classes.LineLoading}>
-            <LinearProgressbar loadingtime={inputs.time} color={inputs.color} />
+          <div key="linearloading" className={classes.Element}>
+            <LinearProgressbar
+              loadingtime={inputs.time}
+              color={inputs.color}
+              maxValue={inputs.maxValue}
+              text={inputs.text}
+              aid={parasite.aid}
+              // nextByButton="true"
+            />
+            {inputs.text !== "" ? (
+              <div key={"description" + i} className={classes.Element}>
+                <div
+                  className={classes.Description}
+                  style={{ float: inputs.textAlign }}
+                >
+                  {inputs.text}
+                </div>
+              </div>
+            ) : null}
           </div>
         );
       }
