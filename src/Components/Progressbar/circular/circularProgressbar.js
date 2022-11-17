@@ -18,7 +18,7 @@ function CircularProgressWithLabel(
       <CircularProgress
         variant="determinate"
         {...props}
-        size="12rem"
+        size="14rem"
         sx={{ color: "var(--primary500Color)" }}
       />
       <Box
