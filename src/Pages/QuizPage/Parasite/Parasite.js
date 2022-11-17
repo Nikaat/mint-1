@@ -29,7 +29,15 @@ const parasite = (props) => {
             onClick={() => props.goNext(parasite.aid, props.code)}
             // onClick={() => props.goToCheckout()}
           >
-            {elements[i].inputs.text}
+            <p
+              className={classes.ButtonText}
+              style={{
+                color: elements[i].inputs.textColor,
+              }}
+            >
+              {" "}
+              {elements[i].inputs.text}{" "}
+            </p>
           </button>
         </div>
       );
@@ -184,6 +192,20 @@ const parasite = (props) => {
           <img
             src={inputs.link}
             className={classes.Image}
+            style={{ float: inputs.textAlign }}
+            alt=""
+          />
+        </div>
+      );
+    }
+
+    if (elements[i].id === "icon") {
+      const inputs = elements[i].inputs;
+      el[i] = (
+        <div key="image" className={classes.Element}>
+          <img
+            src={inputs.link}
+            className={classes.Icon}
             style={{ float: inputs.textAlign }}
             alt=""
           />
