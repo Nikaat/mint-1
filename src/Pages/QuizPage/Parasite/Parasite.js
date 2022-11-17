@@ -22,22 +22,19 @@ const parasite = (props) => {
         <div key="button" className={classes.Element}>
           <button
             className={classes.ParasiteButton}
-            style={{
-              backgroundColor: elements[i].inputs.bgColor,
-              color: elements[i].inputs.textColor,
-            }}
             onClick={() => props.goNext(parasite.aid, props.code)}
             // onClick={() => props.goToCheckout()}
           >
-            <p
+            <div
               className={classes.ButtonText}
               style={{
+                backgroundColor: elements[i].inputs.bgColor,
                 color: elements[i].inputs.textColor,
               }}
             >
               {" "}
               {elements[i].inputs.text}{" "}
-            </p>
+            </div>
           </button>
         </div>
       );
