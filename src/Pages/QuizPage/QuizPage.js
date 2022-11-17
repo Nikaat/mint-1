@@ -15,10 +15,6 @@ import ProgressContainer from "./Quiz/progressContainer/progressContainer";
 class QuizPage extends Component {
   componentDidMount = () => {
     this.props.fetchData();
-    const params = new URLSearchParams(window.location.search); // id=123
-    let type = params.get("type");
-
-    this.props.onSaveType(type);
   };
 
   state = {
@@ -91,7 +87,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchData: () => dispatch(actionCreators.fetchData()),
-  onSaveType: (linkType) => dispatch(actionCreators.saveType(linkType)),
   goNext: (aid, code) => dispatch(actionCreators.goNext(aid, code)),
 });
 
