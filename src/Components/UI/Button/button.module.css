@@ -13,4 +13,5 @@
     max-width: 100%;
     background: var(--primary400Color);
     box-shadow: 0 12px 23px var(--primaryButtonShadowColor);
+    font-family: 'Dana';
 }
