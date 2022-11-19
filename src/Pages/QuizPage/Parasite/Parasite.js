@@ -57,9 +57,16 @@ const Parasite = (props) => {
         <div
           key={"title" + i}
           className={classes.Element}
-          style={{ textAlign: inputs.textAlign }}
+          style={{
+            textAlign: inputs.textAlign !== "" ? inputs.textAlign : "right",
+          }}
         >
-          <h3 className={classes.Title} style={{ float: inputs.textAlign }}>
+          <h3
+            className={classes.Title}
+            style={{
+              float: inputs.textAlign !== "" ? inputs.textAlign : "right",
+            }}
+          >
             {inputs.text}
           </h3>
         </div>
@@ -73,7 +80,9 @@ const Parasite = (props) => {
         <div key={"description" + i} className={classes.Element}>
           <div
             className={classes.Description}
-            style={{ textAlign: inputs.textAlign }}
+            style={{
+              textAlign: inputs.textAlign !== "" ? inputs.textAlign : "right",
+            }}
           >
             <div dangerouslySetInnerHTML={{ __html: text }} />
           </div>
@@ -254,7 +263,10 @@ const Parasite = (props) => {
         <div
           key="image"
           className={classes.Element}
-          style={{ justifyContent: inputs.textAlign }}
+          style={{
+            justifyContent:
+              inputs.textAlign !== "" ? inputs.textAlign : "right",
+          }}
         >
           <img src={inputs.link} className={classes.Icon} alt="" />
         </div>
