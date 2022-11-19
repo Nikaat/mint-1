@@ -5,12 +5,14 @@ const initialState = {
   answerIndex: null,
   answerIndexes: [null, null, null, null, null, null, null],
   questionNum: 0,
-  heightScale: "FT",
-  weightScale: "LBS",
+  heightScale: "CM",
+  weightScale: "KG",
   inputValue: {
     height_ft: "",
     height_in: "",
     height_cm: "",
+    weight_lbs: "",
+    weight_kg: "",
     weight_current_lbs: "",
     weight_current_kg: "",
     weight_goal_lbs: "",
@@ -19,6 +21,7 @@ const initialState = {
   code: "",
   aid: "",
   result: {},
+  inputError: false,
 };
 
 const quizReducer = (state = initialState, action) => {
@@ -49,7 +52,7 @@ const quizReducer = (state = initialState, action) => {
         weightScale: state.weightScale === "LBS" ? "KG" : "LBS",
       });
     case actionTypes.ON_INPUT_CHANGE:
-      return action.qNum === 2
+      return action.HorW === "height"
         ? updateObject(state, {
             inputValue: {
               ...state.inputValue,
@@ -67,35 +70,19 @@ const quizReducer = (state = initialState, action) => {
                   : state.inputValue.height_in,
             },
           })
-        : action.qNum === 3
-        ? updateObject(state, {
+        : updateObject(state, {
             inputValue: {
               ...state.inputValue,
-              weight_current_lbs:
+              weight_lbs:
                 action.scale === "lbs"
                   ? action.value
-                  : state.inputValue.weight_current_lbs,
-              weight_current_kg:
+                  : state.inputValue.weight_lbs,
+              weight_kg:
                 action.scale === "kg"
                   ? action.value
-                  : state.inputValue.weight_current_kg,
+                  : state.inputValue.weight_kg,
             },
-          })
-        : action.qNum === 4
-        ? updateObject(state, {
-            inputValue: {
-              ...state.inputValue,
-              weight_goal_lbs:
-                action.scale === "lbs"
-                  ? action.value
-                  : state.inputValue.weight_goal_lbs,
-              weight_goal_kg:
-                action.scale === "kg"
-                  ? action.value
-                  : state.inputValue.weight_goal_kg,
-            },
-          })
-        : state;
+          });
     case actionTypes.SAVE_FETCHED_DATA:
       return updateObject(state, {
         questionNum: state.questionNum + 1,
@@ -122,6 +109,14 @@ const quizReducer = (state = initialState, action) => {
       return updateObject(state, {
         code: action.code,
         result: action.result,
+      });
+    case actionTypes.SHOW_INPUT_ERROR:
+      return updateObject(state, {
+        inputError: true,
+      });
+    case actionTypes.HIDE_INPUT_ERROR:
+      return updateObject(state, {
+        inputError: false,
       });
     default:
       return state;

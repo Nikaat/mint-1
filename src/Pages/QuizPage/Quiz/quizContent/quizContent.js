@@ -23,7 +23,14 @@ const QuizContent = (props) => {
       );
       break;
     case "inputQuestion":
-      QuestionType = <InputQuestion header={props.header} hint={props.hint} />;
+      QuestionType = (
+        <InputQuestion
+          borderImage={props.result.borderImage}
+          header={props.result.text}
+          HorW={props.result.inputQuestion}
+          aid={props.result.answers[0].aid}
+        />
+      );
       break;
     case "multiSelect":
       QuestionType = (

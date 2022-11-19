@@ -10,6 +10,7 @@
 }
 
 .Root {
+    direction: ltr;
     align-items: center;
     border-bottom: 1px solid var(--neutral400Color);
     color: var(--neutral900Color);
@@ -52,9 +53,45 @@ input::-webkit-inner-spin-button {
     appearance: none;
 }
 
+
+.ErrorContainer {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+.ErrorText {
+    color: var(--accentYellowColor);
+    align-items: flex-start;
+    font: inherit;
+    display: flex;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.ErrorIcon {
+    line-height: 1.2;
+    color: inherit;
+    display: inline-block;
+    flex-shrink: 0;
+    height: 1em;
+    overflow: hidden;
+    transition: fill .2s cubic-bezier(.4,0,.2,1) 0ms;
+    user-select: none;
+    width: 1em;
+    font-size: inherit;
+    stroke-width: 0;
+    fill: currentColor;
+    stroke: currentColor;
+    margin-right: 0.3em;
+    margin-top: 0.1em;
+    padding: 3px;
+}
+
 @media (max-width: 500px) {
     .Root {
-        width: 130px;
         margin: auto;
     }
 }

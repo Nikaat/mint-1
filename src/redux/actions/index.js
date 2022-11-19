@@ -25,6 +25,7 @@ export {
   clickedonNextButton,
   fetchData,
   goNext,
+  sendInput,
 } from "./newQuiz";
 
 export { choosePlan } from "./Checkout";

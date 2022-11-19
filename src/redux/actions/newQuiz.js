@@ -119,12 +119,98 @@ export const onScaleChange = () => {
   };
 };
 
-export const onInputChange = (value, scale, qNum) => {
+export const onInputChange = (value, scale, HorW) => {
   return {
     type: actionTypes.ON_INPUT_CHANGE,
     value: value,
     scale: scale,
-    qNum: qNum,
+    HorW: HorW,
+  };
+};
+
+export const sendInput = (prevAid, prevCode, name) => {
+  return (dispatch, getState) => {
+    let value;
+    switch (name) {
+      case "height_cm":
+        value = getState().quiz.inputValue.height_cm;
+        if (value < 90 || value > 240) {
+          dispatch(showInputError());
+        } else {
+          dispatch(hideInputError());
+        }
+        break;
+      case "height_ft,height_in":
+        value =
+          getState().quiz.inputValue.height_ft +
+          "," +
+          getState().quiz.inputValue.height_in;
+        if (
+          getState().quiz.inputValue.height_ft < 3 ||
+          getState().quiz.inputValue.height_ft > 7 ||
+          getState().quiz.inputValue.height_in < 1 ||
+          getState().quiz.inputValue.height_in > 11
+        ) {
+          dispatch(showInputError());
+        } else {
+          dispatch(hideInputError());
+        }
+        break;
+      case "weight_kg":
+        value = getState().quiz.inputValue.weight_kg;
+        if (value < 25 || value > 300) {
+          dispatch(showInputError());
+        } else {
+          dispatch(hideInputError());
+        }
+        break;
+      case "weight_lbs":
+        value = getState().quiz.inputValue.weight_lbs;
+        if (value < 60 || value > 700) {
+          dispatch(showInputError());
+        } else {
+          dispatch(hideInputError());
+        }
+        break;
+      default:
+        value = "";
+    }
+    if (getState().quiz.inputError === false) {
+      setTimeout(() => {
+        axios
+          .get(
+            "https://mintdoctor.ir/process/v2/main/question.php?type=" +
+              getState().genderSel.type +
+              "&code=" +
+              prevCode +
+              "&aid=" +
+              prevAid +
+              "&" +
+              name +
+              "=" +
+              value
+          )
+          .then((res) => {
+            // console.log(
+            //   "https://mintdoctor.ir/process/v2/main/question.php?type=" +
+            //     getState().genderSel.type +
+            //     "&code=" +
+            //     prevCode +
+            //     "&aid=" +
+            //     prevAid +
+            //     "&" +
+            //     name +
+            //     "=" +
+            //     value
+            // );
+            console.log(res);
+            const code = res.data.result.code;
+            const result = res.data.result;
+            dispatch(saveFetchedData(code, result));
+            dispatch(nullAnswerIndex());
+          });
+      }, 1000);
+    }
   };
 };
 
@@ -192,5 +278,17 @@ export const goNext = (prevAid, prevCode) => {
               dispatch(saveFetchedData(code, result));
             });
         }, 1000);
+  };
+};
+
+export const showInputError = () => {
+  return {
+    type: actionTypes.SHOW_INPUT_ERROR,
+  };
+};
+
+export const hideInputError = () => {
+  return {
+    type: actionTypes.HIDE_INPUT_ERROR,
   };
 };

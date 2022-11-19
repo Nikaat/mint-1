@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 
 import classes from "./Parasite.module.css";
@@ -9,12 +9,23 @@ import CircularStatic from "../../../Components/Progressbar/circular/circularPro
 import LinearProgressbar from "../../../Components/Progressbar/linear/linearProgressbar";
 import TitleFade from "../../../Components/TitleFade/TitleFade";
 
-const parasite = (props) => {
+const Parasite = (props) => {
   let parasite = props.result.parasite;
   let elements = props.result.parasite.elements;
 
+  const [isButton, setIsButton] = useState(false);
+
   let el = [];
   let elementsLength = Object.keys(elements).length;
+
+  useEffect(() => {
+    for (var i = 0; i < elementsLength; i++) {
+      if (elements[i].id === "button") {
+        setIsButton(true);
+        console.log(isButton);
+      }
+    }
+  }, [elements, elementsLength, isButton]);
 
   for (var i = 0; i < elementsLength; i++) {
     if (elements[i].id === "button") {
@@ -191,7 +202,9 @@ const parasite = (props) => {
         </div>
       );
 
-      setTimeout(() => props.goNext(parasite.aid, props.code), 5000);
+      // if (isButton === false) {
+      //   setTimeout(() => props.goNext(parasite.aid, props.code), 5000);
+      // }
     }
 
     if (elements[i].id === "video") {
@@ -242,4 +255,4 @@ const parasite = (props) => {
 
 const mapStateToProps = (state) => ({ code: state.quiz.code });
 
-export default connect(mapStateToProps)(parasite);
+export default connect(mapStateToProps)(Parasite);

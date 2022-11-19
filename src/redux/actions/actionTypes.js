@@ -12,6 +12,8 @@ export const ON_INPUT_CHANGE = "ON_INPUT_CHANGE";
 export const GO_TO_CALENDAR = "GO_TO_CALENDAR";
 export const SAVE_FETCHED_DATA = "SAVE_FETCHED_DATA";
 export const GO_NEXT = "GO_NEXT";
+export const SHOW_INPUT_ERROR = "SHOW_INPUT_ERROR";
+export const HIDE_INPUT_ERROR = "HIDE_INPUT_ERROR";
 
 export const NULL_ANSWER_INDEX = "NULL_ANSWER_INDEX";
 

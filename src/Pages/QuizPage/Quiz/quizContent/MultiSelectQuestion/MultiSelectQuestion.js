@@ -39,7 +39,7 @@ const MultiSelectQuestion = (props) => {
                 <QuizCard
                   {...opt}
                   idx={index}
-                  key={opt.aid}
+                  key={opt.aid + index}
                   image={opt.image}
                   onAnswer={props.clickedonMultiSelectCard}
                   backgroundImg={props.borderImage}
@@ -50,7 +50,7 @@ const MultiSelectQuestion = (props) => {
                 <QuizImageCard
                   {...opt}
                   idx={index}
-                  key={opt.aid}
+                  key={opt.aid + index}
                   backgroundImg={props.borderImage}
                   onAnswer={props.clickedonMultiSelectCard}
                   multiSelect="true"

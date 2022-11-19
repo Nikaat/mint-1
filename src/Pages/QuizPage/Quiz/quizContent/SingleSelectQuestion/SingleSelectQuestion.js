@@ -30,7 +30,7 @@ const SingleSelectQuestion = (props) => {
             <QuizImageCard
               {...opt}
               idx={index}
-              key={opt.aid}
+              key={opt.aid + index}
               image={opt.image}
               onAnswer={props.onSingleAnswer}
             />
@@ -38,7 +38,7 @@ const SingleSelectQuestion = (props) => {
             <QuizCard
               {...opt}
               idx={index}
-              key={opt.aid}
+              key={opt.aid + index}
               backgroundImg={props.borderImage}
               onAnswer={props.onSingleAnswer}
             />

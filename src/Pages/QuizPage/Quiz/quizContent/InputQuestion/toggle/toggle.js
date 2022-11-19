@@ -21,14 +21,14 @@ const toggle = (props) => {
         type="button"
         onClick={() => props.onScaleChange()}
       >
-        {props.qNum === 2 ? "FT" : "LBS"}
+        {props.HorW === "height" ? "FT" : "LBS"}
       </button>
       <button
         className={option[1]}
         type="button"
         onClick={() => props.onScaleChange()}
       >
-        {props.qNum === 2 ? "CM" : "KG"}
+        {props.HorW === "height" ? "CM" : "KG"}
       </button>
     </div>
   );
