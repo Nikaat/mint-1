@@ -22,6 +22,7 @@ const initialState = {
   aid: "",
   result: {},
   inputError: false,
+  token: "",
 };
 
 const quizReducer = (state = initialState, action) => {
@@ -88,6 +89,7 @@ const quizReducer = (state = initialState, action) => {
         questionNum: state.questionNum + 1,
         code: action.code,
         result: action.result,
+        token: action.token,
       });
     case actionTypes.NULL_ANSWER_INDEX:
       return updateObject(state, {

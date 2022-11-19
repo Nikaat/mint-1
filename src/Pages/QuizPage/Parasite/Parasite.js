@@ -207,6 +207,18 @@ const Parasite = (props) => {
       // }
     }
 
+    if (elements[i].id === "transitionText") {
+      let inputs = elements[i].inputs;
+      el[i] = (
+        <div key="transitionText" className={classes.Element}>
+          <div className={classes.TransitionText}>
+            <div className={classes.TransitionText1}>{inputs.texts[0]}</div>
+            <div className={classes.TransitionText2}>{inputs.texts[1]}</div>
+          </div>
+        </div>
+      );
+    }
+
     if (elements[i].id === "video") {
       const inputs = elements[i].inputs;
       el[i] = (
@@ -253,6 +265,8 @@ const Parasite = (props) => {
   return <div className={classes.ParasiteContainer}>{el}</div>;
 };
 
-const mapStateToProps = (state) => ({ code: state.quiz.code });
+const mapStateToProps = (state) => ({
+  code: state.quiz.code,
+});
 
 export default connect(mapStateToProps)(Parasite);

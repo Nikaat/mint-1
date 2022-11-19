@@ -36,7 +36,9 @@ export const clickedonNextButton = (prevCode, answerIndexes) => {
     setTimeout(() => {
       axios
         .get(
-          "https://mintdoctor.ir/process/v2/main/question.php?type=" +
+          "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
+            getState().quiz.token +
+            "&type=" +
             getState().genderSel.type +
             "&code=" +
             prevCode +
@@ -45,7 +47,9 @@ export const clickedonNextButton = (prevCode, answerIndexes) => {
         )
         .then((res) => {
           // console.log(
-          //   "https://mintdoctor.ir/process/v2/main/question.php?type=" +
+          //   "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
+          //     getState().quiz.token +
+          //     "&type=" +
           //     getState().genderSel.type +
           //     "&code=" +
           //     prevCode +
@@ -55,7 +59,8 @@ export const clickedonNextButton = (prevCode, answerIndexes) => {
           console.log(res);
           const code = res.data.result.code;
           const result = res.data.result;
-          dispatch(saveFetchedData(code, result));
+          const token = res.data.result.token;
+          dispatch(saveFetchedData(code, result, token));
           dispatch(nullAnswerIndex());
         });
     }, 1000);
@@ -74,7 +79,9 @@ export const clickedonQuizCard = (index, prevAid, prevCode) => {
     setTimeout(() => {
       axios
         .get(
-          "https://mintdoctor.ir/process/v2/main/question.php?type=" +
+          "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
+            getState().quiz.token +
+            "&type=" +
             getState().genderSel.type +
             "&code=" +
             prevCode +
@@ -85,7 +92,8 @@ export const clickedonQuizCard = (index, prevAid, prevCode) => {
           console.log(res);
           const code = res.data.result.code;
           const result = res.data.result;
-          dispatch(saveFetchedData(code, result));
+          const token = res.data.result.token;
+          dispatch(saveFetchedData(code, result, token));
           dispatch(nullAnswerIndex());
         });
     }, 1000);
@@ -179,7 +187,9 @@ export const sendInput = (prevAid, prevCode, name) => {
       setTimeout(() => {
         axios
           .get(
-            "https://mintdoctor.ir/process/v2/main/question.php?type=" +
+            "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
+              getState().quiz.token +
+              "&type=" +
               getState().genderSel.type +
               "&code=" +
               prevCode +
@@ -220,11 +230,12 @@ export const goToCalendar = () => {
   };
 };
 
-export const saveFetchedData = (code, result) => {
+export const saveFetchedData = (code, result, token) => {
   return {
     type: actionTypes.SAVE_FETCHED_DATA,
     code: code,
     result: result,
+    token: token,
   };
 };
 
@@ -245,7 +256,8 @@ export const fetchData = () => {
         console.log(res);
         const code = res.data.result.code;
         const result = res.data.result;
-        dispatch(saveFetchedData(code, result));
+        const token = res.data.result.token;
+        dispatch(saveFetchedData(code, result, token));
       });
   };
 };
@@ -258,7 +270,9 @@ export const goNext = (prevAid, prevCode) => {
       : setTimeout(() => {
           axios
             .get(
-              "https://mintdoctor.ir/process/v2/main/question.php?type=" +
+              "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
+                getState().quiz.token +
+                "&type=" +
                 getState().genderSel.type +
                 "&code=" +
                 prevCode +
@@ -266,16 +280,21 @@ export const goNext = (prevAid, prevCode) => {
                 prevAid
             )
             .then((res) => {
-              // console.log(
-              //   "https://mintdoctor.ir/process/v2/main/question.php?type=eghdam&code=" +
-              //     prevCode +
-              //     "&aid=" +
-              //     prevAid
-              // );
+              console.log(
+                "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
+                  getState().quiz.token +
+                  "&type=" +
+                  getState().genderSel.type +
+                  "&code=" +
+                  prevCode +
+                  "&aid=" +
+                  prevAid
+              );
               console.log(res);
               const code = res.data.result.code;
               const result = res.data.result;
-              dispatch(saveFetchedData(code, result));
+              const token = res.data.result.token;
+              dispatch(saveFetchedData(code, result, token));
             });
         }, 1000);
   };
