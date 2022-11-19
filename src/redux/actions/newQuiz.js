@@ -44,14 +44,14 @@ export const clickedonNextButton = (prevCode, answerIndexes) => {
             aids
         )
         .then((res) => {
-          console.log(
-            "https://mintdoctor.ir/process/v2/main/question.php?type=" +
-              getState().genderSel.type +
-              "&code=" +
-              prevCode +
-              "&aid=" +
-              aids
-          );
+          // console.log(
+          //   "https://mintdoctor.ir/process/v2/main/question.php?type=" +
+          //     getState().genderSel.type +
+          //     "&code=" +
+          //     prevCode +
+          //     "&aid=" +
+          //     aids
+          // );
           console.log(res);
           const code = res.data.result.code;
           const result = res.data.result;

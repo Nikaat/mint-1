@@ -25,6 +25,7 @@ html[dir="rtl"] .QuizCardContainer {
 .QuizCardContent {
     flex-grow: 1;
     padding: 28px 0 28px 32px;
+    flex-direction: column;
 }
 
 html[dir="rtl"] .QuizCardContent {
