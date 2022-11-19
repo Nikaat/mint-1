@@ -1,0 +1,11 @@
+.Element {
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}

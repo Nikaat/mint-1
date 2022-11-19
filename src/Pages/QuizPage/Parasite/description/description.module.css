@@ -1,0 +1,10 @@
+
+.Element {
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Description {
+    line-height: 1.6rem;
+}

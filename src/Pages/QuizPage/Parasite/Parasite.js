@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
 
 import classes from "./Parasite.module.css";
-import LineChart from "../../../Components/Chart/lineChart";
-import PieChart from "../../../Components/Chart/pieChart";
-import BarChart from "../../../Components/Chart/barChart";
-import CircularStatic from "../../../Components/Progressbar/circular/circularProgressbar";
-import LinearProgressbar from "../../../Components/Progressbar/linear/linearProgressbar";
+import Button from "./button/button";
+import Title from "./title/title";
+import Description from "./description/description";
+import ParasiteLoading from "./loading/loading";
+import Diagram from "./diagram/diagram";
 import TitleFade from "../../../Components/TitleFade/TitleFade";
+import Image from "./imagee/image";
+import Video from "./videoo/video";
+import TransitionText from "./transitionText/transitionText";
+import Icon from "./iconn/icon";
+import { connect } from "react-redux";
 
 const Parasite = (props) => {
   let parasite = props.result.parasite;
@@ -22,7 +26,6 @@ const Parasite = (props) => {
     for (var i = 0; i < elementsLength; i++) {
       if (elements[i].id === "button") {
         setIsButton(true);
-        console.log(isButton);
       }
     }
   }, [elements, elementsLength, isButton]);
@@ -30,190 +33,48 @@ const Parasite = (props) => {
   for (var i = 0; i < elementsLength; i++) {
     if (elements[i].id === "button") {
       el[i] = (
-        <div key="button" className={classes.Element}>
-          <button
-            className={classes.ParasiteButton}
-            onClick={() => props.goNext(parasite.aid, props.code)}
-            // onClick={() => props.goToCheckout()}
-          >
-            <div
-              className={classes.ButtonText}
-              style={{
-                backgroundColor: elements[i].inputs.bgColor,
-                color: elements[i].inputs.textColor,
-              }}
-            >
-              {" "}
-              {elements[i].inputs.text}{" "}
-            </div>
-          </button>
-        </div>
+        <Button
+          key="button"
+          parasite={parasite}
+          inputs={elements[i].inputs}
+          goNext={props.goNext}
+        />
       );
     }
 
     if (elements[i].id === "title") {
-      const inputs = elements[i].inputs;
       el[i] = (
-        <div
-          key={"title" + i}
-          className={classes.Element}
-          style={{
-            textAlign: inputs.textAlign !== "" ? inputs.textAlign : "right",
-          }}
-        >
-          <h3
-            className={classes.Title}
-            style={{
-              float: inputs.textAlign !== "" ? inputs.textAlign : "right",
-              fontSize:
-                inputs.textSize === "big"
-                  ? "32px"
-                  : inputs.textSize === "small"
-                  ? "22px"
-                  : "28px",
-            }}
-          >
-            {inputs.text}
-          </h3>
-        </div>
+        <Title key={"title" + Math.random()} inputs={elements[i].inputs} />
       );
     }
 
     if (elements[i].id === "description") {
-      const inputs = elements[i].inputs;
-      const text = inputs.text;
       el[i] = (
-        <div key={"description" + i} className={classes.Element}>
-          <div
-            className={classes.Description}
-            style={{
-              textAlign: inputs.textAlign !== "" ? inputs.textAlign : "right",
-              fontSize:
-                inputs.textSize === "big"
-                  ? "26px"
-                  : inputs.textSize === "small"
-                  ? "14px"
-                  : "20px",
-            }}
-          >
-            <div dangerouslySetInnerHTML={{ __html: text }} />
-          </div>
-        </div>
+        <Description
+          key={"description" + Math.random()}
+          inputs={elements[i].inputs}
+        />
       );
     }
 
     if (elements[i].id === "loading") {
-      let inputs = elements[i].inputs;
-      if (inputs.type === "circleFade") {
-        el[i] = (
-          <div key="circleFade" className={classes.Element}>
-            <CircularStatic
-              color={inputs.color}
-              maxValue={inputs.maxValue}
-              texts={inputs.texts}
-              loadingtime={inputs.time}
-              aid={parasite.aid}
-              // nextByButton="true"
-            />
-            {inputs.text !== "" ? (
-              <div key={"description" + i} className={classes.Element}>
-                <div
-                  className={classes.Description}
-                  style={{ textAlign: inputs.textAlign }}
-                >
-                  {inputs.text}
-                </div>
-              </div>
-            ) : null}
-          </div>
-        );
-      }
-      if (inputs.type === "circle") {
-        el[i] = (
-          <div key="circleloading" className={classes.Element}>
-            <CircularStatic
-              color={inputs.color}
-              maxValue={inputs.maxValue}
-              loadingtime={inputs.time}
-              aid={parasite.aid}
-              // nextByButton="true"
-            />
-            {inputs.text !== "" ? (
-              <div key={"description" + i} className={classes.Element}>
-                <div
-                  className={classes.Description}
-                  style={{ float: inputs.textAlign }}
-                >
-                  {inputs.text}
-                </div>
-              </div>
-            ) : null}
-          </div>
-        );
-      }
-      if (inputs.type === "linear") {
-        el[i] = (
-          <div key={"linearloading" + i} className={classes.Element}>
-            <LinearProgressbar
-              loadingtime={inputs.time}
-              color={inputs.color}
-              maxValue={inputs.maxValue}
-              text={inputs.text}
-              aid={parasite.aid}
-              // nextByButton="true"
-            />
-            {inputs.text !== "" ? (
-              <div key={"description" + i} className={classes.Element}>
-                <div
-                  className={classes.Description}
-                  style={{ float: inputs.textAlign }}
-                >
-                  {inputs.text}
-                </div>
-              </div>
-            ) : null}
-          </div>
-        );
-      }
+      el[i] = (
+        <ParasiteLoading
+          key={"loading" + Math.random()}
+          parasite={parasite}
+          inputs={elements[i].inputs}
+        />
+      );
     }
 
     if (elements[i].id === "diagram") {
-      if (elements[i].type === "line") {
-        let inputs = elements[i].inputs;
-        el[i] = (
-          <div key="line" className={classes.ChartContainer}>
-            <LineChart
-              color={inputs.color}
-              labels={inputs.labels}
-              datasets={inputs.datasets}
-            />
-          </div>
-        );
-      }
-      if (elements[i].type === "pie") {
-        let inputs = elements[i].inputs;
-        el[i] = (
-          <div key="pie" className={classes.ChartContainer}>
-            <PieChart
-              color={inputs.color}
-              labels={inputs.labels}
-              datasets={inputs.datasets}
-            />
-          </div>
-        );
-      }
-      if (elements[i].type === "bar") {
-        let inputs = elements[i].inputs;
-        el[i] = (
-          <div key="bar" className={classes.ChartContainer}>
-            <BarChart
-              color={inputs.color}
-              labels={inputs.labels}
-              datasets={inputs.datasets}
-            />
-          </div>
-        );
-      }
+      el[i] = (
+        <Diagram
+          key={"diagram" + Math.random()}
+          inputs={elements[i].inputs}
+          type={elements[i].type}
+        />
+      );
     }
 
     if (elements[i].id === "titleFade") {
@@ -222,71 +83,35 @@ const Parasite = (props) => {
           <TitleFade texts={elements[i].inputs.texts} />
         </div>
       );
-
-      // if (isButton === false) {
-      //   setTimeout(() => props.goNext(parasite.aid, props.code), 5000);
-      // }
+      setTimeout(
+        () => props.goNext(parasite.aid, props.code),
+        elements[i].inputs.texts.length * 6000
+      );
     }
 
     if (elements[i].id === "transitionText") {
-      let inputs = elements[i].inputs;
       el[i] = (
-        <div
-          key="transitionText"
-          className={classes.Element}
-          style={{ position: "relative" }}
-        >
-          <div className={classes.TransitionText}>
-            <h3 className={classes.TransitionText1}>{inputs.texts[0]}</h3>
-            <h3 className={classes.TransitionText2}>{inputs.texts[1]}</h3>
-          </div>
-        </div>
+        <TransitionText
+          key={"transitionText" + Math.random()}
+          inputs={elements[i].inputs}
+        />
       );
     }
 
     if (elements[i].id === "video") {
-      const inputs = elements[i].inputs;
       el[i] = (
-        <div key="video" className={classes.Element}>
-          <video
-            src={inputs.link}
-            controls
-            autoPlay
-            className={classes.Video}
-            controlsList="nodownload"
-          />
-        </div>
+        <Video key={"image" + Math.random()} inputs={elements[i].inputs} />
       );
     }
 
     if (elements[i].id === "image") {
-      const inputs = elements[i].inputs;
       el[i] = (
-        <div key="image" className={classes.Element}>
-          <img
-            src={inputs.link}
-            className={classes.Image}
-            style={{ float: inputs.textAlign }}
-            alt=""
-          />
-        </div>
+        <Image key={"image" + Math.random()} inputs={elements[i].inputs} />
       );
     }
 
     if (elements[i].id === "icon") {
-      const inputs = elements[i].inputs;
-      el[i] = (
-        <div
-          key="image"
-          className={classes.Element}
-          style={{
-            justifyContent:
-              inputs.textAlign !== "" ? inputs.textAlign : "right",
-          }}
-        >
-          <img src={inputs.link} className={classes.Icon} alt="" />
-        </div>
-      );
+      el[i] = <Icon key={"icon" + Math.random()} inputs={elements[i].inputs} />;
     }
   }
 

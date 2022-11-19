@@ -1,0 +1,10 @@
+.Element {
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Icon {
+    width: 50%;
+    margin-bottom: 25px;
+}

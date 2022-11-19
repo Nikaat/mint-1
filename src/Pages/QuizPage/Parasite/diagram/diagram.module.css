@@ -1,0 +1,13 @@
+
+.ChartContainer {
+    width: 50%;
+    margin: 25px auto;
+} 
+
+@media (max-width: 500px) {
+    .ChartContainer {
+        width: auto;
+        margin: 25px;
+    }
+
+}
