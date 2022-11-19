@@ -67,10 +67,10 @@ const Parasite = (props) => {
               float: inputs.textAlign !== "" ? inputs.textAlign : "right",
               fontSize:
                 inputs.textSize === "big"
-                  ? "26px"
+                  ? "32px"
                   : inputs.textSize === "small"
-                  ? "14px"
-                  : "20px",
+                  ? "22px"
+                  : "28px",
             }}
           >
             {inputs.text}
