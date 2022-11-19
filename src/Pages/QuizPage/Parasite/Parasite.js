@@ -210,10 +210,10 @@ const Parasite = (props) => {
     if (elements[i].id === "transitionText") {
       let inputs = elements[i].inputs;
       el[i] = (
-        <div key="transitionText" className={classes.Element}>
+        <div className={classes.Element} style={{ position: "relative" }}>
           <div className={classes.TransitionText}>
-            <div className={classes.TransitionText1}>{inputs.texts[0]}</div>
-            <div className={classes.TransitionText2}>{inputs.texts[1]}</div>
+            <h4 className={classes.TransitionText1}>{inputs.texts[0]}</h4>
+            <h4 className={classes.TransitionText2}>{inputs.texts[1]}</h4>
           </div>
         </div>
       );

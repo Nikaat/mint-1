@@ -258,7 +258,6 @@ export const fetchData = () => {
         const code = res.data.result.code;
         const result = res.data.result;
         const token = res.data.result.token;
-        console.log(token);
         dispatch(saveFetchedData(code, result, token));
       });
   };
@@ -282,16 +281,16 @@ export const goNext = (prevAid, prevCode) => {
                 prevAid
             )
             .then((res) => {
-              console.log(
-                "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
-                  getState().quiz.token +
-                  "&type=" +
-                  getState().genderSel.type +
-                  "&code=" +
-                  prevCode +
-                  "&aid=" +
-                  prevAid
-              );
+              // console.log(
+              //   "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
+              //     getState().quiz.token +
+              //     "&type=" +
+              //     getState().genderSel.type +
+              //     "&code=" +
+              //     prevCode +
+              //     "&aid=" +
+              //     prevAid
+              // );
               console.log(res);
               const code = res.data.result.code;
               const result = res.data.result;
