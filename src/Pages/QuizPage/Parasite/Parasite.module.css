@@ -90,11 +90,11 @@
 }
 
 .TransitionText1 {
-    animation: fade-out 3s forwards ;
+    animation: fade-out 5s forwards ;
 }
 
 .TransitionText2 {
-    animation: fade-in 3s forwards ;
+    animation: fade-in 5s forwards ;
     padding-bottom: 15px;
 }
 
