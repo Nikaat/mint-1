@@ -67,7 +67,7 @@ html[dir="rtl"] .QuizCardContent {
 
 .Image {
     display: none;
-    width: 25%;
+    height: 80px;
 }
 
 html[dir='rtl'] .Image {

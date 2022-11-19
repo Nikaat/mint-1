@@ -62,7 +62,7 @@ const parasite = (props) => {
         <div key={"description" + i} className={classes.Element}>
           <div
             className={classes.Description}
-            style={{ float: inputs.textAlign }}
+            style={{ textAlign: inputs.textAlign }}
           >
             <div dangerouslySetInnerHTML={{ __html: text }} />
           </div>
@@ -87,7 +87,7 @@ const parasite = (props) => {
               <div key={"description" + i} className={classes.Element}>
                 <div
                   className={classes.Description}
-                  style={{ float: inputs.textAlign }}
+                  style={{ textAlign: inputs.textAlign }}
                 >
                   {inputs.text}
                 </div>
@@ -121,7 +121,7 @@ const parasite = (props) => {
       }
       if (inputs.type === "linear") {
         el[i] = (
-          <div key="linearloading" className={classes.Element}>
+          <div key={"linearloading" + i} className={classes.Element}>
             <LinearProgressbar
               loadingtime={inputs.time}
               color={inputs.color}
