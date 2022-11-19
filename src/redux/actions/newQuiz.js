@@ -216,7 +216,8 @@ export const sendInput = (prevAid, prevCode, name) => {
             console.log(res);
             const code = res.data.result.code;
             const result = res.data.result;
-            dispatch(saveFetchedData(code, result));
+            const token = res.data.result.token;
+            dispatch(saveFetchedData(code, result, token));
             dispatch(nullAnswerIndex());
           });
       }, 1000);
@@ -257,6 +258,7 @@ export const fetchData = () => {
         const code = res.data.result.code;
         const result = res.data.result;
         const token = res.data.result.token;
+        console.log(token);
         dispatch(saveFetchedData(code, result, token));
       });
   };
