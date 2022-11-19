@@ -87,14 +87,17 @@
     position: absolute;
     width: 100%;
     text-align: center;
+    color: #1380b2;
 }
 
 .TransitionText1 {
     animation: fade-out 5s forwards ;
+    font-size: 28px;
 }
 
 .TransitionText2 {
     animation: fade-in 5s forwards ;
+    font-size: 28px;
     padding-bottom: 15px;
 }
 

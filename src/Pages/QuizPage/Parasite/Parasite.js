@@ -65,6 +65,12 @@ const Parasite = (props) => {
             className={classes.Title}
             style={{
               float: inputs.textAlign !== "" ? inputs.textAlign : "right",
+              fontSize:
+                inputs.textSize === "big"
+                  ? "26px"
+                  : inputs.textSize === "small"
+                  ? "14px"
+                  : "20px",
             }}
           >
             {inputs.text}
@@ -82,6 +88,12 @@ const Parasite = (props) => {
             className={classes.Description}
             style={{
               textAlign: inputs.textAlign !== "" ? inputs.textAlign : "right",
+              fontSize:
+                inputs.textSize === "big"
+                  ? "26px"
+                  : inputs.textSize === "small"
+                  ? "14px"
+                  : "20px",
             }}
           >
             <div dangerouslySetInnerHTML={{ __html: text }} />
@@ -225,8 +237,8 @@ const Parasite = (props) => {
           style={{ position: "relative" }}
         >
           <div className={classes.TransitionText}>
-            <h4 className={classes.TransitionText1}>{inputs.texts[0]}</h4>
-            <h4 className={classes.TransitionText2}>{inputs.texts[1]}</h4>
+            <h3 className={classes.TransitionText1}>{inputs.texts[0]}</h3>
+            <h3 className={classes.TransitionText2}>{inputs.texts[1]}</h3>
           </div>
         </div>
       );
