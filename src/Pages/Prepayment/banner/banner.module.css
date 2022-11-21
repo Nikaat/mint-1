@@ -1,0 +1,72 @@
+.Banner {
+    display: flex;
+    flex-direction: column;
+    background: var(--primary400Color);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.BannerContainer {
+    margin-bottom: 0;
+}
+
+.BannerContent {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 1032px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.BannerTextContainer {
+    position: relative;
+    display: block;
+    max-width: 192px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    /* opacity: 0; */
+    text-shadow: 0 1px 2px rgb(42 56 107 / 20%);
+    transform: translateY(20px);
+    transition: all 1s ease-in-out;
+}
+
+.BannerTextContainerIsShown {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.BannerTextContainer:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    width: 6px;
+    background: var(--secondary2Color);
+    border-radius: 8px;
+    content: "";
+}
+
+.BannerText {
+    width: 100%;
+    max-width: 175px;
+    transform: translateX(14px);
+    margin-left: 15px;
+}
+
+.BannerImageContainer {
+    font: inherit;
+}
+
+.BannerImage {
+    display: inline-block;
+    width: 100%;
+    min-width: 100px;
+    max-width: 179px;
+    height: 179px;
+    object-fit: contain;
+}

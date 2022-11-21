@@ -1,0 +1,46 @@
+.AnimationArrowsContainer {
+    position: absolute;
+    top: 0;
+    right: -14px;
+}
+
+.Container {
+    position: relative;
+    opacity: 0;
+    transition-delay: 3s;
+}
+
+.IsShown {
+    opacity: 1;
+}
+
+.AnimationTriangle1 {
+    -webkit-animation: purchase-personalized-animation-arrows_opacityAnimation1__Nd8Dr 1.5s ease-in-out 3s infinite;
+    animation: purchase-personalized-animation-arrows_opacityAnimation1__Nd8Dr 1.5s ease-in-out 3s infinite;
+    transform: translateX(64px);
+}
+
+.AnimationTriangle2 {
+    -webkit-animation: purchase-personalized-animation-arrows_opacityAnimation2__bVEBi 1.5s ease-in-out 3s infinite;
+    animation: purchase-personalized-animation-arrows_opacityAnimation2__bVEBi 1.5s ease-in-out 3s infinite;
+    transform: translateX(49px);
+}
+
+.AnimationTriangle3 {
+    -webkit-animation: purchase-personalized-animation-arrows_opacityAnimation3__bAeo7 1.5s ease-in-out 3s infinite;
+    animation: purchase-personalized-animation-arrows_opacityAnimation3__bAeo7 1.5s ease-in-out 3s infinite;
+    transform: translateX(34px);
+}
+
+.AnimationTriangle4 {
+    -webkit-animation: purchase-personalized-animation-arrows_opacityAnimation4__McmDm 1.5s ease-in-out 3s infinite;
+    animation: purchase-personalized-animation-arrows_opacityAnimation4__McmDm 1.5s ease-in-out 3s infinite;
+    transform: translateX(19px);
+}
+
+.AnimationTriangle1 , .AnimationTriangle2 , .AnimationTriangle3 , .AnimationTriangle4 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-height: 264px;
+}

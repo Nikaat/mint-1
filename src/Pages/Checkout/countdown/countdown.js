@@ -1,8 +1,9 @@
 import React from "react";
 
 import classes from "./countdown.module.css";
+import CountdownComp from "./countDownComp/CountDownComp";
 
-const countdown = (peops) => {
+const countdown = (props) => {
   return (
     <div className={classes.Main}>
       <div className={classes.Countdown}>
@@ -10,9 +11,7 @@ const countdown = (peops) => {
           <p className={classes.Text}>Reserved price for:</p>
           <div className={classes.Time}>
             <div className={classes.TimeNumbers}>
-              <span>04</span>
-              <span className={classes.TimeDivider}>:</span>
-              <span>46</span>
+              <CountdownComp date={props.date} />
             </div>
             <div className={classes.TimeUnits}>
               <span className={classes.TimeUnit}>minutes</span>

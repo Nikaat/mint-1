@@ -150,6 +150,80 @@
     text-align: left;
 }
 
+.StickyfixedCountdown {
+    position: fixed;
+    z-index: 211;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(30px);
+    /* background: var(--blurredHeaderBackgroundColor); */
+    box-shadow: 0 2px 16px rgb(0 0 0 / 8%);
+    background-color: white;
+}
+
+.StickyCountdownContainer {
+    display: flex;
+    width: 100%;
+    max-width: 450px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    margin: 0 auto;
+}
+
+.StickyCountdownTime {
+    padding: 0 5px;
+}
+
+.StickyCountdownTimeNumbers {
+    color: var(--primary500Color);
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    line-height: 1.25;
+}
+
+.StickyCountdownTimeUnits {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -3px;
+    color: var(--neutral900Color);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.33;
+}
+
+.StickyCountdownTimeUnit {
+    margin: 0 3px;
+}
+
+.StickyCountdownCtaContainer {
+    width: 100%;
+    max-width: 240px;
+    padding: 0 5px;
+}
+
+.StickyPulsingButton {
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    background-color: var(--secondary1Color);
+    box-shadow: 0 0 0 0 var(--secondaryButtonShadowColor);
+    position: relative;
+    padding: 14px;
+    animation: pulsing-button-ui_pulse__YwoKU 1.25s cubic-bezier(.66,0,0,1) infinite;
+    border-radius: var(--buttonRadius);
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .7px;
+    line-height: 1.25;
+    outline: none;
+    text-shadow: 0 1px 2px rgb(66 33 108 / 12%);
+    text-transform: uppercase;
+}
+
 @media (max-width: 500px) {
     .HeaderWithCountdownDesktop {
         display: none;

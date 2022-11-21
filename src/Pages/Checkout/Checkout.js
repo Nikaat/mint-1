@@ -5,6 +5,7 @@ import classes from "./Checkout.module.css";
 import Logo from "../../assets/images/logo.png";
 import BurgerButton from "../../Components/UI/BurgerButton/BurgerButton";
 import Countdown from "./countdown/countdown";
+import CountdownComp from "./countdown/countDownComp/CountDownComp";
 import Banner from "./banner/banner";
 import Introductory from "./Introductory/Introductory";
 import Plans from "./plans/plans";
@@ -19,6 +20,20 @@ class Checkout extends Component {
   state = {
     faq: { Q1: false, Q2: false, Q3: false },
     modal: false,
+
+    visible: false,
+    date: Date.now(),
+  };
+
+  componentDidMount = () => {
+    const handleScroll = () => {
+      let position = window.pageYOffset;
+      this.setState({ visible: position > 100 });
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   };
 
   onfaqQuestion = (q) => {
@@ -58,7 +73,7 @@ class Checkout extends Component {
                   </a>
                 </span>
               </div>
-              <Countdown />
+              <Countdown date={this.state.date} />
               <div className={classes.BurgerButton}>
                 <BurgerButton />
               </div>
@@ -85,15 +100,45 @@ class Checkout extends Component {
                 </span>
               </div>
             </section>
+
             <div className={classes.StickyCountdown}>
               <div>
                 <div className={classes.CountdownText}>
                   Reserved price for:{" "}
                   <span className={classes.CountdownTimeUnit}>
-                    <span>00</span>
-                    <span>:</span>
-                    <span>00</span>
+                    <CountdownComp date={this.state.date} />
                   </span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className={classes.StickyfixedCountdown}
+              style={{
+                display: this.state.visible === true ? "block" : "none",
+              }}
+            >
+              <div className={classes.StickyCountdownContainer}>
+                <div className={classes.StickyCountdownTime}>
+                  <div className={classes.StickyCountdownTimeNumbers}>
+                    <CountdownComp date={this.state.date} />
+                  </div>
+                  <div className={classes.StickyCountdownTimeUnits}>
+                    <span className={classes.StickyCountdownTimeUnit}>
+                      minutes
+                    </span>
+                    <span className={classes.StickyCountdownTimeUnit}>
+                      seconds
+                    </span>
+                  </div>
+                </div>
+                <div className={classes.StickyCountdownCtaContainer}>
+                  <button
+                    className={classes.StickyPulsingButton}
+                    data-button="countdown-button"
+                  >
+                    GET MY PLAN
+                  </button>
                 </div>
               </div>
             </div>

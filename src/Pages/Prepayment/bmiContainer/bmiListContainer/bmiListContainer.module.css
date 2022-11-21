@@ -1,0 +1,14 @@
+.ListContainer {
+    position: relative;
+    margin: 24px 0 16px;
+}
+
+.Container {
+    position: relative;
+    display: flex;
+}
+
+.List {
+    max-width: 160px;
+}
+

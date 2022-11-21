@@ -1,0 +1,49 @@
+.BMINote {
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-in-out 2s;
+}
+
+.IsShown {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.Container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.Overweight {
+    background: hsla(36,94%,73%,.2);
+}
+
+.WarningIcon {
+    padding: 7px;
+    margin-right: 8px;
+    border-radius: 6px;
+}
+
+.Overweight .WarningIcon {
+    background: hsla(36,94%,73%,.4);
+}
+
+.Title {
+    margin-bottom: 4px;
+    color: var(--neutral900Color);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.Text {
+    color: var(--neutral900Color);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.4;
+}
