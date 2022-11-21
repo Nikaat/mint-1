@@ -50,7 +50,6 @@ const quizCard = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  qNum: state.quiz.questionNum,
   answerIndex: state.quiz.answerIndex,
   code: state.quiz.code,
   answerIndexes: state.quiz.answerIndexes,

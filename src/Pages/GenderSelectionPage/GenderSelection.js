@@ -5,7 +5,7 @@ import { clickedonGenderCard } from "../../redux/actions";
 
 import classes from "./GenderSelection.module.css";
 // import HelpButton from "../../Components/UI/HelpButton/HelpButton";
-import GenderSelectioncard from "../../Pages/GenderSelectionPage/GenderSelectionCard/GenderSelectionCard";
+import GenderSelectioncard from "./GenderSelectionCard/GenderSelectionCard";
 import Copyright from "../../Components/Copyright/Copyright";
 import * as actionCreators from "../../redux/actions";
 

@@ -1,0 +1,45 @@
+.GenderSelection {
+    max-width: 500px;
+    height: 100%;
+    padding: 10px 16px;
+    margin: 0 auto;
+    color: var(--neutral900Color);
+}
+
+.Header {
+    margin: 8px 10px 20px;
+}
+
+.HeaderTitle {
+    display: block;
+    padding: 0 10px;
+    z-index: 1;
+    margin: 16px 0;
+    color: var(--neutral900Color);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center; 
+}
+
+.buttonSection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width: 500px) {
+    .GenderSelection {
+        justify-content: flex-start;
+        padding: 0;
+    }
+    .Main {
+        padding-top: 24px;
+    }
+    .quizLabel {
+        margin-bottom: 26px;
+    }
+    .caption {
+        margin-bottom: 24px;
+    }
+}

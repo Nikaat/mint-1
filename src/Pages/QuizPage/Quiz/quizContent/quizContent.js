@@ -4,7 +4,7 @@ import SingleSelectQuestion from "./SingleSelectQuestion/SingleSelectQuestion";
 import InputQuestion from "./InputQuestion/InputQuestion";
 import MultiSelectQuestion from "./MultiSelectQuestion/MultiSelectQuestion";
 import DatePicker from "./Calendar/datePicker";
-import GenderSelection from "../../../GenderSelectionPage/GenderSelection";
+import GenderSelection from "./GenderSelection/GenderSelection";
 
 const QuizContent = (props) => {
   let QuestionType;
@@ -51,7 +51,12 @@ const QuizContent = (props) => {
       );
       break;
     case "genderSelection":
-      QuestionType = <GenderSelection />;
+      QuestionType = (
+        <GenderSelection
+          dataCard={props.result.answers}
+          header={props.result.text}
+        />
+      );
       break;
     case "Calendar":
       QuestionType = <DatePicker header={props.header} />;

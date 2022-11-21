@@ -1,7 +1,37 @@
 import React from "react";
+import { Navigate } from "react-router-dom";
+import { connect } from "react-redux";
 
-const genderSelectionquestion = (props) => {
-  return <div></div>;
+import classes from "./GenderSelection.module.css";
+import GenderSelectioncard from "./GenderSelectionCard/GenderSelectionCard";
+import { clickedonQuizCard } from "../../../../../redux/actions";
+
+const GenderSelection = (props) => {
+  return (
+    <main className={classes.GenderSelection}>
+      <div className={classes.Header}>
+        <h1 className={classes.HeaderTitle}>{props.header}</h1>
+      </div>
+      <section className={classes.buttonSection}>
+        {props.dataCard.map((opt, index) => (
+          <GenderSelectioncard
+            {...opt}
+            idx={index}
+            key={opt.aid + index}
+            image={opt.image}
+            onAnswer={props.onSingleAnswer}
+          />
+        ))}
+      </section>
+
+      {props.isAnswered === true ? <Navigate to={props.nextPage} /> : null}
+    </main>
+  );
 };
 
-export default genderSelectionquestion;
+const mapDispatchToProps = (dispatch) => ({
+  onSingleAnswer: (index, aid, code) =>
+    dispatch(clickedonQuizCard(index, aid, code)),
+});
+
+export default connect(null, mapDispatchToProps)(GenderSelection);

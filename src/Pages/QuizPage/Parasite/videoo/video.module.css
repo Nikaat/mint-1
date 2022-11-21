@@ -1,10 +1,14 @@
 .Element {
     margin: 25px;
-    display: flex;
-    flex-direction: column;
 }
 
 .Video {
-    width: 100%;
+    width: 50%;
     border-radius: 10px;
+}
+
+@media (max-width: 500px) {
+    .Video {
+        width: 100%;
+    }
 }

@@ -52,16 +52,9 @@ const SingleSelectQuestion = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  qNum: state.quiz.questionNum,
-});
-
 const mapDispatchToProps = (dispatch) => ({
   onSingleAnswer: (index, aid, code) =>
     dispatch(clickedonQuizCard(index, aid, code)),
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SingleSelectQuestion);
+export default connect(null, mapDispatchToProps)(SingleSelectQuestion);
