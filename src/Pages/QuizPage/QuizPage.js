@@ -15,6 +15,7 @@ import ProgressContainer from "./Quiz/progressContainer/progressContainer";
 class QuizPage extends Component {
   componentDidMount = () => {
     this.props.fetchData();
+    window.scrollTo(0, 0);
   };
 
   state = {

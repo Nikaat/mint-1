@@ -60,6 +60,7 @@ export const clickedonNextButton = (prevCode, answerIndexes) => {
           const code = res.data.result.code;
           const result = res.data.result;
           const token = res.data.result.token;
+          window.scrollTo(0, 0);
           dispatch(saveFetchedData(code, result, token));
           dispatch(nullAnswerIndex());
         });
@@ -93,6 +94,7 @@ export const clickedonQuizCard = (index, prevAid, prevCode) => {
           const code = res.data.result.code;
           const result = res.data.result;
           const token = res.data.result.token;
+          window.scrollTo(0, 0);
           dispatch(saveFetchedData(code, result, token));
           dispatch(nullAnswerIndex());
         });
@@ -217,6 +219,7 @@ export const sendInput = (prevAid, prevCode, name) => {
             const code = res.data.result.code;
             const result = res.data.result;
             const token = res.data.result.token;
+            window.scrollTo(0, 0);
             dispatch(saveFetchedData(code, result, token));
             dispatch(nullAnswerIndex());
           });
@@ -258,6 +261,7 @@ export const fetchData = () => {
         const code = res.data.result.code;
         const result = res.data.result;
         const token = res.data.result.token;
+        window.scrollTo(0, 0);
         dispatch(saveFetchedData(code, result, token));
       });
   };
@@ -295,6 +299,7 @@ export const goNext = (prevAid, prevCode) => {
               const code = res.data.result.code;
               const result = res.data.result;
               const token = res.data.result.token;
+              window.scrollTo(0, 0);
               dispatch(saveFetchedData(code, result, token));
             });
         }, 1000);
