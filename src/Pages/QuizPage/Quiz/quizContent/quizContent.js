@@ -55,6 +55,7 @@ const QuizContent = (props) => {
         <GenderSelection
           dataCard={props.result.answers}
           header={props.result.text}
+          hint={props.result.hint}
         />
       );
       break;

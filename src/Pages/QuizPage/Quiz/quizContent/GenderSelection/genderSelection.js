@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import classes from "./GenderSelection.module.css";
 import GenderSelectioncard from "./GenderSelectionCard/GenderSelectionCard";
 import { clickedonQuizCard } from "../../../../../redux/actions";
+import Hint from "../hint/hint";
 
 const GenderSelection = (props) => {
   return (
@@ -23,7 +24,9 @@ const GenderSelection = (props) => {
           />
         ))}
       </section>
-
+      {props.hint.caption !== "" ? (
+        <Hint title={props.hint.title} caption={props.hint.caption} />
+      ) : null}
       {props.isAnswered === true ? <Navigate to={props.nextPage} /> : null}
     </main>
   );
