@@ -28,7 +28,9 @@ const GenderSelection = (props) => {
         ))}
       </section>
       {props.hint.caption !== "" ? (
-        <Hint title={props.hint.title} caption={props.hint.caption} />
+        <div className={classes.Hint}>
+          <Hint title={props.hint.title} caption={props.hint.caption} />
+        </div>
       ) : null}
       {props.isAnswered === true ? <Navigate to={props.nextPage} /> : null}
     </main>

@@ -12,7 +12,7 @@ const hint = (props) => {
         </div>
       ) : null}
       <div className={classes.HintCaption}>
-        <p>{props.caption}</p>
+        <div dangerouslySetInnerHTML={{ __html: props.caption }} />
       </div>
     </div>
   );
