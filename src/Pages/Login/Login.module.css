@@ -1,0 +1,124 @@
+.PageContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding-top: 80px;
+    background: var(--pageBackgroundColor);
+}
+
+.EmailPageMobileContent {
+    height: 100%;
+}
+
+.EmailPageContainer {
+    padding: 16px 10px;
+    position: relative;
+    height: 100%;
+    background-color: var(--background1Color);
+}
+
+.EmailGeneratedForm {
+    position: relative;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 10px 16px;
+}
+
+.EmailGeneratedContent {
+    flex: 1 1;
+}
+
+.EmailGeneratedInstruction {
+    padding: 0;
+    margin: 0 auto 24px;
+    color: var(--neutral900Color);
+    font-size: 24px;
+    font-weight: var(--pageTitleFontWeight);
+    line-height: 1.33;
+    text-align: center;
+}
+
+.EmailGeneratedForm b {
+    color: var(--primary400Color);
+    font-weight: 900;
+}
+
+.EmailGeneratedInputRow {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.EmailGeneratedInput {
+    width: calc(100% - 6px);
+    padding: 12px 16px;
+    border: 1px solid var(--neutral700Color);
+    margin-left: 3px;
+    background: var(--background3Color);
+    border-radius: 12px;
+    color: var(--neutral900Color);
+    font-size: 16px;
+    line-height: 1.4;
+    outline: none;
+    font-family: inherit;
+}
+
+.EmailGeneratedTip {
+    position: relative;
+    padding-left: 40px;
+    margin: 12px auto;
+}
+
+.LockIcon {
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    display: block;
+    width: 24px;
+    height: auto;
+}
+
+.EmailGeneratedTipText {
+    color: var(--neutral500Color);
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.KeyboardFooter {
+    position: absolute;
+    right: 0;
+    top: calc(100vh - 160px);
+    left: 0;
+    transition: transform .2s cubic-bezier(.17,.59,.4,.77);
+}
+
+.GreenWideButton {
+    display: block;
+    width: 100%;
+    max-width: 335px;
+    margin: 0 auto;
+    background: var(--primary400Color);
+    box-shadow: 0 12px 23px var(--primaryButtonShadowColor);
+    padding: var(--buttonPadding) 24px;
+    border: 0;
+    border-radius: var(--buttonRadius);
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    outline: 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .2s;
+}
+
+@media (max-width: 500px) {
+    .PageContainer {
+        padding-top: 48px;
+    }
+}

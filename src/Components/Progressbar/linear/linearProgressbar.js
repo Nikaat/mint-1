@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import { goNext } from "../../../redux/actions";
 import { connect } from "react-redux";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const CustomizedLinearProgress = styled(Box)`
   color: #20b2aa;
@@ -52,28 +53,38 @@ function LinearProgressbar(props) {
   const maxValue = parseInt(props.maxValue, 10);
 
   React.useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((prevProgress) =>
-        prevProgress >= maxValue ? maxValue : prevProgress + 1
-      );
-    }, time);
+    setTimeout(() => {
+      const timer = setInterval(() => {
+        setProgress((prevProgress) =>
+          prevProgress >= maxValue ? maxValue : prevProgress + 1
+        );
+      }, time);
+      return () => {
+        clearInterval(timer);
+      };
+    }, parseInt(props.delayTime, 10) * 1000);
 
-    return () => {
-      clearInterval(timer);
-    };
     // eslint-disable-next-line
   }, []);
 
   if (progress === maxValue) {
-    if (props.nextByButton !== "true") {
+    if (props.hasButton !== "true") {
       props.goNext(props.aid, props.code);
     }
   }
 
+  const theme = createTheme({
+    palette: {
+      primary: { main: props.color },
+    },
+  });
+
   return (
-    <Box sx={{ width: "100%", direction: "ltr" }}>
-      <LinearProgressWithLabel value={progress} />
-    </Box>
+    <ThemeProvider theme={theme}>
+      <Box sx={{ width: "100%", direction: "ltr" }}>
+        <LinearProgressWithLabel color="primary" value={progress} />
+      </Box>
+    </ThemeProvider>
   );
 }
 

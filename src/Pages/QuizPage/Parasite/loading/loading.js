@@ -57,17 +57,21 @@ const loading = (props) => {
       <div key={"linearloading" + Math.random()} className={classes.Element}>
         <LinearProgressbar
           loadingtime={props.inputs.time}
+          delayTime={props.inputs.delay}
           color={props.inputs.color}
           maxValue={props.inputs.maxValue}
           text={props.inputs.text}
           aid={props.parasite.aid}
-          // nextByButton="true"
+          hasButton={props.inputs.hasButton}
         />
         {props.inputs.text !== "" ? (
           <div key={"description" + Math.random} className={classes.Element}>
             <div
               className={classes.Description}
-              style={{ float: props.inputs.textAlign }}
+              style={{
+                float: props.inputs.textAlign,
+                color: props.inputs.color,
+              }}
             >
               {props.inputs.text}
             </div>
