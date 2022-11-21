@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import classes from "./Quiz.module.css";
 import QuizIndicator from "./quizIndicator/quizIndicator";
 import ProgressContainer from "./progressContainer/progressContainer";
 import QuizContent from "./quizContent/quizContent";
 
-const quiz = (props) => {
+const Quiz = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className={classes.QuizContainer}>
       <div className={classes.Indicator}>
@@ -17,4 +21,4 @@ const quiz = (props) => {
   );
 };
 
-export default quiz;
+export default Quiz;

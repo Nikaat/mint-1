@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import SingleSelectQuestion from "./SingleSelectQuestion/SingleSelectQuestion";
 import InputQuestion from "./InputQuestion/InputQuestion";
@@ -7,6 +7,10 @@ import DatePicker from "./Calendar/datePicker";
 
 const QuizContent = (props) => {
   let QuestionType;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   switch (props.result.questionType) {
     case "singleSelect":

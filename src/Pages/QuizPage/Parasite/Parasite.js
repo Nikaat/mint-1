@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import classes from "./Parasite.module.css";
 import Button from "./button/button";
@@ -17,28 +17,23 @@ const Parasite = (props) => {
   let parasite = props.result.parasite;
   let elements = props.result.parasite.elements;
 
-  const [isButton, setIsButton] = useState(false);
-
   let el = [];
   let elementsLength = Object.keys(elements).length;
 
   useEffect(() => {
-    for (var i = 0; i < elementsLength; i++) {
-      if (elements[i].id === "button") {
-        setIsButton(true);
-      }
-    }
-  }, [elements, elementsLength, isButton]);
+    window.scrollTo(0, 0);
+  }, []);
 
   for (var i = 0; i < elementsLength; i++) {
     if (elements[i].id === "button") {
       el[i] = (
-        <Button
-          key="button"
-          parasite={parasite}
-          inputs={elements[i].inputs}
-          goNext={props.goNext}
-        />
+        <div key="button" className={classes.FixedButtonContainer}>
+          <Button
+            parasite={parasite}
+            inputs={elements[i].inputs}
+            goNext={props.goNext}
+          />
+        </div>
       );
     }
 

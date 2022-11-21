@@ -11,6 +11,16 @@
     justify-content: center;
 }
 
+.FixedButtonContainer {
+    width: 100%;
+    position: fixed;
+    right: 0;
+    padding: 20px 0 0;
+    z-index: 11;
+    bottom: 0;
+    padding-bottom: 32px;
+}
+
 .TitleFadeList {
     list-style: none;
 }
