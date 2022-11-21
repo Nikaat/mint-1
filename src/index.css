@@ -92,7 +92,8 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
   padding: 0;
   border: 0;
   margin: 0;
-  vertical-align: baseline
+  vertical-align: baseline;
+  font-family: 'Dana';
 }
 
 * {

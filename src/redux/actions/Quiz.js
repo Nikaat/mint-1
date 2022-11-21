@@ -3,10 +3,11 @@ import axios from "axios";
 import * as actionTypes from "./actionTypes";
 import * as actionCreators from "./index";
 
-export const answerQuestion = (index) => {
+export const answerQuestion = (index, aid) => {
   return {
     type: actionTypes.ANSWER_QUESTION,
     index: index,
+    aid: aid,
   };
 };
 
@@ -16,28 +17,88 @@ export const changequestionPage = () => {
   };
 };
 
-export const clickedonNextButton = (qNum) => {
-  return (dispatch) => {
-    if (qNum <= 16) {
-      setTimeout(() => {
-        dispatch(changequestionPage());
-      }, 1000);
+export const clickedonNextButton = (prevCode, answerIndexes) => {
+  let aids = "";
+  answerIndexes.map((item) => {
+    if (item != null) {
+      aids = aids + item + ",";
     }
+    return aids;
+  });
+
+  return (dispatch, getState) => {
+    if (aids === "") {
+      aids = getState().quiz.result.answers[0].aid;
+    }
+    console.log(aids);
+
+    console.log(getState());
+    setTimeout(() => {
+      axios
+        .get(
+          "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
+            getState().quiz.token +
+            "&type=" +
+            getState().genderSel.type +
+            "&code=" +
+            prevCode +
+            "&aid=" +
+            aids
+        )
+        .then((res) => {
+          // console.log(
+          //   "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
+          //     getState().quiz.token +
+          //     "&type=" +
+          //     getState().genderSel.type +
+          //     "&code=" +
+          //     prevCode +
+          //     "&aid=" +
+          //     aids
+          // );
+          console.log(res);
+          const code = res.data.result.code;
+          const result = res.data.result;
+          const token = res.data.result.token;
+          window.scrollTo(0, 0);
+          dispatch(saveFetchedData(code, result, token));
+          dispatch(nullAnswerIndex());
+        });
+    }, 1000);
   };
 };
 
-export const clickedonQuizCard = (index, qNum) => {
-  return (dispatch) => {
+export const nullAnswerIndex = () => {
+  return {
+    type: actionTypes.NULL_ANSWER_INDEX,
+  };
+};
+
+export const clickedonQuizCard = (index, prevAid, prevCode) => {
+  return (dispatch, getState) => {
     dispatch(answerQuestion(index));
-    if (qNum <= 16) {
-      setTimeout(() => {
-        dispatch(changequestionPage());
-      }, 1000);
-    } else if (qNum === 16) {
-      setTimeout(() => {
-        dispatch(goToCalendar());
-      });
-    }
+    setTimeout(() => {
+      axios
+        .get(
+          "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
+            getState().quiz.token +
+            "&type=" +
+            getState().genderSel.type +
+            "&code=" +
+            prevCode +
+            "&aid=" +
+            prevAid
+        )
+        .then((res) => {
+          console.log(res);
+          const code = res.data.result.code;
+          const result = res.data.result;
+          const token = res.data.result.token;
+          window.scrollTo(0, 0);
+          dispatch(saveFetchedData(code, result, token));
+          dispatch(nullAnswerIndex());
+        });
+    }, 1000);
   };
 };
 
@@ -68,12 +129,102 @@ export const onScaleChange = () => {
   };
 };
 
-export const onInputChange = (value, scale, qNum) => {
+export const onInputChange = (value, scale, HorW) => {
   return {
     type: actionTypes.ON_INPUT_CHANGE,
     value: value,
     scale: scale,
-    qNum: qNum,
+    HorW: HorW,
+  };
+};
+
+export const sendInput = (prevAid, prevCode, name) => {
+  return (dispatch, getState) => {
+    let value;
+    switch (name) {
+      case "height_cm":
+        value = getState().quiz.inputValue.height_cm;
+        if (value < 90 || value > 240) {
+          dispatch(showInputError());
+        } else {
+          dispatch(hideInputError());
+        }
+        break;
+      case "height_ft,height_in":
+        value =
+          getState().quiz.inputValue.height_ft +
+          "," +
+          getState().quiz.inputValue.height_in;
+        if (
+          getState().quiz.inputValue.height_ft < 3 ||
+          getState().quiz.inputValue.height_ft > 7 ||
+          getState().quiz.inputValue.height_in < 1 ||
+          getState().quiz.inputValue.height_in > 11
+        ) {
+          dispatch(showInputError());
+        } else {
+          dispatch(hideInputError());
+        }
+        break;
+      case "weight_kg":
+        value = getState().quiz.inputValue.weight_kg;
+        if (value < 25 || value > 300) {
+          dispatch(showInputError());
+        } else {
+          dispatch(hideInputError());
+        }
+        break;
+      case "weight_lbs":
+        value = getState().quiz.inputValue.weight_lbs;
+        if (value < 60 || value > 700) {
+          dispatch(showInputError());
+        } else {
+          dispatch(hideInputError());
+        }
+        break;
+      default:
+        value = "";
+    }
+    if (getState().quiz.inputError === false) {
+      setTimeout(() => {
+        axios
+          .get(
+            "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
+              getState().quiz.token +
+              "&type=" +
+              getState().genderSel.type +
+              "&code=" +
+              prevCode +
+              "&aid=" +
+              prevAid +
+              "&" +
+              name +
+              "=" +
+              value
+          )
+          .then((res) => {
+            // console.log(
+            //   "https://mintdoctor.ir/process/v2/main/question.php?type=" +
+            //     getState().genderSel.type +
+            //     "&code=" +
+            //     prevCode +
+            //     "&aid=" +
+            //     prevAid +
+            //     "&" +
+            //     name +
+            //     "=" +
+            //     value
+            // );
+            console.log(res);
+            const code = res.data.result.code;
+            const result = res.data.result;
+            const token = res.data.result.token;
+            window.scrollTo(0, 0);
+            dispatch(saveFetchedData(code, result, token));
+            dispatch(nullAnswerIndex());
+          });
+      }, 1000);
+    }
   };
 };
 
@@ -83,49 +234,86 @@ export const goToCalendar = () => {
   };
 };
 
-export const saveFetchedData = (code, aid, result) => {
+export const saveFetchedData = (code, result, token) => {
   return {
     type: actionTypes.SAVE_FETCHED_DATA,
     code: code,
-    aid: aid,
     result: result,
+    token: token,
   };
 };
 
-export const fetchData = (prevCode, prevAid) => {
-  return (dispatch) => {
+export const fetchData = () => {
+  return (dispatch, getState) => {
     // const headers = {
     //   "Content-Type": "application/json",
     //   Authorization: "",
     //   token: "",
     // };
-    if (prevCode === "") {
-      axios
-        .get(
-          "https://mintdoctor.ir/process/v2/main/question.php?type=eghdam&aid=start"
-        )
-        .then((res) => {
-          console.log(res);
-          const code = res.data.result.code;
-          const aid = res.data.result.answers[0].aid;
-          const result = res.data.result;
-          dispatch(saveFetchedData(code, aid, result));
-        });
-    } else {
-      axios
-        .get(
-          "https://mintdoctor.ir/process/v2/main/question.php?type=eghdam&code=" +
-            prevCode +
-            "&aid=" +
-            prevAid
-        )
-        .then((res) => {
-          console.log(res);
-          const code = res.data.result.code;
-          const aid = res.data.result.answers[0].aid;
-          const result = res.data.result;
-          dispatch(saveFetchedData(code, aid, result));
-        });
-    }
+    axios
+      .get(
+        "https://mintdoctor.ir/process/v2/main/question.php?type=" +
+          getState().genderSel.type +
+          "&aid=start"
+      )
+      .then((res) => {
+        console.log(res);
+        const code = res.data.result.code;
+        const result = res.data.result;
+        const token = res.data.result.token;
+        window.scrollTo(0, 0);
+        dispatch(saveFetchedData(code, result, token));
+      });
+  };
+};
+
+export const goNext = (prevAid, prevCode) => {
+  return (dispatch, getState) => {
+    console.log(prevAid);
+    prevAid === "main"
+      ? setTimeout(() => dispatch(actionCreators.returnToFirstPage()), 1000)
+      : setTimeout(() => {
+          axios
+            .get(
+              "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
+                getState().quiz.token +
+                "&type=" +
+                getState().genderSel.type +
+                "&code=" +
+                prevCode +
+                "&aid=" +
+                prevAid
+            )
+            .then((res) => {
+              // console.log(
+              //   "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
+              //     getState().quiz.token +
+              //     "&type=" +
+              //     getState().genderSel.type +
+              //     "&code=" +
+              //     prevCode +
+              //     "&aid=" +
+              //     prevAid
+              // );
+              console.log(res);
+              const code = res.data.result.code;
+              const result = res.data.result;
+              const token = res.data.result.token;
+              window.scrollTo(0, 0);
+              dispatch(saveFetchedData(code, result, token));
+            });
+        }, 1000);
+  };
+};
+
+export const showInputError = () => {
+  return {
+    type: actionTypes.SHOW_INPUT_ERROR,
+  };
+};
+
+export const hideInputError = () => {
+  return {
+    type: actionTypes.HIDE_INPUT_ERROR,
   };
 };

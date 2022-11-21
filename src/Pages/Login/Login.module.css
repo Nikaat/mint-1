@@ -42,7 +42,7 @@
 }
 
 .EmailGeneratedForm b {
-    color: var(--primary400Color);
+    color: #A76D85;
     font-weight: 900;
 }
 
@@ -94,12 +94,12 @@
     transition: transform .2s cubic-bezier(.17,.59,.4,.77);
 }
 
-.GreenWideButton {
+.WideButton {
     display: block;
     width: 100%;
     max-width: 335px;
     margin: 0 auto;
-    background: var(--primary400Color);
+    background: #E76D85;
     box-shadow: 0 12px 23px var(--primaryButtonShadowColor);
     padding: var(--buttonPadding) 24px;
     border: 0;

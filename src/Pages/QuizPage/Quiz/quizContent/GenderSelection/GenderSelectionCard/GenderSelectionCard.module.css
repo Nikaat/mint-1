@@ -1,14 +1,14 @@
 
 .Button {
+    flex: 1;
     background: #0000;
     border: none;
     cursor: pointer;
     display: block;
     filter: drop-shadow(0 2px 6px rgba(22,42,65,.06)) drop-shadow(0 12px 24px rgba(7,21,37,.08));
-    max-width: 155px;
     outline: none;
     padding: 45px 0 0;
-    margin: 0 12px;
+    margin: 0 8px;
     min-width: 20px;
 }
 

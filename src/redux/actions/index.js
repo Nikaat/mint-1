@@ -6,16 +6,6 @@ export {
   saveType,
 } from "./GenderSel";
 
-// export {
-//   answerQuestion,
-//   changequestionPage,
-//   clickedonQuizCard,
-//   returnToPreviusQuestion,
-//   onArrow,
-//   clickedonNextButton,
-//   fetchData,
-// } from "./Quiz";
-
 export {
   answerQuestion,
   changequestionPage,
@@ -26,6 +16,6 @@ export {
   fetchData,
   goNext,
   sendInput,
-} from "./newQuiz";
+} from "./Quiz";
 
 export { choosePlan } from "./Checkout";

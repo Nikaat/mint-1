@@ -11,8 +11,7 @@ const Login = (props) => {
             <div className={classes.EmailGeneratedContent}>
               <div className={classes.EmailGeneratedInstruction}>
                 <p>
-                  Enter your email to learn how to <b>lose weight</b> with
-                  BetterMe<br></br>
+                  <b>بارداری سریع</b> با مینت <br></br>
                 </p>
               </div>
               <div className={classes.EmailGeneratedInputRow}>
@@ -21,7 +20,7 @@ const Login = (props) => {
                   autoComplete="off"
                   type="email"
                   name="email"
-                  placeholder="Enter your email to get your plan"
+                  placeholder="شماره موبایل یا ایمیلتون رو وارد کنید"
                   value=""
                 />
               </div>
@@ -39,19 +38,18 @@ const Login = (props) => {
                   ></path>
                 </svg>
                 <span className={classes.EmailGeneratedTipText}>
-                  We respect your privacy and are committed to protecting your
-                  personal data. We’ll email you a copy of your results for
-                  convenient access.
+                  نام کاربری، شماره موبایل یا ایمیل شما خواهد بود و برای دریافت
+                  برنامه باید با یکی از این موارد، وارد مینت بشید.
                 </span>
               </div>
             </div>
             <div className={classes.KeyboardFooter}>
               <button
-                className={classes.GreenWideButton}
+                className={classes.WideButton}
                 data-button="email-form-submit"
                 type="submit"
               >
-                Get my plan
+                دریافت برنامه
               </button>
             </div>
           </form>
