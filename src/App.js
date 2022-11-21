@@ -4,7 +4,6 @@ import { Routes, Route } from "react-router";
 import "./App.css";
 import Layout from "./hoc/Layout/Layout";
 import GenderSelection from "./Pages/GenderSelectionPage/GenderSelection";
-// import GQuestion from "./Pages/GeneratedQuestionPage/GQuestion";
 import QuizPage from "./Pages/QuizPage/QuizPage";
 import Checkout from "./Pages/Checkout/Checkout";
 import Login from "./Pages/Login/login";
