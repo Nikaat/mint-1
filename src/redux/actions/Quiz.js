@@ -39,24 +39,14 @@ export const clickedonNextButton = (prevCode, answerIndexes) => {
           "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
             getState().quiz.token +
             "&type=" +
-            getState().genderSel.type +
+            getState().quiz.type +
             "&code=" +
             prevCode +
             "&aid=" +
             aids
         )
         .then((res) => {
-          // console.log(
-          //   "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
-          //     getState().quiz.token +
-          //     "&type=" +
-          //     getState().genderSel.type +
-          //     "&code=" +
-          //     prevCode +
-          //     "&aid=" +
-          //     aids
-          // );
-          console.log(res);
+          console.log("clickedonNextButton", res);
           const code = res.data.result.code;
           const result = res.data.result;
           const token = res.data.result.token;
@@ -83,14 +73,14 @@ export const clickedonQuizCard = (index, prevAid, prevCode) => {
           "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
             getState().quiz.token +
             "&type=" +
-            getState().genderSel.type +
+            getState().quiz.type +
             "&code=" +
             prevCode +
             "&aid=" +
             prevAid
         )
         .then((res) => {
-          console.log(res);
+          console.log("clickedonQuizCard", res);
           const code = res.data.result.code;
           const result = res.data.result;
           const token = res.data.result.token;
@@ -192,7 +182,7 @@ export const sendInput = (prevAid, prevCode, name) => {
             "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
               getState().quiz.token +
               "&type=" +
-              getState().genderSel.type +
+              getState().quiz.type +
               "&code=" +
               prevCode +
               "&aid=" +
@@ -203,19 +193,7 @@ export const sendInput = (prevAid, prevCode, name) => {
               value
           )
           .then((res) => {
-            // console.log(
-            //   "https://mintdoctor.ir/process/v2/main/question.php?type=" +
-            //     getState().genderSel.type +
-            //     "&code=" +
-            //     prevCode +
-            //     "&aid=" +
-            //     prevAid +
-            //     "&" +
-            //     name +
-            //     "=" +
-            //     value
-            // );
-            console.log(res);
+            console.log("sendInput", res);
             const code = res.data.result.code;
             const result = res.data.result;
             const token = res.data.result.token;
@@ -253,11 +231,11 @@ export const fetchData = () => {
     axios
       .get(
         "https://mintdoctor.ir/process/v2/main/question.php?type=" +
-          getState().genderSel.type +
+          getState().quiz.type +
           "&aid=start"
       )
       .then((res) => {
-        console.log(res);
+        console.log("fetchData", res);
         const code = res.data.result.code;
         const result = res.data.result;
         const token = res.data.result.token;
@@ -269,40 +247,54 @@ export const fetchData = () => {
 
 export const goNext = (prevAid, prevCode) => {
   return (dispatch, getState) => {
-    console.log(prevAid);
-    prevAid === "main"
-      ? setTimeout(() => dispatch(actionCreators.returnToFirstPage()), 1000)
-      : setTimeout(() => {
-          axios
-            .get(
-              "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
-                getState().quiz.token +
-                "&type=" +
-                getState().genderSel.type +
-                "&code=" +
-                prevCode +
-                "&aid=" +
-                prevAid
-            )
-            .then((res) => {
-              // console.log(
-              //   "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
-              //     getState().quiz.token +
-              //     "&type=" +
-              //     getState().genderSel.type +
-              //     "&code=" +
-              //     prevCode +
-              //     "&aid=" +
-              //     prevAid
-              // );
-              console.log(res);
-              const code = res.data.result.code;
-              const result = res.data.result;
-              const token = res.data.result.token;
-              window.scrollTo(0, 0);
-              dispatch(saveFetchedData(code, result, token));
-            });
-        }, 1000);
+    if (getState().quiz.result.isResult === "false") {
+      prevAid === "main"
+        ? setTimeout(() => dispatch(actionCreators.returnToFirstPage()), 1000)
+        : setTimeout(() => {
+            axios
+              .get(
+                "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
+                  getState().quiz.token +
+                  "&type=" +
+                  getState().quiz.type +
+                  "&code=" +
+                  prevCode +
+                  "&aid=" +
+                  prevAid
+              )
+              .then((res) => {
+                console.log("goNext", res);
+                const code = res.data.result.code;
+                const result = res.data.result;
+                const token = res.data.result.token;
+                window.scrollTo(0, 0);
+                dispatch(saveFetchedData(code, result, token));
+              });
+          }, 1000);
+    } else {
+      setTimeout(() => {
+        axios
+          .get(
+            "https://mintdoctor.ir/process/v2/main/question.php?Authorization=" +
+              getState().quiz.token +
+              "&type=" +
+              getState().quiz.type +
+              "&code=" +
+              prevCode +
+              "&aid=" +
+              prevAid
+          )
+          .then((res) => {
+            console.log("goNext", res);
+            const code = res.data.result.code;
+            const result = res.data.result;
+            const token = res.data.result.token;
+            window.scrollTo(0, 0);
+            dispatch(saveFetchedData(code, result, token));
+          });
+        dispatch(goToCheckout());
+      }, 1000);
+    }
   };
 };
 
@@ -315,5 +307,18 @@ export const showInputError = () => {
 export const hideInputError = () => {
   return {
     type: actionTypes.HIDE_INPUT_ERROR,
+  };
+};
+
+export const saveType = (linkType) => {
+  return {
+    type: actionTypes.SAVE_TYPE,
+    linkType: linkType,
+  };
+};
+
+export const goToCheckout = () => {
+  return {
+    type: actionTypes.GO_TO_CHECKOUT,
   };
 };

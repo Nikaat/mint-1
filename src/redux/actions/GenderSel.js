@@ -27,10 +27,3 @@ export const returnToFirstPage = () => {
     type: actionTypes.RETURN_TO_FIRST_PAGE,
   };
 };
-
-export const saveType = (linkType) => {
-  return {
-    type: actionTypes.SAVE_TYPE,
-    linkType: linkType,
-  };
-};

@@ -23,6 +23,8 @@ const initialState = {
   result: {},
   inputError: false,
   token: "",
+  type: "",
+  checkout: false,
 };
 
 const quizReducer = (state = initialState, action) => {
@@ -120,6 +122,10 @@ const quizReducer = (state = initialState, action) => {
       return updateObject(state, {
         inputError: false,
       });
+    case actionTypes.SAVE_TYPE:
+      return updateObject(state, { type: action.linkType });
+    case actionTypes.GO_TO_CHECKOUT:
+      return updateObject(state, { checkout: true });
     default:
       return state;
   }

@@ -1,0 +1,71 @@
+.HighlightsContainer {
+    position: relative;
+    margin-bottom: 48px;
+}
+
+.Container {
+    background: var(--background3Color);
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-in-out;
+}
+
+.Container, .IsShown {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.SubContainer {
+    overflow: hidden;
+    padding: 24px 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgb(22 42 65 / 6%), 0 12px 24px rgb(7 21 37 / 8%);
+}
+
+.Title {
+    margin-bottom: 4px;
+    color: var(--neutral900Color);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.Text {
+    margin-bottom: 20px;
+    color: var(--neutral900Color);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    line-height: 1.43;
+    text-align: left;
+}
+
+.AnimationLabel1, .AnimationLabel3 {
+    padding: 4px 6px;
+    margin-top: 4px;
+    background: var(--shadow40Primary100Color);
+    border-radius: 4px;
+    color: var(--primary500Color);
+    font-weight: 700;
+}
+
+.AnimationLabel1, .AnimationLabel2, .AnimationLabel3 {
+    display: inline-block;
+    transform: scale(0);
+
+    transform: scale(1);
+}
+
+.AnimationLabel1 {
+    transition: transform .5s ease-in-out 3.5s;
+}
+
+.AnimationLabel2 {
+    transition: transform .5s ease-in-out 4s;
+}
+
+.AnimationLabel3 {
+    transition: transform .5s ease-in-out 4.5s;
+}

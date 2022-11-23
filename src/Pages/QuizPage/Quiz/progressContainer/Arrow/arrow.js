@@ -12,6 +12,12 @@ const arrow = (props) => {
       height="24"
       viewBox="0 0 24 24"
       className={classes.ArrowBack}
+      style={{
+        display:
+          props.result.preAid === "main" || props.result.isResult === "true"
+            ? "none"
+            : "inline",
+      }}
     >
       <path
         fillRule="evenodd"
@@ -23,8 +29,7 @@ const arrow = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  qNum: state.quiz.questionNum,
-  redirectToFirstPage: state.quiz.redirectToFirstPage,
+  result: state.quiz.result,
   code: state.quiz.code,
 });
 

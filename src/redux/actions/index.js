@@ -3,7 +3,6 @@ export {
   changePage,
   clickedonGenderCard,
   returnToFirstPage,
-  saveType,
 } from "./GenderSel";
 
 export {
@@ -16,6 +15,8 @@ export {
   fetchData,
   goNext,
   sendInput,
+  saveType,
+  goToCheckout,
 } from "./Quiz";
 
 export { choosePlan } from "./Checkout";

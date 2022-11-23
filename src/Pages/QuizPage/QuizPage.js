@@ -14,6 +14,12 @@ import ProgressContainer from "./Quiz/progressContainer/progressContainer";
 
 class QuizPage extends Component {
   componentDidMount = () => {
+    const params = new URLSearchParams(window.location.search); // id=123
+    let type = params.get("type");
+
+    this.props.onSaveType(type);
+    console.log(type);
+
     this.props.fetchData();
     window.scrollTo(0, 0);
   };
@@ -69,26 +75,27 @@ class QuizPage extends Component {
             </div>
           </div>
         )}
-        {this.props.isGenderSelected === false ? <Navigate to="/" /> : null}
-        {this.state.checkout === true ? <Navigate to="/checkout" /> : null}
+        {/* {this.props.isGenderSelected === false ? <Navigate to="/" /> : null} */}
+        {this.props.checkout === true ? <Navigate to="/mint/checkout" /> : null}
       </Auxiliary>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  qNum: state.quiz.questionNum,
-  isGenderSelected: state.genderSel.isAnswered,
+  // isGenderSelected: state.genderSel.isAnswered,
   code: state.quiz.code,
   aid: state.quiz.aid,
   result: state.quiz.result,
   questionType: state.quiz.result.questionType,
   parasite: state.quiz.result.parasite,
+  checkout: state.quiz.checkout,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   fetchData: () => dispatch(actionCreators.fetchData()),
   goNext: (aid, code) => dispatch(actionCreators.goNext(aid, code)),
+  onSaveType: (linkType) => dispatch(actionCreators.saveType(linkType)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuizPage);
