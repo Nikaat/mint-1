@@ -51,7 +51,7 @@
     text-shadow: 0 1px 2px var(--buttonTextShadowColor);
     width: 100%;
     background: var(--secondary1Color);
-    animation: button-module_pulse__icT-A 1.25s cubic-bezier(.66,0,0,1) infinite;
+    animation: pulse 1.25s cubic-bezier(.66,0,0,1) infinite;
     box-shadow: 0 0 0 0 var(--secondaryButtonShadowColor);
 }
 
@@ -116,4 +116,18 @@
     .SafeCheckout {
         margin: 0;
     }
+}
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(78, 208, 154, .7);
+	}
+
+	70% {
+		box-shadow: 0 0 0 10px rgba(78, 208, 154,0);
+	}
+
+	100% {
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
 }
