@@ -86,6 +86,7 @@ const breakdown = (props) => {
               xmlns="http://www.w3.org/2000/svg"
               className={classes.PriceLabel}
               style={{
+                display: "none",
                 "--label-color":
                   props.active === "true"
                     ? "var(--primary100Color)"
@@ -95,11 +96,15 @@ const breakdown = (props) => {
               <path d="M15.5669 1.57768C16.3234 0.583597 17.5009 0 18.7501 0H215.5039C218.8176 0 221.5039 2.68629 221.5039 6V42C221.5039 45.3137 218.8176 48 215.5039 48H19.7413C17.8675 48 16.1013 47.1246 14.9666 45.6335L1.26892 27.6335C-0.364796 25.4866 -0.364799 22.5134 1.26892 20.3665L15.5669 1.57768Z"></path>
             </svg>
             <div className={classes.Price}>
-              <span className={classes.Currency}>$</span>
+              <span className={classes.Currency} style={{ display: "none" }}>
+                $
+              </span>
               <span className={classes.Dollars}>{props.dollors}</span>
               <span className={classes.Row}>
-                <span className={classes.Cents}>{props.cents}</span>
-                <span className={classes.Period}>per day</span>
+                <span className={classes.Cents} style={{ display: "none" }}>
+                  {props.cents}
+                </span>
+                <span className={classes.Period}>هزار تومان</span>
               </span>
             </div>
           </div>{" "}

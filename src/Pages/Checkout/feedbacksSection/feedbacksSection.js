@@ -7,7 +7,7 @@ const feedbacksSection = (props) => {
   return (
     <div className={classes.Container}>
       <div className={classes.AppStoreReviews}>
-        <h1 className={classes.AppStoreReviewsTitle}>Users love our plans</h1>
+        <h1 className={classes.AppStoreReviewsTitle}>نظرات مامان های مینتی</h1>
         <div className={classes.AppStoreReviewsSubtitle}>
           Here's what people are saying about BetterMe
         </div>

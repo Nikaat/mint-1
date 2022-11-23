@@ -13,19 +13,8 @@ const plans = (props) => {
     <div className={classes.Plans}>
       <div className={classes.Container}>
         <div className={classes.ChoosePlanGenericContainer}>
-          <h3 className={classes.ChoosePlanHeader}>Choose Your Plan</h3>
+          <h3 className={classes.ChoosePlanHeader}>انتخاب خدمات مورد نیاز</h3>
           <div className={classes.PlanListContainer}>
-            <Breakdown
-              planName="7-DAY PLAN"
-              price="9.99"
-              singleLine="7 days"
-              dollors="1"
-              cents="43"
-              data="affiliates-introductory-3-subs-1-week"
-              active={weekAcive}
-              id="week"
-              clicked={props.clicked}
-            />
             <Breakdown
               planName="1-MONTH PLAN"
               price="28.56"
@@ -35,6 +24,17 @@ const plans = (props) => {
               data="affiliates-introductory-3-subs-1-month"
               active={monthAcive}
               id="month"
+              clicked={props.clicked}
+            />
+            <Breakdown
+              planName="7-DAY PLAN"
+              price="9.99"
+              singleLine="7 days"
+              dollors="1"
+              cents="43"
+              data="affiliates-introductory-3-subs-1-week"
+              active={weekAcive}
+              id="week"
               clicked={props.clicked}
             />
             <Breakdown
@@ -57,13 +57,13 @@ const plans = (props) => {
             className={classes.Button}
             data-button="checkout-get-plan"
           >
-            GET MY PLAN
+            دریافت رژيم
           </button>
         </div>
-        <div className={classes.LegalContainer}>
+        <div style={{ display: "none" }} className={classes.LegalContainer}>
           <Legal />
         </div>
-        <div className={classes.SafeCheckout}>
+        <div className={classes.SafeCheckout} style={{ display: "none" }}>
           <div className={classes.ChoosePlanSafeCheckout}>
             <span className={classes.SafeCheckoutText}>
               Guaranteed <b>Safe</b> Checkout

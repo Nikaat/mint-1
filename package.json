@@ -2,7 +2,7 @@
   "name": "mint",
   "version": "0.1.0",
   "private": true,
-  "main": "public/index.html",
+  "main": "index.html",
   "homepage": "https://mintmoms.com",
   "dependencies": {
     "@emotion/react": "^11.10.5",

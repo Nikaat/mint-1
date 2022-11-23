@@ -20,7 +20,7 @@ const countdown = (props) => {
           </div>
           <div className={classes.CtaContainer}>
             <button className={classes.Button} data-button="countdown-button">
-              GET MY PLAN
+              دریافت رژیم
             </button>
           </div>
         </div>

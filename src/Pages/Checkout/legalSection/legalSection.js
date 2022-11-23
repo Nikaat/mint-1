@@ -56,7 +56,7 @@ const legalSection = (props) => {
           className={classes.Button}
           databutton="checkout-get-plan"
         >
-          GET MY PLAN
+          دریافت رژیم
         </button>
       </div>
       <div className={classes.Legal}>

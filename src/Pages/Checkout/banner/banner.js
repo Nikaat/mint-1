@@ -16,7 +16,7 @@ const banner = (peops) => {
               </h1>
               <div className={classes.TopBannerButton}>
                 <button type="button" className={classes.Button}>
-                  GET MY PLAN
+                  دریافت رژیم
                 </button>
               </div>
             </div>

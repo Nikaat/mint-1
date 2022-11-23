@@ -76,8 +76,9 @@
     padding: var(--buttonPadding);
     text-shadow: 0 1px 2px var(--buttonTextShadowColor);
     width: 100%;
-    background: var(--secondary1Color);
     box-shadow: 0 12px 23px var(--secondaryButtonShadowColor);
+    background: var(--secondary1Color);
+    animation: pulse 1.25s cubic-bezier(.66,0,0,1) infinite;
 }
 
 .Legal {
@@ -111,4 +112,19 @@
         margin: 0;
         margin-top: 24px;
     }
+}
+
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(78, 208, 154, .7);
+	}
+
+	70% {
+		box-shadow: 0 0 0 10px rgba(78, 208, 154,0);
+	}
+
+	100% {
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
 }

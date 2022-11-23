@@ -6,7 +6,7 @@ import classes from "./promoCodeForm.module.css";
 const PromoCodeForm = (props) => {
   const [inputValue, setInputValue] = useState("");
   return (
-    <form className={classes.Container}>
+    <form className={classes.Container} style={{ display: "none" }}>
       <h4 className={classes.PromoHeading}>Apply promo code</h4>
       <div className={classes.Content}>
         <div className={classes.InputContainer}>

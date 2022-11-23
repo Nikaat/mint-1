@@ -5,7 +5,7 @@ import MealPlanInsight from "./mealPlanInsight/mealPlanInsight";
 
 const mealPlan = (props) => {
   return (
-    <div className={classes.MealPlan}>
+    <div className={classes.MealPlan} style={{ display: "none" }}>
       <div className={classes.Container}>
         <div className={classes.InsightsContainer}>
           <h3 className={classes.Header}>Personalized meal plan</h3>

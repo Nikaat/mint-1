@@ -147,7 +147,7 @@ class Checkout extends Component {
                     className={classes.StickyPulsingButton}
                     data-button="countdown-button"
                   >
-                    GET MY PLAN
+                    دریافت رژیم
                   </button>
                 </div>
               </div>

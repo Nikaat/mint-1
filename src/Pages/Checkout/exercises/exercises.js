@@ -5,7 +5,7 @@ import Exercise from "./exercise/exercise";
 
 const exercises = (props) => {
   return (
-    <div className={classes.Exercises}>
+    <div className={classes.Exercises} style={{ display: "none" }}>
       <div className={classes.Container}>
         <div className={classes.PlanContainer}>
           <h3 className={classes.Header}>Easy-to-follow exercises</h3>
