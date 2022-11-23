@@ -16,9 +16,9 @@ const breakdown = (props) => {
             ? [classes.PlanCard]
             : [classes.PlanCard, classes.PlanCardActive].join(" ")
         }
-        onClick={() => props.clicked(props.id)}
+        onClick={() => props.clicked(props.index)}
       >
-        {props.data === "affiliates-introductory-3-subs-1-month" ? (
+        {props.index === 0 ? (
           <div
             className={classes.MostPopularLabel}
             style={{
@@ -26,20 +26,15 @@ const breakdown = (props) => {
                 props.active === "true" ? "" : "var(--neutral300Color)",
             }}
           >
-            MOST POPULAR
+            پیشنهاد مینت
           </div>
         ) : null}
         <div
           className={classes.MainContentItemContainer}
           style={{
             "--MainContentItemContainer-border-radius":
-              props.data === "affiliates-introductory-3-subs-1-month"
-                ? "0 0 8px 8px"
-                : "8px",
-            borderTop:
-              props.data === "affiliates-introductory-3-subs-1-month"
-                ? "none"
-                : "",
+              props.index === 0 ? "0 0 8px 8px" : "8px",
+            borderTop: props.index === 0 ? "none" : "",
             "--before-border-color":
               props.active === "true"
                 ? "var(--primary400Color)"
@@ -71,13 +66,31 @@ const breakdown = (props) => {
             </div>
             <div className={classes.PricingDetails}>
               <div className={classes.PlanDescription}>
-                <span className={classes.PlanPriceStriked}></span> $
-                {props.price} per{" "}
+                {props.description}
+                {/* <span className={classes.PlanPriceStriked}></span> $
+                {props.price} per{" "} */}
                 <span className={classes.singleLine}>{props.singleLine}</span>
               </div>
             </div>
           </div>
-          <div className={classes.PlanPerDay}>
+          <div className={classes.PlanPerDayFa}>
+            <div className={classes.TowPrice}>
+              <div style={{ textDecoration: "line-through", fontSize: "16px" }}>
+                {props.price}
+              </div>
+              <div
+                style={{
+                  fontWeight: "700",
+                  color:
+                    props.active === "true" ? "var(--secondary1Color)" : null,
+                }}
+              >
+                {props.discountPrice}
+              </div>
+            </div>
+            <span className={classes.Toman}>هزار تومان</span>
+          </div>
+          {/* <div className={classes.PlanPerDay}>
             <svg
               width="165"
               height="48"
@@ -107,7 +120,7 @@ const breakdown = (props) => {
                 <span className={classes.Period}>هزار تومان</span>
               </span>
             </div>
-          </div>{" "}
+          </div>{" "} */}
         </div>
       </div>
     </div>

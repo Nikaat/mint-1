@@ -50,6 +50,7 @@
 
 .PlanMainInfo {
     width: 100%;
+    margin: auto;
 }
 
 .PlanName {
@@ -95,6 +96,7 @@
     color: var(--neutral600Color);
 }
 
+
 .PlanPerDay::after {
     position: absolute;
     z-index: 1;
@@ -137,8 +139,7 @@
 .Row {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .Cents {
@@ -165,4 +166,27 @@
     line-height: 1.23;
     text-align: center;
     white-space: nowrap;
+}
+
+.PlanPerDayFa {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    min-width: 96px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 8px 14px 8px 6px;
+    margin-right: 7px;
+    border-radius: 0 5px 5px 0;
+    color: var(--neutral600Color);
+}
+
+.Toman {
+    font-size: 12px;
+    padding-right: 7px;
+}
+
+.TowPrice {
+    display: flex;
+    flex-direction: column;
 }

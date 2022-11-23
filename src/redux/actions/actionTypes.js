@@ -19,3 +19,4 @@ export const GO_TO_CHECKOUT = "GO_TO_CHECKOUT";
 export const NULL_ANSWER_INDEX = "NULL_ANSWER_INDEX";
 
 export const CHOOSE_PLAN = "CHOOSE_PLAN";
+export const NO_DISCOUNT = "NO_DISCOUNT";

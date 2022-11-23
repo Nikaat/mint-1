@@ -19,4 +19,4 @@ export {
   goToCheckout,
 } from "./Quiz";
 
-export { choosePlan } from "./Checkout";
+export { choosePlan, noDiscount } from "./Checkout";

@@ -6,22 +6,34 @@ import PromoCodeForm from "./promoCodeForm/promoCodeForm";
 import Legal from "./legal/legal";
 
 const plans = (props) => {
-  let weekAcive = props.planSelected === "week" ? "true" : "false";
-  let monthAcive = props.planSelected === "month" ? "true" : "false";
-  let month3Acive = props.planSelected === "month3" ? "true" : "false";
   return (
     <div className={classes.Plans}>
       <div className={classes.Container}>
         <div className={classes.ChoosePlanGenericContainer}>
           <h3 className={classes.ChoosePlanHeader}>انتخاب خدمات مورد نیاز</h3>
           <div className={classes.PlanListContainer}>
-            <Breakdown
+            {props.result.plans.map((plan, index) => (
+              <Breakdown
+                key={"plan" + index}
+                index={index}
+                planName={plan.title}
+                price={plan.price}
+                discountPrice={plan.discountPrice}
+                description={plan.description}
+                // singleLine="1 month"
+                // dollors="1"
+                // cents="02"
+                active={props.planSelectedIndex === index ? "true" : "false"}
+                id="month"
+                clicked={props.clicked}
+              />
+            ))}
+            {/* <Breakdown
               planName="1-MONTH PLAN"
               price="28.56"
               singleLine="1 month"
               dollors="1"
               cents="02"
-              data="affiliates-introductory-3-subs-1-month"
               active={monthAcive}
               id="month"
               clicked={props.clicked}
@@ -32,7 +44,6 @@ const plans = (props) => {
               singleLine="7 days"
               dollors="1"
               cents="43"
-              data="affiliates-introductory-3-subs-1-week"
               active={weekAcive}
               id="week"
               clicked={props.clicked}
@@ -46,8 +57,8 @@ const plans = (props) => {
               data="affiliates-introductory-3-subs-3-month"
               active={month3Acive}
               id="month3"
-              clicked={props.clicked}
-            />
+              clicked={props.clicked} 
+            />*/}
           </div>
           <PromoCodeForm />
         </div>

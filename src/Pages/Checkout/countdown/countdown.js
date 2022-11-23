@@ -8,10 +8,13 @@ const countdown = (props) => {
     <div className={classes.Main}>
       <div className={classes.Countdown}>
         <div className={classes.Container}>
-          <p className={classes.Text}>Reserved price for:</p>
+          <p className={classes.Text}>اعتبار تخفیف تا:</p>
           <div className={classes.Time}>
             <div className={classes.TimeNumbers}>
-              <CountdownComp date={props.date} />
+              <CountdownComp
+                date={props.date}
+                noDiscoutnt={props.deleteDiscount}
+              />
             </div>
             <div className={classes.TimeUnits}>
               <span className={classes.TimeUnit}>minutes</span>

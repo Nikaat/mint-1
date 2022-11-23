@@ -101,12 +101,22 @@ class Checkout extends Component {
             <section className={classes.TitleSection}>
               <div className={classes.Container}>
                 <span className={classes.Title}>
-                  Start{" "}
-                  <b className={classes.HighlightedTitle}>losing weight</b>{" "}
-                  right now
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: this.props.result.title,
+                    }}
+                  />
+                  {/* Start{" "} */}
+                  {/* <b className={classes.HighlightedTitle}>losing weight</b>{" "}
+                  right now */}
                 </span>
                 <span className={classes.SubTitle}>
-                  Join over <span>10,000,000</span> members of BetterMe family
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: this.props.result.description,
+                    }}
+                  />
+                  {/* <span>10,000,000</span> members of BetterMe family */}
                 </span>
               </div>
             </section>
@@ -114,7 +124,7 @@ class Checkout extends Component {
             <div className={classes.StickyCountdown}>
               <div>
                 <div className={classes.CountdownText}>
-                  Reserved price for:{" "}
+                  اعتبار تخفیف تا:{" "}
                   <span className={classes.CountdownTimeUnit}>
                     <CountdownComp date={this.state.date} />
                   </span>
@@ -159,7 +169,8 @@ class Checkout extends Component {
           <section className={classes.IntroductoryMainSection}>
             <Introductory />
             <Plans
-              planSelected={this.props.planSelected}
+              result={this.props.result}
+              planSelectedIndex={this.props.planSelectedIndex}
               clicked={this.props.choosePlan}
             />
             <MealPlan />
@@ -191,11 +202,13 @@ class Checkout extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  planSelected: state.checkout.planSelected,
+  planSelectedIndex: state.checkout.planSelectedIndex,
+  result: state.quiz.result,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  choosePlan: (plan) => dispatch({ type: actionTypes.CHOOSE_PLAN, plan: plan }),
+  choosePlan: (index) =>
+    dispatch({ type: actionTypes.CHOOSE_PLAN, index: index }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Checkout);

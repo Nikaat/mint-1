@@ -1,8 +1,14 @@
 import * as actionTypes from "./actionTypes";
 
-export const choosePlan = (plan) => {
+export const choosePlan = (index) => {
   return {
     type: actionTypes.CHOOSE_PLAN,
-    plan: plan,
+    index: index,
+  };
+};
+
+export const noDiscount = () => {
+  return {
+    type: actionTypes.NO_DISCOUNT,
   };
 };
