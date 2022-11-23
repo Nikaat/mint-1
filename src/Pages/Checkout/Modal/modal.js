@@ -9,8 +9,8 @@ const modal = (props) => {
         <div className={classes.ScrollableContent}>
           <div className={classes.Title}>
             <div className={classes.TitleGroup}>
-              <h3 className={classes.TitleText}>How the program helps me</h3>
-              <span className={classes.DateNameText}>7 July</span>
+              <h3 className={classes.TitleText}>{props.title}</h3>
+              <span className={classes.DateNameText}>{props.date}</span>
             </div>
             <div className={classes.TitleGroup}>
               <div>
@@ -35,17 +35,13 @@ const modal = (props) => {
                   alt=""
                 />
               </div>
-              <span className={classes.DateNameText}>IAmMoorer</span>
+              <span className={classes.DateNameText}>{props.name}</span>
             </div>
           </div>
           <div className={classes.Review}>
             <p>
-              The hardest part for me was to have a plan and stick with it....
-              Better Me has it all laid out. The MOST important lesson I have
-              learned though.....even though I might feel that I “don’t eat a
-              lot” counting those calories will reveal your TRUTH. What you eat
-              is a fraction of the battle....count those calories and WIN the
-              battle.<br></br>
+              {props.text}
+              <br></br>
             </p>
           </div>
         </div>

@@ -43,7 +43,14 @@ const appStoreReview = (props) => {
         </p>
         <button
           className={classes.ExpandButton}
-          onClick={() => props.openModal()}
+          onClick={() =>
+            props.openModal(
+              props.titleText,
+              props.dateText,
+              props.nameText,
+              props.comment
+            )
+          }
         >
           more
         </button>

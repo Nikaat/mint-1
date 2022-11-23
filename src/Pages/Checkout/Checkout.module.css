@@ -211,7 +211,7 @@
     box-shadow: 0 0 0 0 var(--secondaryButtonShadowColor);
     position: relative;
     padding: 14px;
-    animation: pulsing-button-ui_pulse__YwoKU 1.25s cubic-bezier(.66,0,0,1) infinite;
+    animation: pulse 1.25s cubic-bezier(.66,0,0,1) infinite;
     border-radius: var(--buttonRadius);
     color: #fff;
     cursor: pointer;
@@ -253,4 +253,19 @@
     .LegalSection {
         padding: 16px 0 32px;
     }
+}
+
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(78, 208, 154, .7);
+	}
+
+	70% {
+		box-shadow: 0 0 0 10px rgba(78, 208, 154,0);
+	}
+
+	100% {
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
 }

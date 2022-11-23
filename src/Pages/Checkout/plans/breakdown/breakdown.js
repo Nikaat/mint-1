@@ -19,7 +19,15 @@ const breakdown = (props) => {
         onClick={() => props.clicked(props.id)}
       >
         {props.data === "affiliates-introductory-3-subs-1-month" ? (
-          <div className={classes.MostPopularLabel}>MOST POPULAR</div>
+          <div
+            className={classes.MostPopularLabel}
+            style={{
+              backgroundColor:
+                props.active === "true" ? "" : "var(--neutral300Color)",
+            }}
+          >
+            MOST POPULAR
+          </div>
         ) : null}
         <div
           className={classes.MainContentItemContainer}
@@ -28,6 +36,10 @@ const breakdown = (props) => {
               props.data === "affiliates-introductory-3-subs-1-month"
                 ? "0 0 8px 8px"
                 : "8px",
+            borderTop:
+              props.data === "affiliates-introductory-3-subs-1-month"
+                ? "none"
+                : "",
             "--before-border-color":
               props.active === "true"
                 ? "var(--primary400Color)"
@@ -39,6 +51,10 @@ const breakdown = (props) => {
             "--after-height": props.active === "true" ? "14px" : null,
             "--after-background":
               props.active === "true" ? "var(--primary400Color)" : null,
+            borderColor:
+              props.active === "true"
+                ? "var(--primary400Color)"
+                : "var(--neutral300Color)",
           }}
         >
           <div className={classes.PlanMainInfo}>

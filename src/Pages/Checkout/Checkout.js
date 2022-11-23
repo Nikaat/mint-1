@@ -13,13 +13,17 @@ import MealPlan from "./mealPlan/mealPlan";
 import Exercises from "./exercises/exercises";
 import FeedbacksSection from "./feedbacksSection/feedbacksSection";
 import LegalSection from "./legalSection/legalSection";
-import Modal from "../../Components/UI/Modal/modal";
+import Modal from "./Modal/modal";
 import * as actionTypes from "../../redux/actions/actionTypes";
 
 class Checkout extends Component {
   state = {
     faq: { Q1: false, Q2: false, Q3: false },
     modal: false,
+    modalName: "",
+    modalTitle: "",
+    modalDate: "",
+    modalComment: "",
 
     visible: false,
     date: Date.now(),
@@ -52,8 +56,14 @@ class Checkout extends Component {
     }
   };
 
-  onModalHandler = () => {
-    this.setState((prevState) => ({ modal: !prevState.modal }));
+  onModalHandler = (title, date, name, comment) => {
+    this.setState((prevState) => ({
+      modal: !prevState.modal,
+      modalTitle: title,
+      modalDate: date,
+      modalName: name,
+      modalComment: comment,
+    }));
   };
 
   render() {
@@ -167,7 +177,13 @@ class Checkout extends Component {
         </main>
         {/* sidebarBackdrop */}
         {this.state.modal === true ? (
-          <Modal clicked={this.onModalHandler} />
+          <Modal
+            name={this.state.modalName}
+            date={this.state.modalDate}
+            title={this.state.modalTitle}
+            text={this.state.modalComment}
+            clicked={this.onModalHandler}
+          />
         ) : null}
       </div>
     );

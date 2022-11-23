@@ -16,8 +16,8 @@ function App() {
       <Routes>
         <Route path="/mint/generated-questionary" element={<QuizPage />} />
         <Route path="/mint/pre-checkout" element={<PrePayment />} />
-        <Route path="/mint/checkout" element={<Checkout />} />
-        <Route path="/mint/login" element={<Login />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<QuizPage />} />
         <Route path="*" element={<QuizPage />} />
       </Routes>
