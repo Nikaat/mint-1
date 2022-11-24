@@ -64,7 +64,12 @@ const legalSection = (props) => {
       </div>
       <div className={classes.Legal}>
         <div className={classes.LegalAddress}>
-          Themistokli Dervi 39, 1st floor, Office 104, 1066, Nicosia, Cyprus.
+          قدرت‌گرفته از شرکت بین‌المللی Mint Global Solutions Ltd
+          <br />
+          دفتر ایران : تهران - ناحیه نوآوری شریف - باشگاه کسب‌وکارهای دانش‌بنیان
+          - واحد ۳۹
+          <br />
+          دفتر بریتانیا : انگلستان - تانتون - کریدول اُرچارد - واحد ۵
         </div>
       </div>
     </div>

@@ -42,22 +42,6 @@ class Checkout extends Component {
     };
   };
 
-  onfaqQuestion = (q) => {
-    if (q === "Q1") {
-      this.setState((prevState) => ({
-        faq: { ...this.state.faq, Q1: !prevState.faq.Q1 },
-      }));
-    } else if (q === "Q2") {
-      this.setState((prevState) => ({
-        faq: { ...this.state.faq, Q2: !prevState.faq.Q2 },
-      }));
-    } else if (q === "Q3") {
-      this.setState((prevState) => ({
-        faq: { ...this.state.faq, Q3: !prevState.faq.Q3 },
-      }));
-    }
-  };
-
   onModalHandler = (title, date, name, comment, image) => {
     this.setState((prevState) => ({
       modal: !prevState.modal,

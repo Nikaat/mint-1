@@ -10,9 +10,7 @@ const introductory = (props) => {
         <div className={classes.PicsListWithImageContainer}>
           <div>
             <div className={classes.PicsListWithImageTitle}>
-              <h2 className={classes.Title}>
-                چیزی که با خرید اشتراک دریافت می‌کنید
-              </h2>
+              <h2 className={classes.Title}>آنچه دریافت می‌کنید</h2>
             </div>
             <ul>
               {props.result.wyg.map((item, index) => (

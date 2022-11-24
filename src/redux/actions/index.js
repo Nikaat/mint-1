@@ -26,4 +26,5 @@ export {
   noDiscount,
   selectFaq,
   saveCheckooutData,
+  purchase,
 } from "./Checkout";

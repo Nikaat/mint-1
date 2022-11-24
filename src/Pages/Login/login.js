@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import classes from "./Login.module.css";
 import * as actionTypes from "../../redux/actions/actionTypes";
+import * as actionCreators from "../../redux/actions";
 
 const Login = (props) => {
   return (
@@ -20,8 +21,6 @@ const Login = (props) => {
                 <input
                   className={classes.EmailGeneratedInput}
                   autoComplete="off"
-                  type="email"
-                  name="email"
                   placeholder="شماره موبایل یا ایمیلتون رو وارد کنید"
                   value={props.phoneNumber}
                   onChange={(event) =>
@@ -51,8 +50,7 @@ const Login = (props) => {
             <div className={classes.KeyboardFooter}>
               <button
                 className={classes.WideButton}
-                data-button="email-form-submit"
-                type="submit"
+                onClick={() => props.clicked()}
               >
                 دریافت برنامه
               </button>
@@ -74,6 +72,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onInputLoginChange: (value) =>
       dispatch({ type: actionTypes.ON_LOGIN_INPUT_CHANGE, value: value }),
+    clicked: () => dispatch(actionCreators.purchase()),
   };
 };
 
