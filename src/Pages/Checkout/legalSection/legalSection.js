@@ -59,7 +59,7 @@ const legalSection = (props) => {
           databutton="checkout-get-plan"
           onClick={() => props.onButton()}
         >
-          دریافت رژیم
+          دریافت برنامه
         </button>
       </div>
       <div className={classes.Legal}>

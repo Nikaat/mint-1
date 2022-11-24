@@ -37,7 +37,7 @@ const plans = (props) => {
             data-button="checkout-get-plan"
             onClick={() => props.onButton()}
           >
-            دریافت رژيم
+            دریافت برنامه
           </button>
         </div>
         <div style={{ display: "none" }} className={classes.LegalContainer}>

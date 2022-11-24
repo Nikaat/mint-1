@@ -29,7 +29,7 @@ const countdown = (props) => {
               data-button="countdown-button"
               onClick={() => props.onButton()}
             >
-              دریافت رژیم
+              دریافت برنامه
             </button>
           </div>
         </div>

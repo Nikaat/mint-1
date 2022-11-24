@@ -51,16 +51,16 @@ export const onLoginInputChange = (value) => {
 
 export const purchase = () => {
   return (dispatch, getState) => {
-    let result = getState().result;
+    let result = getState().quiz.result;
     let planIndex = getState().checkout.planSelectedIndex;
     let planId = result.plans[planIndex].planId;
     setTimeout(() => {
       axios
         .get(
           "https://mintdoctor.ir/process/v2/login/request.php?code=" +
-            result.code +
+            getState().quiz.code +
             "&Authorization=" +
-            result.token +
+            getState().quiz.token +
             "&phoneNumber=" +
             getState().checkout.phoneNumber +
             "&plan=" +
@@ -71,9 +71,9 @@ export const purchase = () => {
         .then((res) => {
           console.log(
             "https://mintdoctor.ir/process/v2/login/request.php?code=" +
-              result.code +
+              getState().quiz.code +
               "&Authorization=" +
-              result.token +
+              getState().quiz.token +
               "&phoneNumber=" +
               getState().checkout.phoneNumber +
               "&plan=" +
@@ -82,7 +82,13 @@ export const purchase = () => {
               getState().checkout.discount
           );
           console.log("goNext-login", res);
-          window.scrollTo(0, 0);
+          console.log(res.data.success);
+
+          if (res.data.success === "true") {
+            window.location = res.data.result.resultLink;
+          } else {
+            alert(res.data.message);
+          }
         });
     }, 1000);
   };

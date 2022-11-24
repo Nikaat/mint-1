@@ -145,7 +145,7 @@ class Checkout extends Component {
                     data-button="countdown-button"
                     onClick={() => this.props.onButton()}
                   >
-                    دریافت رژیم
+                    دریافت برنامه
                   </button>
                 </div>
               </div>

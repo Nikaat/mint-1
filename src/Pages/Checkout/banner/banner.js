@@ -22,7 +22,7 @@ const banner = (props) => {
                   className={classes.Button}
                   onClick={() => props.onButton()}
                 >
-                  دریافت رژیم
+                  دریافت برنامه
                 </button>
               </div>
             </div>

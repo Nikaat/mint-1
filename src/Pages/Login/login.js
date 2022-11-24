@@ -47,15 +47,15 @@ const Login = (props) => {
                 </span>
               </div>
             </div>
-            <div className={classes.KeyboardFooter}>
-              <button
-                className={classes.WideButton}
-                onClick={() => props.clicked()}
-              >
-                دریافت برنامه
-              </button>
-            </div>
           </form>
+          <div className={classes.KeyboardFooter}>
+            <button
+              className={classes.WideButton}
+              onClick={() => props.clicked()}
+            >
+              دریافت برنامه
+            </button>
+          </div>
         </main>
       </div>
     </div>
@@ -65,6 +65,8 @@ const Login = (props) => {
 const mapStateToProps = (state) => {
   return {
     phoneNumber: state.checkout.phoneNumber,
+    pay: state.checkout.pay,
+    paylink: state.checkout.link,
   };
 };
 

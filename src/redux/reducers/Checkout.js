@@ -7,6 +7,7 @@ const initialState = {
   faqIndex: null,
   login: false,
   phoneNumber: "",
+  pay: false,
 };
 
 const checkoutReducer = (state = initialState, action) => {
@@ -23,6 +24,8 @@ const checkoutReducer = (state = initialState, action) => {
       return updateObject(state, { login: true });
     case actionTypes.ON_LOGIN_INPUT_CHANGE:
       return updateObject(state, { phoneNumber: action.value });
+    case actionTypes.GO_TO_PAY:
+      return updateObject(state, { pay: true, link: action.link });
     default:
       return state;
   }

@@ -52,7 +52,7 @@ const PrePayment = (props) => {
               class="button-module_container__C4518 button-module_accentColor__LZNFz"
             >
               <span as="span" class="typography-module_body1Bold__ghm17">
-                دریافت رژيم
+                دریافت برنامه
               </span>
             </button>
           </div> */}
