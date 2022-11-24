@@ -40,9 +40,10 @@ const appStoreReview = (props) => {
         <p>
           {props.comment}
           <br></br>
-          <img src={props.image} alt="" className="" />
+          <img src={props.image} alt="" className={classes.Image} />
         </p>
         <button
+          style={{ display: "none" }}
           className={classes.ExpandButton}
           onClick={() =>
             props.openModal(

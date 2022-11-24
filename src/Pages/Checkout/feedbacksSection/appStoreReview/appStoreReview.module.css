@@ -60,14 +60,20 @@
     border-radius: 50%;
 }
 
+.Image {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 9px;
+}
+
 .ReviewExpandable {
     color: var(--neutral700Color);
     font-size: 14px;
     letter-spacing: -.001em;
     line-height: 1.43;
     position: relative;
-    overflow: hidden;
-    max-height: 80.08px;
+    /* overflow: hidden; */
+    /* max-height: 80.08px; */
     text-align: justify;
 }
 
