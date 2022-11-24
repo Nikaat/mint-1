@@ -18,12 +18,22 @@ const appStoreReview = (props) => {
     <div className={classes.AppStoreReview}>
       <div className={classes.Title}>
         <div className={classes.TitleGroup}>
-          <h3 className={classes.TitleText}>{props.titleText}</h3>
-          <span className={classes.DateNameText}>{props.dateText}</span>
-        </div>
-        <div className={classes.TitleGroup}>
-          <div>{starts}</div>
+          <img
+            src={props.profileImage}
+            className={classes.ProfileImage}
+            alt=""
+          />
           <span className={classes.DateNameText}>{props.nameText}</span>
+
+          <div className={classes.DateandStars}>
+            <span className={classes.DateNameText}>{props.dateText}</span>
+            <br />
+            <span className={classes.Starts}>{starts}</span>
+          </div>
+        </div>
+
+        <div className={classes.TitleGroup}>
+          <h3 className={classes.TitleText}>{props.titleText}</h3>
         </div>
       </div>
       <div className={classes.ReviewExpandable}>
@@ -44,7 +54,7 @@ const appStoreReview = (props) => {
             )
           }
         >
-          more
+          بیشتر
         </button>
       </div>
     </div>

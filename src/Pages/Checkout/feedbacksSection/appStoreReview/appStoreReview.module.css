@@ -28,7 +28,6 @@
 }
 
 .TitleText {
-    margin-right: 10px;
     color: var(--neutral900Color);
 }
 
@@ -38,6 +37,19 @@
     font-weight: 600;
     line-height: 1.23;
     white-space: nowrap;
+
+    width: 50%;
+    margin: auto;
+}
+
+.DateandStars {
+    display: flex;
+    flex-direction: column;
+}
+
+.ProfileImage {
+    width: 17%;
+    border-radius: 50%;
 }
 
 .ReviewExpandable {

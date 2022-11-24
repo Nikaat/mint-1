@@ -17,6 +17,7 @@ const feedbacksSection = (props) => {
             titleText={item.title}
             dateText={item.date}
             nameText={item.profileName}
+            profileImage={item.profileImage}
             comment={item.text}
             image={item.image}
             rate={item.rate}
