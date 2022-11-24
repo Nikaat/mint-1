@@ -31,20 +31,28 @@
     color: var(--neutral900Color);
 }
 
-.DateNameText {
+.Name {
     color: var(--neutral600Color);
     font-size: 13px;
     font-weight: 600;
     line-height: 1.23;
     white-space: nowrap;
-
     width: 50%;
     margin: auto;
+}
+
+.Date {
+    color: var(--neutral600Color);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.23;
+    white-space: nowrap;
 }
 
 .DateandStars {
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
 
 .ProfileImage {

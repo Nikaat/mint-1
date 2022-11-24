@@ -23,3 +23,4 @@ export const NO_DISCOUNT = "NO_DISCOUNT";
 export const SELECT_FAQ = "SELECT_FAQ";
 export const GO_TO_LOGIN = "GO_TO_LOGIN";
 export const SAVE_CHECKOUT_DATA = "SAVE_CHECKOUT_DATA";
+export const ON_LOGIN_INPUT_CHANGE = "ON_LOGIN_INPUT_CHANGE";

@@ -23,10 +23,10 @@ const appStoreReview = (props) => {
             className={classes.ProfileImage}
             alt=""
           />
-          <span className={classes.DateNameText}>{props.nameText}</span>
+          <span className={classes.Name}>{props.nameText}</span>
 
           <div className={classes.DateandStars}>
-            <span className={classes.DateNameText}>{props.dateText}</span>
+            <span className={classes.Date}>{props.dateText}</span>
             <br />
             <span className={classes.Starts}>{starts}</span>
           </div>

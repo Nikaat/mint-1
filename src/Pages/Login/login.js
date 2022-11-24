@@ -1,6 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import classes from "./Login.module.css";
+import * as actionTypes from "../../redux/actions/actionTypes";
 
 const Login = (props) => {
   return (
@@ -21,7 +23,10 @@ const Login = (props) => {
                   type="email"
                   name="email"
                   placeholder="شماره موبایل یا ایمیلتون رو وارد کنید"
-                  value=""
+                  value={props.phoneNumber}
+                  onChange={(event) =>
+                    props.onInputLoginChange(event.target.value)
+                  }
                 />
               </div>
               <div className={classes.EmailGeneratedTip}>
@@ -59,4 +64,17 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+const mapStateToProps = (state) => {
+  return {
+    phoneNumber: state.checkout.phoneNumber,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onInputLoginChange: (value) =>
+      dispatch({ type: actionTypes.ON_LOGIN_INPUT_CHANGE, value: value }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

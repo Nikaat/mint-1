@@ -21,6 +21,7 @@ export {
 
 export {
   sendPlanId,
+  goToLogin,
   choosePlan,
   noDiscount,
   selectFaq,

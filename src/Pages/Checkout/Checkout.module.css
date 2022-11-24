@@ -145,7 +145,7 @@
 .CountdownTimeUnit {
     display: inline-block;
     width: 55px;
-    color: var(--secondary2Color);
+    color: #fcf82f;
     text-align: left;
 }
 

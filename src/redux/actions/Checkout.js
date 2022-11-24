@@ -1,4 +1,3 @@
-import axios from "axios";
 import * as actionTypes from "./actionTypes";
 
 export const choosePlan = (index) => {
@@ -21,27 +20,10 @@ export const selectFaq = (index) => {
   };
 };
 
-export const sendPlanId = (planId) => {
-  return (dispatch, getState) => {
+export const sendPlanId = () => {
+  return (dispatch) => {
     setTimeout(() => {
-      axios
-        .get(
-          "https://mintdoctor.ir/process/v2/main/checkout.php?Authorization=" +
-            getState().quiz.token +
-            "&type=" +
-            getState().quiz.type +
-            "&code=" +
-            getState().quiz.code +
-            "&planId=" +
-            planId
-        )
-        .then((res) => {
-          console.log("goNext-login", res);
-          const result = res.data.result;
-          window.scrollTo(0, 0);
-          dispatch(saveCheckooutData(result));
-          dispatch(goToLogin());
-        });
+      dispatch(goToLogin());
     }, 1000);
   };
 };
@@ -56,5 +38,12 @@ export const saveCheckooutData = (result) => {
   return {
     type: actionTypes.SAVE_FETCHED_DATA,
     result: result,
+  };
+};
+
+export const onLoginInputChange = (value) => {
+  return {
+    type: actionTypes.ON_INPUT_CHANGE,
+    value: value,
   };
 };
