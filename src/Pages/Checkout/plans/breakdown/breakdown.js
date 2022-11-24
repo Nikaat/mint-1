@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import classes from "./breakdown.module.css";
 
@@ -75,11 +76,18 @@ const breakdown = (props) => {
           </div>
           <div className={classes.PlanPerDayFa}>
             <div className={classes.TowPrice}>
-              <div style={{ textDecoration: "line-through", fontSize: "16px" }}>
+              <div
+                style={{
+                  textDecoration:
+                    props.disCount === true ? "line-through" : "none",
+                  fontSize: props.disCount === true ? "16px" : "",
+                }}
+              >
                 {props.price}
               </div>
               <div
                 style={{
+                  display: props.disCount === true ? "block" : "none",
                   fontWeight: "700",
                   color:
                     props.active === "true" ? "var(--secondary1Color)" : null,
@@ -127,4 +135,10 @@ const breakdown = (props) => {
   );
 };
 
-export default breakdown;
+const mapStateToProps = (state) => {
+  return {
+    disCount: state.checkout.discount,
+  };
+};
+
+export default connect(mapStateToProps)(breakdown);

@@ -1,8 +1,9 @@
 import React from "react";
 
 import classes from "./Introductory.module.css";
+import IntItem from "./intItem/intItem";
 
-const introductory = (peops) => {
+const introductory = (props) => {
   return (
     <div className={classes.ContentContainer}>
       <div className={classes.CheckoutPlanBenefits}>
@@ -14,53 +15,14 @@ const introductory = (peops) => {
               </h2>
             </div>
             <ul>
-              <li className={classes.PicsListItem}>
-                <img
-                  className={classes.PicsListItemImage}
-                  src="https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_1.0,fl_lossy,q_auto:eco/a_f6nufp"
-                  srcSet="https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_1.0,fl_lossy,q_auto:eco/a_f6nufp 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_2.0,fl_lossy,q_auto:eco/a_f6nufp 2x"
-                  alt="Weight loss plan"
+              {props.result.wyg.map((item, index) => (
+                <IntItem
+                  key={index}
+                  description={item.description}
+                  icon={item.icon}
+                  title={item.title}
                 />
-                <div>
-                  <p className={classes.PicsListItemTitle}>Weight loss plan</p>
-                  <p className={classes.PicsListItemSubtitle}>
-                    A unique exercise plan that fits into your daily schedule
-                    and helps see weight loss and tone results quickly.
-                  </p>
-                </div>
-              </li>
-              <li className={classes.PicsListItem}>
-                <img
-                  className={classes.PicsListItemImage}
-                  src="https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_1.0,fl_lossy,q_auto:eco/a_rdbhra"
-                  srcSet="https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_1.0,fl_lossy,q_auto:eco/a_rdbhra 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_2.0,fl_lossy,q_auto:eco/a_rdbhra 2x"
-                  alt="Easy meal plan"
-                />
-                <div>
-                  <p className={classes.PicsListItemTitle}>Easy meal plan</p>
-                  <p className={classes.PicsListItemSubtitle}>
-                    A personalized Meal Plan that's as close as possible to the
-                    regular diet, enhanced to be healthy and helpful to reach
-                    your goals.
-                  </p>
-                </div>
-              </li>
-              <li className={classes.PicsListItem}>
-                <img
-                  className={classes.PicsListItemImage}
-                  src="https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_1.0,fl_lossy,q_auto:eco/a_eisart"
-                  srcSet="https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_1.0,fl_lossy,q_auto:eco/a_eisart 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/dpr_2.0,fl_lossy,q_auto:eco/a_eisart 2x"
-                  alt="Coach support"
-                />
-                <div>
-                  <p className={classes.PicsListItemTitle}>Coach support</p>
-                  <p className={classes.PicsListItemSubtitle}>
-                    Connect with personal coaches who help with motivation and
-                    answer all your questions, and are constantly by your side
-                    for fastest and most effective results.{" "}
-                  </p>
-                </div>
-              </li>
+              ))}
             </ul>
             <div className={classes.PicsListWithImageNote}>
               <p className={classes.Footnote}>

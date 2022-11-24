@@ -112,6 +112,11 @@
         margin: 0;
         margin-top: 24px;
     }
+
+    .Container {
+        padding: 0 20px;
+    }
+
 }
 
 

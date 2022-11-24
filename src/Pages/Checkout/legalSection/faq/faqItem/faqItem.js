@@ -1,12 +1,14 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import classes from "./faqItem.module.css";
+import * as actionCreators from "../../../../../redux/actions";
 
 const faqItem = (props) => (
   <div className={classes.FaqItem}>
     <div
       className={classes.FaqQuestion}
-      onClick={() => props.clicked(props.id)}
+      onClick={() => props.clicked(props.index)}
     >
       {props.question}
       <div className={classes.FaqItemBtn}>
@@ -17,7 +19,9 @@ const faqItem = (props) => (
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className={classes.FaqItemBtnIcon}
-          style={{ transform: props.faq === true ? "rotate(180deg)" : null }}
+          style={{
+            transform: props.faqIndex === props.index ? "rotate(180deg)" : null,
+          }}
         >
           <path
             fillRule="evenodd"
@@ -29,7 +33,9 @@ const faqItem = (props) => (
     </div>
     <div
       className={
-        props.faq === false ? classes.FaqAnswerClose : classes.FaqAnswerOpen
+        props.faqIndex !== props.index
+          ? classes.FaqAnswerClose
+          : classes.FaqAnswerOpen
       }
     >
       <div className={classes.FaqAnswerText}>{props.answer}</div>
@@ -37,4 +43,16 @@ const faqItem = (props) => (
   </div>
 );
 
-export default faqItem;
+const mapStateToProps = (state) => {
+  return {
+    faqIndex: state.checkout.faqIndex,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    clicked: (index) => dispatch(actionCreators.selectFaq(index)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(faqItem);

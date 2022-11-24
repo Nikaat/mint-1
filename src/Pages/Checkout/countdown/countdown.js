@@ -1,7 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import classes from "./countdown.module.css";
 import CountdownComp from "./countDownComp/CountDownComp";
+import * as actionCreators from "../../../redux/actions";
 
 const countdown = (props) => {
   return (
@@ -16,13 +18,17 @@ const countdown = (props) => {
                 noDiscoutnt={props.deleteDiscount}
               />
             </div>
-            <div className={classes.TimeUnits}>
+            {/* <div className={classes.TimeUnits}>
               <span className={classes.TimeUnit}>minutes</span>
               <span className={classes.TimeUnit}>seconds</span>
-            </div>
+            </div> */}
           </div>
           <div className={classes.CtaContainer}>
-            <button className={classes.Button} data-button="countdown-button">
+            <button
+              className={classes.Button}
+              data-button="countdown-button"
+              onClick={() => props.onButton()}
+            >
               دریافت رژیم
             </button>
           </div>
@@ -32,4 +38,10 @@ const countdown = (props) => {
   );
 };
 
-export default countdown;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onButton: () => dispatch(actionCreators.sendPlanId()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(countdown);

@@ -285,16 +285,6 @@ export const goNext = (prevAid, prevCode) => {
               prevAid
           )
           .then((res) => {
-            console.log(
-              "https://mintdoctor.ir/process/v2/main/checkout.php?Authorization=" +
-                getState().quiz.token +
-                "&type=" +
-                getState().quiz.type +
-                "&code=" +
-                prevCode +
-                "&aid=" +
-                prevAid
-            );
             console.log("goNext-checkout", res);
             const code = res.data.result.code;
             const result = res.data.result;

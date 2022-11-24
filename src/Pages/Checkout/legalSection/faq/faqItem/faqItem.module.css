@@ -74,4 +74,20 @@
     letter-spacing: -.01em;
     line-height: 1.43;
     padding: 24px 24px 32px;
+    text-align: justify;
+}
+
+@media (max-width: 500px) {
+    .FaqQuestion {
+        padding: 20px 60px;
+        font-size: 14px;
+    }
+
+    .FaqAnswerText {
+        font-size: 13px;
+    }
+
+    .FaqItem {
+        margin-bottom: 16px;
+    }
 }

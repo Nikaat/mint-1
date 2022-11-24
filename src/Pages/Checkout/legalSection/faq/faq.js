@@ -5,38 +5,16 @@ import FaqItem from "./faqItem/faqItem";
 
 const faq = (props) => (
   <div className={classes.Container}>
-    <span className={classes.Title}>People Often Ask</span>
+    <span className={classes.Title}>سوالات متداول کاربران</span>
     <ul className={classes.QuestionsList}>
-      <FaqItem
-        question="I’m worried that I’ll quit the Meal Plan halfway"
-        answer="We totally get it, and that’s why we made sure that our Meal Plans are
-        as similar to the regular menu as possible. We believe that even those
-        who live off fast food will be satisfied with both the meals and the
-        results, and never feel hungry."
-        faq={props.faq.Q1}
-        id="Q1"
-        clicked={props.clicked}
-      />
-      <FaqItem
-        question="I don’t want to give up my sweets!"
-        answer="And you don't have to. We know that it’s hard to get rid of the
-        sweet tooth, and included sweet dishes into the meal plan. We’ve
-        picked balanced sweets."
-        faq={props.faq.Q2}
-        id="Q2"
-        clicked={props.clicked}
-      />
-      <FaqItem
-        question="Can I lose weight without working out?"
-        answer="Sure thing! Nutrition is the most important element in weight loss.
-        However if you incorporate workouts, your body will get more toned
-        and defined. We know it’s a lot to take on, and the workouts are
-        extremely easy, suitable for first-timers, and will take up barely
-        any time."
-        faq={props.faq.Q3}
-        id="Q3"
-        clicked={props.clicked}
-      />
+      {props.result.faq.map((item, index) => (
+        <FaqItem
+          key={index}
+          index={index}
+          question={item.question}
+          answer={item.answer}
+        />
+      ))}
     </ul>
   </div>
 );

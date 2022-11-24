@@ -1,9 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import Auxiliary from "../../../hoc/Auxiliary/Auxiliary";
 import classes from "./banner.module.css";
+import * as actionCreators from "../../../redux/actions";
 
-const banner = (peops) => {
+const banner = (props) => {
   return (
     <Auxiliary>
       <div className={classes.ContainerDesktop}>
@@ -15,7 +17,11 @@ const banner = (peops) => {
                 right now
               </h1>
               <div className={classes.TopBannerButton}>
-                <button type="button" className={classes.Button}>
+                <button
+                  type="button"
+                  className={classes.Button}
+                  onClick={() => props.onButton()}
+                >
                   دریافت رژیم
                 </button>
               </div>
@@ -199,4 +205,10 @@ const banner = (peops) => {
   );
 };
 
-export default banner;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onButton: () => dispatch(actionCreators.sendPlanId()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(banner);

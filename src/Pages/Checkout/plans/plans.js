@@ -1,9 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import classes from "./plans.module.css";
 import Breakdown from "./breakdown/breakdown";
 import PromoCodeForm from "./promoCodeForm/promoCodeForm";
 import Legal from "./legal/legal";
+import * as actionCreators from "../../../redux/actions";
 
 const plans = (props) => {
   return (
@@ -20,45 +22,11 @@ const plans = (props) => {
                 price={plan.price}
                 discountPrice={plan.discountPrice}
                 description={plan.description}
-                // singleLine="1 month"
-                // dollors="1"
-                // cents="02"
                 active={props.planSelectedIndex === index ? "true" : "false"}
                 id="month"
                 clicked={props.clicked}
               />
             ))}
-            {/* <Breakdown
-              planName="1-MONTH PLAN"
-              price="28.56"
-              singleLine="1 month"
-              dollors="1"
-              cents="02"
-              active={monthAcive}
-              id="month"
-              clicked={props.clicked}
-            />
-            <Breakdown
-              planName="7-DAY PLAN"
-              price="9.99"
-              singleLine="7 days"
-              dollors="1"
-              cents="43"
-              active={weekAcive}
-              id="week"
-              clicked={props.clicked}
-            />
-            <Breakdown
-              planName="3-MONTH PLAN"
-              price="42.84"
-              singleLine="3 months"
-              dollors="0"
-              cents="36"
-              data="affiliates-introductory-3-subs-3-month"
-              active={month3Acive}
-              id="month3"
-              clicked={props.clicked} 
-            />*/}
           </div>
           <PromoCodeForm />
         </div>
@@ -67,6 +35,7 @@ const plans = (props) => {
             type="button"
             className={classes.Button}
             data-button="checkout-get-plan"
+            onClick={() => props.onButton()}
           >
             دریافت رژيم
           </button>
@@ -92,4 +61,8 @@ const plans = (props) => {
   );
 };
 
-export default plans;
+const mapDispatchToProps = (dispatch) => ({
+  onButton: () => dispatch(actionCreators.sendPlanId()),
+});
+
+export default connect(null, mapDispatchToProps)(plans);

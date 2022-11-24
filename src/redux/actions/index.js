@@ -19,4 +19,10 @@ export {
   goToCheckout,
 } from "./Quiz";
 
-export { choosePlan, noDiscount } from "./Checkout";
+export {
+  sendPlanId,
+  choosePlan,
+  noDiscount,
+  selectFaq,
+  saveCheckooutData,
+} from "./Checkout";

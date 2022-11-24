@@ -1,8 +1,10 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import classes from "./legalSection.module.css";
 import Faq from "./faq/faq";
 import MoneyBackGuarantee from "./moneyBackGuarantee/moneyBackGuarantee";
+import * as actionCreators from "../../../redux/actions";
 
 const legalSection = (props) => {
   return (
@@ -21,7 +23,7 @@ const legalSection = (props) => {
           alt="Avocado"
         />
         <div className={classes.Faq}>
-          <Faq faq={props.faq} clicked={props.faqClicked} />
+          <Faq result={props.result} />
         </div>
       </div>
       <div className={classes.MoneyBackGuarantee}>
@@ -55,6 +57,7 @@ const legalSection = (props) => {
           type="button"
           className={classes.Button}
           databutton="checkout-get-plan"
+          onClick={() => props.onButton()}
         >
           دریافت رژیم
         </button>
@@ -68,4 +71,10 @@ const legalSection = (props) => {
   );
 };
 
-export default legalSection;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onButton: () => dispatch(actionCreators.sendPlanId()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(legalSection);

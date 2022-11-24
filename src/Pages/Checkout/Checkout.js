@@ -15,10 +15,11 @@ import FeedbacksSection from "./feedbacksSection/feedbacksSection";
 import LegalSection from "./legalSection/legalSection";
 import Modal from "./Modal/modal";
 import * as actionTypes from "../../redux/actions/actionTypes";
+import * as actionCreators from "../../redux/actions";
+import { Navigate } from "react-router";
 
 class Checkout extends Component {
   state = {
-    faq: { Q1: false, Q2: false, Q3: false },
     modal: false,
     modalName: "",
     modalTitle: "",
@@ -143,19 +144,20 @@ class Checkout extends Component {
                   <div className={classes.StickyCountdownTimeNumbers}>
                     <CountdownComp date={this.state.date} />
                   </div>
-                  <div className={classes.StickyCountdownTimeUnits}>
+                  {/* <div className={classes.StickyCountdownTimeUnits}>
                     <span className={classes.StickyCountdownTimeUnit}>
                       minutes
                     </span>
                     <span className={classes.StickyCountdownTimeUnit}>
                       seconds
                     </span>
-                  </div>
+                  </div> */}
                 </div>
                 <div className={classes.StickyCountdownCtaContainer}>
                   <button
                     className={classes.StickyPulsingButton}
                     data-button="countdown-button"
+                    onClick={() => this.props.onButton()}
                   >
                     دریافت رژیم
                   </button>
@@ -167,7 +169,7 @@ class Checkout extends Component {
             <Banner />
           </div>
           <section className={classes.IntroductoryMainSection}>
-            <Introductory />
+            <Introductory result={this.props.result} />
             <Plans
               result={this.props.result}
               planSelectedIndex={this.props.planSelectedIndex}
@@ -180,10 +182,7 @@ class Checkout extends Component {
             <FeedbacksSection openModal={this.onModalHandler} />
           </section>
           <section className={classes.LegalSection}>
-            <LegalSection
-              faq={this.state.faq}
-              faqClicked={this.onfaqQuestion}
-            />
+            <LegalSection result={this.props.result} />
           </section>
         </main>
         {/* sidebarBackdrop */}
@@ -196,6 +195,7 @@ class Checkout extends Component {
             clicked={this.onModalHandler}
           />
         ) : null}
+        {this.props.login === true ? <Navigate to="/login" /> : null}
       </div>
     );
   }
@@ -204,11 +204,13 @@ class Checkout extends Component {
 const mapStateToProps = (state) => ({
   planSelectedIndex: state.checkout.planSelectedIndex,
   result: state.quiz.result,
+  login: state.checkout.login,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   choosePlan: (index) =>
     dispatch({ type: actionTypes.CHOOSE_PLAN, index: index }),
+  onButton: () => dispatch(actionCreators.sendPlanId()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Checkout);

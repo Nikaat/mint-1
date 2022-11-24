@@ -1,0 +1,40 @@
+
+.PicsListItem {
+    display: flex;
+    margin-bottom: 24px;
+    --subTitleColor: var(--neutral700Color);
+}
+
+.PicsListItemImage {
+    display: block;
+    height: 56px;
+    flex: 0 0 56px;
+    margin: 0 16px 0 0;
+}
+
+html[dir = 'rtl'] .PicsListItemImage {
+    margin: 0 0 0 16px;
+}
+
+.PicsListItemTitle {
+    margin-bottom: 2px;
+    color: var(--neutral900Color);
+    font-size: 16px;
+    font-weight: 700;
+    text-align: justify;
+    line-height: 1.25;
+}
+
+.PicsListItemSubtitle {
+    color: var(--subTitleColor);
+    font-size: 14px;
+    line-height: 1.43;
+    text-align: justify;
+}
+
+
+@media (max-width: 500px) {
+    .PicsListItem {
+        margin-bottom: 16px;
+    }
+}

@@ -30,32 +30,6 @@
     text-align: left;
 }
 
-.PicsListItem {
-    display: flex;
-    margin-bottom: 24px;
-    --subTitleColor: var(--neutral700Color);
-}
-
-.PicsListItemImage {
-    display: block;
-    height: 56px;
-    flex: 0 0 56px;
-    margin: 0 16px 0 0;
-}
-
-.PicsListItemTitle {
-    margin-bottom: 2px;
-    color: var(--neutral900Color);
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.25;
-}
-
-.PicsListItemSubtitle {
-    color: var(--subTitleColor);
-    font-size: 14px;
-    line-height: 1.43;
-}
 
 .PicsListWithImageNote {
     display: block;
@@ -100,10 +74,6 @@
         font-size: 24px;
         line-height: 1.4;
         text-align: center;
-    }
-
-    .PicsListItem {
-        margin-bottom: 16px;
     }
 
     .PicsListWithImageNote {
