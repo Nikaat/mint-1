@@ -42,6 +42,7 @@ const modal = (props) => {
             <p>
               {props.text}
               <br></br>
+              <img src={props.image} alt="" style={{ width: "100%" }} />
             </p>
           </div>
         </div>

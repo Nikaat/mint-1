@@ -29,7 +29,7 @@ const legalSection = (props) => {
       <div className={classes.MoneyBackGuarantee}>
         <MoneyBackGuarantee guarantee={props.result.guarantee} />
       </div>
-      <div className={classes.AboveButtonElement}>
+      <div className={classes.AboveButtonElement} style={{ display: "none" }}>
         <div className={classes.UnderButtonLegalText}>
           <span data-testid="akaTrialLegalTextFull">
             <b>PLEASE NOTE:</b> After your 1-Month introductory offer, unless

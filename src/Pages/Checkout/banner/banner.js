@@ -189,8 +189,7 @@ const banner = (props) => {
         <div className={classes.Comparison} style={{ maxWidth: "375px" }}>
           <img
             className={classes.ComparisonImageLeft}
-            src="https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_535/v1/weightloss/checkout/affiliates/var1_z8ezaz.png"
-            srcSet="https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_1.0,fl_lossy,q_auto:eco,w_535/v1/weightloss/checkout/affiliates/var1_z8ezaz.png 1x, https://res.cloudinary.com/drhg6wpcy/image/upload/c_fit,dpr_2.0,fl_lossy,q_auto:eco,w_535/v1/weightloss/checkout/affiliates/var1_z8ezaz.png 2x"
+            src={props.imageLeft}
             alt=""
           />
           <img

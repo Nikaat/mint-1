@@ -25,6 +25,7 @@ class Checkout extends Component {
     modalTitle: "",
     modalDate: "",
     modalComment: "",
+    modalImage: "",
 
     visible: false,
     date: Date.now(),
@@ -57,13 +58,14 @@ class Checkout extends Component {
     }
   };
 
-  onModalHandler = (title, date, name, comment) => {
+  onModalHandler = (title, date, name, comment, image) => {
     this.setState((prevState) => ({
       modal: !prevState.modal,
       modalTitle: title,
       modalDate: date,
       modalName: name,
       modalComment: comment,
+      modalImage: image,
     }));
   };
 
@@ -166,7 +168,7 @@ class Checkout extends Component {
             </div>
           </div>
           <div className={classes.Banner}>
-            <Banner />
+            <Banner imageLeft={this.props.result.bannerImage} />
           </div>
           <section className={classes.IntroductoryMainSection}>
             <Introductory result={this.props.result} />
@@ -179,7 +181,10 @@ class Checkout extends Component {
             <Exercises />
           </section>
           <section className={classes.FeedbacksSection}>
-            <FeedbacksSection openModal={this.onModalHandler} />
+            <FeedbacksSection
+              openModal={this.onModalHandler}
+              comments={this.props.result.comments}
+            />
           </section>
           <section className={classes.LegalSection}>
             <LegalSection result={this.props.result} />
@@ -192,6 +197,7 @@ class Checkout extends Component {
             date={this.state.modalDate}
             title={this.state.modalTitle}
             text={this.state.modalComment}
+            image={this.state.modalImage}
             clicked={this.onModalHandler}
           />
         ) : null}

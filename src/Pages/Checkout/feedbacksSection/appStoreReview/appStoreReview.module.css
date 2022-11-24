@@ -48,6 +48,7 @@
     position: relative;
     overflow: hidden;
     max-height: 80.08px;
+    text-align: justify;
 }
 
 .ExpandButton {
@@ -60,7 +61,7 @@
     right: 0;
     bottom: 0;
     padding-left: 22px;
-    background: linear-gradient(270deg, #FFFFFF 63.54%, rgba(255, 255, 255, 0) 91.43%);;
+    background: linear-gradient(270deg, #FFFFFF 63.54%, rgba(255, 255, 255, 0) 91.43%);
     color: #2c70c3;
     cursor: pointer;
     font-size: 15px;
@@ -69,6 +70,14 @@
     line-height: 20.02px;
     outline: none;
     text-decoration: none;
+}
+
+html[dir= 'rtl'] .ExpandButton {
+    right: inherit;
+    left: 0;
+    padding-left: 0;
+    padding-right: 22px;
+    background: linear-gradient(90deg, #FFFFFF 63.54%, rgba(255, 255, 255, 0) 91.43%);
 }
 
 @media (max-width: 500px) {
