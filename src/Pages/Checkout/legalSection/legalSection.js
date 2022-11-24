@@ -27,7 +27,7 @@ const legalSection = (props) => {
         </div>
       </div>
       <div className={classes.MoneyBackGuarantee}>
-        <MoneyBackGuarantee />
+        <MoneyBackGuarantee guarantee={props.result.guarantee} />
       </div>
       <div className={classes.AboveButtonElement}>
         <div className={classes.UnderButtonLegalText}>

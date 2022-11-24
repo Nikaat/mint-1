@@ -6,9 +6,14 @@ const moneyBackGuarantee = (props) => (
   <div className={classes.Container}>
     <div className={classes.Content}>
       <div className={classes.ContentInner}>
-        <span className={classes.Title}>30-Day Money-Back Guarantee</span>
+        <span className={classes.Title}>{props.guarantee.guaranteeTitle}</span>
         <span className={classes.Text}>
-          <p>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: props.guarantee.guaranteeDescription,
+            }}
+          />
+          {/* <p>
             We believe that our plan may work for you and you’ll get visible
             results in 4 weeks! We even are ready to return your money back if
             you don’t see visible results and can demonstrate that you followed
@@ -21,7 +26,7 @@ const moneyBackGuarantee = (props) => (
               money-back policy
             </a>
             .<br></br>
-          </p>
+          </p> */}
         </span>
       </div>
       <svg
