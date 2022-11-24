@@ -16,7 +16,7 @@ const arrow = (props) => {
         display:
           props.result.preAid === "main" || props.result.isResult === "true"
             ? "none"
-            : "inline",
+            : "block",
       }}
     >
       <path
