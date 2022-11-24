@@ -35,7 +35,7 @@
     padding: 0;
     margin: 0 auto 24px;
     color: var(--neutral900Color);
-    font-size: 24px;
+    font-size: 20px;
     font-weight: var(--pageTitleFontWeight);
     line-height: 1.33;
     text-align: center;
@@ -71,6 +71,11 @@
     margin: 12px auto;
 }
 
+html[dir = 'rtl'] .EmailGeneratedTip {
+    padding-left: 0;
+    padding-right: 40px;
+}
+
 .LockIcon {
     position: absolute;
     top: 2px;
@@ -78,6 +83,11 @@
     display: block;
     width: 24px;
     height: auto;
+}
+
+html[dir= 'rtl'] .LockIcon {
+    left: auto;
+    right: 4px;
 }
 
 .EmailGeneratedTipText {

@@ -14,14 +14,16 @@ const Login = (props) => {
             <div className={classes.EmailGeneratedContent}>
               <div className={classes.EmailGeneratedInstruction}>
                 <p>
-                  <b>بارداری سریع</b> با مینت <br></br>
+                  {/* <b>بارداری سریع</b>  */}
+                  شماره موبایل یا ایمیلتون رو وارد کنید
+                  <br></br>
                 </p>
               </div>
               <div className={classes.EmailGeneratedInputRow}>
                 <input
                   className={classes.EmailGeneratedInput}
                   autoComplete="off"
-                  placeholder="شماره موبایل یا ایمیلتون رو وارد کنید"
+                  placeholder="محل وارد کردن شماره موبایل یا ایمیل"
                   value={props.phoneNumber}
                   onChange={(event) =>
                     props.onInputLoginChange(event.target.value)
