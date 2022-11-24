@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import classes from "./plans.module.css";
+import CommonContainer from "./commonContainer/commonContainer";
 import Breakdown from "./breakdown/breakdown";
 import PromoCodeForm from "./promoCodeForm/promoCodeForm";
 import Legal from "./legal/legal";
@@ -13,6 +14,7 @@ const plans = (props) => {
       <div className={classes.Container}>
         <div className={classes.ChoosePlanGenericContainer}>
           <h3 className={classes.ChoosePlanHeader}>انتخاب خدمات مورد نیاز</h3>
+          <CommonContainer result={props.result} />
           <div className={classes.PlanListContainer}>
             {props.result.plans.map((plan, index) => (
               <Breakdown

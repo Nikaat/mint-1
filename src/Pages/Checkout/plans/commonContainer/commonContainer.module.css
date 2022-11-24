@@ -1,0 +1,50 @@
+.Container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.PersonalizationItem {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.Icon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    margin-right: 8px;
+}
+
+html[dir= 'rtl'] .Icon {
+    margin-left: 8px;
+    margin-right: 0;
+}
+
+.Column {
+    display: flex;
+    flex-direction: column;
+}
+
+.Label {
+    color: var(--neutral600Color);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.Value {
+    color: var(--neutral900Color);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.43;
+}
+
+.Separator {
+    flex: 0 0 1px;
+    align-self: stretch;
+    margin: 0 16px;
+    background-color: var(--neutral300Color);
+}

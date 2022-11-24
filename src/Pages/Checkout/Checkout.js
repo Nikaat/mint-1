@@ -128,6 +128,7 @@ class Checkout extends Component {
               <div className={classes.StickyCountdownContainer}>
                 <div className={classes.StickyCountdownTime}>
                   <div className={classes.StickyCountdownTimeNumbers}>
+                    <div className={classes.StickyText}>اعتبار تخفیف تا: </div>
                     <CountdownComp date={this.state.date} />
                   </div>
                   {/* <div className={classes.StickyCountdownTimeUnits}>
