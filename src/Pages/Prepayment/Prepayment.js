@@ -1,6 +1,7 @@
 import React from "react";
 
 import classes from "./Prepayment.module.css";
+import Header from "./header/header";
 import Banner from "./banner/banner";
 import BmiContainer from "./bmiContainer/bmiContainer";
 import Highlights from "./highlights/highlights";
@@ -9,6 +10,7 @@ const PrePayment = (props) => {
   return (
     <div className={classes.PageContainer} data-page="general" id="page">
       <div>
+        <Header />
         <Banner />
         <div className={classes.SubContainer}>
           <h2 className={classes.Title}>Personal Summary</h2>

@@ -1,0 +1,26 @@
+.Container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 111;
+}
+
+.DefaultMobileHeader {
+    align-items: center;
+    background-color: var(--background1Color);
+    display: flex;
+    height: 48px;
+    justify-content: flex-end;
+    padding: 0 22px;
+    position: relative;
+}
+
+.Logo {
+    display: block;
+    height: 32px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: auto;
+}

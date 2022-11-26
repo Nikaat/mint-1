@@ -69,3 +69,12 @@
 .AnimationLabel3 {
     transition: transform .5s ease-in-out 4.5s;
 }
+
+.DisclaimerText {
+    margin: 12px 0 24px;
+    color: var(--neutral600Color);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.33;
+    text-align: left;
+}

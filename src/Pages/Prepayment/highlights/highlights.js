@@ -1,6 +1,7 @@
 import React from "react";
 
 import classes from "./highlights.module.css";
+import Graph from "./graph/graph";
 
 const highlights = (props) => {
   return (
@@ -15,95 +16,8 @@ const highlights = (props) => {
               <span className={classes.AnimationLabel2}>by</span>{" "}
               <span className={classes.AnimationLabel3}>January 2023</span>
             </p>
-            <div class="graph_container__nokLa graph_containerAnimated__87QTA">
-              <div class="graph_content__BxX6a">
-                <div class="graph_lines__shHyv">
-                  <div class="graph_line__rhKwd"></div>
-                  <div class="graph_line__rhKwd"></div>
-                  <div class="graph_line__rhKwd"></div>
-                  <div class="graph_line__rhKwd"></div>
-                </div>
-                <div class="graph_graphContainer__ql9mg">
-                  <div class="graph_graphContent__p0Vgs">
-                    <svg
-                      class="graph_graphCurveMobile__fG8vB"
-                      viewBox="0 0 230 79"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0 0C6.03939 24.6667 7.54924 37 108.709 50C172.123 58.1493 170.613 72 230 77"
-                        stroke-width="3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                    <svg
-                      class="graph_graphCurveDesktop__a2_N6"
-                      viewBox="0 0 542 185"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0 0C14.2319 58.3211 17.79 87.4816 256.175 118.218C405.611 137.486 402.053 170.235 542 182.056"
-                        stroke-width="5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                    <svg
-                      class="graph_graphCurveShadow__igKFi"
-                      viewBox="0 0 230 106"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M108 50C6.84027 37 6.03939 24.6667 0 0V106H230V77C170.613 72 171.414 58.1493 108 50Z"
-                        fill="url(#paint0_linear)"
-                      ></path>
-                      <defs>
-                        <linearGradient
-                          id="paint0_linear"
-                          x1="-19.7458"
-                          y1="10.3922"
-                          x2="-20.2791"
-                          y2="106"
-                          gradientUnits="userSpaceOnUse"
-                        >
-                          <stop stop-opacity="0.8"></stop>
-                          <stop offset="0.475239" stop-opacity="0.24"></stop>
-                          <stop offset="1" stop-opacity="0"></stop>
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                    <div class="graph_dashedLineLoseLeft__9dYR7">
-                      <p class="graph_date__tZu1y">NOV</p>
-                    </div>
-                    <div class="graph_dashedLineLoseMiddle__vspLz">
-                      <p class="graph_date__tZu1y">DEC 2022</p>
-                    </div>
-                    <div class="graph_dashedLineLoseRight__COjLx">
-                      <p class="graph_dateTarget__pnhU_">
-                        BY <b>JAN 2023</b>
-                      </p>
-                    </div>
-                    <div class="graph_startCircleLoseContainer__dnQaD">
-                      <div class="graph_startCircle__acIX_">
-                        <div class="graph_startCircleText__PKLuz">
-                          <b>65</b>kg
-                        </div>
-                      </div>
-                    </div>
-                    <div class="graph_endCircleLoseContainer__rFRDo">
-                      <div class="graph_endCircle__gAcH2">
-                        60 <span>kg</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <p class="purchase-personalized-highlights_disclaimerText__9qZY_">
+            <Graph />
+            <p className={classes.DisclaimerText}>
               *Based on the data of users who log their progress in the app.
               Consult your physician first. The chart is a non-customized
               illustration and results may vary

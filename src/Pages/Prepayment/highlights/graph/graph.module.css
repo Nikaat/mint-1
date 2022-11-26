@@ -1,0 +1,214 @@
+.ContainerAnimated {
+    position: relative;
+    padding-bottom: 32px;
+}
+
+.Content {
+    position: relative;
+}
+
+.Lines {
+    position: absolute;
+    z-index: 0;
+    top: 31.12%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Line {
+    width: 100%;
+    height: 1px;
+    background: var(--neutral300Color);
+}
+
+.GraphContainer {
+    padding: 6.87% 18.81% 0 12.54%;
+}
+
+.GraphContent {
+    position: relative;
+    padding: 0 0 13.05%;
+}
+
+.GraphCurveMobile {
+    width: 100%;
+    stroke: var(--primary400Color);
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: graph_strokeDashOffsetMobile__Z1aWr 2s forwards;
+    animation-delay: 2s;
+}
+
+.GraphCurveDesktop {
+    width: 100%;
+    stroke: var(--primary400Color);
+    animation: graph_strokeDashOffsetDesktop__jDQhd 2s forwards;
+    animation-delay: 2s;
+}
+
+.GraphCurveShadow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    /* opacity: 0; */
+    animation: graph_opacityAnimation__asukD 1s forwards;
+    animation-delay: 2s;
+}
+
+.DashedLineLoseLeft {
+    position: absolute;
+    width: 2px;
+    background-image: linear-gradient(to top,var(--primary400Color) 11px,transparent 11px);
+    background-position: bottom;
+    background-repeat: repeat-y;
+    background-size: 2px 17px;
+    top: 0;
+    left: 0;
+    animation: graph_dashedLineAnimation__RuBkQ 1s 1s forwards;
+    animation-delay: 1.5s;
+}
+
+.Date {
+    position: absolute;
+    left: 50%;
+    padding: 4px 10px;
+    color: var(--neutral900Color);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.33;
+    /* opacity: 0; */
+    text-align: center;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    animation: graph_dateAnimation__USXd8 .5s 1s forwards;
+    animation-delay: 2.5s;
+}
+
+.DashedLineLoseMiddle {
+    position: absolute;
+    width: 2px;
+    background-image: linear-gradient(to top,var(--primary400Color) 11px,transparent 11px);
+    background-position: bottom;
+    background-repeat: repeat-y;
+    background-size: 2px 17px;
+    top: 47%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: graph_dashedLineAnimation__RuBkQ 1s 1s forwards;
+    animation-delay: 2.5s;
+}
+
+.DashedLineLoseRight {
+    position: absolute;
+    width: 2px;
+    background-image: linear-gradient(to top,var(--primary400Color) 11px,transparent 11px);
+    background-position: bottom;
+    background-repeat: repeat-y;
+    background-size: 2px 17px;
+    top: 70%;
+    right: 0;
+    animation: graph_dashedLineAnimation__RuBkQ 1s 1s forwards;
+    animation-delay: 2s;
+}
+
+.DateTarget {
+    position: absolute;
+    left: 50%;
+    padding: 4px 10px;
+    color: var(--neutral900Color);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.33;
+    /* opacity: 0; */
+    text-align: center;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background: var(--primary400Color);
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: .7px;
+    /* opacity: 0; */
+    animation: graph_dateAnimation__USXd8 .5s 1s forwards;
+    animation-delay: 3s;
+}
+
+.DateTarget b {
+    font-weight: 800;
+}
+
+.StartCircleLoseContainer {
+    position: absolute;
+    top: -23px;
+    left: -32px;
+}
+
+.StartCircle {
+    display: flex;
+    width: 64px;
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #fff;
+    background: var(--neutral600Color);
+    border-radius: 50%;
+    /* opacity: 0; */
+    transition: opacity .5s ease-in-out 1s;
+
+    opacity: 1;
+}
+
+.StartCircleText {
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.33;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.StartCircleText b {
+    display: block;
+    font-size: 16px;
+}
+
+.EndCircleLoseContainer {
+    position: absolute;
+    right: -52px;
+    bottom: 17.86%;
+    /* opacity: 0; */
+
+    animation: graph_opacityAnimation__asukD .5s forwards;
+    animation-delay: 3s;
+}
+
+.EndCircle {
+    display: inline-block;
+    display: flex;
+    width: 80px;
+    height: 80px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #fff;
+    background: var(--primary400Color);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.33;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: pre-line;
+}
+
+.EndCircle span {
+    display: block;
+    font-size: 10px;
+    line-height: 1.6;
+}
